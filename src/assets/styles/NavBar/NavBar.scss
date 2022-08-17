@@ -1,0 +1,26 @@
+@import "../variables.scss";
+
+.navbar {
+  background-color: $white;
+  .list_item {
+    color: $secondary;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding-right: 15px;
+    display: inline;
+    font-family: "josefin sans";
+    font-weight: 700;
+  }
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
+  border: 2px solid $primary;
+  color: $primary;
+  padding: 2px 15px;
+  border-radius: 40px;
+  font-family: "josefin sans";
+  font-weight: 700;
+  margin-top: 6px;
+}
