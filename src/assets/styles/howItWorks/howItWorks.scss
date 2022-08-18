@@ -1,0 +1,43 @@
+@import "../variables.scss";
+
+.hiw-heading {
+  color: $primary;
+}
+
+.hiw-container {
+  //   max-width: 1330px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .hiw-col-1 {
+    max-width: 250px;
+    min-width: 120px;
+    text-align: center;
+    img {
+      width: 70%;
+      margin-bottom: 10px;
+    }
+    margin-bottom: 15px;
+  }
+  .hiw-col-2 {
+    max-width: 80px;
+    // min-width: 120px;
+    img {
+      width: 100%;
+    }
+  }
+  .hiw-text-container {
+    text-align: center;
+
+    .hiw-text-heading {
+      color: $secondary;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+    .hiw-text-para {
+      color: $black;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
+}

@@ -8,11 +8,7 @@ const sectionStyle = {
 };
 const Hero = () => {
   return (
-    <Container
-      fluid
-      className="hero text-center px-4  my-1"
-      style={sectionStyle}
-    >
+    <Container fluid className="hero text-center px-4  " style={sectionStyle}>
       <h2 className="hero-quote">
         “There is a sun within every person;
         <br /> the you we call campanion.”

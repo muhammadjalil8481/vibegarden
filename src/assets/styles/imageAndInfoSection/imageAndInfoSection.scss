@@ -1,0 +1,30 @@
+@import "../variables.scss";
+
+.section-heading {
+  @media (max-width: 1000px) {
+    font-size: 42px;
+  }
+}
+.section-text {
+  line-height: 1.7;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+}
+.white-text {
+  color: $white;
+}
+
+.green-text {
+  color: $secondary;
+}
+.button-container {
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+}
+.info-section {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
