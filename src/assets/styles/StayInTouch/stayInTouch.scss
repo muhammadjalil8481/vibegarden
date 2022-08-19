@@ -1,0 +1,29 @@
+@import "../variables.scss";
+
+.hit-heading {
+  color: $primary;
+}
+.hit-para {
+  max-width: 80%;
+  //   font-weight: 700;
+  color: $black-3;
+  letter-spacing: 2px;
+}
+
+.hit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hit-input {
+  padding: 12px;
+  width: 400px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-family: "josefin sans";
+  margin-bottom: 20px;
+  margin-top: 10px;
+}

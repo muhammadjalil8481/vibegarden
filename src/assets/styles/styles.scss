@@ -6,8 +6,17 @@
 @import "./Container/Container.scss";
 @import "./VideoCard/videocard.scss";
 @import "./howItWorks/howItWorks.scss";
-@import "./TwoColumnLayout/twoColomnLayout.scss";
+@import "./fourColumnInfoSection/fourColumnInfoSection.scss";
+@import "./LineBreak/lineBreak.scss";
+@import "./SampleTools/SampleTools.scss";
+@import "./VideoCardSmall/VideoCardSmall.scss";
+@import "./VideoShiftedCard/VideoShiftedCard.scss";
+@import "./MoreVG/MoreVG.scss";
+@import "./WhiteInfoCard/WhiteInfoCard.scss";
+@import "./RectangularVideoCard/RectangularVideoCard.scss";
+@import "./StayInTouch/stayInTouch.scss";
 @import "./variables.scss";
+@import "./Footer/Footer.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
@@ -55,3 +64,6 @@ button {
 .auto-margin-horizontal {
   margin: 0 auto;
 }
+// .row {
+//   padding: 0;
+// }

@@ -29,6 +29,8 @@ const images = {
   paymentOptions: require("../assets/images/payment-options.png"),
   andoidIcon: require("../assets/images/android.svg"),
   appleIcon: require("../assets/images/apple-icon.svg"),
+  greenMask: require("../assets/images/green-mask.png"),
+  pinkMask: require("../assets/images/pink-mask.png"),
 };
 
 export default images;

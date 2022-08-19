@@ -6,10 +6,11 @@ const gradientBackground = {
   color: "rgba(255, 255, 255, 1)",
 };
 
-const ButtonFilled = ({ text = "Button", bgGradient }) => {
+const ButtonFilled = ({ text = "Button", bgGradient, paddingX }) => {
+  const padX = { paddingLeft: paddingX, paddingRight: paddingX };
   return (
     <button
-      className="btn-filled"
+      className={`${paddingX && "pd-x"} btn-filled`}
       style={bgGradient === "yes" ? gradientBackground : null}
     >
       {text}

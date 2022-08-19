@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.fcis {
+
+  .fcis-container {
+    .fcis-item {  
+      padding: 20px;
+      &--heading {
+        font-family: "josefin sans";
+        color: $secondary;
+      }
+      &--list-item {
+        color: $black-3;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+
+      
+      }
+    }
+  }
+}

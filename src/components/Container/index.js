@@ -6,7 +6,7 @@ const gradientBackground = {
   backgroundImage: `url(${rectangle})`,
 };
 
-const ContainerSection = ({ isFluid, bgGradient, children }) => {
+const ContainerSection = ({ isFluid, bgGradient, children, borderRadius }) => {
   return isFluid === "yes" ? (
     <Container
       fluid
@@ -16,7 +16,10 @@ const ContainerSection = ({ isFluid, bgGradient, children }) => {
       {children}
     </Container>
   ) : (
-    <Container style={bgGradient === "yes" ? gradientBackground : null}>
+    <Container
+      style={bgGradient === "yes" ? gradientBackground : null}
+      className={borderRadius && "border-radius"}
+    >
       {children}
     </Container>
   );

@@ -2,8 +2,12 @@ import NavBar from "./components/Navbar";
 import Hero from "./components/Hero";
 import GradientImageInfoSection from "./components/GradientImageInfoSection";
 import HowItWorks from "./components/howItWorks/HowItWorks";
-import TwoColumnSection from "./components/TwoColumnSection";
 import WhiteImageInfoSection from "./components/WhiteImageInfoSection.js";
+import FourColumnInfoSection from "./components/fourColumnInfoSection";
+import LineBreak from "./components/lineBreak";
+import SampleTools from "./components/SampleToolsSection";
+import MoreVG from "./components/MoreVGSection.js";
+import StayInTouch from "./components/StayInTouchSection";
 
 function App() {
   return (
@@ -12,8 +16,12 @@ function App() {
       <Hero />
       <GradientImageInfoSection videoCardLeftMargin={"30px"} />
       <WhiteImageInfoSection />
-      {/* <HowItWorks /> */}
-      {/* <TwoColumnSection /> */}
+      <HowItWorks />
+      <FourColumnInfoSection />
+      <LineBreak />
+      <SampleTools />
+      <MoreVG />
+      <StayInTouch />
     </div>
   );
 }

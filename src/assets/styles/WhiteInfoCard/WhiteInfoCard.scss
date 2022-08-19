@@ -1,0 +1,17 @@
+@import "../variables.scss";
+
+.wic {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 10px;
+
+  .wic-heading {
+    color: $secondary;
+    font-family: "josefin sans";
+  }
+  .wic-para {
+    font-size: 16px;
+  }
+  .wic-video-container {
+  }
+}
