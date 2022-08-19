@@ -1,27 +1,19 @@
 import NavBar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ImageAndInfoSection from "./components/imageAndInfoSection";
+import GradientImageInfoSection from "./components/GradientImageInfoSection";
 import HowItWorks from "./components/howItWorks/HowItWorks";
+import TwoColumnSection from "./components/TwoColumnSection";
+import WhiteImageInfoSection from "./components/WhiteImageInfoSection.js";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Hero />
-      <ImageAndInfoSection
-        makeFluid
-        makeBgGradient
-        videoCardLeftMargin={"30px"}
-      />
-      <ImageAndInfoSection
-        // makeBgGradient
-        makeFluid
-        makeReverse
-        headingColor="#1B5B2F"
-        textColor="rgba(22, 20, 20, 1)"
-        button={"filled"}
-      />
-      <HowItWorks />
+      <GradientImageInfoSection videoCardLeftMargin={"30px"} />
+      <WhiteImageInfoSection />
+      {/* <HowItWorks /> */}
+      {/* <TwoColumnSection /> */}
     </div>
   );
 }

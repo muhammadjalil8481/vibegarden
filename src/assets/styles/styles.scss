@@ -1,10 +1,12 @@
 @import "./NavBar/NavBar.scss";
 @import "./Hero/hero.scss";
-@import "./imageAndInfoSection/imageAndInfoSection.scss";
+@import "./GradientImageInfoSection/GradientImageInfoSection.scss";
+@import "WhiteImageInfoSection/WhiteImageInfoSecion.scss";
 @import "./Button/button.scss";
 @import "./Container/Container.scss";
 @import "./VideoCard/videocard.scss";
 @import "./howItWorks/howItWorks.scss";
+@import "./TwoColumnLayout/twoColomnLayout.scss";
 @import "./variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
@@ -20,6 +22,9 @@ body {
 h2 {
   font-size: 48px;
   font-family: "josefin sans";
+  @media (max-width: 1000px) {
+    font-size: 42px;
+  }
 }
 h3 {
   font-size: 36px;
@@ -34,6 +39,10 @@ p {
   font-size: 18px;
   letter-spacing: 0.75px;
   line-height: 1.5;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
 }
 button {
   font-size: 18px;

@@ -1,0 +1,63 @@
+@import "../variables.scss";
+
+.section-heading {
+  @media (max-width: 1000px) {
+    font-size: 42px;
+  }
+}
+.section-text {
+  line-height: 1.7;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+}
+.white-text {
+  color: $white;
+}
+
+.green-text {
+  color: $secondary;
+}
+.button-container {
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+}
+
+.info-section {
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+  @media (max-width: 820px) {
+    max-width: 90%;
+    margin-right: -40px;
+  }
+}
+
+.video-card {
+  @media (max-width: 767px) {
+    text-align: center;
+    margin-left: 25%;
+  }
+  @media (max-width: 690px) {
+    margin-left: 20%;
+  }
+  @media (max-width: 650px) {
+    margin-left: 18%;
+  }
+  @media (max-width: 600px) {
+    margin-left: 15%;
+  }
+  @media (max-width: 550px) {
+    margin-left: 8%;
+  }
+  @media (max-width: 500px) {
+    margin-left: 4%;
+  }
+  @media (max-width: 465px) {
+    margin-left: 10%;
+  }
+  @media (max-width: 390px) {
+    margin-left: 0;
+  }
+}
