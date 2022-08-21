@@ -1,20 +1,33 @@
 @import "../variables.scss";
 
 .fcis {
-
   .fcis-container {
-    .fcis-item {  
-      padding: 20px;
-      &--heading {
-        font-family: "josefin sans";
-        color: $secondary;
+    padding: 3rem;
+    .fcis-row {
+      @media (max-width: 991px) {
+        justify-content: space-between;
       }
-      &--list-item {
-        color: $black-3;
-        letter-spacing: 1px;
-        margin-bottom: 16px;
-
-      
+      .fcis-item {
+        margin-bottom: 2rem;
+        @media (max-width: 991px) {
+          width: 48%;
+        }
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+        .fcis-item--heading {
+          color: $secondary;
+          font-weight: 700;
+        }
+        .fcis-item--list {
+          margin-top: 2.5rem;
+          .fcis-item--list-item {
+            font-size: 1.8rem;
+            color: $black-3;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+          }
+        }
       }
     }
   }

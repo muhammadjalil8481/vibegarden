@@ -1,17 +1,50 @@
 @import "../variables.scss";
 
 .wic {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
   background-color: $white;
-  padding: 20px;
-  border-radius: 10px;
-
+  padding: 2rem;
+  border-radius: 1rem;
+  @media (max-width: 767px) {
+    align-items: center;
+  }
   .wic-heading {
     color: $secondary;
     font-family: "josefin sans";
   }
   .wic-para {
     font-size: 16px;
+    color: $black-3;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
   .wic-video-container {
+    display: flex;
+    align-self: stretch;
+    @media (min-width: 1400px) {
+      width: 90%;
+      margin-left: 5%;
+    }
+    @media (max-width: 767px) {
+      width: 70%;
+      margin-left: 14%;
+    }
+    @media (max-width: 600px) {
+      width: 80%;
+      margin-left: 10%;
+    }
+    @media (max-width: 600px) {
+      width: 90%;
+      margin-left: 5%;
+    }
+  }
+  .wic-btn-container {
+    align-self: center;
+    margin-top: 3rem;
   }
 }

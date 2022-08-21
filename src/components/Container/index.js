@@ -4,6 +4,8 @@ import rectangle from "../../assets/images/rectangle.svg";
 
 const gradientBackground = {
   backgroundImage: `url(${rectangle})`,
+  backgroundSize: "cover",
+  backgroundRepear: "no-repeat",
 };
 
 const ContainerSection = ({ isFluid, bgGradient, children, borderRadius }) => {

@@ -30,7 +30,9 @@ const NavBar = () => {
             <NavLink>
               <div className="list_item">Login</div>
             </NavLink>
-            <ButtonOutline text="Join Us" />
+            <div className="nav-btn">
+              <ButtonOutline text="Join Us" />
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

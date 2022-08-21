@@ -2,8 +2,10 @@ import React from "react";
 import ContainerSection from "../Container";
 import circle from "../../assets/images/circle.svg";
 import VideoCardSmall from "../VideoCardSmall";
+import VideoCard from "../VideoCard/VideoCard";
+import images from "../../constants/images";
 
-const VideoCardShifted = ({ width = "600px" }) => {
+const VideoCardShifted = ({ width = "600px", image = images.placeholder1 }) => {
   return (
     <section className="vcs">
       <ContainerSection bgGradient={"yes"} borderRadius>
@@ -23,7 +25,7 @@ const VideoCardShifted = ({ width = "600px" }) => {
             </a>
           </div>
           <div className="vcs-video-card">
-            <VideoCardSmall width="270px" title="title" />
+            <VideoCard width="220px" height="180px" image={image} />
           </div>
         </div>
       </ContainerSection>

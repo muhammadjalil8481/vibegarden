@@ -11,26 +11,13 @@ const HowItWorks = () => {
   return (
     <section className="hiw py-5">
       <ContainerSection isFluid={"yes"}>
-        <h2 class="hiw-heading">How It Works</h2>
-        <div className="row mb-5">
-          <div className="hiw-container mt-2">
-            <div className="col-md-2 ">
-              <div className="hiw-col-1">
-                <img src={howItWorks1} />
-                <div className="hiw-text-container">
-                  <h5 className="hiw-text-heading">Column Header Green</h5>
-                  <p className="hiw-text-para">
-                    Column Body Copy - same as default body copy style. Lorem
-                    ipsum dolor sit amet
-                  </p>
-                </div>
+        <div className="container">
+          <h2 class="hiw-heading">How It Works</h2>
+          <div className="row mb-5 hiw-container">
+            <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
+              <div className="hiw-img-container">
+                <img src={howItWorks1} className="hiw-img" />
               </div>
-            </div>
-            <div className="col-md-1 hiw-col-2">
-              <img src={plusSign} />
-            </div>
-            <div className="col-md-2 hiw-col-1">
-              <img src={howItWorks2} />
               <div className="hiw-text-container">
                 <h5 className="hiw-text-heading">Column Header Green</h5>
                 <p className="hiw-text-para">
@@ -39,11 +26,13 @@ const HowItWorks = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-1 hiw-col-2 ">
+            <div className="col-md-1 col-sm-2 col-3 hiw-small-col">
               <img src={plusSign} />
             </div>
-            <div className="col-md-2 hiw-col-1">
-              <img src={howItWorks3} />
+            <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
+              <div className="hiw-img-container">
+                <img src={howItWorks1} className="hiw-img" />
+              </div>
               <div className="hiw-text-container">
                 <h5 className="hiw-text-heading">Column Header Green</h5>
                 <p className="hiw-text-para">
@@ -52,11 +41,28 @@ const HowItWorks = () => {
                 </p>
               </div>
             </div>
-            <div className="col-md-1 hiw-col-2 ">
-              <img src={equalsSign} />
+            <div className="col-md-1 col-sm-2 col-3 hiw-small-col">
+              <img src={plusSign} />
             </div>
-            <div className="col-md-2 hiw-col-1">
-              <img src={howItWorks4} />
+            <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
+              <div className="hiw-img-container">
+                <img src={howItWorks1} className="hiw-img" />
+              </div>
+              <div className="hiw-text-container">
+                <h5 className="hiw-text-heading">Column Header Green</h5>
+                <p className="hiw-text-para">
+                  Column Body Copy - same as default body copy style. Lorem
+                  ipsum dolor sit amet
+                </p>
+              </div>
+            </div>
+            <div className="col-md-1 col-sm-2 col-3 hiw-small-col">
+              <img src={plusSign} />
+            </div>
+            <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
+              <div className="hiw-img-container">
+                <img src={howItWorks1} className="hiw-img" />
+              </div>
               <div className="hiw-text-container">
                 <h5 className="hiw-text-heading">Column Header Green</h5>
                 <p className="hiw-text-para">
@@ -67,6 +73,61 @@ const HowItWorks = () => {
             </div>
           </div>
         </div>
+
+        {/* <div className="hiw-container mt-2"> */}
+
+        {/* <div className="hiw-col-1"> */}
+        {/* <img src={howItWorks1} /> */}
+        {/* <div className="hiw-text-container"> */}
+        {/* <h5 className="hiw-text-heading">Column Header Green</h5> */}
+        {/* <p className="hiw-text-para"> */}
+        {/* Column Body Copy - same as default body copy style. Lorem
+                    ipsum dolor sit amet */}
+        {/* </p> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* <div className="col-md-1 hiw-col-2"> */}
+        {/* <img src={plusSign} /> */}
+        {/* </div> */}
+        {/* <div className="col-md-2 hiw-col-1"> */}
+        {/* <img src={howItWorks2} /> */}
+        {/* <div className="hiw-text-container"> */}
+        {/* <h5 className="hiw-text-heading">Column Header Green</h5> */}
+        {/* <p className="hiw-text-para"> */}
+        {/* Column Body Copy - same as default body copy style. Lorem
+                  ipsum dolor sit amet */}
+        {/* </p> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* <div className="col-md-1 hiw-col-2 ">
+              <img src={plusSign} />
+            </div> */}
+        {/* <div className="col-md-2 hiw-col-1"> */}
+        {/* <img src={howItWorks3} /> */}
+        {/* <div className="hiw-text-container"> */}
+        {/* <h5 className="hiw-text-heading">Column Header Green</h5> */}
+        {/* <p className="hiw-text-para"> */}
+        {/* Column Body Copy - same as default body copy style. Lorem
+                  ipsum dolor sit amet */}
+        {/* </p> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* <div className="col-md-1 hiw-col-2 "> */}
+        {/* <img src={equalsSign} /> */}
+        {/* </div> */}
+        {/* <div className="col-md-2 hiw-col-1"> */}
+        {/* <img src={howItWorks4} /> */}
+        {/* <div className="hiw-text-container"> */}
+        {/* <h5 className="hiw-text-heading">Column Header Green</h5> */}
+        {/* <p className="hiw-text-para"> */}
+        {/* Column Body Copy - same as default body copy style. Lorem
+                  ipsum dolor sit amet */}
+        {/* </p> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* </div> */}
+        {/* </div> */}
       </ContainerSection>
     </section>
   );

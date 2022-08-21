@@ -2,25 +2,26 @@
 
 .hero {
   color: $white;
-  padding: 100px 0;
+  padding: 10rem 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-size: cover;
   &-quote {
-    font-size: 36px;
+    font-size: 3.6rem;
     letter-spacing: 2px;
     font-family: "josefin sans";
     line-height: 1.4;
   }
   &-author {
-    font-size: 18px;
+    font-size: 1.8rem;
     letter-spacing: 1px;
   }
   &-heading {
-    margin-top: 80px;
+    margin-top: 8rem;
     // margin-bottom: 45px;
 
-    font-size: 55px;
+    font-size: 5.5rem;
     letter-spacing: 3px;
   }
 }

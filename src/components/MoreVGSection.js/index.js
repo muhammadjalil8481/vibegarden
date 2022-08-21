@@ -5,24 +5,29 @@ import images from "../../constants/images";
 
 const MoreVG = () => {
   return (
-    <section className="mvg ">
+    <section className="mvg py-5 gx-xl-0 gx-lg-1">
       <ContainerSection isFluid={"yes"}>
-        <h2 className="mvg-heading">More About Vibe garden</h2>
-        <div className="row mvg-container ">
-          <div className="col-md-3 col-sm-6 mvg-item ">
-            <WhiteInfoCard
-              heading="A Creation Story"
-              image={images.placeholder3}
-            />
-          </div>
-          <div className="col-md-3 col-sm-6 mvg-item">
-            <WhiteInfoCard
-              heading="The Vibe Bloom App"
-              image={images.placeholder4}
-            />
-          </div>
-          <div className="col-md-3 col-sm-6 mvg-item">
-            <WhiteInfoCard heading="Teachers" image={images.placeholder5} />
+        <h2 className="mvg-heading mb-5">More About Vibe garden</h2>
+        <div className="container-lg mvg-container">
+          <div className="row mvg-row ">
+            <div className="col-md-4 mvg-item ">
+              <WhiteInfoCard
+                btnText="Explorer Groundwork"
+                image={images.placeholder3}
+              />
+            </div>
+            <div className="col-md-4 mvg-item ">
+              <WhiteInfoCard
+                btnText="Explorer Groundwork"
+                image={images.placeholder4}
+              />
+            </div>
+            <div className="col-md-4 mvg-item ">
+              <WhiteInfoCard
+                btnText="Explorer Groundwork"
+                image={images.placeholder5}
+              />
+            </div>
           </div>
         </div>
       </ContainerSection>

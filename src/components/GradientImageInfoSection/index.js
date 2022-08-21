@@ -10,14 +10,13 @@ const GradientImageInfoSection = ({
   videoCardRightMargin,
 }) => {
   return (
-    <div className="mb-5 ">
-      <ContainerSection isFluid="yes" bgGradient="yes">
-        <div className="row py80 px-lg-5  justify-content-center align-items-center mx-auto ">
-          <div className={`col-md-6 info-section `}>
-            <div className="info-section">
-              <h2 className="section-heading white-text">
-                Embodying Your Fullness
-              </h2>
+    <section className="giid">
+      <ContainerSection isFluid={"yes"} bgGradient="yes">
+        <div class="container giid-container py80">
+          <div class="row giid-row">
+            <div class="col-md-8 giid-col giid-left-col">
+              {/* <h1>Left side</h1> */}
+              <h2 className="giid-heading ">Embodying Your Fullness</h2>
               <p className="white-text section-text mt-2 mb-5">
                 Body copy style for white text on dark or gradient backgrounds
                 (Medium Weight) Lorem ipsum dolor sit amet, consectetur
@@ -29,17 +28,19 @@ const GradientImageInfoSection = ({
                 dictum nisi tempus. Etiam dui tellus, porttitor vitae rutrum a,
                 ultrices pharetra nulla.
               </p>
-              <div className="button-container">
+              <div className="giid-btn-container">
                 <ButtonFilled text="Explorer Tools" />
               </div>
             </div>
-          </div>
-          <div className="col-md-5 video-card">
-            <VideoCard time="3:15" leftMargin={videoCardLeftMargin} />
+            <div class="col-sm-4 giid-col giid-right-col">
+              <div className="giid-video-card">
+                <VideoCard time="3:15" image={images.placeholder2} />
+              </div>
+            </div>
           </div>
         </div>
       </ContainerSection>
-    </div>
+    </section>
   );
 };
 

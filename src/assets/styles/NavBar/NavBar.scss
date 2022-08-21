@@ -10,9 +10,26 @@
     display: inline;
     font-family: "josefin sans";
     font-weight: 700;
+    font-size: 1.6rem;
   }
 }
-
+.nav-link {
+  @media (max-width: 991px) {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+}
+.nav-btn {
+  @media (max-width: 991px) {
+    text-align: center;
+  }
+}
+// .navbar-nav {
+//   @media (max-width: 991px) {
+//     margin-top: 1rem;
+//     margin-left: 1rem;
+//   }
+// }
 .btn-outline {
   background-color: rgba(255, 255, 255, 1);
   outline: none;
@@ -23,4 +40,9 @@
   font-family: "josefin sans";
   font-weight: 700;
   margin-top: 6px;
+}
+
+.nav-btn {
+  position: relative;
+  top: -0.5rem;
 }
