@@ -1,0 +1,138 @@
+@import "../variables.scss";
+
+.join-us {
+  //   background-color: salmon;
+  &-container {
+    // background-color: lawngreen;
+    @media (max-width: 991px) {
+      padding: 0 3rem;
+    }
+  }
+}
+.join-us-row {
+  display: flex;
+  justify-content: center;
+  //   background-color: silver;
+}
+
+.join-us-left-col {
+  //   background-color: khaki;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  .join-us-heading {
+    color: $secondary;
+    font-family: "josefin sans";
+    font-size: 4rem;
+    font-family: 700;
+    @media (max-width: 991px) {
+      h2 {
+        font-size: 3.6rem;
+      }
+    }
+  }
+  .join-us-video-card {
+    margin-left: 7%;
+    @media (max-width: 767px) {
+      margin-left: 2%;
+    }
+  }
+}
+
+.join-us-info {
+  &-heading {
+    font-size: 3.2rem;
+    font-family: "josefin sans";
+    color: $secondary;
+    font-family: 700;
+  }
+  &-para {
+    font-size: 1.4rem;
+    color: $black-3;
+    line-height: 1.7;
+  }
+}
+
+.line-break-container {
+  display: flex;
+  //   background-color: yellow;
+  justify-content: center;
+}
+.line-break-vertical {
+  width: 1px;
+  height: 70%;
+  background-color: $secondary;
+}
+
+.join-us-right-col {
+  display: flex;
+  flex-direction: column;
+  //   align-items: center;
+  .join-us-back-btn {
+    color: $secondary;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  .join-us-ppc {
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: 991px) {
+      justify-content: center;
+    }
+    @media (max-width: 767px) {
+      align-items: flex-end;
+    }
+    // flex-basis: 50%;
+  }
+  .join-us-next-btn {
+    color: $secondary;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    letter-spacing: 2px;
+    align-self: flex-end;
+    @media (max-width: 767px) {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.join-us-form {
+  align-self: center;
+  margin-top: 3rem;
+  @media (max-width: 767px) {
+    align-self: flex-start;
+    margin-left: 2rem;
+  }
+  @media (max-width: 345px) {
+    margin-left: 0;
+  }
+  .join-us-form-group {
+    // background-color: khaki;
+    .join-us-form-label {
+      font-size: 1.4rem;
+      color: $secondary;
+      font-family: "josefin sans";
+    }
+    .join-us-form-input {
+      width: 300px;
+      padding: 1rem 2rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgba($secondary, 0.5);
+      border-radius: 1rem;
+      outline: none;
+      font-size: 1.8rem;
+      color: $black-3;
+      font-family: "josefin sans";
+      box-shadow: 4px 1px 10px 5px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 4px 1px 10px 5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 4px 1px 10px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

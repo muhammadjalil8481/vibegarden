@@ -1,0 +1,13 @@
+@import "../variables.scss";
+
+.form-group {
+  display: flex;
+  align-items: center;
+  .form-group-label {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    color: $black-3;
+  }
+}
+.checkbox-list {
+}
