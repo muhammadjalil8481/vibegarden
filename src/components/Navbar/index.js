@@ -2,9 +2,10 @@ import React from "react";
 import { Navbar, Container, Nav, NavLink } from "react-bootstrap";
 import ButtonOutline from "../Button/ButtonOutline";
 import images from "../../constants/images";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = ({ onlyBrand }) => {
+  const navigate = useNavigate();
   return (
     <Navbar expand="lg" className="navbar">
       <Container>
@@ -31,7 +32,9 @@ const NavBar = ({ onlyBrand }) => {
               </Nav>
               <Nav className="ms-auto">
                 <NavLink>
-                  <div className="list_item">Login</div>
+                  <div className="list_item" onClick={() => navigate("/login")}>
+                    Login
+                  </div>
                 </NavLink>
                 <div className="nav-btn">
                   <Link to={"/join-us"}>
