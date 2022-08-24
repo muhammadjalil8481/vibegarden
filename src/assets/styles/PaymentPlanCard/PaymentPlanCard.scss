@@ -8,7 +8,7 @@
   flex-direction: column;
   padding: 4rem 2rem;
   border-radius: 2rem;
-  margin-left: 3rem;
+  // margin-left: 3rem;
   box-shadow: 2px 3px 27px 5px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 2px 3px 27px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 2px 3px 27px 5px rgba(0, 0, 0, 0.1);
@@ -26,6 +26,11 @@
   }
   @media (max-width: 767px) {
     height: 250px;
+    margin-right: 2rem;
+  }
+  @media (max-width: 559px) {
+    // height: 250px;
+    margin-right: 0;
   }
 
   // background-color: salmon;

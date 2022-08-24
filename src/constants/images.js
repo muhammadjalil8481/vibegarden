@@ -31,6 +31,7 @@ const images = {
   appleIcon: require("../assets/images/apple-icon.svg"),
   greenMask: require("../assets/images/green-mask.png"),
   pinkMask: require("../assets/images/pink-mask.png"),
+  downIcon: require("../assets/images/down-icon.png"),
 };
 
 export default images;

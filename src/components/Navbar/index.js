@@ -8,8 +8,8 @@ const NavBar = ({ onlyBrand }) => {
   const navigate = useNavigate();
   return (
     <Navbar expand="lg" className="navbar">
-      <Container>
-        <Navbar.Brand href="#home" className="brand">
+      <div className="container-lg">
+        <Navbar.Brand className="brand" onClick={() => navigate("/")}>
           <img src={images.logo} alt="Vibe Garden Logo" />
         </Navbar.Brand>
         {!onlyBrand && (
@@ -31,21 +31,26 @@ const NavBar = ({ onlyBrand }) => {
                 </NavLink>
               </Nav>
               <Nav className="ms-auto">
-                <NavLink>
-                  <div className="list_item" onClick={() => navigate("/login")}>
-                    Login
+                <div className="navbar-actions">
+                  <NavLink>
+                    <div
+                      className="list_item"
+                      onClick={() => navigate("/login")}
+                    >
+                      Login
+                    </div>
+                  </NavLink>
+                  <div className="nav-btn">
+                    <Link to={"/join-us"}>
+                      <ButtonOutline text="Join Us" />
+                    </Link>
                   </div>
-                </NavLink>
-                <div className="nav-btn">
-                  <Link to={"/join-us"}>
-                    <ButtonOutline text="Join Us" />
-                  </Link>
                 </div>
               </Nav>
             </Navbar.Collapse>
           </>
         )}
-      </Container>
+      </div>
     </Navbar>
   );
 };

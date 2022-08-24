@@ -53,3 +53,155 @@
     }
   }
 }
+
+// *****************
+
+.wiis2 {
+  // background-color: salmon;
+  .wiis2-container {
+    // background-color: wheat;
+    @media (max-width: 767px) {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+  .wiis2-row {
+    align-items: center;
+    justify-content: space-around;
+    // background-color: royalblue;
+    @media (max-width: 992px) {
+      justify-content: space-between;
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .wiis2-left-col {
+    // background-color: thistle;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1024px) {
+      max-width: 60%;
+    }
+    // @media (max-width: 991px) {
+    //   max-width: 50%;
+    // }
+    @media (max-width: 767px) {
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .wiis2-heading {
+      color: $secondary;
+      font-size: 3.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-family: "josefin sans";
+    }
+    .wiis2-para {
+      color: $black-3;
+      // font-weight: 700;
+      line-height: 1.6;
+      font-size: 1.6rem;
+    }
+    .wiis2-link {
+      // background-color: darkblue;
+      text-align: end;
+      @media (max-width: 767px) {
+        text-align: center;
+      }
+    }
+  }
+  .wiis2-right-col {
+    // background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .wiis2-right-col-heading {
+      h2 {
+        color: $secondary;
+      }
+      width: 100%;
+      padding-left: 2rem;
+      @media (max-width: 1199px) {
+        padding-left: 0;
+      }
+      @media (max-width: 991px) {
+        padding-left: 2rem;
+      }
+      @media (max-width: 767px) {
+        text-align: center;
+        padding-left: 0;
+      }
+    }
+    .wiis2-right-col-btn-container {
+      display: flex;
+      // background-color: lightcoral;
+      width: 100%;
+      padding: 0 6rem;
+      margin-top: 1rem;
+
+      @media (max-width: 1399px) {
+        padding: 0 4rem;
+      }
+      @media (max-width: 1199px) {
+        padding: 0 2rem;
+      }
+      @media (max-width: 991px) {
+        padding: 0 4rem;
+      }
+      @media (max-width: 850px) {
+        padding: 0 3rem;
+      }
+      @media (max-width: 767px) {
+        padding: 0;
+        position: absolute;
+        bottom: -15%;
+        left: 17%;
+      }
+      @media (max-width: 575px) {
+        left: 33%;
+      }
+      @media (max-width: 510px) {
+        left: 30%;
+      }
+      @media (max-width: 460px) {
+        left: 28%;
+      }
+      @media (max-width: 400px) {
+        left: 25%;
+      }
+      @media (max-width: 400px) {
+        left: 20%;
+      }
+
+      .wiis2-right-col-btn {
+        margin-right: 1rem;
+        @media (max-width: 465px) {
+          margin-top: 1rem;
+        }
+      }
+    }
+    @media (max-width: 1280px) {
+      justify-content: flex-start;
+    }
+    @media (max-width: 767px) {
+      justify-content: center;
+      margin-top: 4rem;
+    }
+    @media (max-width: 400px) {
+      justify-content: center;
+    }
+  }
+}
+
+.wiis2-video-card {
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+}

@@ -24,7 +24,25 @@
   padding: 5px 15px;
   border-radius: 40px;
 }
-
+.btn-green {
+  background-color: $secondary;
+  color: $white;
+  font-family: "josefin sans";
+  outline: none;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.btn-light {
+  background-color: rgba($secondary, 0.2);
+  color: $black-2;
+  font-weight: 700;
+  font-family: "josefin sans";
+  outline: none;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
 .pd-x {
   padding-left: 60px;
   padding-right: 60px;

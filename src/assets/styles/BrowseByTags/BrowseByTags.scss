@@ -1,0 +1,10 @@
+@import "../variables.scss";
+
+.bbt {
+  padding: 5rem 0;
+  &-container {
+    .bbt-heading {
+      color: $white;
+    }
+  }
+}
