@@ -29,8 +29,12 @@
 @import "./ColoredLink/ColoredLink.scss";
 @import "./ThreeColumnWhiteVideoInfoLayout/ThreeColumnWhiteVideoInfoLayout.scss";
 @import "./BrowseByTags/BrowseByTags.scss";
+@import "./BigImageSection/bigImageSection.scss";
 @import "./SearchInput/SearchInput.scss";
 @import "./FeaturedTools/FeaturedTools.scss";
+@import "./UserButton/userbutton.scss";
+@import "./GroundWork/GroundWork.scss";
+@import "./FourColumnVideoLayout/FourColumnVideoLayout.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
@@ -167,4 +171,22 @@ a {
     rgba(205, 37, 141, 1) 25%,
     rgba(237, 83, 94, 1) 89%
   );
+}
+.bg-gradient-pinkMask {
+  background-image: url("../images/pink-mask.png");
+}
+.bg-gradient-blueflowers {
+  background-image: url("../images/hero.png");
+}
+.bg-gradient-greenMask {
+  background-image: url("../images/green-mask.png");
+}
+.text-end {
+  text-align: end;
+}
+.text-white {
+  color: $white !important;
+}
+.text-black {
+  color: $black !important;
 }

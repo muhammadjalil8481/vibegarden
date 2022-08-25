@@ -1,0 +1,76 @@
+@import "../variables.scss";
+
+.fcvl {
+  //   background-color: darkgoldenrod;
+  padding: 5rem 0;
+  .fcvl-container {
+    // background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .fcvl-heading {
+    }
+    .fcvl-para {
+      color: $grey;
+      font-size: 1.6rem;
+      font-weight: 700;
+      width: 70%;
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+    }
+    .fcvl-row {
+      //   background-color: darkkhaki;
+      align-items: stretch;
+      justify-content: stretch;
+      .fcvl-col {
+        // background-color: darkolivegreen;
+        max-width: 240px;
+        margin-left: 3rem;
+        height: 200px;
+        background-color: transparent;
+      }
+    }
+  }
+}
+.subtext-container {
+  display: flex;
+  flex-direction: row;
+  .subtext {
+    font-size: 1.4rem;
+    font-family: "josefin sans";
+    color: $black-3;
+    font-weight: 700;
+    margin-right: 1rem;
+  }
+}
+
+// .fcvl {
+//   flex-direction: row-reverse;
+//   top: -3%;
+//   left: -25%;
+// }
+
+// .fcvl .vid-card-titleAndIcon img {
+//   width: 50%;
+// }
+.fcvl .vid-card-time {
+  padding: 2px 10px;
+}
+.fcvl .vid-card-video-icon {
+  width: 50%;
+}
+.fcvl-card {
+  // width: 100px;
+  height: 100px;
+  background-color: darkcyan;
+}
+
+.fcvl-link {
+  font-family: "josefin sans";
+  color: $secondary;
+  font-weight: 700;
+  align-self: flex-end;
+  margin-right: 7rem;
+  margin-top: 4rem;
+}

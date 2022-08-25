@@ -12,7 +12,7 @@ const Hero = ({
   heading = "Hi, You",
 }) => {
   return (
-    <Container fluid className="hero text-center px-4  " style={sectionStyle}>
+    <Container fluid className="hero text-center px-4  ">
       <h2 className="hero-quote">
         “There is a sun within every person;
         <br /> the you we call campanion.”

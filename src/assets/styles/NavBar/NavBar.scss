@@ -55,3 +55,22 @@
 .navbar-actions {
   display: flex;
 }
+.expandedBar {
+  background-color: $white;
+  border: 1px solid $primary;
+  text-align: center;
+  padding: 1rem 1.8rem;
+  border-radius: 18px;
+  position: absolute;
+  right: 5%;
+  top: 94%;
+  .list_item-expanded {
+    color: $primary;
+    font-size: 1.6rem;
+    // background-color: lavender;
+    font-family: "josefin sans";
+    padding: 0.5rem 0 0.5rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $primary;
+  }
+}

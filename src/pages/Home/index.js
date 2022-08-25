@@ -15,7 +15,9 @@ const HomePage = () => {
   return (
     <>
       <NavBar />
-      <Hero />
+      <div className="bg-gradient-blueflowers">
+        <Hero />
+      </div>
       <GradientImageInfoSection videoCardLeftMargin={"30px"} />
       <WhiteImageInfoSection />
       <HowItWorks />

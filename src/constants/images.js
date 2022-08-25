@@ -32,6 +32,7 @@ const images = {
   greenMask: require("../assets/images/green-mask.png"),
   pinkMask: require("../assets/images/pink-mask.png"),
   downIcon: require("../assets/images/down-icon.png"),
+  userImage: require("../assets/images/userimage.png"),
 };
 
 export default images;

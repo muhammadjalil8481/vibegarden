@@ -8,6 +8,7 @@ const GradientImageInfoSection = ({
   button,
   videoCardLeftMargin,
   videoCardRightMargin,
+  noButton,
 }) => {
   return (
     <section className="giid">
@@ -28,9 +29,11 @@ const GradientImageInfoSection = ({
                 dictum nisi tempus. Etiam dui tellus, porttitor vitae rutrum a,
                 ultrices pharetra nulla.
               </p>
-              <div className="giid-btn-container">
-                <ButtonFilled text="Explorer Tools" />
-              </div>
+              {!noButton && (
+                <div className="giid-btn-container">
+                  <ButtonFilled text="Explorer Tools" />
+                </div>
+              )}
             </div>
             <div class="col-sm-6 giid-col giid-right-col">
               <div className="giid-video-card">
@@ -39,6 +42,7 @@ const GradientImageInfoSection = ({
                   image={images.placeholder2}
                   width="500px"
                   height="300px"
+                  title="title"
                 />
               </div>
             </div>

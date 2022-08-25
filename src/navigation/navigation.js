@@ -6,6 +6,7 @@ import OutletComponent from "./outlet";
 import LoginScreen from "../pages/Login";
 import EmailConfirmation from "../pages/EmailConfirmation";
 import HomeLoggedIn from "../pages/HomeLoggedIn";
+import GroundWork from "../pages/GroundWork";
 
 const Navigation = () => {
   return (
@@ -17,6 +18,7 @@ const Navigation = () => {
       <Route element={<LoginScreen />} path="/login" />
       <Route element={<EmailConfirmation />} path="/email-confirmation" />
       <Route element={<HomeLoggedIn />} path="/homepage" />
+      <Route element={<GroundWork />} path="/groundwork" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );
