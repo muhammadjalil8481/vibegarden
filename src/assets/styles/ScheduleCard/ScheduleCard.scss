@@ -1,0 +1,42 @@
+@import "../variables.scss";
+
+.sc-card {
+//   background-color: yellow;
+  padding: 6rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .sc-card-username-container {
+    // background-color: lavender;
+    display: flex;
+    // justify-content: center;
+    align-self: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+    .sc-card-username-circle {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+    }
+    .sc-card-username-name {
+      color: $secondary;
+      text-transform: capitalize;
+      font-weight: 700;
+      font-family: "josefin sans";
+      margin-left: 0.7rem;
+      margin-top: 1.4rem;
+    }
+  }
+  .sc-card-videocard {
+    height: 250px;
+  }
+  .sc-card-para {
+    text-align: center;
+    font-size: 1.6rem;
+    color: $black-3;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+}

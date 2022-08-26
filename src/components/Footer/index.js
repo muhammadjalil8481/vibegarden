@@ -3,8 +3,10 @@ import ContainerSection from "../Container";
 import images from "../../constants/images";
 import appleIcon from "../../assets/images/apple-icon.svg";
 import ButtonFilled from "../Button/ButtonFilled";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="footer">
       <div class="container footer-container">
@@ -25,54 +27,27 @@ const Footer = () => {
               Download
             </button>
           </div>
-          <div class="col-md-4 col-sm-3 col-lg-3 mb-md-0 mb-4 footer-links-col">
+          <div class="col-md-4 col-sm-3 col-lg-3  mb-4 footer-links-col">
             <h4 class="footer-list-heading">Quick Links</h4>
             <ul class="footer-list">
-              <li>
-                <a href="#" class="py-1 d-block">
-                  Groundwork
-                </a>
+              <li onClick={() => navigate("/groundwork")}>Groundwork</li>
+              <li onClick={() => navigate("/tools")}>Tools</li>
+              <li onClick={() => navigate("/guides")}>Guides</li>
+              <li onClick={() => navigate("/community-garden")}>
+                Community Garden
               </li>
-              <li>
-                <a href="#" class="py-1 d-block">
-                  Tools
-                </a>
-              </li>
-              <li>
-                <a href="#" class="py-1 d-block">
-                  Tools
-                </a>
-              </li>
-              <li>
-                <a href="#" class="py-1 d-block">
-                  Tools
-                </a>
-              </li>
+              <li onClick={() => navigate("/about-us")}>About Us</li>
             </ul>
           </div>
           <div class="col-md-4 col-sm-3 col-lg-3 mb-md-0 mb-4 footer-links-col">
-            <h4 class="footer-list-heading">Quick Links</h4>
+            <h4 class="footer-list-heading">Contact Us</h4>
             <ul class="footer-list">
+              <li>Sample@mail.com</li>
               <li>
-                <a href="#" class="py-1 d-block">
-                  Groundwork
-                </a>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam
               </li>
-              <li>
-                <a href="#" class="py-1 d-block">
-                  Tools
-                </a>
-              </li>
-              <li>
-                <a href="#" class="py-1 d-block">
-                  Tools
-                </a>
-              </li>
-              <li>
-                <a href="#" class="py-1 d-block">
-                  Tools
-                </a>
-              </li>
+              <li>+222-232-0009</li>
             </ul>
           </div>
           <div class="col-md-4 col-lg-3 mb-md-0 mb-4 footer-form-col">
@@ -101,9 +76,10 @@ const Footer = () => {
             <img src={images.paymentOptions} />
           </div>
           <div className="col-md-6 footer-links">
-            <a href="#">About Us</a>
-            <a href="#">About Us</a>
-            <a href="#">About Us</a>
+            <li onClick={() => navigate("/termsandconditions")}>
+              Terms And Conditions
+            </li>
+            <li onClick={() => navigate("/privacypolicy")}>Privacy Policy</li>
           </div>
         </div>
         <div className="footer-line-break"></div>

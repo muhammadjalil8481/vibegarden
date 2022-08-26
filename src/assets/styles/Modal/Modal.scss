@@ -1,0 +1,37 @@
+@import "../variables.scss";
+
+.modalComp {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  //   z-index: ;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  .modalComp-container {
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    position: relative;
+    top: 10%;
+    left: 10%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 2px 2px 15px 6px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 2px 15px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  .modalComp-icon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: $secondary;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.video-js {
+//   aspect-ratio: 16/9;
+}

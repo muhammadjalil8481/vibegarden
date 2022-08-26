@@ -5,7 +5,7 @@ import images from "../../constants/images";
 import { Link, useNavigate } from "react-router-dom";
 import UserButton from "../userButton.js";
 
-const NavBar = ({ onlyBrand, user = false }) => {
+const NavBar = ({ onlyBrand, user = true }) => {
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
   const [dimensions, setDimensions] = React.useState({
@@ -41,13 +41,13 @@ const NavBar = ({ onlyBrand, user = false }) => {
                 <NavLink onClick={() => navigate("/groundwork")}>
                   <div className="list_item">Groundwork</div>
                 </NavLink>
-                <NavLink>
+                <NavLink onClick={() => navigate("/tools")}>
                   <div className="list_item">Tools</div>
                 </NavLink>
-                <NavLink>
+                <NavLink onClick={() => navigate("/guides")}>
                   <div className="list_item">Guides</div>
                 </NavLink>
-                <NavLink>
+                <NavLink onClick={() => navigate("/community-garden")}>
                   <div className="list_item">Community Garden</div>
                 </NavLink>
               </Nav>

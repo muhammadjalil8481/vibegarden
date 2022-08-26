@@ -223,3 +223,39 @@
 .align-end {
   align-self: end;
 }
+
+.wiis-heading-double {
+  color: $secondary;
+  font-family: "josefin sans";
+  font-weight: 700;
+}
+
+.community-garden .wiis-para {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  width: 85%;
+}
+
+.wiis-topHeading {
+  color: $secondary;
+  font-family: "josefin sans";
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.wiis-bottomHeadingAndButton {
+  display: flex;
+  // background-color: darkblue;
+  align-items: center;
+  margin-left: 8rem;
+  margin-top: 8rem;
+  .wiis-bottomHeading {
+    font-family: "josefin sans";
+    font-weight: 700;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+  }
+}

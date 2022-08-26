@@ -1,14 +1,15 @@
 @import "../variables.scss";
 
 .fcvl {
-  //   background-color: darkgoldenrod;
+  // background-color: darkgoldenrod;
   padding: 5rem 0;
   .fcvl-container {
     // background-color: aqua;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
+    position: relative;
     .fcvl-heading {
     }
     .fcvl-para {
@@ -17,15 +18,19 @@
       font-weight: 700;
       width: 70%;
       margin-top: 1rem;
-      margin-bottom: 4rem;
+      margin-bottom: 6rem;
+      // background-color: darkblue;
     }
     .fcvl-row {
       //   background-color: darkkhaki;
       align-items: stretch;
       justify-content: stretch;
+      margin-bottom: 5rem;
+      align-self: center;
+
       .fcvl-col {
         // background-color: darkolivegreen;
-        max-width: 240px;
+        max-width: 260px;
         margin-left: 3rem;
         height: 200px;
         background-color: transparent;
@@ -72,5 +77,32 @@
   font-weight: 700;
   align-self: flex-end;
   margin-right: 7rem;
-  margin-top: 4rem;
+  // margin-top: 2rem;
+}
+.fcvl-search-input-icon-container {
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: rgba($secondary, 0.2);
+  width: fit-content;
+  position: absolute;
+  right: -20%;
+  top: 2%;
+  margin-left: 1rem;
+}
+.fcvl-search-input {
+  position: relative;
+  // background-color: wheat;
+}
+.fcvl-search-input-container {
+  position: absolute;
+  top: 1%;
+  right: 10%;
+}
+.fcvl-left-para {
+  margin-left: 10%;
+  width: 50% !important;
+}
+.fcvl-left-heading {
+  margin-left: 10%;
+  // width: 50% !important;
 }

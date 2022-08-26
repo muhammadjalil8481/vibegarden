@@ -12,7 +12,7 @@ const GradientImageInfoSection = ({
 }) => {
   return (
     <section className="giid">
-      <ContainerSection isFluid={"yes"} bgGradient="yes">
+      <ContainerSection isFluid={"yes"}>
         <div class="container giid-container py80">
           <div class="row giid-row">
             <div class="col-md-6 giid-col giid-left-col">

@@ -7,6 +7,12 @@ import LoginScreen from "../pages/Login";
 import EmailConfirmation from "../pages/EmailConfirmation";
 import HomeLoggedIn from "../pages/HomeLoggedIn";
 import GroundWork from "../pages/GroundWork";
+import Tools from "../pages/Tools";
+import Guides from "../pages/Guides";
+import CommunityGarden from "../pages/CommunityGarden";
+import AboutUs from "../pages/AboutUs";
+import TermsAndConditions from "../pages/TermsAndConditions";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 const Navigation = () => {
   return (
@@ -19,6 +25,12 @@ const Navigation = () => {
       <Route element={<EmailConfirmation />} path="/email-confirmation" />
       <Route element={<HomeLoggedIn />} path="/homepage" />
       <Route element={<GroundWork />} path="/groundwork" />
+      <Route element={<Tools />} path="/tools" />
+      <Route element={<Guides />} path="/guides" />
+      <Route element={<CommunityGarden />} path="/community-garden" />
+      <Route element={<AboutUs />} path="/about-us" />
+      <Route element={<TermsAndConditions />} path="/termsandconditions" />
+      <Route element={<PrivacyPolicy />} path="/privacypolicy" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );

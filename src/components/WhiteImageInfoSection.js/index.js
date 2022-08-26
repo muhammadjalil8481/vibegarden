@@ -9,13 +9,18 @@ const WhiteImageInfoSection = ({
   videoCardLeftMargin,
   videoCardRightMargin,
   noHeading,
+  noButton,
   topHeading,
   videoCardHeight = "230px",
   videoCardWidth = "300px",
   orderReverse,
+  orderReverseWithButton,
   rightAlignHeading,
   whiteHeading,
   whitePara,
+  doubleHeading,
+  videoCardTopHeading,
+  bottomInfo,
 }) => {
   return (
     <section className="wiis">
@@ -35,6 +40,16 @@ const WhiteImageInfoSection = ({
               {!noHeading && (
                 <h2 className="wiis-heading ">Embodying Your Fullness</h2>
               )}
+              {doubleHeading && (
+                <>
+                  <h3 className="wiis-heading-double">
+                    Embodying Your Fullness
+                  </h3>
+                  <h3 className="wiis-heading-double">
+                    Embodying Your Fullness
+                  </h3>
+                </>
+              )}
               <p className={`${whitePara && "text-white"} wiis-para mt-2 mb-5`}>
                 Body copy style for white text on dark or gradient backgrounds
                 (Medium Weight) Lorem ipsum dolor sit amet, consectetur
@@ -46,22 +61,27 @@ const WhiteImageInfoSection = ({
                 dictum nisi tempus. Etiam dui tellus, porttitor vitae rutrum a,
                 ultrices pharetra nulla.
               </p>
-              <div
-                className={`wiis-btn-container ${orderReverse && "text-end"}`}
-              >
-                <ButtonFilled
-                  text="Join Us"
-                  bgGradient={"yes"}
-                  paddingX="1rem"
-                />
-              </div>
+              {!noButton && (
+                <div
+                  className={`wiis-btn-container ${orderReverse && "text-end"}`}
+                >
+                  <ButtonFilled
+                    text="Join Us"
+                    bgGradient={"yes"}
+                    paddingX="1rem"
+                  />
+                </div>
+              )}
             </div>
             <div
               class={`col-sm-4 wiis-col wiis-right-col ${
-                orderReverse && "order-md-3"
+                (orderReverse || orderReverseWithButton) && "order-md-3"
               }`}
             >
               <div className="wiis-video-card">
+                {videoCardTopHeading && (
+                  <h3 className="wiis-topHeading">What Next?</h3>
+                )}
                 <VideoCard
                   time="3:15"
                   image={images.placeholder1}
@@ -71,6 +91,14 @@ const WhiteImageInfoSection = ({
               </div>
             </div>
           </div>
+          {bottomInfo && (
+            <div className="wiis-bottomHeadingAndButton">
+              <h4 className="wiis-bottomHeading">
+                Register Your Interest; Shad Your Ideas
+              </h4>
+              <ButtonFilled bgGradient={"yes"} paddingX />
+            </div>
+          )}
         </div>
       </ContainerSection>
     </section>

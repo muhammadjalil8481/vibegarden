@@ -1,6 +1,7 @@
 @import "../variables.scss";
 
 .fga-form-group {
+  position: relative;
   .fga-form-label {
     font-size: 1.4rem;
     color: $secondary;
@@ -8,7 +9,7 @@
   }
   .fga-form-input {
     width: 300px;
-    padding: 1rem 2rem;
+    padding: 1rem 4rem 1rem 2rem;
     margin-bottom: 1rem;
     border: 1px solid rgba($secondary, 0.5);
     border-radius: 1rem;
@@ -31,6 +32,18 @@
     //   padding-bottom: 1rem;
     // }
   }
+  .fga-form-icon {
+    position: absolute;
+    right: 2%;
+    top: 20%;
+  }
+}
+.fga-form-input::placeholder {
+  color: rgba($secondary, 0.7);
+}
+.fcvl .fga-form-input {
+  width: 320px;
+  // margin-right: 1rem;
 }
 
 select {
@@ -52,3 +65,8 @@ select {
 select::-ms-expand {
   display: none;
 }
+
+.buttonAndHeading2 .fga-form-input {
+  width: 550px;
+}
+

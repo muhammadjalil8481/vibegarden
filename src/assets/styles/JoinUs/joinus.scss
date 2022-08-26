@@ -105,7 +105,7 @@
 
 .line-break-container {
   display: flex;
-  //   background-color: yellow;
+  // background-color: yellow;
   justify-content: center;
 }
 .line-break-vertical {
@@ -114,6 +114,12 @@
   background-color: $secondary;
 }
 
+.ss-container .line-break-container {
+  align-items: center;
+}
+.ss-container .line-break-vertical {
+  height: 90%;
+}
 .join-us-right-col {
   display: flex;
   flex-direction: column;

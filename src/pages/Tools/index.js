@@ -6,34 +6,25 @@ import FourColumnVideoLayout from "../../components/FourColumnVideoLayout.js";
 import BrowseByTags from "../../components/BrowseByTags";
 import Footer from "../../components/Footer";
 
-const GroundWork = () => {
+const Tools = () => {
   return (
     <div>
       <NavBar />
       <div className="bg-gradient-blueflowers">
         <Hero />
       </div>
-      <div className="bg-gradient-pink">
-        <GradientImageInfoSection videoCardLeftMargin={"30px"} noButton />
+      <div className="bg-gradient-green">
+        <GradientImageInfoSection videoCardLeftMargin={"30px"} />
       </div>
-      <FourColumnVideoLayout searchInput />
-      <div className="bg-gradient-greenMask">
-        <FourColumnVideoLayout whiteHeading whitePara whiteLink whiteSubText />
+      <FourColumnVideoLayout searchInput leftHeading leftPara secondRow />
+      <div className="bg-gradient-pinkMask">
+        <FourColumnVideoLayout secondRow />
       </div>
-      <FourColumnVideoLayout />
-      <div
-        style={{
-          backgroundColor: "green",
-          height: "1px",
-          width: "80%",
-          margin: "0 auto",
-        }}
-      ></div>
-      <FourColumnVideoLayout />
+      <FourColumnVideoLayout secondRow />
       <BrowseByTags />
       <Footer />
     </div>
   );
 };
 
-export default GroundWork;
+export default Tools;

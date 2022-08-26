@@ -10,6 +10,8 @@ const WhiteImageInfoSection2 = ({
   button,
   videoCardLeftMargin,
   videoCardRightMargin,
+  videoWidth = "450px",
+  videoHeight = "256px",
 }) => {
   return (
     <section className="wiis2">
@@ -41,8 +43,8 @@ const WhiteImageInfoSection2 = ({
                   time="3:15"
                   image={images.placeholder1}
                   title="Title"
-                  width="450px"
-                  height="256px"
+                  width={videoWidth}
+                  height={videoHeight}
                 />
               </div>
               <div className="wiis2-right-col-btn-container">

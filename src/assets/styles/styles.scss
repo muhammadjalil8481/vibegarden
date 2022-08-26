@@ -1,4 +1,5 @@
 @import "./NavBar/NavBar.scss";
+@import "./variables.scss";
 @import "./Hero/hero.scss";
 @import "./GradientImageInfoSection/GradientImageInfoSection.scss";
 @import "WhiteImageInfoSection/WhiteImageInfoSecion.scss";
@@ -32,9 +33,14 @@
 @import "./BigImageSection/bigImageSection.scss";
 @import "./SearchInput/SearchInput.scss";
 @import "./FeaturedTools/FeaturedTools.scss";
+@import "./AboutUs/about-us.scss";
+@import "./Modal/Modal.scss";
 @import "./UserButton/userbutton.scss";
 @import "./GroundWork/GroundWork.scss";
 @import "./FourColumnVideoLayout/FourColumnVideoLayout.scss";
+@import "./ScheduleCard/ScheduleCard.scss";
+@import "./ButtonAndHeading/ButtonAndHeading.scss";
+@import "./ScheduleSection/ScheduleSection.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
@@ -189,4 +195,17 @@ a {
 }
 .text-black {
   color: $black !important;
+}
+.center-align {
+  align-self: center;
+}
+.left-green-heading {
+  color: $secondary;
+  margin-bottom: 3rem;
+  // font-weight: 700;
+}
+.left-aligned-para {
+  color: $black-3;
+  letter-spacing: 2px;
+  line-height: 1.8;
 }

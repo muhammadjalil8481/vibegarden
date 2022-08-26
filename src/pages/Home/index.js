@@ -10,6 +10,8 @@ import SampleTools from "../../components/SampleToolsSection";
 import MoreVG from "../../components/MoreVGSection.js";
 import StayInTouch from "../../components/StayInTouchSection";
 import Footer from "../../components/Footer";
+import VidCard from "../../components/VidCard";
+import images from "../../constants/images";
 
 const HomePage = () => {
   return (
@@ -18,7 +20,9 @@ const HomePage = () => {
       <div className="bg-gradient-blueflowers">
         <Hero />
       </div>
-      <GradientImageInfoSection videoCardLeftMargin={"30px"} />
+      <div className="bg-gradient-pink">
+        <GradientImageInfoSection videoCardLeftMargin={"30px"} />
+      </div>
       <WhiteImageInfoSection />
       <HowItWorks />
       <FourColumnInfoSection />

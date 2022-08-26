@@ -1,4 +1,6 @@
 import React from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import { green } from "@mui/material/colors";
 
 const FormGroupAuth = ({
   inputType = "text",
@@ -7,12 +9,24 @@ const FormGroupAuth = ({
   selectId = "default",
   selectName = "defaultname",
   options = ["option1", "option2", "option3"],
+  noLabel,
+  placeHolder = "placeHolder",
+  icon,
 }) => {
   if (!isSelectInput) {
     return (
       <div className="fga-form-group">
-        <p className="fga-form-label">{label}</p>
-        <input type={inputType} className="fga-form-input" />
+        {!noLabel && <p className="fga-form-label">{label}</p>}
+        <input
+          type={inputType}
+          className="fga-form-input"
+          placeholder={placeHolder}
+        />
+        {icon && (
+          <div className="fga-form-icon">
+            <SearchIcon fontSize="large" sx={{ color: green[700] }} />
+          </div>
+        )}
       </div>
     );
   }

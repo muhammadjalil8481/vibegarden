@@ -10,12 +10,13 @@ const ButtonFilled = ({
   text = "Button",
   bgGradient,
   paddingX,
+  paddingY,
   // onPressFunction = () => null,
 }) => {
   const padX = { paddingLeft: paddingX, paddingRight: paddingX };
   return (
     <button
-      className={`${paddingX && "pd-x"} btn-filled`}
+      className={`${paddingX && "pd-x"} ${paddingY && "pd-y"} btn-filled`}
       style={bgGradient === "yes" ? gradientBackground : null}
       // onPress={onPressFunction}
     >
