@@ -3,12 +3,12 @@ import Footer from "../../components/Footer";
 import NavBar from "../../components/Navbar";
 import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 
-const AboutUs = () => {
+const FreshBlooms = () => {
   return (
     <>
       <NavBar />
       <div className="au-top-section">
-        <h2 className="au-heading">ABOUT US</h2>
+        <h2 className="au-heading">FRESH BLOOMS</h2>
         <p className="au-para">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -16,19 +16,31 @@ const AboutUs = () => {
           rebum.
         </p>
       </div>
+      <div className="au-wiis">
+        <WhiteImageInfoSection noButton lightButton postedDate />
+      </div>
       <div className="au-wiis-reverse">
-        <WhiteImageInfoSection orderReverseWithButton noButton />
+        <WhiteImageInfoSection
+          orderReverseWithButton
+          noButton
+          lightButton
+          postedDate
+        />
       </div>
       <div className="au-wiis">
-        <WhiteImageInfoSection noButton />
+        <WhiteImageInfoSection noButton lightButton postedDate />
       </div>
       <div className="au-wiis-reverse">
-        <WhiteImageInfoSection orderReverseWithButton noButton />
+        <WhiteImageInfoSection
+          orderReverseWithButton
+          noButton
+          lightButton
+          postedDate
+        />
       </div>
-
       <Footer />
     </>
   );
 };
 
-export default AboutUs;
+export default FreshBlooms;

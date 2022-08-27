@@ -2,6 +2,7 @@ import React from "react";
 import ContainerSection from "../Container";
 import images from "../../constants/images";
 import appleIcon from "../../assets/images/apple-icon.svg";
+import androidIcon from "../../assets/images/android.svg";
 import ButtonFilled from "../Button/ButtonFilled";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -18,12 +19,19 @@ const Footer = () => {
             <p className="footer-para">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
+            <button
+              className="footer-button bg-gradient-pink footer-app-btn"
+              onClick={() => navigate("/appDownload")}
+            >
+              <img src={androidIcon} />
+              VibeBloom App
+            </button>
             <button className="footer-button">
               <img src={appleIcon} />
               Download
             </button>
             <button className="footer-button">
-              <img src={appleIcon} />
+              <img src={androidIcon} />
               Download
             </button>
           </div>

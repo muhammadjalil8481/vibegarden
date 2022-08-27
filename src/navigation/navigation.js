@@ -13,6 +13,9 @@ import CommunityGarden from "../pages/CommunityGarden";
 import AboutUs from "../pages/AboutUs";
 import TermsAndConditions from "../pages/TermsAndConditions";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import FreshBlooms from "../pages/FreshBlooms";
+import AppDownload from "../pages/AppDownload";
+import ResetPassword from "../pages/ResetPassword";
 
 const Navigation = () => {
   return (
@@ -31,6 +34,9 @@ const Navigation = () => {
       <Route element={<AboutUs />} path="/about-us" />
       <Route element={<TermsAndConditions />} path="/termsandconditions" />
       <Route element={<PrivacyPolicy />} path="/privacypolicy" />
+      <Route element={<FreshBlooms />} path="/freshblooms" />
+      <Route element={<AppDownload />} path="/appdownload" />
+      <Route element={<ResetPassword />} path="/resetpassword" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );

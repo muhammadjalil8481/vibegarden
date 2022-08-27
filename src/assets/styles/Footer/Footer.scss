@@ -40,16 +40,22 @@
           background-color: $white;
           border: none;
           outline: none;
-          padding: 1rem 3rem;
+          padding: 0.7rem 2.5rem;
           display: flex;
           justify-content: center;
           align-items: center;
           border-radius: 3rem;
           margin-bottom: 1.3rem;
+          font-size: 1.6rem;
+          color: $black-3;
+          width: 23rem;
           img {
             margin-bottom: 0.5rem;
-            margin-right: 0.5rem;
+            margin-right: 1.5rem;
           }
+        }
+        .footer-app-btn {
+          color: $white;
         }
       }
       .footer-links-col {

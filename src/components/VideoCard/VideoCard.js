@@ -32,7 +32,11 @@ const VideoCard = ({
       </div>
       {showModal && (
         // <div onClick={() => setShowModal(false)}>
-        <Modal showModal={showModal} setShowModal={setShowModal} />
+        <Modal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          image={image}
+        />
         // </div>
       )}
     </>

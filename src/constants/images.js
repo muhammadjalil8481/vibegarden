@@ -33,6 +33,7 @@ const images = {
   pinkMask: require("../assets/images/pink-mask.png"),
   downIcon: require("../assets/images/down-icon.png"),
   userImage: require("../assets/images/userimage.png"),
+  qrCode: require("../assets/images/qrcode.png"),
 };
 
 export default images;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ContainerSection from "../Container";
 import ButtonFilled from "../Button/ButtonFilled";
 import images from "../../constants/images";
@@ -30,9 +31,11 @@ const WhiteImageInfoSection2 = ({
                 nisl eu metus. Sed fermentum erat sit amet enim blandit, quis
                 dictum nisi tempus.
               </p>
-              <div className="wiis2-link">
-                <ColoredLink text="See Fresh Blooms Archive" />
-              </div>
+              <Link to="/freshblooms">
+                <div className="wiis2-link">
+                  <ColoredLink text="See Fresh Blooms Archive" />
+                </div>
+              </Link>
             </div>
             <div class="col-sm-5 wiis2-col wiis2-right-col">
               <div className="wiis2-right-col-heading">

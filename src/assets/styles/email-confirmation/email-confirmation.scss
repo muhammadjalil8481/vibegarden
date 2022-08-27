@@ -47,6 +47,8 @@
       max-width: 50%;
       text-align: center;
       margin-bottom: 4rem;
+      color: $grey;
+      font-weight: 700;
       @media (max-width: 500px) {
         max-width: 80%;
       }

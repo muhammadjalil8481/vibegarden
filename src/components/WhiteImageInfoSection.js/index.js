@@ -3,6 +3,7 @@ import ContainerSection from "../Container";
 import ButtonFilled from "../Button/ButtonFilled";
 import images from "../../constants/images";
 import VideoCard from "../VideoCard/VideoCard";
+import LightButton from "../Button/LightButton";
 
 const WhiteImageInfoSection = ({
   button,
@@ -21,6 +22,8 @@ const WhiteImageInfoSection = ({
   doubleHeading,
   videoCardTopHeading,
   bottomInfo,
+  lightButton,
+  postedDate,
 }) => {
   return (
     <section className="wiis">
@@ -61,6 +64,16 @@ const WhiteImageInfoSection = ({
                 dictum nisi tempus. Etiam dui tellus, porttitor vitae rutrum a,
                 ultrices pharetra nulla.
               </p>
+              {lightButton && (
+                <div className="wiis-lightBtnContainer">
+                  <div className="wiis-lightBtn">
+                    <LightButton />
+                  </div>
+                  <div className="wiis-lightBtn">
+                    <LightButton />
+                  </div>
+                </div>
+              )}
               {!noButton && (
                 <div
                   className={`wiis-btn-container ${orderReverse && "text-end"}`}
@@ -89,6 +102,11 @@ const WhiteImageInfoSection = ({
                   height={videoCardHeight}
                 />
               </div>
+              {postedDate && (
+                <div className="wiis-postedDate">
+                  <p>{`Posted Date: 7/26/2022`}</p>
+                </div>
+              )}
             </div>
           </div>
           {bottomInfo && (

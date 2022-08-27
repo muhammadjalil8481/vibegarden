@@ -3,6 +3,7 @@ import VideoIcon2nd from "../../assets/images/video-tag-icon.svg";
 import images from "../../constants/images";
 import VideoIcon from "../../assets/images/video-icon.svg";
 import ButtonFilled from "../../components/Button/ButtonFilled";
+import VidCard from "../VidCard";
 
 const ThreeColumnWhiteVideoInfoLayout = () => {
   return (
@@ -20,10 +21,7 @@ const ThreeColumnWhiteVideoInfoLayout = () => {
               elit. Mauris placerat euismod porttitor.
             </p>
             <div className="tcwvil-video">
-              <img src={images.placeholder4} className="tcwvil-video-image" />
-              <h5 className="tcwvil-video-title">Title</h5>
-              <img src={VideoIcon} className="tcwvil-video-icon" />
-              <p className="tcwvil-video-time">00:00</p>
+              <VidCard image={images.placeholder} />
             </div>
             <div className="tcwvil-subtext-container">
               <p className="tcwvil-subtext">Lorem</p>
@@ -46,10 +44,7 @@ const ThreeColumnWhiteVideoInfoLayout = () => {
               elit. Mauris placerat euismod porttitor.
             </p>
             <div className="tcwvil-video">
-              <img src={images.placeholder4} className="tcwvil-video-image" />
-              <h5 className="tcwvil-video-title">Title</h5>
-              <img src={VideoIcon} className="tcwvil-video-icon" />
-              <p className="tcwvil-video-time">00:00</p>
+              <VidCard />
             </div>
             <div className="tcwvil-subtext-container">
               <p className="tcwvil-subtext">Lorem</p>
@@ -72,10 +67,7 @@ const ThreeColumnWhiteVideoInfoLayout = () => {
               elit. Mauris placerat euismod porttitor.
             </p>
             <div className="tcwvil-video">
-              <img src={images.placeholder4} className="tcwvil-video-image" />
-              <h5 className="tcwvil-video-title">Title</h5>
-              <img src={VideoIcon} className="tcwvil-video-icon" />
-              <p className="tcwvil-video-time">00:00</p>
+              <VidCard image={images.placeholder4} />
             </div>
             <div className="tcwvil-subtext-container">
               <p className="tcwvil-subtext">Lorem</p>

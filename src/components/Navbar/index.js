@@ -5,7 +5,7 @@ import images from "../../constants/images";
 import { Link, useNavigate } from "react-router-dom";
 import UserButton from "../userButton.js";
 
-const NavBar = ({ onlyBrand, user = true }) => {
+const NavBar = ({ onlyBrand, user = false }) => {
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
   const [dimensions, setDimensions] = React.useState({

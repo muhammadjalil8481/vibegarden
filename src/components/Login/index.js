@@ -4,7 +4,7 @@ import images from "../../constants/images";
 import FormGroupAuth from "../FormInputAuth";
 import { styled } from "@mui/material/styles";
 import Checkbox from "@mui/material/Checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonFilled from "../Button/ButtonFilled";
 
 const RememberMeCheckboxIcon = styled("span")(({ theme }) => ({
@@ -60,6 +60,7 @@ const sectionStyle = {
   //   backgroundColor: "red",
 };
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <section className="login" style={sectionStyle}>
       <ContainerSection isFluid={"yes"}>
@@ -79,7 +80,12 @@ const Login = () => {
                 />
                 <p className="login-form-label">Remember</p>
               </div>
-              <p className="login-forgot-password">Forgot Password?</p>
+              <p
+                className="login-forgot-password"
+                onClick={() => navigate("/resetpassword")}
+              >
+                Forgot Password?
+              </p>
             </div>
             <div className="login-button">
               <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
