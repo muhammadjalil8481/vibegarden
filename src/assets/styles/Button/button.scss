@@ -33,6 +33,15 @@
   padding: 5px 15px;
   border-radius: 5px;
 }
+.btn-green-outline {
+  background-color: $white;
+  color: $black-2;
+  font-family: "josefin sans";
+  outline: none;
+  border: 1px solid $secondary;
+  padding: 5px 15px;
+  border-radius: 25px;
+}
 .btn-light {
   background-color: rgba($secondary, 0.2);
   color: $black-2;

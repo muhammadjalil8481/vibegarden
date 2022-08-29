@@ -1,0 +1,102 @@
+@import "../variables.scss";
+
+.profile-screen {
+  //   background-color: wheat;
+  padding: 5rem 0;
+  .ps-container {
+    // background-color: rosybrown;
+    .ps-row {
+      //   background-color: royalblue;
+
+      //   flex-direction: column;
+    }
+  }
+}
+
+.ps-top {
+  //   background-color: teal;
+  display: flex;
+  flex-direction: row;
+  //   background-color: saddlebrown;
+  justify-content: space-between;
+  //   align-items: center;
+  .ps-top-image {
+    width: 38%;
+    img {
+      width: 100%;
+    }
+  }
+  .ps-top-imginfo {
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    align-items: center;
+  }
+  .ps-top-info {
+    margin-left: 2rem;
+    .ps-top-heading {
+      font-family: "josefin sans";
+    }
+    .ps-top-subscription {
+      color: $primary;
+      font-size: 1.6rem;
+      font-weight: 700;
+      span {
+        color: $secondary;
+      }
+    }
+  }
+}
+.ps-top-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  //   background-color: lavender;
+}
+.ps-top-btn {
+  margin-right: 2rem;
+}
+
+.ps-aboutForm {
+  // background-color: saddlebrown;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin-top: 5rem;
+}
+.ps-billingForm {
+  // background-color: darkcyan;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin-top: 5rem;
+}
+.ps-subscriptionForm {
+  // background-color: lawngreen;
+  height: fit-content;
+  margin-top: -22rem;
+}
+.ps-heading {
+  // background-color: darkblue;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+.ps-inputIcon {
+  display: flex;
+  align-items: center;
+}
+.ps-editPassword {
+  background: #1492e6;
+  padding: 1.2rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  margin-left: 1.5rem;
+}
+
+.ps-form {
+  margin-left: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}

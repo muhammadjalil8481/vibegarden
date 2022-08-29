@@ -5,6 +5,7 @@ import images from "../../constants/images";
 import FormGroupAuth from "../FormInputAuth";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { green } from "@mui/material/colors";
+import { useNavigate } from "react-router-dom";
 
 const FourColumnVideoLayout = ({
   leftHeading,
@@ -17,7 +18,11 @@ const FourColumnVideoLayout = ({
   whiteSubText,
   searchInput,
   secondRow,
+  dataArray = [],
+  seeAllOnClick = () => null,
+  backLink,
 }) => {
+  const navigate = useNavigate();
   return (
     <section className="fcvl">
       <ContainerSection isFluid={"yes"}>
@@ -54,50 +59,37 @@ const FourColumnVideoLayout = ({
             </p>
           )}
           <div className="fcvl-row row">
-            <div className="col-lg-3 fcvl-col">
-              <VidCard titleIcon blackTitle />
-              <div className="subtext-container">
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
+            {dataArray.map((video, index) => (
+              <div className="col-lg-3 fcvl-col" key={`video${index}`}>
+                <VidCard
+                  titleIcon
+                  blackTitle
+                  title={video.title}
+                  time={video.duration}
+                />
+                <div className="subtext-container">
+                  <p
+                    className={`subtext ${whiteSubText && "color-white"}`}
+                    onClick={() =>
+                      navigate("/individualGroundWork", {
+                        state: {
+                          // title: video.title,
+                          // desc: video.description,
+                          // image: video.image,
+                          // video: video.video,
+                          ...video,
+                        },
+                      })
+                    }
+                  >
+                    {video.subTitle1}
+                  </p>
+                  <p className={`subtext ${whiteSubText && "color-white"}`}>
+                    {video.subTitle2}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 fcvl-col">
-              <VidCard titleIcon blackTitle image={images.placeholder1} />
-              <div className="subtext-container">
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-3 fcvl-col">
-              <VidCard titleIcon blackTitle image={images.placeholder2} />
-              <div className="subtext-container">
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-3 fcvl-col" image={images.placeholder6}>
-              <VidCard titleIcon blackTitle />
-              <div className="subtext-container">
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
-                <p className={`subtext ${whiteSubText && "color-white"}`}>
-                  Lorem
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
           {secondRow && (
             <div className="fcvl-row row">
@@ -147,9 +139,24 @@ const FourColumnVideoLayout = ({
               </div>
             </div>
           )}
-          <h5
-            className={`fcvl-link ${whiteLink && "color-white"}`}
-          >{`See All >`}</h5>
+          {/* <Link to={`${seeAllDestination}`}> */}
+          {!backLink && (
+            <h5
+              className={`fcvl-link ${whiteLink && "color-white"}`}
+              onClick={() => seeAllOnClick()}
+            >
+              {`See All >`}
+            </h5>
+          )}
+          {backLink && (
+            <h5
+              className={`fcvl-link ${whiteLink && "color-white"}`}
+              onClick={() => seeAllOnClick()}
+            >
+              {`< Back To All GroundWork`}
+            </h5>
+          )}
+          {/* </Link> */}
         </div>
       </ContainerSection>
     </section>

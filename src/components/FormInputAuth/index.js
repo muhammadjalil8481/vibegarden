@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { green } from "@mui/material/colors";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { green, grey } from "@mui/material/colors";
 
 const FormGroupAuth = ({
   inputType = "text",
@@ -10,21 +11,42 @@ const FormGroupAuth = ({
   selectName = "defaultname",
   options = ["option1", "option2", "option3"],
   noLabel,
-  placeHolder = "placeHolder",
+  placeHolder = "",
   icon,
+  showPasswordIcon,
+  value,
 }) => {
+  const [inputTypeState, setInputTypeState] = useState(inputType);
+  const showPasswordText = () => {
+    setInputTypeState(inputTypeState === "password" ? "text" : "password");
+  };
   if (!isSelectInput) {
     return (
       <div className="fga-form-group">
         {!noLabel && <p className="fga-form-label">{label}</p>}
         <input
-          type={inputType}
+          type={inputTypeState}
           className="fga-form-input"
           placeholder={placeHolder}
+          value={value}
         />
         {icon && (
-          <div className="fga-form-icon">
+          <div
+            className={` ${
+              noLabel ? "fga-form-icon-no-label" : "fga-form-icon"
+            }`}
+          >
             <SearchIcon fontSize="large" sx={{ color: green[700] }} />
+          </div>
+        )}
+        {showPasswordIcon && (
+          <div
+            className={` ${
+              noLabel ? "fga-form-icon-no-label" : "fga-form-icon"
+            }`}
+            onClick={showPasswordText}
+          >
+            <VisibilityOffIcon fontSize="large" sx={{ color: grey[600] }} />
           </div>
         )}
       </div>

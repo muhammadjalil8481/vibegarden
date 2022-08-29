@@ -5,7 +5,7 @@ import images from "../../constants/images";
 import { Link, useNavigate } from "react-router-dom";
 import UserButton from "../userButton.js";
 
-const NavBar = ({ onlyBrand, user = false }) => {
+const NavBar = ({ onlyBrand, user = true }) => {
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
   const [dimensions, setDimensions] = React.useState({
@@ -94,7 +94,7 @@ const NavBar = ({ onlyBrand, user = false }) => {
               )}
               {expanded && (
                 <div className="expandedBar">
-                  <NavLink>
+                  <NavLink onClick={() => navigate("profile")}>
                     <div className="list_item-expanded">Profile Settings</div>
                   </NavLink>
                   <NavLink>

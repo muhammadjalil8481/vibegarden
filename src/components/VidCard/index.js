@@ -4,7 +4,13 @@ import VideoIcon2nd from "../../assets/images/video-tag-icon.svg";
 import VideoIcon from "../../assets/images/video-icon.svg";
 import Modal from "../Modal";
 
-const VidCard = ({ titleIcon, blackTitle, image = images.placeholder5 }) => {
+const VidCard = ({
+  titleIcon,
+  blackTitle,
+  image = images.placeholder5,
+  title = "Titles",
+  time = "00:10",
+}) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -19,17 +25,17 @@ const VidCard = ({ titleIcon, blackTitle, image = images.placeholder5 }) => {
           {titleIcon && <img src={VideoIcon2nd} />}
           {titleIcon && (
             <h5 className={`vid-card-title ${blackTitle && "text-black"}`}>
-              Title
+              {title}
             </h5>
           )}
         </div>
         {!titleIcon && (
           <h5 className={`vid-card-topTitle ${blackTitle && "text-black"}`}>
-            Title
+            {title}
           </h5>
         )}
         <img src={VideoIcon} className="vid-card-video-icon" />
-        <p className="vid-card-time">00:00</p>
+        <p className="vid-card-time">{time}</p>
         {/* </div> */}
       </div>
       {showModal && (

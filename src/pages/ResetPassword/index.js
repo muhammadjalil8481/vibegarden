@@ -24,9 +24,7 @@ const ResetPassword = ({ email = "user@gmail.com" }) => {
         <PinCodeInput />
         <div
           className="ec-btn-container"
-          // onClick={() =>
-          //   navigate("/join-us", { state: { isEmailVerified: "yes" } })
-          // }
+          onClick={() => navigate("/updatepassword")}
         >
           <ButtonFilled bgGradient={"yes"} text="Confirm" paddingX />
         </div>

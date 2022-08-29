@@ -1,6 +1,7 @@
 const images = {
   logo: require("../assets/images/logo.png"),
   logo2: require("../assets/images/logo-2.png"),
+  logo3: require("../assets/images/logo-3.png"),
   hero: require("../assets/images/hero.png"),
   placeholder: require("../assets/images/placeholder.png"),
   placeholder1: require("../assets/images/placeholder-1.png"),
@@ -34,6 +35,8 @@ const images = {
   downIcon: require("../assets/images/down-icon.png"),
   userImage: require("../assets/images/userimage.png"),
   qrCode: require("../assets/images/qrcode.png"),
+  userImageBig: require("../assets/images/userimagebig.png"),
+  user2image : require("../assets/images/user2image.png"),
 };
 
 export default images;

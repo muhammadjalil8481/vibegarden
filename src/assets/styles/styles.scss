@@ -16,6 +16,7 @@
 @import "./WhiteInfoCard/WhiteInfoCard.scss";
 @import "./RectangularVideoCard/RectangularVideoCard.scss";
 @import "./StayInTouch/stayInTouch.scss";
+@import "./IndividualGroundWork/individualGroundWork.scss";
 @import "./variables.scss";
 @import "./Footer/Footer.scss";
 @import "./CheckBoxList/CheckBoxList.scss";
@@ -38,8 +39,10 @@
 @import "./UserButton/userbutton.scss";
 @import "./GroundWork/GroundWork.scss";
 @import "./FourColumnVideoLayout/FourColumnVideoLayout.scss";
+@import "./updatePassword/updatePassword.scss";
 @import "./ScheduleCard/ScheduleCard.scss";
 @import "./ButtonAndHeading/ButtonAndHeading.scss";
+@import "./ProfileScreen/ProfileScreen.scss";
 @import "./AppDownload/AppDownload.scss";
 @import "./ScheduleSection/ScheduleSection.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
@@ -85,9 +88,14 @@ button {
   font-size: 1.8rem;
   letter-spacing: 1px;
 }
-a {
-  text-decoration: none;
-}
+// a {
+//   text-decoration: none;
+//   border: none;
+//   &:hover{
+//     text-decoration: none;
+//     border: none;
+//   }
+// }
 .py70 {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -214,4 +222,27 @@ a {
   color: $black-3;
   letter-spacing: 2px;
   line-height: 1.8;
+}
+.heading-line {
+  // background-color: darkgoldenrod;
+  display: flex;
+  align-items: center;
+  .hl-heading {
+    // background-color: darkcyan;
+    width: auto;
+    color: $primary;
+    font-size: 3rem;
+    font-family: "josefin sans";
+  }
+  .hl-line {
+    // width: 80%;
+    margin-left: 0.6rem;
+    background-color: $primary;
+    height: 2px;
+    flex-grow: 1;
+  }
+}
+
+::-webkit-resizer {
+  display: none;
 }

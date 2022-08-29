@@ -16,6 +16,13 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import FreshBlooms from "../pages/FreshBlooms";
 import AppDownload from "../pages/AppDownload";
 import ResetPassword from "../pages/ResetPassword";
+import UpdatePassword from "../pages/UpdatePassword";
+import ProfileScreen from "../pages/ProfileScreen";
+import Essentials from "../pages/Essentials";
+import BuildingSlocks from "../pages/BuildingSlocks";
+import DeeperCuts from "../pages/DeeperCuts";
+import Play from "../pages/Play";
+import IndividualGroundWork from "../pages/IndividualGroundWork";
 
 const Navigation = () => {
   return (
@@ -37,6 +44,13 @@ const Navigation = () => {
       <Route element={<FreshBlooms />} path="/freshblooms" />
       <Route element={<AppDownload />} path="/appdownload" />
       <Route element={<ResetPassword />} path="/resetpassword" />
+      <Route element={<UpdatePassword />} path="/updatepassword" />
+      <Route element={<ProfileScreen />} path="/profile" />
+      <Route element={<Essentials />} path="/essentials" />
+      <Route element={<BuildingSlocks />} path="/buildingslocks" />
+      <Route element={<DeeperCuts />} path="/deepercuts" />
+      <Route element={<Play />} path="/play" />
+      <Route element={<IndividualGroundWork />} path="/individualGroundWork" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );
