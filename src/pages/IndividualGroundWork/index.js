@@ -7,10 +7,45 @@ import GreenLineBreak from "../../components/GreenLineBreak";
 import StarIcon from "@mui/icons-material/Star";
 import Comment from "../../components/Comments";
 import GreenButton from "../../components/Button/GreenButton";
+import Carousel from "react-elastic-carousel";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { consts } from "react-elastic-carousel";
+import images from "../../constants/images";
+import Footer from "../../components/Footer";
+import ButtonAndHeading from "../../components/HeadingAndButton.js";
+import VideoCardSlider from "../../components/VideoCardSlider";
+
+function myArrow({ type, onClick, isEdge }) {
+  const pointer =
+    type === consts.PREV ? (
+      <ArrowBackIcon
+        fontSize="large"
+        color={!isEdge ? "success" : "disabled"}
+      />
+    ) : (
+      <ArrowForwardIcon
+        fontSize="large"
+        color={!isEdge ? "success" : "disabled"}
+      />
+    );
+  return (
+    <button
+      onClick={onClick}
+      disabled={isEdge}
+      className={`slider-btn ${
+        type === consts.PREV ? "left-btn" : "right-btn"
+      }`}
+    >
+      {pointer}
+    </button>
+  );
+}
 
 const IndividualGroundWork = () => {
   const location = useLocation();
   //   console.log(location.state);
+  const breakPoints = [{ width: 1, itemsToShow: 1 }];
 
   return (
     <>
@@ -47,7 +82,11 @@ const IndividualGroundWork = () => {
           </div>
         </div>
         <div className="idgw-2-comment">
-          <Comment />
+          <Carousel breakPoints={breakPoints} renderArrow={myArrow}>
+            <Comment />
+            <Comment />
+            <Comment />
+          </Carousel>
         </div>
         <div className="idgw-2-newComment">
           <h4 className="idgw-2-heading">Leave A Comment</h4>
@@ -60,6 +99,79 @@ const IndividualGroundWork = () => {
           </div>
         </div>
       </section>
+      <div className="idgw3-video-slider">
+        <VideoCardSlider />
+      </div>
+      <section className="container">
+        <h2>Additional Resource</h2>
+        <div className="link-display">
+          <div className="link-display-heading">
+            <span>•</span>
+            <h4>Link Display Name</h4>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasLorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor i
+          </p>
+        </div>
+        <div className="link-display">
+          <div className="link-display-heading">
+            <span>•</span>
+            <h4>Link Display Name</h4>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasLorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor i
+          </p>
+        </div>
+      </section>
+      <section className="idgw-5 container">
+        <h2>Suggested Teacher</h2>
+        <div className="idgw-5-row">
+          <div className="idgw-5-col-1">
+            <img src={images.teacher1} />
+          </div>
+          <div className="idgw-5-col-2">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasLorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor I Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+              eirmod tempor invidunt ut.<span>Link</span>
+            </p>
+          </div>
+        </div>
+        <div className="idgw-5-row">
+          <div className="idgw-5-col-1">
+            <img src={images.teacher2} />
+          </div>
+          <div className="idgw-5-col-2">
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasLorem ipsum dolor sit amet,
+              consetetur sadipscing elitr, sed diam nonumy eirmod tempor I Lorem
+              ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+              eirmod tempor invidunt ut.<span>Link</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <GreenLineBreak />
+      <ButtonAndHeading
+        heading="Want To Go Deeper?"
+        text="Schedule Vibrguides"
+      />
+      <Footer />
     </>
   );
 };

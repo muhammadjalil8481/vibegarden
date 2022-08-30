@@ -15,6 +15,7 @@ const FormGroupAuth = ({
   icon,
   showPasswordIcon,
   value,
+  setValue,
 }) => {
   const [inputTypeState, setInputTypeState] = useState(inputType);
   const showPasswordText = () => {
@@ -29,12 +30,14 @@ const FormGroupAuth = ({
           className="fga-form-input"
           placeholder={placeHolder}
           value={value}
+          onChange={(event) => setValue(event.target.value)}
         />
         {icon && (
           <div
             className={` ${
               noLabel ? "fga-form-icon-no-label" : "fga-form-icon"
             }`}
+            // onClick={() => console.log(value)}
           >
             <SearchIcon fontSize="large" sx={{ color: green[700] }} />
           </div>

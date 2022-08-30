@@ -150,3 +150,141 @@ textarea::placeholder {
   //   border-radius: 15px;
   overflow: hidden;
 }
+
+.rec.rec-dot {
+  visibility: hidden;
+}
+
+.idgw-3-carousel {
+  padding: 0 5rem;
+}
+
+.rec .rec-carousel-item {
+  position: relative;
+}
+// .slider-arrow {
+//   width: 30px;
+//   height: 30px;
+//
+.slider-btn {
+  background: none;
+  border: none;
+  outline: none;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border: 2px solid $secondary;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  z-index: 10;
+  // background-color: darkcyan;
+}
+.left-btn {
+  position: absolute;
+  right: 7.5%;
+}
+.right-btn {
+}
+
+.idgw-3 {
+  // background-color: #2680eb;
+  margin: 5rem 0;
+  .idgw-3-video-card {
+    width: 250px;
+    height: 200px;
+  }
+  h2 {
+    margin-bottom: 3rem;
+  }
+}
+
+.idgw-3-vid-card-container {
+  .vid-card-subTexts {
+    display: flex;
+    margin-top: 0.4rem;
+    p {
+      font-size: 1.6rem;
+      font-family: "josefin sans";
+      font-weight: 700;
+      color: $black-3;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.arrow2SliderBtn {
+  border: none;
+  background: none;
+  border: none;
+  outline: none;
+  // width: 32px;
+  // height: 32px;
+  // min-width: 32px;
+  // min-height: 32px;
+  // border: 2px solid $secondary;
+  // border-radius: 50%;
+  // font-size: 1.6rem;
+  z-index: 10;
+}
+.idgw3-video-slider {
+  margin-top: 6rem;
+}
+.idgw-5 {
+  // background-color: forestgreen;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .idgw-5-row {
+    // background-color: saddlebrown;
+    display: flex;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    .idgw-5-col-2 {
+      margin-left: 2rem;
+      p {
+        font-size: 1.7rem;
+        color: $grey;
+        font-weight: 700;
+        line-height: 1.8;
+        width: 95%;
+        span {
+          color: $secondary;
+          margin-left: 0.5rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+.link-display {
+  margin-top: 3rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+    color: $grey;
+    font-weight: 700;
+    line-height: 1.8;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+.link-display-heading {
+  display: flex;
+  align-items: flex-end;
+
+  span {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+    margin-right: 2rem;
+  }
+  h4 {
+    font-size: 2.5rem;
+    font-family: "josefin sans";
+    font-weight: 700;
+  }
+}

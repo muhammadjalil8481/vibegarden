@@ -4,6 +4,7 @@ import ButtonFilled from "../Button/ButtonFilled";
 import images from "../../constants/images";
 import VideoCard from "../VideoCard/VideoCard";
 import LightButton from "../Button/LightButton";
+import { Link } from "react-router-dom";
 
 const WhiteImageInfoSection = ({
   button,
@@ -24,6 +25,11 @@ const WhiteImageInfoSection = ({
   bottomInfo,
   lightButton,
   postedDate,
+  mainHeading = "Main Heading",
+  btnText = "Button",
+  padX = true,
+  onClickFunction = () => null,
+  link = "#",
 }) => {
   return (
     <section className="wiis">
@@ -40,9 +46,7 @@ const WhiteImageInfoSection = ({
           )}
           <div class="row wiis-row">
             <div class="col-md-8 wiis-col wiis-left-col order-md-2">
-              {!noHeading && (
-                <h2 className="wiis-heading ">Embodying Your Fullness</h2>
-              )}
+              {!noHeading && <h2 className="wiis-heading ">{mainHeading}</h2>}
               {doubleHeading && (
                 <>
                   <h3 className="wiis-heading-double">
@@ -78,11 +82,13 @@ const WhiteImageInfoSection = ({
                 <div
                   className={`wiis-btn-container ${orderReverse && "text-end"}`}
                 >
-                  <ButtonFilled
-                    text="Join Us"
-                    bgGradient={"yes"}
-                    paddingX="1rem"
-                  />
+                  <Link to={`${link}`}>
+                    <ButtonFilled
+                      text={btnText}
+                      bgGradient={"yes"}
+                      paddingX={padX}
+                    />
+                  </Link>
                 </div>
               )}
             </div>

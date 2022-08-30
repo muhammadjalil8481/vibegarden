@@ -10,6 +10,7 @@ const VidCard = ({
   image = images.placeholder5,
   title = "Titles",
   time = "00:10",
+  subText,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -38,6 +39,7 @@ const VidCard = ({
         <p className="vid-card-time">{time}</p>
         {/* </div> */}
       </div>
+      
       {showModal && (
         // <div onClick={() => setShowModal(false)}>
         <Modal

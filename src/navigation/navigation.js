@@ -23,6 +23,8 @@ import BuildingSlocks from "../pages/BuildingSlocks";
 import DeeperCuts from "../pages/DeeperCuts";
 import Play from "../pages/Play";
 import IndividualGroundWork from "../pages/IndividualGroundWork";
+import Teachers from "../pages/Teachers";
+import Topic from "../pages/Topic";
 
 const Navigation = () => {
   return (
@@ -51,6 +53,8 @@ const Navigation = () => {
       <Route element={<DeeperCuts />} path="/deepercuts" />
       <Route element={<Play />} path="/play" />
       <Route element={<IndividualGroundWork />} path="/individualGroundWork" />
+      <Route element={<Teachers />} path="/teachers" />
+      <Route element={<Topic />} path="/topic" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );

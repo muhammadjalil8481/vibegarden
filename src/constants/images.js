@@ -36,7 +36,9 @@ const images = {
   userImage: require("../assets/images/userimage.png"),
   qrCode: require("../assets/images/qrcode.png"),
   userImageBig: require("../assets/images/userimagebig.png"),
-  user2image : require("../assets/images/user2image.png"),
+  user2image: require("../assets/images/user2image.png"),
+  teacher1: require("../assets/images/teacher1.png"),
+  teacher2: require("../assets/images/teacher2.png"),
 };
 
 export default images;

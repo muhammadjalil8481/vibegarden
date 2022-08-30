@@ -10,8 +10,10 @@ import GreenLineBreak from "../../components/GreenLineBreak";
 import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 import WhiteImageInfoSection2 from "../../components/WhiteImageInfoSection2";
 import ButtonAndHeading from "../../components/HeadingAndButton.js";
+import { useNavigate } from "react-router-dom";
 
 const Guides = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <NavBar />
@@ -23,7 +25,13 @@ const Guides = () => {
       </div>
       <ScheduleSection />
       <GreenLineBreak />
-      <WhiteImageInfoSection orderReverseWithButton />
+      <WhiteImageInfoSection
+        orderReverseWithButton
+        mainHeading="Teachers"
+        btnText="See All Teachers"
+        padX={false}
+        link="/teachers"
+      />
       <GreenLineBreak />
       <ButtonAndHeading />
       <Footer />
