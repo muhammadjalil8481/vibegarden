@@ -38,7 +38,9 @@ const images = {
   userImageBig: require("../assets/images/userimagebig.png"),
   user2image: require("../assets/images/user2image.png"),
   teacher1: require("../assets/images/teacher1.png"),
+  logo3: require("../assets/images/logo3.png"),
   teacher2: require("../assets/images/teacher2.png"),
+  mobileapp: require("../assets/images/mobileapp.png"),
 };
 
 export default images;

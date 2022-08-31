@@ -9,27 +9,6 @@
   justify-content: center;
   text-align: center;
 
-  .ec-icon {
-    background-color: rgba(27, 91, 47, 0.1);
-    // display: inline
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    padding: 0.5rem;
-    // border-bottom-left-radius: 1rem;
-    // border-top-left-radius: 1rem;
-    // border-bottom-right-radius: 2rem
-    border-radius: 0.5rem;
-    transform: rotate(45deg);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    .icon {
-      transform: rotate(-45deg);
-    }
-  }
   &-container {
     // margin-top: 15%;
     display: flex;
@@ -56,5 +35,27 @@
     .ec-btn-container {
       margin-top: 5rem;
     }
+  }
+}
+
+.ec-icon {
+  background-color: rgba(27, 91, 47, 0.1);
+  // display: inline
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  padding: 0.5rem;
+  // border-bottom-left-radius: 1rem;
+  // border-top-left-radius: 1rem;
+  // border-bottom-right-radius: 2rem
+  border-radius: 0.5rem;
+  transform: rotate(45deg);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .icon {
+    transform: rotate(-45deg);
   }
 }

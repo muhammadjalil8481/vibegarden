@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { green, grey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 
 const FormGroupAuth = ({
   inputType = "text",
@@ -39,7 +40,9 @@ const FormGroupAuth = ({
             }`}
             // onClick={() => console.log(value)}
           >
-            <SearchIcon fontSize="large" sx={{ color: green[700] }} />
+            <Link to="/searchpage">
+              <SearchIcon fontSize="large" sx={{ color: green[700] }} />
+            </Link>
           </div>
         )}
         {showPasswordIcon && (

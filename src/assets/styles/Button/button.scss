@@ -74,3 +74,40 @@
     padding: 5px 8px;
   }
 }
+
+.time-button {
+  display: flex;
+  // background-color: $white;
+  width: fit-content;
+  padding: 1rem 2rem;
+  border: 1px solid $secondary;
+  border-radius: 10px;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $secondary;
+  }
+  p {
+    font-family: "josefin sans";
+    color: $secondary;
+    line-height: 1;
+    margin-bottom: 0;
+  }
+  &:hover p {
+    color: $white;
+  }
+
+  .character {
+    margin: 0 1rem;
+  }
+}
+
+.active-time-btn {
+  background-color: $secondary;
+  border-radius: 10px;
+  p {
+    color: $white;
+  }
+}
+
+

@@ -1,6 +1,7 @@
 import React from "react";
 import VidCard from "../VidCard";
 import ButtonFilled from "../Button/ButtonFilled";
+import { useNavigate, Link } from "react-router-dom";
 const ScheduleCard = ({ name = "Name" }) => {
   return (
     <div className="card sc-card border-0">
@@ -16,9 +17,11 @@ const ScheduleCard = ({ name = "Name" }) => {
         Weight) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
         placerat euismod portti
       </p>
-      <div className="sc-card-btn">
-        <ButtonFilled bgGradient={"yes"} text={`Schedule With ${name}`} />
-      </div>
+      <Link to="/schedule">
+        <div className="sc-card-btn">
+          <ButtonFilled bgGradient={"yes"} text={`Schedule With ${name}`} />
+        </div>
+      </Link>
     </div>
   );
 };

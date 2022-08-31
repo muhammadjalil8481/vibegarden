@@ -9,8 +9,10 @@ import HomeLoggedIn from "../pages/HomeLoggedIn";
 import GroundWork from "../pages/GroundWork";
 import Tools from "../pages/Tools";
 import Guides from "../pages/Guides";
+import ThankYou from "../pages/ThankYou/ThankYou";
 import CommunityGarden from "../pages/CommunityGarden";
 import AboutUs from "../pages/AboutUs";
+import SearchPage from "../pages/SearchPage";
 import TermsAndConditions from "../pages/TermsAndConditions";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import FreshBlooms from "../pages/FreshBlooms";
@@ -25,6 +27,8 @@ import Play from "../pages/Play";
 import IndividualGroundWork from "../pages/IndividualGroundWork";
 import Teachers from "../pages/Teachers";
 import Topic from "../pages/Topic";
+import Schedule from "../pages/Schedule";
+import Payment from "../pages/Payment/Payment";
 
 const Navigation = () => {
   return (
@@ -55,6 +59,10 @@ const Navigation = () => {
       <Route element={<IndividualGroundWork />} path="/individualGroundWork" />
       <Route element={<Teachers />} path="/teachers" />
       <Route element={<Topic />} path="/topic" />
+      <Route element={<Schedule />} path="/schedule" />
+      <Route element={<Payment />} path="/payment" />
+      <Route element={<ThankYou />} path="/thankyou" />
+      <Route element={<SearchPage />} path="/searchpage" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );

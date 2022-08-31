@@ -1,6 +1,7 @@
 import React from "react";
 import ScheduleCard from "../ScheduleCard";
 
+
 const ScheduleSection = () => {
   return (
     <div className="container ss-container">

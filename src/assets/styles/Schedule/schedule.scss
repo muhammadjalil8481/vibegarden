@@ -1,0 +1,145 @@
+@import "../variables.scss";
+
+.teacher-schedule-info {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  .teacher-heading {
+    color: $secondary;
+    font-family: "josefin sans";
+    margin-bottom: 2rem;
+  }
+  .teacher-row {
+    display: flex;
+    align-items: center;
+
+    .teacher-image {
+      width: 84%;
+      height: 85%;
+      border-radius: 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .teacher-desc {
+      color: $black-3;
+      font-size: 1.6rem;
+      font-family: "josefin sans";
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-left: -3rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+.teacher-schedule-video {
+  width: 35%;
+  margin: 7rem auto;
+}
+
+.schedule-left {
+  //   background-color: sandybrown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-btn {
+    // background-color: salmon;
+    width: 80%;
+    padding-left: 0.7rem;
+    margin-top: 3rem;
+  }
+}
+.schedule-heading {
+  // align-self: flex-start;
+  // background-color: saddlebrown;
+  width: 80%;
+  font-family: "josefin sans";
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.schedule-right {
+  //   background-color: lightcoral;
+  .schedule-right-timeSelect {
+    // background-color: mediumaquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $secondary;
+    border-radius: 20px;
+    padding: 4rem 2rem 2rem 0.5rem;
+    width: 80%;
+    .schedule-right-timeBtn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2rem;
+
+      .item-price {
+        font-family: "josefin sans";
+        font-size: 2rem;
+        margin-top: 2.5rem;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.schedule-info {
+  font-size: 2.4rem;
+  color: $black-3;
+  font-family: "josefin sans";
+  width: 80%;
+  margin-left: 0.4rem;
+  line-height: 1.5;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  background-color: rgba($grey, 0.4);
+  height: 2px;
+  width: 80%;
+}
+
+.schedule-time {
+  //   background-color: salmon;
+  display: flex;
+  width: 80%;
+  margin: 3rem auto;
+
+  h5 {
+    color: $secondary;
+    text-align: center;
+    font-family: "josefin sans";
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+  }
+  .schedule-time-morning {
+    // background-color: sandybrown;
+    margin-right: 5rem;
+  }
+  .schedule-time-evening {
+    // background-color: lawngreen;
+  }
+  .schedule-time-btn {
+    margin-bottom: 2rem;
+  }
+}
+
+.schedule-note {
+  font-size: 2rem;
+  margin-left: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8rem;
+  span {
+    font-size: 2.6rem;
+    color: $secondary;
+    margin-right: 0.3rem;
+    font-weight: 700;
+  }
+}
