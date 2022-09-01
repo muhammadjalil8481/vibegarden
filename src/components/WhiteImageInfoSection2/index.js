@@ -6,6 +6,7 @@ import images from "../../constants/images";
 import VideoCard from "../VideoCard/VideoCard";
 import ColoredLink from "../ColouredLink";
 import LightButton from "../Button/LightButton";
+import VidCard from "../VidCard";
 
 const WhiteImageInfoSection2 = ({
   button,
@@ -37,25 +38,28 @@ const WhiteImageInfoSection2 = ({
                 </div>
               </Link>
             </div>
-            <div class="col-sm-5 wiis2-col wiis2-right-col">
+            <div class="col-md-5 wiis2-col wiis2-right-col">
               <div className="wiis2-right-col-heading">
                 <h2>H2</h2>
               </div>
-              <div className="wiis2-video-card">
-                <VideoCard
+
+              <div className="wiis2-vid-card">
+                <VidCard
                   time="3:15"
-                  image={images.placeholder1}
+                  image={images.placeholder2}
                   title="Title"
-                  width={videoWidth}
-                  height={videoHeight}
                 />
               </div>
-              <div className="wiis2-right-col-btn-container">
-                <div className="wiis2-right-col-btn">
-                  <LightButton />
+              <div className="wiis2-right-col-btn-container ">
+                <div className="wiis2-right-col-btn ">
+                  <Link to="/individualgroundwork">
+                    <LightButton text="Details" />
+                  </Link>
                 </div>
                 <div className="wiis2-right-col-btn">
-                  <LightButton />
+                  <Link to="/topic">
+                    <LightButton text="#Tag" />
+                  </Link>
                 </div>
               </div>
             </div>

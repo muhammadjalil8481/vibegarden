@@ -3,6 +3,7 @@ import ContainerSection from "../Container";
 import images from "../../constants/images";
 import appleIcon from "../../assets/images/apple-icon.svg";
 import androidIcon from "../../assets/images/android.svg";
+import copyright from "../../assets/images/copyright.svg";
 import ButtonFilled from "../Button/ButtonFilled";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -70,11 +71,13 @@ const Footer = () => {
                   class="form-control rounded-left"
                   placeholder="Enter email address"
                 />
-                <ButtonFilled
-                  bgGradient={"yes"}
-                  text="Subscribe"
-                  paddingX={"10px"}
-                />
+                <div className="footer-form-btn">
+                  <ButtonFilled
+                    bgGradient={"yes"}
+                    text="Subscribe"
+                    paddingX={"10px"}
+                  />
+                </div>
               </div>
             </form>
           </div>
@@ -92,7 +95,12 @@ const Footer = () => {
         </div>
         <div className="footer-line-break"></div>
         <div className="footer-copyright">
-          <p>Copy Rights 2022 Reserved - Vibe Garden</p>
+          <p>
+            <span className="copyright-icon">
+              <img src={copyright} />
+            </span>
+            Copy Rights 2022 Reserved - Vibe Garden
+          </p>
         </div>
       </div>
     </footer>

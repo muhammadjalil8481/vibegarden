@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 import Checkbox from "@mui/material/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonFilled from "../Button/ButtonFilled";
+import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
 
 const RememberMeCheckboxIcon = styled("span")(({ theme }) => ({
   borderRadius: 5,
@@ -63,15 +64,26 @@ const Login = () => {
   const navigate = useNavigate();
   return (
     <section className="login" style={sectionStyle}>
+      <div className="ec-icon" onClick={() => navigate("/home")}>
+        <ArrowBackIosRoundedIcon
+          color="success"
+          fontSize="large"
+          className="icon"
+        />
+      </div>
       <ContainerSection isFluid={"yes"}>
         <div className="container login-container">
           <div className="login-img">
-            <img src={images.logo2} />
+            <img src={images.logo3} />
           </div>
           <h3 className="login-heading">Login</h3>
           <form action="#" className="login-form">
             <FormGroupAuth label="Email Address" inputType="email" />
-            <FormGroupAuth label="Password" inputType="password" />
+            <FormGroupAuth
+              label="Password"
+              inputType="password"
+              showPasswordIcon
+            />
             <div className="form-options">
               <div className="login-checkbox">
                 <Checkbox
@@ -87,7 +99,10 @@ const Login = () => {
                 Forgot Password?
               </p>
             </div>
-            <div className="login-button">
+            <div
+              className="login-button"
+              onClick={() => navigate("/home", { state: { user: true } })}
+            >
               <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
             </div>
             <h3 className="login-or">OR</h3>

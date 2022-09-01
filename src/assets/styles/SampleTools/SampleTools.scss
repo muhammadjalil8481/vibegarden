@@ -10,10 +10,10 @@
     align-self: center;
     .st-heading {
       text-align: center;
+      color: $secondary;
     }
     .st-cards {
       justify-content: center;
-      // background-color: darkcyan;
       @media (max-width: 767px) {
         position: relative;
         left: 13%;

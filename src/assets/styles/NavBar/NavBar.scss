@@ -54,6 +54,10 @@
 }
 .navbar-actions {
   display: flex;
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
 }
 .expandedBar {
   background-color: $white;

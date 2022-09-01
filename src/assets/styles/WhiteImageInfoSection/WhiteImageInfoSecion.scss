@@ -17,12 +17,20 @@
     margin-bottom: 2rem;
     font-size: 3.2rem;
     // background-color: wheat;
+    @media (max-width: 1199px) {
+      margin-bottom: 0;
+      // margin-left: 3rem;
+      // background-color: lawngreen;
+    }
+    @media (max-width: 991px) {
+      text-align: center;
+    }
   }
   .wiis-row {
     align-items: center;
     justify-content: space-around;
-    // background-color: wheat;
-    @media (max-width: 992px) {
+
+    @media (max-width: 991px) {
       justify-content: space-between;
     }
     @media (max-width: 767px) {
@@ -50,6 +58,8 @@
     }
     .wiis-para {
       color: $black-3;
+      line-height: 1.7;
+      margin-top: 1rem !important;
     }
   }
   .wiis-right-col {
@@ -61,11 +71,34 @@
     }
     @media (max-width: 767px) {
       justify-content: center;
+      align-items: center;
       margin-top: 4rem;
     }
     @media (max-width: 400px) {
       justify-content: center;
     }
+  }
+}
+.wiis-vid-card {
+  width: 80%;
+  height: 280px;
+  margin-left: 2rem;
+  @media (max-width: 1199px) {
+    width: 85%;
+    height: 250px;
+  }
+  @media (max-width: 991px) {
+    width: 130%;
+    height: 250px;
+  }
+  @media (max-width: 767px) {
+    width: 80%;
+  }
+  @media (max-width: 450px) {
+    height: 230px;
+  }
+  @media (max-width: 400px) {
+    height: 200px;
   }
 }
 
@@ -137,6 +170,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
     .wiis2-right-col-heading {
       h2 {
         color: $secondary;
@@ -176,7 +210,7 @@
       @media (max-width: 767px) {
         padding: 0;
         position: absolute;
-        bottom: -15%;
+        bottom: -20%;
         left: 17%;
       }
       @media (max-width: 575px) {
@@ -207,7 +241,7 @@
     }
     @media (max-width: 767px) {
       justify-content: center;
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
     @media (max-width: 400px) {
       justify-content: center;
@@ -292,4 +326,57 @@
 
 .au-wiis-reverse .wiis-left-col p {
   width: 90%;
+}
+
+.wiis2-vid-card {
+  // background-color: saddlebrown;
+  width: 90%;
+  height: 290px;
+  @media (max-width: 991px) {
+    width: 85%;
+    height: 250px;
+  }
+  @media (max-width: 800px) {
+    width: 80%;
+    height: 230px;
+  }
+  @media (max-width: 768px) {
+    width: 70%;
+    height: 250px;
+  }
+  @media (max-width: 450px) {
+    width: 70%;
+    height: 200px;
+  }
+}
+
+.wiis-top-headingMargin {
+  margin-right: 9rem;
+  @media (max-width: 1199px) {
+    margin-right: 3rem;
+  }
+  @media (max-width: 991px) {
+    margin-bottom: -5rem !important;
+    margin-right: -40rem;
+  }
+  @media (max-width: 768px) {
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+.wiis-vid-card-margin {
+  @media (max-width: 991px) {
+    margin-left: -8rem;
+  }
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.wiis-text-align {
+  text-align: end;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }

@@ -13,18 +13,21 @@ const MoreVG = () => {
             <div className="col-md-4 mvg-item ">
               <WhiteInfoCard
                 btnText="Explorer Groundwork"
+                heading="A Creation Story"
                 image={images.placeholder3}
               />
             </div>
             <div className="col-md-4 mvg-item ">
               <WhiteInfoCard
-                btnText="Explorer Groundwork"
+                heading="The Vibe Bloom App"
+                btnText="Begin Your Quest"
                 image={images.placeholder4}
               />
             </div>
             <div className="col-md-4 mvg-item ">
               <WhiteInfoCard
-                btnText="Explorer Groundwork"
+                heading="Teachers"
+                btnText="Visit Teacher"
                 image={images.placeholder5}
               />
             </div>

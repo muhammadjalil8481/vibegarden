@@ -9,6 +9,12 @@
   }
   .bis-video-card {
     width: 50%;
+    @media (max-width: 991px) {
+      width: 80%;
+    }
+    @media (max-width: 520px) {
+      width: 90%;
+    }
   }
   .bis-heading {
     color: $secondary;
@@ -27,6 +33,7 @@
   width: 100%;
   height: 100%;
   background-color: transparent;
+  cursor: pointer;
 
   .vid-card-image {
     width: 100%;
@@ -72,10 +79,11 @@
     background-color: $black-3;
     display: inline;
     padding: 5px 15px;
-    border-radius: 20px;
+    border-radius: 10px;
     position: absolute;
     bottom: 2%;
     right: 3%;
+    border: 1px solid rgba($white, 0.4);
     @media (max-width: 768px) {
       font-size: 1.4rem;
       padding: 3px 10px;

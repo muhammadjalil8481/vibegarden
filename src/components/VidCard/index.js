@@ -3,14 +3,17 @@ import images from "../../constants/images";
 import VideoIcon2nd from "../../assets/images/video-tag-icon.svg";
 import VideoIcon from "../../assets/images/video-icon.svg";
 import Modal from "../Modal";
+import VideoIconPink from "../../assets/images/video-icon-pink.svg";
 
 const VidCard = ({
   titleIcon,
   blackTitle,
   image = images.placeholder5,
-  title = "Titles",
-  time = "00:10",
+  title = "Title",
+  time = "3:15",
   subText,
+  noTitle,
+  pinkVideoIcon,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -30,16 +33,19 @@ const VidCard = ({
             </h5>
           )}
         </div>
-        {!titleIcon && (
+        {!titleIcon && !noTitle && (
           <h5 className={`vid-card-topTitle ${blackTitle && "text-black"}`}>
             {title}
           </h5>
         )}
-        <img src={VideoIcon} className="vid-card-video-icon" />
+        <img
+          src={pinkVideoIcon ? VideoIconPink : VideoIcon}
+          className="vid-card-video-icon"
+        />
         <p className="vid-card-time">{time}</p>
         {/* </div> */}
       </div>
-      
+
       {showModal && (
         // <div onClick={() => setShowModal(false)}>
         <Modal

@@ -3,16 +3,16 @@ import { Container } from "react-bootstrap";
 import images from "../../constants/images";
 import ButtonFilled from "../Button/ButtonFilled";
 
-const sectionStyle = {
-  backgroundImage: `url(${images.pinkMask})`,
-  //   backgroundColor: "red",
-};
+// const sectionStyle = {
+//   backgroundImage: `url(${images.pinkMask})`,
+//   //   backgroundColor: "red",
+// };
 const StayInTouch = () => {
   return (
     <Container
       fluid
       className="sit text-center px-4 py-5 "
-      style={sectionStyle}
+      // style={sectionStyle}
     >
       <h2 className="sit-heading">Want To Stay In Touch</h2>
       <p className="sit-para">

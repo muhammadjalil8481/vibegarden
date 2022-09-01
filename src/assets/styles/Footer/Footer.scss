@@ -14,6 +14,9 @@
       @media (max-width: 991px) {
         justify-content: flex-start;
       }
+      @media (max-width: 767px) {
+        justify-content: center;
+      }
       .footer-col-1 {
         // background-color: royalblue;
         display: flex;
@@ -66,17 +69,27 @@
         // align-items: center;
         // margin-top: -3rem;
         @media (max-width: 767px) {
-          margin-top: -0.5rem;
-          margin-left: 10rem;
+          // margin-top: -0.5rem;
+          // margin-left: 5rem;
+          margin-right: 10rem;
         }
         @media (max-width: 575px) {
-          margin-top: -0.5rem;
-          margin-left: -10rem;
+          // margin-top: -0.5rem;
+          // margin-left: 20rem;
+          align-self: center;
+          width: 70%;
+          text-align: center;
+          margin-right: 0;
+          margin-left: 0;
         }
-        @media (max-width: 400px) {
-          margin-top: -0.5rem;
-          margin-left: -5rem;
-        }
+        // @media (max-width: 575px) {
+        //   margin-top: -0.5rem;
+        //   margin-left: -10rem;
+        // }
+        // @media (max-width: 400px) {
+        //   margin-top: -0.5rem;
+        //   margin-left: -5rem;
+        // }
         justify-content: center;
         .footer-list-heading {
           font-size: 2.5rem;
@@ -84,6 +97,9 @@
           color: $white;
           margin-bottom: 1rem;
           margin-left: 5rem;
+          @media (max-width: 575px) {
+            margin-left: 0;
+          }
           // text-align: start;
         }
         ul {
@@ -91,6 +107,12 @@
           padding-left: 0;
           width: 75%;
           margin-left: 5rem;
+          @media (max-width: 500px) {
+            margin-left: 3rem;
+          }
+          @media (max-width: 400px) {
+            margin-left: 2rem;
+          }
           // text-align: center;
           li {
             // margin-left: -3.5rem;
@@ -110,6 +132,7 @@
         @media (max-width: 767px) {
           max-width: 80%;
           margin-left: 8rem !important;
+          margin-top: 2rem;
         }
         @media (max-width: 991px) {
           margin-left: 3rem;
@@ -126,6 +149,9 @@
           font-family: "josefin sans";
           color: $white;
           margin-bottom: 1rem;
+          @media (max-width: 767px) {
+            text-align: center;
+          }
         }
         .footer-form-para {
           color: $white;
@@ -133,6 +159,9 @@
           letter-spacing: 2px;
           margin-top: 2.5rem;
           margin-bottom: 2rem;
+          @media (max-width: 767px) {
+            text-align: center;
+          }
         }
         .footer-form {
           .footer-form-group {
@@ -205,4 +234,45 @@
   color: $white-3;
   font-size: 1.4rem;
   margin-top: 2rem;
+  // background-color: lavender;
+  position: relative;
+
+  .copyright-icon {
+    display: inline-block;
+    position: absolute;
+    left: 34%;
+    bottom: 10%;
+    @media (max-width: 1399px) {
+      left: 31%;
+      bottom: 8%;
+    }
+    @media (max-width: 1199px) {
+      left: 28%;
+    }
+    @media (max-width: 991px) {
+      left: 22%;
+    }
+    @media (max-width: 768px) {
+      left: 13%;
+    }
+    @media (max-width: 524px) {
+      left: 10%;
+    }
+    @media (max-width: 490px) {
+      left: 7%;
+    }
+    @media (max-width: 450px) {
+      left: 4%;
+    }
+    @media (max-width: 420px) {
+      visibility: hidden;
+    }
+  }
+}
+
+.footer-form-btn {
+  @media (max-width: 767px) {
+    text-align: center;
+    width: 100%;
+  }
 }

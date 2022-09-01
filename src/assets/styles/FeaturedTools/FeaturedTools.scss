@@ -1,15 +1,14 @@
 @import "../variables.scss";
 
 .ft {
-  // background-color: darkblue;
-  // background: linear-gradient(
-  //   37deg,
-  //   rgba(122, 176, 58, 1) 0%,
-  //   rgba(32, 95, 46, 1) 90%
-  // );
+  margin-top: 5rem;
   padding: 4rem 0 8rem 0;
   .ft-heading {
     color: $secondary;
+    margin-bottom: 1rem;
+    @media (max-width: 991px) {
+      text-align: center;
+    }
   }
   .ft-para {
     color: $black-3;
@@ -74,6 +73,22 @@
   }
 }
 
-.ft-col {
-  height: 250px;
+.ft-col-container {
+  // background-color: saddlebrown;
+  display: flex;
+  justify-content: center;
+  .ft-col {
+    height: 250px;
+
+    @media (max-width: 1199px) {
+      height: 220px;
+    }
+    @media (max-width: 991px) {
+      margin-bottom: 2rem;
+      width: 90%;
+    }
+    @media (max-width: 575px) {
+      width: 70%;
+    }
+  }
 }

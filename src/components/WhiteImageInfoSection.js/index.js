@@ -5,6 +5,7 @@ import images from "../../constants/images";
 import VideoCard from "../VideoCard/VideoCard";
 import LightButton from "../Button/LightButton";
 import { Link } from "react-router-dom";
+import VidCard from "../VidCard";
 
 const WhiteImageInfoSection = ({
   button,
@@ -30,6 +31,7 @@ const WhiteImageInfoSection = ({
   padX = true,
   onClickFunction = () => null,
   link = "#",
+  heading = "Go Deeper - Vibe Guides",
 }) => {
   return (
     <section className="wiis">
@@ -37,11 +39,11 @@ const WhiteImageInfoSection = ({
         <div class="container wiis-container py80">
           {topHeading && (
             <h3
-              className={`wiis-top-heading mx-5 ${
-                whiteHeading && "text-white"
-              } ${rightAlignHeading && "text-end"}`}
+              className={`wiis-top-heading  ${whiteHeading && "text-white"} ${
+                rightAlignHeading && "wiis-text-align"
+              } ${orderReverse && "wiis-top-headingMargin"}`}
             >
-              Go Deeper - Vibe Guides
+              {heading}
             </h3>
           )}
           <div class="row wiis-row">
@@ -57,7 +59,7 @@ const WhiteImageInfoSection = ({
                   </h3>
                 </>
               )}
-              <p className={`${whitePara && "text-white"} wiis-para mt-2 mb-5`}>
+              <p className={`${whitePara && "text-white"} wiis-para mt-5 mb-5`}>
                 Body copy style for white text on dark or gradient backgrounds
                 (Medium Weight) Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. Mauris placerat euismod porttitor. Nam nec
@@ -80,7 +82,9 @@ const WhiteImageInfoSection = ({
               )}
               {!noButton && (
                 <div
-                  className={`wiis-btn-container ${orderReverse && "text-end"}`}
+                  className={`wiis-btn-container ${
+                    orderReverse && "wiis-text-align"
+                  }`}
                 >
                   <Link to={`${link}`}>
                     <ButtonFilled
@@ -93,11 +97,11 @@ const WhiteImageInfoSection = ({
               )}
             </div>
             <div
-              class={`col-sm-4 wiis-col wiis-right-col ${
+              class={`col-md-4 wiis-col wiis-right-col ${
                 (orderReverse || orderReverseWithButton) && "order-md-3"
               }`}
             >
-              <div className="wiis-video-card">
+              {/* <div className="wiis-video-card">
                 {videoCardTopHeading && (
                   <h3 className="wiis-topHeading">What Next?</h3>
                 )}
@@ -107,6 +111,13 @@ const WhiteImageInfoSection = ({
                   width={videoCardWidth}
                   height={videoCardHeight}
                 />
+              </div> */}
+              <div
+                className={`wiis-vid-card ${
+                  orderReverse && "wiis-vid-card-margin"
+                }`}
+              >
+                <VidCard image={images.placeholder} />
               </div>
               {postedDate && (
                 <div className="wiis-postedDate">

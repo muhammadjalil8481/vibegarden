@@ -3,10 +3,7 @@
 .hero {
   color: $white;
   padding: 10rem 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+
   &-quote {
     font-size: 3.6rem;
     letter-spacing: 2px;

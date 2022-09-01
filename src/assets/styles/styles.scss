@@ -189,32 +189,45 @@ button {
   );
 }
 .bg-gradient-pink {
-  background: rgb(205, 37, 141);
+  background: rgb(237, 83, 94);
   background: linear-gradient(
     121deg,
-    rgba(205, 37, 141, 1) 25%,
-    rgba(237, 83, 94, 1) 89%
+    rgba(237, 83, 94, 1) 29%,
+    rgba(205, 37, 141, 1) 75%
   );
 }
 .bg-gradient-pinkMask {
   background-image: url("../images/pink-mask.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .bg-gradient-blueflowers {
   background-image: url("../images/hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .bg-gradient-greenMask {
   background-image: url("../images/green-mask.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .bg-flowers {
   background-image: url("../images/flowers-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .bg-lightGreen {
   background-color: rgba($secondary, 0.15);
 }
 .bg-lightPink {
   background-color: rgba($primary, 0.1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .text-end {
   text-align: end;

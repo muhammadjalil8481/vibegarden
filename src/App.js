@@ -1,5 +1,5 @@
 import Navigation from "./navigation/navigation";
-import React, { useRef, useEffect } from "react";
+import React from "react";
 
 function App() {
   const videoJsOptions = {

@@ -5,7 +5,7 @@ import images from "../../constants/images";
 import { Link, useNavigate } from "react-router-dom";
 import UserButton from "../userButton.js";
 
-const NavBar = ({ onlyBrand, user = true }) => {
+const NavBar = ({ onlyBrand, userNav = true }) => {
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
   const [dimensions, setDimensions] = React.useState({
@@ -51,7 +51,7 @@ const NavBar = ({ onlyBrand, user = true }) => {
                   <div className="list_item">Community Garden</div>
                 </NavLink>
               </Nav>
-              {!user && (
+              {!userNav && (
                 <Nav className="ms-auto">
                   <div className="navbar-actions">
                     <NavLink>
@@ -70,7 +70,7 @@ const NavBar = ({ onlyBrand, user = true }) => {
                   </div>
                 </Nav>
               )}
-              {user && dimensions.width > 991 && (
+              {userNav && dimensions.width > 991 && (
                 <Nav className="ms-auto">
                   <div
                     className="navbar-actions"
@@ -80,7 +80,7 @@ const NavBar = ({ onlyBrand, user = true }) => {
                   </div>
                 </Nav>
               )}
-              {user && dimensions.width <= 991 && (
+              {userNav && dimensions.width <= 991 && (
                 <Nav className="ms-auto">
                   <div className="navbar-actions d-flex flex-column">
                     <NavLink>

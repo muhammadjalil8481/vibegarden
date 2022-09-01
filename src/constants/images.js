@@ -10,6 +10,7 @@ const images = {
   placeholder4: require("../assets/images/placeholder-4.png"),
   placeholder5: require("../assets/images/placeholder-5.png"),
   placeholder6: require("../assets/images/placeholder-6.png"),
+  placeholder7: require("../assets/images/placeholder-7.png"),
   rectangle: require("../assets/images/rectangle.svg"),
   rectangle1: require("../assets/images/rectangle-1.svg"),
   rectangle2: require("../assets/images/rectangle-2.svg"),

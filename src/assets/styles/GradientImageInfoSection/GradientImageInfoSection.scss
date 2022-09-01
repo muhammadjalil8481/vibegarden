@@ -10,7 +10,6 @@
   .giid-row {
     align-items: center;
     justify-content: space-around;
-
     @media (max-width: 992px) {
       justify-content: space-between;
     }
@@ -48,30 +47,28 @@
       justify-content: flex-end;
     }
     @media (max-width: 767px) {
-      justify-content: center;
-      margin-left: -25%;
+      width: 70%;
       margin-top: 4rem;
     }
-    @media (max-width: 575px) {
-      margin-left: 4%;
+    @media (max-width: 440px) {
+      width: 80%;
     }
-    @media (max-width: 495px) {
-      margin-left: 5%;
-    }
-    @media (max-width: 450px) {
-      margin-left: 6%;
-    }
-    @media (max-width: 420px) {
-      margin-left: 4%;
-    }
-    @media (max-width: 400px) {
-      margin-left: 0;
-    }
-    // @media (max-width: 490px) {
-    //   margin
-    // }
-    // @media (max-width: 400px) {
-    //   justify-content: center;
-    // }
+  }
+}
+
+.giid-vid-card {
+  width: 80%;
+  height: 320px;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    height: 280px;
+  }
+  @media (max-width: 440px) {
+    height: 250px;
   }
 }

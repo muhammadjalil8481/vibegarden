@@ -25,6 +25,9 @@
         margin-top: 2rem;
         font-size: 1.6rem;
         letter-spacing: 1px;
+        @media (max-width: 768px) {
+          width: 90%;
+        }
 
         // border-bottom: 2px solid $white;
       }
@@ -37,6 +40,9 @@
         bottom: -10%;
         left: 30.5%;
         border-radius: 2px;
+        @media (max-width: 768px) {
+          left: 5%;
+        }
       }
     }
   }
@@ -48,14 +54,22 @@
   justify-content: center;
   margin-top: 2rem;
   align-items: center;
+  margin-left: 2rem;
+  @media (max-width: 552px) {
+    margin-left: 0;
+  }
   .bbt-tag {
-    // background-color: lawngreen;
-    // border: 1px solid black;
     width: 170px;
     font-size: 1.6rem;
     color: $white;
     font-weight: 400;
     font-family: "josefin sans";
     margin-top: 1rem;
+    @media (max-width: 552px) {
+      width: 30%;
+    }
+    @media (max-width: 460px) {
+      width: 130px;
+    }
   }
 }

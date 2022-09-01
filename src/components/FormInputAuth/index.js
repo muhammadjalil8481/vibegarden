@@ -52,7 +52,9 @@ const FormGroupAuth = ({
             }`}
             onClick={showPasswordText}
           >
-            <VisibilityOffIcon fontSize="large" sx={{ color: grey[600] }} />
+            <div className="showPasswordIcon">
+              <VisibilityOffIcon fontSize="large" sx={{ color: grey[600] }} />
+            </div>
           </div>
         )}
       </div>

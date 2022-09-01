@@ -6,7 +6,7 @@ const GroundWorkEssentials = () => {
   return (
     <section className="ge">
       <ContainerSection isFluid={"yes"}>
-        <div className="container ge-container text-center">
+        <div className="container-lg ge-container text-center">
           <h2 className="ge-heading">Groundwork Essentials</h2>
           <p className="ge-para">
             LoLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -15,7 +15,11 @@ const GroundWorkEssentials = () => {
             et ea rebum. Stet clita kass
           </p>
           <div className="ge-cards">
-            <ThreeColumnWhiteVideoInfoLayout />
+            <ThreeColumnWhiteVideoInfoLayout
+              title1="A Creation Story"
+              title2="A Creation Story"
+              title3="A Creation Story"
+            />
           </div>
         </div>
       </ContainerSection>

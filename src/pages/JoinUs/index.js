@@ -8,6 +8,7 @@ import GreenButton from "../../components/Button/GreenButton";
 import images from "../../constants/images";
 import FormGroupAuth from "../../components/FormInputAuth";
 import { useNavigate, Link, useLocation } from "react-router-dom";
+import VidCard from "../../components/VidCard";
 
 const JoinUs = () => {
   const navigate = useNavigate();
@@ -31,7 +32,8 @@ const JoinUs = () => {
               <CheckBoxList />
             </div>
             <div className="join-us-video-card">
-              <EmptyVideoCard width="450px" />
+              {/* <EmptyVideoCard width="450px" /> */}
+              <VidCard noTitle pinkVideoIcon image={images.placeholder5} />
             </div>
             <div className="join-us-info my70">
               <h3 className="join-us-info-heading mb-4">
@@ -96,10 +98,15 @@ const JoinUs = () => {
                   <FormGroupAuth label="First Name" inputType="text" />
                   <FormGroupAuth label="Last Name" inputType="text" />
                   <FormGroupAuth label="Email" inputType="email" />
-                  <FormGroupAuth label="Password" inputType="password" />
+                  <FormGroupAuth
+                    label="Password"
+                    inputType="password"
+                    showPasswordIcon
+                  />
                   <FormGroupAuth
                     label="Confirm Password"
                     inputType="password"
+                    showPasswordIcon
                   />
                 </>
               )}
@@ -115,7 +122,7 @@ const JoinUs = () => {
             {isEmailVerified === "yes" && (
               <div
                 className="join-us-submit-btn"
-                onClick={() => navigate("/homepage")}
+                onClick={() => navigate("/login")}
               >
                 <GreenButton paddingX text="Submit" />
               </div>

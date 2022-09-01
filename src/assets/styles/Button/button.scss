@@ -23,6 +23,7 @@
   background-size: cover;
   padding: 5px 15px;
   border-radius: 40px;
+  font-weight: 700;
 }
 .btn-green {
   background-color: $secondary;
@@ -60,6 +61,15 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-size: 2rem;
+}
+.pd-x-small {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.pd-y-small {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  font-size: 1.8rem;
 }
 
 .wic .btn-filled {
@@ -109,5 +119,3 @@
     color: $white;
   }
 }
-
-

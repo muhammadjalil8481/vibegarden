@@ -4,8 +4,20 @@ import circle from "../../assets/images/circle.svg";
 import VideoCardSmall from "../VideoCardSmall";
 import VideoCard from "../VideoCard/VideoCard";
 import images from "../../constants/images";
+import VidCard from "../VidCard";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link } from "react-router-dom";
 
-const VideoCardShifted = ({ width = "600px", image = images.placeholder1 }) => {
+const para = `Body copy style for white text on dark or gradient backgrounds
+(Medium Weight) Lorem ipsum dolor sit amet, consectetur adipiscing
+elit. Mauris placerat euismod porttitor.`;
+
+const VideoCardShifted = ({
+  width = "600px",
+  image = images.placeholder1,
+  heading = "Gradient Card Headline",
+  desc = para,
+}) => {
   return (
     <section className="vcs">
       <ContainerSection bgGradient={"yes"} borderRadius>
@@ -13,19 +25,26 @@ const VideoCardShifted = ({ width = "600px", image = images.placeholder1 }) => {
           <div className="vcs-info">
             <div className="vcs-info-and-icon">
               <img src={circle} />
-              <h4 className="vcs-heading">Gradient Card Headline</h4>
+              <h4 className="vcs-heading">{heading}</h4>
             </div>
-            <p className="vcs-para">
-              Body copy style for white text on dark or gradient backgrounds
-              (Medium Weight) Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Mauris placerat euismod porttitor.
-            </p>
+            <p className="vcs-para">{desc}</p>
             <a className="vcs-link">
-              SEE MORE <span></span>
+              SEE MORE
+              <span className="vcs-link-icon">
+                <ArrowForwardIcon fontSize="large" />
+              </span>
             </a>
           </div>
           <div className="vcs-video-card">
-            <VideoCard width="220px" height="180px" image={image} />
+            <VidCard image={image} noTitle />
+            <div className="vcs-video-card-subText">
+              <Link to="/individualGroundWork">
+                <p>Details</p>
+              </Link>
+              <Link to="/topic">
+                <p>#Tag</p>
+              </Link>
+            </div>
           </div>
         </div>
       </ContainerSection>

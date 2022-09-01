@@ -1,6 +1,7 @@
 import React from "react";
 import images from "../../constants/images";
 import VideoCard from "../VideoCard/VideoCard";
+import VidCard from "../VidCard";
 import ButtonFilled from "../Button/ButtonFilled";
 
 const WhiteInfoCard = ({
@@ -13,8 +14,8 @@ const WhiteInfoCard = ({
     <div className="wic">
       <h4 className="wic-heading">{heading}</h4>
       <p className="wic-para">{para}</p>
-      <div className="wic-video-container">
-        <VideoCard height="200px" width="100%" image={image} />
+      <div className="wic-vid-container">
+        <VidCard image={image} noTitle />
       </div>
       <div className="wic-btn-container">
         <ButtonFilled bgGradient={"yes"} text={btnText} />

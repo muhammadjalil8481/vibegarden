@@ -36,51 +36,24 @@ const FeaturedTools = ({
             </p>
           )}
           <div className="ft-row row">
-            <div className="col-lg-3 ">
+            <div className="col-lg-3 col-sm-6 ft-col-container">
               <div className="ft-col">
-                <VidCard />
+                <VidCard titleIcon image={images.placeholder} />
               </div>
             </div>
-            <div className="col-lg-3 ">
-              {/* <div className="card ft-card border-0">
-                <img src={images.placeholder3} />
-                <div className="ft-card-titleAndIcon">
-                  <img src={VideoIcon2nd} />
-                  <h5 className="ft-card-title">Title</h5>
-                </div>
-                <img src={VideoIcon} className="ft-card-video-icon" />
-                <p className="ft-card-time">00:00</p>
-              </div> */}
+            <div className="col-lg-3 col-sm-6 ft-col-container">
               <div className="ft-col">
-                <VidCard />
+                <VidCard titleIcon image={images.placeholder2} />
               </div>
             </div>
-            <div className="col-lg-3">
-              {/* <div className="card ft-card border-0">
-                <img src={images.placeholder4} />
-                <div className="ft-card-titleAndIcon">
-                  <img src={VideoIcon2nd} />
-                  <h5 className="ft-card-title">Title</h5>
-                </div>
-                <img src={VideoIcon} className="ft-card-video-icon" />
-                <p className="ft-card-time">00:00</p>
-              </div> */}
+            <div className="col-lg-3 col-sm-6 ft-col-container">
               <div className="ft-col">
-                <VidCard />
+                <VidCard titleIcon image={images.placeholder3} />
               </div>
             </div>
-            <div className="col-lg-3 ">
-              {/* <div className="card ft-card border-0">
-                <img src={images.placeholder1} />
-                <div className="ft-card-titleAndIcon">
-                  <img src={VideoIcon2nd} />
-                  <h5 className="ft-card-title">Title</h5>
-                </div>
-                <img src={VideoIcon} className="ft-card-video-icon" />
-                <p className="ft-card-time">00:00</p>
-              </div> */}
+            <div className="col-lg-3 col-sm-6 ft-col-container">
               <div className="ft-col">
-                <VidCard />
+                <VidCard titleIcon image={images.placeholder4} />
               </div>
             </div>
           </div>
