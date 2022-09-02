@@ -19,7 +19,11 @@ const ScheduleCard = ({ name = "Name" }) => {
       </p>
       <Link to="/schedule">
         <div className="sc-card-btn">
-          <ButtonFilled bgGradient={"yes"} text={`Schedule With ${name}`} />
+          <ButtonFilled
+            bgGradient={"yes"}
+            text={`Schedule With ${name}`}
+            paddingYSmall
+          />
         </div>
       </Link>
     </div>

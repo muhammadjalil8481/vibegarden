@@ -6,8 +6,8 @@
   .wiis-container {
     // background-color: aqua;
     @media (max-width: 767px) {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
   }
   .wiis-top-heading {
@@ -29,6 +29,7 @@
   .wiis-row {
     align-items: center;
     justify-content: space-around;
+    // background-color: salmon;
 
     @media (max-width: 991px) {
       justify-content: space-between;
@@ -66,6 +67,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    // background-color: saddlebrown;
     @media (max-width: 1280px) {
       justify-content: flex-start;
     }
@@ -102,6 +104,14 @@
   }
 }
 
+.guides .wiis-vid-card {
+  @media (max-width: 991px) {
+    margin-left: -6rem;
+  }
+  @media (max-width: 767px) {
+    margin-left: 0rem;
+  }
+}
 // *****************
 
 .wiis2 {
@@ -264,13 +274,20 @@
   font-family: "josefin sans";
   font-weight: 700;
 }
-
+.wiis-heading-double-container {
+  @media (max-width: 767px) {
+    margin-bottom: 2rem;
+  }
+}
 .community-garden .wiis-para {
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 1px;
   line-height: 1.7;
   width: 85%;
+  @media (max-width: 767px) {
+    margin: 0 auto;
+  }
 }
 
 .wiis-topHeading {
@@ -286,12 +303,23 @@
   // background-color: darkblue;
   align-items: center;
   margin-left: 8rem;
-  margin-top: 8rem;
+  margin-top: 5rem;
+  @media (max-width: 991px) {
+    margin-top: 3rem;
+  }
+  @media (max-width: 767px) {
+    margin-left: 5rem;
+    flex-direction: column;
+    text-align: center;
+  }
   .wiis-bottomHeading {
     font-family: "josefin sans";
     font-weight: 700;
     margin-right: 2rem;
     margin-top: 0.5rem;
+    @media (max-width: 767px) {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -299,6 +327,10 @@
   // background-color: lightcoral;
   display: flex;
   margin-top: -1rem;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
   .wiis-lightBtn {
     margin-right: 1rem;
   }
@@ -314,18 +346,66 @@
 }
 
 .au-wiis .wiis-left-col {
-  margin-left: -12rem;
+  // margin-left: -12rem;
+  // background-color: salmon;
 }
 .au-wiis .wiis-left-col p {
   width: 90%;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 }
 
 .au-wiis-reverse {
   margin-left: 8rem;
+  // background-color: sandybrown;
+  @media (max-width: 810px) {
+    margin-left: 3rem;
+  }
+  @media (max-width: 767px) {
+    margin-left: 0;
+  }
 }
 
 .au-wiis-reverse .wiis-left-col p {
   width: 90%;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+}
+.au-wiis .wiis-vid-card {
+  @media (max-width: 991px) {
+    margin-left: -6rem;
+  }
+  @media (max-width: 767px) {
+    margin-left: 0rem;
+  }
+}
+.au-wiis .wiis-right-col {
+  @media (max-width: 991px) {
+    padding-left: 0;
+  }
+}
+.fresh-blooms .wiis-vid-card {
+  @media (max-width: 991px) {
+    margin-left: 0;
+  }
+}
+.fb-reverse .wiis-vid-card {
+  @media (max-width: 991px) {
+    margin-left: -9rem;
+  }
+  @media (max-width: 767px) {
+    margin-left: 0rem;
+  }
+}
+.fb-reverse .wiis-left-col {
+  @media (max-width: 991px) {
+    margin-left: -2rem;
+  }
+  @media (max-width: 767px) {
+    margin-left: 0rem;
+  }
 }
 
 .wiis2-vid-card {
@@ -351,9 +431,12 @@
 }
 
 .wiis-top-headingMargin {
-  margin-right: 9rem;
-  @media (max-width: 1199px) {
+  margin-right: 5rem;
+  @media (max-width: 1399px) {
     margin-right: 3rem;
+  }
+  @media (max-width: 1199px) {
+    margin-right: -2rem;
   }
   @media (max-width: 991px) {
     margin-bottom: -5rem !important;

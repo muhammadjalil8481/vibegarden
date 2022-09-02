@@ -99,11 +99,10 @@ const Login = () => {
                 Forgot Password?
               </p>
             </div>
-            <div
-              className="login-button"
-              onClick={() => navigate("/home", { state: { user: true } })}
-            >
-              <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
+            <div className="login-button">
+              <Link to="/homepage">
+                <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
+              </Link>
             </div>
             <h3 className="login-or">OR</h3>
             <p className="login-signup">

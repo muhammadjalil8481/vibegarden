@@ -6,7 +6,7 @@ const TermsAndConditions = () => {
   return (
     <>
       <NavBar />
-      <div className="container py80">
+      <div className="container py80 px-5">
         <h2 className="left-green-heading">Terms And Conditions</h2>
         <p className="left-aligned-para">
           {`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy

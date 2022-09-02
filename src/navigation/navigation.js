@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
+import HomePage from "../pages/Home/Home";
 import JoinUs from "../pages/JoinUs";
 import OutletComponent from "./outlet";
 import LoginScreen from "../pages/Login";
-import EmailConfirmation from "../pages/EmailConfirmation";
 import HomeLoggedIn from "../pages/HomeLoggedIn";
+import EmailConfirmation from "../pages/EmailConfirmation";
 import GroundWork from "../pages/GroundWork";
 import Tools from "../pages/Tools";
 import Guides from "../pages/Guides";
@@ -34,12 +34,12 @@ const Navigation = () => {
   return (
     <Routes>
       <Route path="/" element={<OutletComponent />} />
-      <Route element={<Home />} index />
-      <Route element={<Home />} path="/home" />
+      <Route element={<HomePage />} index />
+      <Route element={<HomePage />} path="/home" />
       <Route element={<JoinUs />} path="/join-us" />
       <Route element={<LoginScreen />} path="/login" />
       <Route element={<EmailConfirmation />} path="/email-confirmation" />
-      {/* <Route element={<HomeLoggedIn />} path="/homepage" /> */}
+      <Route element={<HomeLoggedIn />} path="/homepage" />
       <Route element={<GroundWork />} path="/groundwork" />
       <Route element={<Tools />} path="/tools" />
       <Route element={<Guides />} path="/guides" />

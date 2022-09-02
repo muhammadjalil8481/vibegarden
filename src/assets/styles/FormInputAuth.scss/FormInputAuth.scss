@@ -49,7 +49,28 @@
 }
 .fcvl .fga-form-input {
   width: 320px;
-  // margin-right: 1rem;
+  @media (max-width: 500px) {
+    width: 280px;
+    margin-left: -3rem;
+  }
+  @media (max-width: 400px) {
+    width: 250px;
+    margin-left: -3rem;
+  }
+}
+.community-garden .fga-form-input {
+  @media (max-width: 767px) {
+    width: 400px !important;
+  }
+  @media (max-width: 440px) {
+    width: 350px !important;
+  }
+  @media (max-width: 380px) {
+    width: 320px !important;
+  }
+  @media (max-width: 350px) {
+    width: 300px !important;
+  }
 }
 .teachers .fga-form-group {
   width: 80%;

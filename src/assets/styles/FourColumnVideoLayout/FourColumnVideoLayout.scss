@@ -24,18 +24,41 @@
     .fcvl-row {
       // background-color: lightcoral;
       align-items: stretch;
-      justify-content: stretch;
+      justify-content: center;
       margin-bottom: 2rem;
       align-self: center;
-      width: 90%;
+      width: 100%;
 
       .fcvl-col {
         // background-color: darkolivegreen;
-        max-width: 260px;
-        margin-left: 3rem;
-        height: 200px;
-        margin-bottom: 4.5rem;
-        // background-color: transparent;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 575px) {
+          margin-bottom: 2rem;
+        }
+        .fcvl-col-video {
+          width: 90%;
+          height: 240px;
+          @media (max-width: 1399px) {
+            width: 100%;
+            height: 200px;
+          }
+          @media (max-width: 991px) {
+            width: 90%;
+            height: 200px;
+          }
+          @media (max-width: 575px) {
+            width: 70%;
+            height: 200px;
+          }
+          @media (max-width: 400px) {
+            width: 80%;
+            height: 200px;
+          }
+        }
       }
     }
   }
@@ -43,6 +66,11 @@
 .subtext-container {
   display: flex;
   flex-direction: row;
+  align-self: flex-start;
+  margin-left: 2rem;
+  @media (max-width: 575px) {
+    margin-left: 8rem;
+  }
   .subtext {
     font-size: 1.4rem;
     font-family: "josefin sans";
@@ -71,7 +99,7 @@
 .fcvl-card {
   // width: 100px;
   height: 100px;
-  background-color: darkcyan;
+  // background-color: darkcyan;
 }
 
 .fcvl-link {
@@ -79,9 +107,21 @@
   color: $secondary;
   font-weight: 700;
   align-self: flex-end;
-  margin-right: 7rem;
+  margin-right: 9rem;
   cursor: pointer;
-  // margin-top: 2rem;
+  margin-top: -3rem;
+  @media (max-width: 1399px) {
+    margin-right: 0;
+  }
+  @media (max-width: 991px) {
+    margin-right: 3rem;
+  }
+  @media (max-width: 776px) {
+    margin-right: 0;
+  }
+  @media (max-width: 576px) {
+    margin-right: 2rem;
+  }
 }
 .fcvl-search-input-icon-container {
   padding: 1rem;
@@ -101,12 +141,36 @@
   position: absolute;
   top: 1%;
   right: 10%;
+  @media (max-width: 1199px) {
+    right: 0;
+  }
+  @media (max-width: 1130px) {
+    position: unset;
+    align-self: center;
+    margin-top: 1.5rem;
+  }
 }
 .fcvl-left-para {
   margin-left: 10%;
   width: 50% !important;
+  @media (max-width: 1130px) {
+    text-align: center;
+    margin-left: 0;
+    align-self: center;
+    width: 60% !important;
+  }
+  @media (max-width: 991px) {
+    text-align: center;
+    margin-left: 0;
+    align-self: center;
+    width: 80% !important;
+  }
 }
 .fcvl-left-heading {
   margin-left: 10%;
   // width: 50% !important;
+  @media (max-width: 1130px) {
+    text-align: center;
+    margin-left: 0;
+  }
 }

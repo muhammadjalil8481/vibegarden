@@ -18,7 +18,16 @@
     font-size: 1.6rem;
     font-weight: 700;
     color: $grey;
-    //   background-color: chartreuse;
+    @media (max-width: 767px) {
+      width: 80%;
+    }
   }
 }
+// }
+
+// .au-wiis-section {
+//   background-color: seagreen;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
 // }

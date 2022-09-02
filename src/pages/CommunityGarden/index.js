@@ -8,8 +8,11 @@ import Footer from "../../components/Footer";
 import GreenLineBreak from "../../components/GreenLineBreak";
 import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 import ButtonAndHeading2 from "../../components/HeadingAndButton2";
+import { dummyVideodata } from "../../constants/dummyVideoData";
 
 const CommunityGarden = () => {
+  const array4 = dummyVideodata.slice(0, 4);
+
   return (
     <div className="community-garden">
       <NavBar />
@@ -19,7 +22,7 @@ const CommunityGarden = () => {
       <div className="bg-gradient-green">
         <GradientImageInfoSection videoCardLeftMargin={"30px"} noButton />
       </div>
-      <FourColumnVideoLayout />
+      <FourColumnVideoLayout dataArray={array4} />
       <GreenLineBreak />
       <WhiteImageInfoSection
         noButton

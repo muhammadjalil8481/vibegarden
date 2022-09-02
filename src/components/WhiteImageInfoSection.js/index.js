@@ -32,6 +32,8 @@ const WhiteImageInfoSection = ({
   onClickFunction = () => null,
   link = "#",
   heading = "Go Deeper - Vibe Guides",
+  rightAlignBtn,
+  blackHeading,
 }) => {
   return (
     <section className="wiis">
@@ -39,25 +41,29 @@ const WhiteImageInfoSection = ({
         <div class="container wiis-container py80">
           {topHeading && (
             <h3
-              className={`wiis-top-heading  ${whiteHeading && "text-white"} ${
+              className={`wiis-top-heading  ${whiteHeading && "text-white"}  ${
                 rightAlignHeading && "wiis-text-align"
-              } ${orderReverse && "wiis-top-headingMargin"}`}
+              } ${rightAlignHeading && "wiis-top-headingMargin"}`}
             >
               {heading}
             </h3>
           )}
           <div class="row wiis-row">
             <div class="col-md-8 wiis-col wiis-left-col order-md-2">
-              {!noHeading && <h2 className="wiis-heading ">{mainHeading}</h2>}
+              {!noHeading && (
+                <h2 className={`wiis-heading ${blackHeading && "text-black"}`}>
+                  {mainHeading}
+                </h2>
+              )}
               {doubleHeading && (
-                <>
+                <div className="wiis-heading-double-container">
                   <h3 className="wiis-heading-double">
                     Embodying Your Fullness
                   </h3>
                   <h3 className="wiis-heading-double">
                     Embodying Your Fullness
                   </h3>
-                </>
+                </div>
               )}
               <p className={`${whitePara && "text-white"} wiis-para mt-5 mb-5`}>
                 Body copy style for white text on dark or gradient backgrounds
@@ -73,17 +79,21 @@ const WhiteImageInfoSection = ({
               {lightButton && (
                 <div className="wiis-lightBtnContainer">
                   <div className="wiis-lightBtn">
-                    <LightButton />
+                    <Link to="/individualgroundwork">
+                      <LightButton text="Deatils" />
+                    </Link>
                   </div>
                   <div className="wiis-lightBtn">
-                    <LightButton />
+                    <Link to="/topic">
+                      <LightButton text="#Tag" />
+                    </Link>
                   </div>
                 </div>
               )}
               {!noButton && (
                 <div
                   className={`wiis-btn-container ${
-                    orderReverse && "wiis-text-align"
+                    rightAlignBtn && "wiis-text-align"
                   }`}
                 >
                   <Link to={`${link}`}>
@@ -101,17 +111,6 @@ const WhiteImageInfoSection = ({
                 (orderReverse || orderReverseWithButton) && "order-md-3"
               }`}
             >
-              {/* <div className="wiis-video-card">
-                {videoCardTopHeading && (
-                  <h3 className="wiis-topHeading">What Next?</h3>
-                )}
-                <VideoCard
-                  time="3:15"
-                  image={images.placeholder1}
-                  width={videoCardWidth}
-                  height={videoCardHeight}
-                />
-              </div> */}
               <div
                 className={`wiis-vid-card ${
                   orderReverse && "wiis-vid-card-margin"

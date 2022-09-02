@@ -5,7 +5,7 @@ import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 
 const AboutUs = () => {
   return (
-    <>
+    <div className="about-us">
       <NavBar />
       <div className="au-top-section">
         <h2 className="au-heading">ABOUT US</h2>
@@ -16,18 +16,20 @@ const AboutUs = () => {
           rebum.
         </p>
       </div>
-      <div className="au-wiis-reverse">
-        <WhiteImageInfoSection orderReverseWithButton noButton />
-      </div>
-      <div className="au-wiis">
-        <WhiteImageInfoSection noButton />
-      </div>
-      <div className="au-wiis-reverse">
-        <WhiteImageInfoSection orderReverseWithButton noButton />
+      <div className="au-wiis-section">
+        <div className="au-wiis-reverse">
+          <WhiteImageInfoSection noButton />
+        </div>
+        <div className="au-wiis">
+          <WhiteImageInfoSection noButton orderReverseWithButton />
+        </div>
+        <div className="au-wiis-reverse">
+          <WhiteImageInfoSection noButton />
+        </div>
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

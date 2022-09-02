@@ -5,7 +5,7 @@ import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 
 const FreshBlooms = () => {
   return (
-    <>
+    <div className="fresh-blooms">
       <NavBar />
       <div className="au-top-section">
         <h2 className="au-heading">FRESH BLOOMS</h2>
@@ -19,7 +19,7 @@ const FreshBlooms = () => {
       <div className="au-wiis">
         <WhiteImageInfoSection noButton lightButton postedDate />
       </div>
-      <div className="au-wiis-reverse">
+      <div className="au-wiis-reverse fb-reverse">
         <WhiteImageInfoSection
           orderReverseWithButton
           noButton
@@ -30,7 +30,7 @@ const FreshBlooms = () => {
       <div className="au-wiis">
         <WhiteImageInfoSection noButton lightButton postedDate />
       </div>
-      <div className="au-wiis-reverse">
+      <div className="au-wiis-reverse fb-reverse">
         <WhiteImageInfoSection
           orderReverseWithButton
           noButton
@@ -39,7 +39,7 @@ const FreshBlooms = () => {
         />
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

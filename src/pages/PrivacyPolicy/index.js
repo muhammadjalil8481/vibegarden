@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <NavBar />
-      <div className="container py80">
+      <div className="container py80 px-5">
         <h2 className="left-green-heading">Privacy Policy</h2>
         <p className="left-aligned-para">
           {`Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy

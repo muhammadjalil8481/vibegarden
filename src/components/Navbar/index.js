@@ -5,9 +5,10 @@ import images from "../../constants/images";
 import { Link, useNavigate } from "react-router-dom";
 import UserButton from "../userButton.js";
 
-const NavBar = ({ onlyBrand, userNav = true }) => {
+const NavBar = ({ onlyBrand }) => {
   const navigate = useNavigate();
-  const [expanded, setExpanded] = useState(false);
+  const [user, setUser] = useState(true);
+  const [expanded, setExpanded] = useState(true);
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth,
@@ -23,9 +24,6 @@ const NavBar = ({ onlyBrand, userNav = true }) => {
     updateSize();
     return () => window.removeEventListener("resize", updateSize);
   }, []);
-  useEffect(() => {
-    console.log(expanded);
-  }, [expanded]);
 
   return (
     <Navbar expand="lg" className="navbar">
@@ -51,7 +49,7 @@ const NavBar = ({ onlyBrand, userNav = true }) => {
                   <div className="list_item">Community Garden</div>
                 </NavLink>
               </Nav>
-              {!userNav && (
+              {!user && (
                 <Nav className="ms-auto">
                   <div className="navbar-actions">
                     <NavLink>
@@ -70,7 +68,7 @@ const NavBar = ({ onlyBrand, userNav = true }) => {
                   </div>
                 </Nav>
               )}
-              {userNav && dimensions.width > 991 && (
+              {user && dimensions.width >= 992 && (
                 <Nav className="ms-auto">
                   <div
                     className="navbar-actions"
@@ -80,7 +78,7 @@ const NavBar = ({ onlyBrand, userNav = true }) => {
                   </div>
                 </Nav>
               )}
-              {userNav && dimensions.width <= 991 && (
+              {user && dimensions.width <= 991 && (
                 <Nav className="ms-auto">
                   <div className="navbar-actions d-flex flex-column">
                     <NavLink>
@@ -92,7 +90,7 @@ const NavBar = ({ onlyBrand, userNav = true }) => {
                   </div>
                 </Nav>
               )}
-              {expanded && (
+              {expanded && dimensions.width >= 992 && (
                 <div className="expandedBar">
                   <NavLink onClick={() => navigate("profile")}>
                     <div className="list_item-expanded">Profile Settings</div>

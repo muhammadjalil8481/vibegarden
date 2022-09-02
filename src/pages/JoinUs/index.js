@@ -15,9 +15,7 @@ const JoinUs = () => {
   const location = useLocation();
   let isEmailVerified = null;
   if (location.state && location.state.isEmailVerified) isEmailVerified = "yes";
-  // useEffect(() => {
-  //   console.log(isEmailVerified);
-  // }, []);
+ 
 
   return (
     <div className="join-us">

@@ -5,8 +5,11 @@ import GradientImageInfoSection from "../../components/GradientImageInfoSection"
 import FourColumnVideoLayout from "../../components/FourColumnVideoLayout.js";
 import BrowseByTags from "../../components/BrowseByTags";
 import Footer from "../../components/Footer";
+import { dummyVideodata } from "../../constants/dummyVideoData";
 
 const Tools = () => {
+  const array8 = dummyVideodata.slice(0, 8);
+
   return (
     <div>
       <NavBar />
@@ -16,11 +19,16 @@ const Tools = () => {
       <div className="bg-gradient-green">
         <GradientImageInfoSection videoCardLeftMargin={"30px"} />
       </div>
-      <FourColumnVideoLayout searchInput leftHeading leftPara secondRow />
+      <FourColumnVideoLayout
+        searchInput
+        leftHeading
+        leftPara
+        dataArray={array8}
+      />
       <div className="bg-gradient-pinkMask">
-        <FourColumnVideoLayout secondRow />
+        <FourColumnVideoLayout dataArray={array8} />
       </div>
-      <FourColumnVideoLayout secondRow />
+      <FourColumnVideoLayout dataArray={array8} />
       <BrowseByTags />
       <Footer />
     </div>

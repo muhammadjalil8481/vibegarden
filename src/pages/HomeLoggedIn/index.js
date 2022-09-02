@@ -42,6 +42,7 @@ const HomeLoggedIn = () => {
           videoCardWidth="350px"
           height="270px"
           orderReverse
+          rightAlignBtn
           rightAlignHeading
           whiteHeading
           whitePara

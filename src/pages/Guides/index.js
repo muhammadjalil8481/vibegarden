@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const Guides = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="guides">
       <NavBar />
       <div className="bg-gradient-blueflowers">
         <Hero />
@@ -31,6 +31,7 @@ const Guides = () => {
         btnText="See All Teachers"
         padX={false}
         link="/teachers"
+        blackHeading
       />
       <GreenLineBreak />
       <ButtonAndHeading />
