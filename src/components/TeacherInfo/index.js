@@ -7,7 +7,7 @@ import VideoCardSlider from "../VideoCardSlider";
 const TeacherInfo = () => {
   return (
     <div className="teacher-info ">
-      <div className="row teacher-info-row container">
+      <div className="row teacher-info-row container-lg">
         <div className="col-md-7 teacher-info-leftcol">
           <div className="teacher-info-imgHeading">
             <div className="teacher-info-img-container">
@@ -27,8 +27,9 @@ const TeacherInfo = () => {
           <VidCard />
         </div>
       </div>
-      {/* <div className="teacher-info-slider"> */}
-      <VideoCardSlider />
+      <div className="teacher-content-slider container">
+        <VideoCardSlider />
+      </div>
       <div className="teacher-info-reels container">
         <h2>Nightlight Reels</h2>
         <div className="row">

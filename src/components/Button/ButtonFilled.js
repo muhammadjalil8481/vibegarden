@@ -14,13 +14,17 @@ const ButtonFilled = ({
   paddingY,
   paddingXSmall,
   paddingYSmall,
+  padXResponsive,
+  padYResponsive,
   // onPressFunction = () => null,
 }) => {
   return (
     <button
-      className={`${paddingX && "pd-x"} ${paddingY && "pd-y"}  ${
-        paddingYSmall && "pd-y-small"
-      } ${paddingXSmall && "pd-x-small"} btn-filled`}
+      className={`${paddingX && "pd-x"} ${paddingY && "pd-y"} ${
+        padYResponsive && "pd-y-res"
+      } ${padXResponsive && "pd-x-res"} ${paddingYSmall && "pd-y-small"} ${
+        paddingXSmall && "pd-x-small"
+      } btn-filled`}
       style={bgGradient === "yes" ? gradientBackground : null}
       // onPress={onPressFunction}
     >

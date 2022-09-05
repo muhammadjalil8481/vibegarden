@@ -1,12 +1,12 @@
 @import "../variables.scss";
 
 .profile-screen {
-  //   background-color: wheat;
+  // background-color: wheat;
   padding: 5rem 0;
   .ps-container {
     // background-color: rosybrown;
     .ps-row {
-      //   background-color: royalblue;
+      // background-color: royalblue;
 
       //   flex-direction: column;
     }
@@ -14,14 +14,27 @@
 }
 
 .ps-top {
-  //   background-color: teal;
+  // background-color: teal;
   display: flex;
   flex-direction: row;
-  //   background-color: saddlebrown;
   justify-content: space-between;
-  //   align-items: center;
+  @media (max-width: 991px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+  @media (max-width: 430px) {
+    padding: 0 2rem;
+  }
   .ps-top-image {
     width: 38%;
+    @media (max-width: 767px) {
+      width: 10rem;
+    }
+    // @media (max-width: 430px) {
+    //   width: 8rem;
+    // }
     img {
       width: 100%;
     }
@@ -36,6 +49,9 @@
     margin-left: 2rem;
     .ps-top-heading {
       font-family: "josefin sans";
+      @media (max-width: 767px) {
+        font-size: 2.6rem;
+      }
     }
     .ps-top-subscription {
       color: $primary;
@@ -52,10 +68,24 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  //   background-color: lavender;
+  // background-color: lavender;
+  @media (max-width: 767px) {
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+  @media (max-width: 430px) {
+    justify-content: flex-end;
+  }
+  @media (max-width: 400px) {
+    // flex-direction: column;
+    // align-items: center;
+  }
 }
 .ps-top-btn {
   margin-right: 2rem;
+  @media (max-width: 430px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .ps-aboutForm {
@@ -73,15 +103,30 @@
   margin-top: 5rem;
 }
 .ps-subscriptionForm {
+  display: flex;
+  flex-direction: column;
   // background-color: lawngreen;
   height: fit-content;
   margin-top: -22rem;
+  @media (max-width: 767px) {
+    margin-top: 5rem;
+  }
 }
 .ps-heading {
   // background-color: darkblue;
   display: flex;
   flex-direction: column;
   width: 85%;
+  @media (max-width: 991px) {
+    align-self: center;
+  }
+  @media (max-width: 480px) {
+    align-self: flex-start;
+    margin-left: 2rem;
+  }
+  @media (max-width: 360px) {
+    margin-left: 1rem;
+  }
 }
 .ps-inputIcon {
   display: flex;
@@ -99,4 +144,15 @@
   margin-left: 5rem;
   margin-top: 3rem;
   margin-bottom: 2rem;
+  @media (max-width: 767px) {
+    align-self: center;
+    margin-left: 0rem;
+  }
+  @media (max-width: 480px) {
+    align-self: flex-start;
+    margin-left: 2rem;
+  }
+  @media (max-width: 360px) {
+    margin-left: 1rem;
+  }
 }

@@ -1,7 +1,7 @@
 @import "../variables.scss";
 
 .idgw-1 {
-  //   background-color: darkcyan;
+  // background-color: darkcyan;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +9,15 @@
   margin-top: 2rem;
   width: fit-content;
   margin-bottom: 2rem;
+  @media (max-width: 575px) {
+    padding: 0 4rem;
+  }
+  @media (max-width: 358px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 325px) {
+    padding: 0 2.6rem;
+  }
   .idgw-1-headingAnIcon {
     // background-color: darkgoldenrod;
     display: flex;
@@ -17,6 +26,13 @@
     h2 {
       margin-top: 1rem;
       margin-left: 1.5rem;
+      @media (max-width: 575px) {
+        // text-align: center;
+        font-size: 3rem;
+      }
+      @media (max-width: 358px) {
+        font-size: 2.8rem;
+      }
     }
   }
   .idgw-1-desc {
@@ -27,10 +43,22 @@
     letter-spacing: 1px;
     margin-top: 1rem;
     margin-bottom: 4rem;
+    @media (max-width: 767px) {
+      width: 90%;
+    }
   }
   .idgw-1-video {
     // background-color: darkblue;
     height: 400px;
+    @media (max-width: 575px) {
+      height: 300px;
+    }
+    @media (max-width: 400px) {
+      height: 250px;
+    }
+    @media (max-width: 400px) {
+      height: 230px;
+    }
   }
   .idgw-1-subtext {
     // background-color: darkblue;
@@ -38,6 +66,18 @@
     align-self: flex-start;
     margin-left: 32rem;
     margin-top: 1rem;
+    @media (max-width: 1399px) {
+      margin-left: 24rem;
+    }
+    @media (max-width: 1199px) {
+      margin-left: 15rem;
+    }
+    @media (max-width: 991px) {
+      margin-left: 4rem;
+    }
+    @media (max-width: 450px) {
+      margin-left: 2rem;
+    }
     p {
       margin-right: 2rem;
       color: $primary;
@@ -48,15 +88,23 @@
 }
 
 .idgw-2 {
-  //   background-color: darkgoldenrod;
+  // background-color: darkgoldenrod;
   margin-top: 2rem;
-
+  @media (max-width: 991px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 767px) {
+    padding: 0 1rem;
+  }
   .idgw-2-headingAndRating {
     // background-color: darkcyan;
     display: flex;
     align-items: center;
     margin-left: 2rem;
     margin-bottom: 1rem;
+    @media (max-width: 550px) {
+      margin-left: 1rem;
+    }
 
     .idgw-2-rating {
       //   background-color: lawngreen;
@@ -64,6 +112,7 @@
       align-items: center;
       margin-left: 1.6rem;
       margin-bottom: 0.5rem;
+
       h5 {
         color: rgba($secondary, 0.8);
         font-size: 2rem;
@@ -84,11 +133,21 @@
 .comment {
   //   background-color: darkcyan;
   margin-left: 2rem;
+  @media (max-width: 767px) {
+    margin-left: 1rem;
+  }
+  @media (max-width: 550px) {
+    margin-left: 0rem;
+  }
   .comment-top {
     // background-color: darkgoldenrod;
     display: flex;
     align-items: center;
-
+    flex-wrap: wrap;
+    @media (max-width: 550px) {
+      // background-color: chartreuse;
+      width: 90%;
+    }
     h4 {
       font-size: 2rem;
       font-weight: 700;
@@ -99,6 +158,10 @@
     p {
       color: $grey;
       font-size: 1.6rem;
+      @media (max-width: 517px) {
+        margin-left: 5.8rem;
+        margin-top: -1rem;
+      }
     }
   }
   .comment-text {
@@ -109,6 +172,13 @@
     margin-left: 5rem;
     width: 90%;
     line-height: 1.7;
+    @media (max-width: 767px) {
+      width: 80%;
+    }
+    @media (max-width: 400px) {
+      margin-left: 3rem;
+      width: 90%;
+    }
   }
   .comment-reply {
     color: #2680eb;
@@ -119,7 +189,10 @@
 
 .idgw-2-newComment {
   margin-left: 2rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
+  @media (max-width: 400px) {
+    margin-top: 0;
+  }
 }
 
 .idgw-2-textArea {
@@ -159,7 +232,7 @@ textarea::placeholder {
   padding: 0 5rem;
 }
 
-.rec .rec-carousel-item {
+.rec .rec-carousel {
   position: relative;
 }
 // .slider-arrow {
@@ -182,13 +255,33 @@ textarea::placeholder {
 }
 .left-btn {
   position: absolute;
-  right: 7.5%;
+  right: 4%;
+  @media (max-width: 1199px) {
+    right: 6%;
+  }
+  @media (max-width: 767px) {
+    right: 7%;
+  }
+  @media (max-width: 550px) {
+    right: 8%;
+  }
+  @media (max-width: 517px) {
+    right: 9%;
+  }
+  @media (max-width: 420px) {
+    right: 10%;
+  }
+  @media (max-width: 360px) {
+    right: 11%;
+  }
+  @media (max-width: 340px) {
+    right: 12%;
+  }
 }
 .right-btn {
 }
 
 .idgw-3 {
-  // background-color: #2680eb;
   margin: 5rem 0;
   .idgw-3-video-card {
     width: 250px;
@@ -228,22 +321,88 @@ textarea::placeholder {
   z-index: 10;
 }
 .idgw3-video-slider {
+  // background-color: salmon;
+  margin: 0 auto;
   margin-top: 6rem;
+  @media (max-width: 1029px) {
+    width: 80%;
+  }
+  @media (max-width: 964px) {
+    width: 90%;
+  }
+  @media (max-width: 866px) {
+    width: 100%;
+  }
+  @media (max-width: 779px) {
+    width: 80%;
+  }
+  @media (max-width: 616px) {
+    width: 90%;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+.idgw-links {
+  @media (max-width: 991px) {
+    padding: 0 3rem;
+  }
+  // @media (max-width: 767px) {
+  //   text-align: center;
+  // }
+  @media (max-width: 575px) {
+    padding: 0 2rem;
+  }
 }
 .idgw-5 {
   // background-color: forestgreen;
   margin-top: 5rem;
   margin-bottom: 5rem;
+  @media (max-width: 991px) {
+    padding: 0 3rem;
+  }
+  @media (max-width: 400px) {
+    padding: 0 1rem;
+  }
   h2 {
     margin-bottom: 2rem;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
   .idgw-5-row {
     // background-color: saddlebrown;
     display: flex;
     margin-bottom: 2rem;
     margin-left: 2rem;
+    align-items: center;
+    @media (max-width: 991px) {
+      align-items: flex-start;
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .idgw-5-col-1 {
+      min-width: 20%;
+      @media (max-width: 767px) {
+        min-width: 40%;
+      }
+      @media (max-width: 556px) {
+        min-width: 50%;
+      }
+      @media (max-width: 480px) {
+        min-width: 60%;
+      }
+      img {
+        width: 100%;
+      }
+    }
     .idgw-5-col-2 {
       margin-left: 2rem;
+      @media (max-width: 767px) {
+        text-align: center;
+      }
       p {
         font-size: 1.7rem;
         color: $grey;
@@ -261,8 +420,14 @@ textarea::placeholder {
 }
 .link-display {
   margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
   h2 {
+    width: fit-content;
     margin-bottom: 2rem;
+    // @media (max-width: 767px) {
+    //   text-align: center;
+    // }
   }
   p {
     font-size: 1.6rem;
@@ -276,7 +441,11 @@ textarea::placeholder {
 .link-display-heading {
   display: flex;
   align-items: flex-end;
-
+  // background-color: cadetblue;
+  width: fit-content;
+  // @media (max-width: 767px) {
+  //   align-self: center;
+  // }
   span {
     font-size: 2.5rem;
     margin-bottom: 0.3rem;

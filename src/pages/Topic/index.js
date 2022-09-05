@@ -22,11 +22,23 @@ const Topic = () => {
         </p>
       </div>
       <GreenLineBreak />
-      <div className="topic-slider">
-        <VideoCardSlider heading="Related GroundWork" twoRows />
+      <div className="topic-slider container-xxl">
+        <VideoCardSlider heading="Related GroundWork" twoRowsFour />
       </div>
-      <div className="topic-slider">
-        <VideoCardSlider heading="Related Tools" twoRows />
+      <div className="topic-slider container-xxl">
+        <VideoCardSlider heading="Related Tools" twoRowsFour />
+      </div>
+      <div className="topic-slider container-xl">
+        <VideoCardSlider heading="Related GroundWork" twoRowsThree />
+      </div>
+      <div className="topic-slider container-xl">
+        <VideoCardSlider heading="Related Tools" twoRowsThree />
+      </div>
+      <div className="topic-slider-single container-xl">
+        <VideoCardSlider heading="Related GroundWork" />
+      </div>
+      <div className="topic-slider-single container-xl">
+        <VideoCardSlider heading="Related Tools" />
       </div>
       <section className="idgw-5 container">
         <h2>Suggested Teacher</h2>

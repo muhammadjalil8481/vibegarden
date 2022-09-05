@@ -16,7 +16,7 @@ const ProfileScreen = () => {
     <>
       <NavBar />
       <section className="profile-screen">
-        <div className="container ps-container ">
+        <div className="container-lg ps-container ">
           <div className="row ps-row ">
             <div className="ps-top col-12">
               <div className="ps-top-imginfo">
@@ -32,12 +32,17 @@ const ProfileScreen = () => {
               </div>
               <div className="ps-top-buttons">
                 <div className="ps-top-btn" onClick={() => setShowModal(true)}>
-                  <GreenButton paddingX outline text="Save" />
+                  <GreenButton outline text="Save" padXResponsive />
                 </div>
-                <ButtonFilled bgGradient={"yes"} paddingX text="Cancel" />
+                <ButtonFilled
+                  padXResponsive
+                  bgGradient={"yes"}
+                  X
+                  text="Cancel"
+                />
               </div>
             </div>
-            <div className="col-6 ps-aboutForm">
+            <div className="col-md-6 ps-aboutForm">
               <div className="ps-heading">
                 <HeadingLine text="About" />
               </div>
@@ -59,7 +64,7 @@ const ProfileScreen = () => {
                 </div>
               </div>
             </div>
-            <div className="col-6 ps-billingForm">
+            <div className="col-md-6 ps-billingForm">
               <div className="ps-heading">
                 <HeadingLine text="Billing Info" />
               </div>
@@ -77,7 +82,7 @@ const ProfileScreen = () => {
                 <FormGroupAuth label="Postal Code" inputType="text" />
               </div>
             </div>
-            <div className="col-6 ps-subscriptionForm">
+            <div className="col-md-6 ps-subscriptionForm">
               <div className="ps-heading">
                 <HeadingLine text="Subscription Info" />
               </div>

@@ -8,7 +8,7 @@ import UserButton from "../userButton.js";
 const NavBar = ({ onlyBrand }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(true);
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth,

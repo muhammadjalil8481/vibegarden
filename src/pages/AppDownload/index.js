@@ -1,6 +1,5 @@
 import React from "react";
 import images from "../../constants/images";
-import androidIcon from "../../assets/images/android.svg";
 import { Link, useNavigate } from "react-router-dom";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
 import { green } from "@mui/material/colors";
@@ -25,7 +24,7 @@ const AppDownload = () => {
           </div>
         </div>
         <div className="circle-img">
-          <img src={androidIcon} />
+          <img src={images.logo4} />
         </div>
       </div>
     </section>

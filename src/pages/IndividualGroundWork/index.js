@@ -71,7 +71,7 @@ const IndividualGroundWork = () => {
         </div>
       </section>
       <GreenLineBreak />
-      <section className="idgw-2 container">
+      <section className="idgw-2 container-lg">
         <div className="idgw-2-headingAndRating">
           <h4 className="idgw-2-heading">Recent Comments</h4>
           <div className="idgw-2-rating">
@@ -99,10 +99,10 @@ const IndividualGroundWork = () => {
           </div>
         </div>
       </section>
-      <div className="idgw3-video-slider">
+      <div className="idgw3-video-slider container-xxl">
         <VideoCardSlider />
       </div>
-      <section className="container">
+      <section className="container-lg idgw-links">
         <h2>Additional Resource</h2>
         <div className="link-display">
           <div className="link-display-heading">
@@ -131,7 +131,7 @@ const IndividualGroundWork = () => {
           </p>
         </div>
       </section>
-      <section className="idgw-5 container">
+      <section className="idgw-5 container-lg">
         <h2>Suggested Teacher</h2>
         <div className="idgw-5-row">
           <div className="idgw-5-col-1">

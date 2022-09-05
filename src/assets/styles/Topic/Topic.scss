@@ -13,9 +13,18 @@
     font-weight: 700;
     letter-spacing: 1px;
     width: 50%;
+    @media (max-width: 1199px) {
+      width: 70%;
+    }
   }
 }
 
 .topic-slider {
   margin-top: 5rem;
+}
+
+.topic-slider-single {
+  @media (min-width: 1016px) {
+    display: none;
+  }
 }

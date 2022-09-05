@@ -15,12 +15,12 @@ const Teachers = () => {
       <NavBar />
       <div className="teachers">
         <h2 className=" teahers-heading">teachers</h2>
-        <section className="teachers-top container">
+        <section className="teachers-top container-lg">
           <div className="row teachers-row">
-            <div className="col-md-3 teachers-left-col">
+            <div className="col-lg-4  teachers-left-col">
               <VidCard />
             </div>
-            <div className="col-md-9 teachers-right-col">
+            <div className="col-lg-8  teachers-right-col">
               <p>
                 Body copy style for white text on dark or gradient backgrounds
                 (Medium Weight) Lorem ipsum dolor sit amet, consectetur
@@ -53,6 +53,13 @@ const Teachers = () => {
         </section>
         {searchValue && (
           <div className="search-box">
+            <div className="search-box-container">
+              <div className="search-box-icon">#</div>
+              <div className="search-box-info">
+                <h5>Buddhism</h5>
+                <p>Topic Page</p>
+              </div>
+            </div>
             <div className="search-box-container">
               <div className="search-box-icon">#</div>
               <div className="search-box-info">

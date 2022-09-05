@@ -10,7 +10,7 @@ const ProfileModal = ({ showModal, setShowModal }) => {
     <div className="profile-modalComp">
       <div className="profile-modalComp-container">
         <div className="profile-modalComp-icon">
-          <img src={images.logo3} />
+          <img src={images.logo4} />
         </div>
         <h4>Changed Saved</h4>
         <div onClick={() => setShowModal(false)}>

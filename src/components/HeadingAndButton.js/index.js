@@ -8,7 +8,7 @@ const ButtonAndHeading = ({
   return (
     <div className="buttonAndHeading">
       <h2 className="bah-heading">{heading}</h2>
-      <ButtonFilled text={text} paddingX bgGradient={"yes"} paddingY />
+      <ButtonFilled text={text} padXResponsive bgGradient={"yes"} paddingY />
     </div>
   );
 };
