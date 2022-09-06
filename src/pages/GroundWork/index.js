@@ -14,8 +14,12 @@ const GroundWork = () => {
   return (
     <div>
       <NavBar />
-      <div className="bg-gradient-blueflowers">
-        <Hero />
+      <div className="bg-lightFlower ">
+        <Hero
+          quote2ndPart="lorem ipsum lorem ipsum.”"
+          quote1stPart="“Lorem ipsum lorem ipsum lorem;"
+          greenColor
+        />
       </div>
       <div className="bg-gradient-pink">
         <GradientImageInfoSection videoCardLeftMargin={"30px"} noButton />

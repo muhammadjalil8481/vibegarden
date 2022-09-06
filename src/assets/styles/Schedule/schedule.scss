@@ -7,40 +7,135 @@
     color: $secondary;
     font-family: "josefin sans";
     margin-bottom: 2rem;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
   .teacher-row {
     display: flex;
     align-items: center;
-
-    .teacher-image {
-      width: 84%;
-      height: 85%;
-      border-radius: 20px;
-
-      img {
-        width: 100%;
-        height: 100%;
+    // background-color: lawngreen;
+    @media (max-width: 991px) {
+      align-items: flex-start;
+    }
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+    @media (max-width: 576px) {
+      padding: 0 3rem;
+    }
+    .teacher-img-col {
+      // background-color: cadetblue;
+      @media (max-width: 767px) {
+        display: flex;
+        justify-content: center;
       }
     }
-    .teacher-desc {
-      color: $black-3;
-      font-size: 1.6rem;
-      font-family: "josefin sans";
-      letter-spacing: 1px;
-      font-weight: 700;
-      margin-left: -3rem;
-      line-height: 1.7;
+
+    .teacher-image {
+      border-radius: 20px;
+      // background-color: salmon;
+      width: 84%;
+      // height: 85%;
+      height: 360px;
+      @media (max-width: 1399px) {
+        height: 300px;
+      }
+      @media (max-width: 1199px) {
+        width: 100%;
+      }
+      @media (max-width: 991px) {
+        width: 90%;
+      }
+      @media (max-width: 767px) {
+        width: 60%;
+      }
+      @media (max-width: 576px) {
+        width: 70%;
+      }
+      @media (max-width: 500px) {
+        width: 80%;
+      }
+      @media (max-width: 430px) {
+        width: 90%;
+      }
+      @media (max-width: 400px) {
+        width: 100%;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .teacher-desc {
+    color: $black-3;
+    font-size: 1.6rem;
+    font-family: "josefin sans";
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-left: -3rem;
+    line-height: 1.7;
+    @media (max-width: 1199px) {
+      margin-left: 2rem;
+    }
+    @media (max-width: 991px) {
+      margin-left: 0;
+    }
+    @media (max-width: 767px) {
+      margin-left: 0;
+      text-align: center;
+      margin-top: 2rem;
     }
   }
 }
 
 .teacher-schedule-video {
-  width: 35%;
+  width: 900px;
+  height: 550px;
   margin: 7rem auto;
+  @media (max-width: 1199px) {
+    width: 800px;
+    height: 500px;
+  }
+  @media (max-width: 991px) {
+    width: 700px;
+    height: 450px;
+  }
+  @media (max-width: 767px) {
+    width: 600px;
+    height: 400px;
+  }
+  @media (max-width: 650px) {
+    width: 500px;
+    height: 350px;
+  }
+  @media (max-width: 550px) {
+    width: 450px;
+    height: 300px;
+    margin: 4rem auto;
+  }
+  @media (max-width: 480px) {
+    width: 400px;
+    height: 260px;
+  }
+  @media (max-width: 430px) {
+    width: 350px;
+    height: 220px;
+  }
+  @media (max-width: 378px) {
+    width: 320px;
+    height: 200px;
+  }
+  @media (max-width: 348px) {
+    width: 290px;
+    height: 180px;
+  }
 }
 
 .schedule-left {
-  //   background-color: sandybrown;
+  // background-color: sandybrown;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +145,14 @@
     width: 80%;
     padding-left: 0.7rem;
     margin-top: 3rem;
+    @media (max-width: 1008px) {
+      padding-left: 0;
+      width: 85%;
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
   }
 }
 .schedule-heading {
@@ -59,9 +162,22 @@
   font-family: "josefin sans";
   font-weight: 700;
   margin-bottom: 3rem;
+  @media (max-width: 767px) {
+    font-size: 3rem;
+    text-align: center;
+  }
 }
 .schedule-right {
-  //   background-color: lightcoral;
+  // background-color: lightcoral;
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  // .schedule-heading {
+  //   margin: 0 auto;
+  //   margin-bottom: 3rem;
+  // }
   .schedule-right-timeSelect {
     // background-color: mediumaquamarine;
     display: flex;
@@ -97,6 +213,7 @@
   line-height: 1.5;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .divider {
@@ -106,10 +223,16 @@
 }
 
 .schedule-time {
-  //   background-color: salmon;
+  // background-color: lightgreen;
   display: flex;
   width: 80%;
   margin: 3rem auto;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
 
   h5 {
     color: $secondary;
@@ -121,6 +244,18 @@
   .schedule-time-morning {
     // background-color: sandybrown;
     margin-right: 5rem;
+    @media (max-width: 991px) {
+      margin-right: 3rem;
+    }
+    @media (max-width: 800px) {
+      margin-right: 2rem;
+    }
+    @media (max-width: 767px) {
+      margin-right: 5rem;
+    }
+    @media (max-width: 400px) {
+      margin-right: 3rem;
+    }
   }
   .schedule-time-evening {
     // background-color: lawngreen;
@@ -136,6 +271,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   margin-bottom: 8rem;
+  margin-top: 2rem;
   span {
     font-size: 2.6rem;
     color: $secondary;

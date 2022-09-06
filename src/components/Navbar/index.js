@@ -75,6 +75,18 @@ const NavBar = ({ onlyBrand }) => {
                     onClick={() => setExpanded(!expanded)}
                   >
                     <UserButton />
+                    {expanded && dimensions.width >= 992 && (
+                      <div className="expandedBar">
+                        <NavLink onClick={() => navigate("profile")}>
+                          <div className="list_item-expanded">
+                            Profile Settings
+                          </div>
+                        </NavLink>
+                        <NavLink>
+                          <div className="list_item-expanded ">Logout</div>
+                        </NavLink>
+                      </div>
+                    )}
                   </div>
                 </Nav>
               )}
@@ -90,7 +102,7 @@ const NavBar = ({ onlyBrand }) => {
                   </div>
                 </Nav>
               )}
-              {expanded && dimensions.width >= 992 && (
+              {/* {expanded && dimensions.width >= 992 && (
                 <div className="expandedBar">
                   <NavLink onClick={() => navigate("profile")}>
                     <div className="list_item-expanded">Profile Settings</div>
@@ -99,7 +111,7 @@ const NavBar = ({ onlyBrand }) => {
                     <div className="list_item-expanded ">Logout</div>
                   </NavLink>
                 </div>
-              )}
+              )} */}
             </Navbar.Collapse>
           </>
         )}

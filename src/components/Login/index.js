@@ -57,8 +57,8 @@ const RememberMeCheckedIcon = styled(RememberMeCheckboxIcon)({
   },
 });
 const sectionStyle = {
-  backgroundImage: `url(${images.pinkMask})`,
-  //   backgroundColor: "red",
+  // backgroundImage: `url(${images.pinkMask})`,
+  // //   backgroundColor: "red",
 };
 const Login = () => {
   const navigate = useNavigate();

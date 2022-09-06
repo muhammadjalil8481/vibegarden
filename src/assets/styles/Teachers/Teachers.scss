@@ -86,6 +86,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   .teachers-filter-icon {
     padding: 1rem;
@@ -102,61 +103,16 @@
 }
 
 .search-box {
-  width: 74%;
+  width: 80%;
   max-height: 350px;
   border: 1px solid $secondary;
   position: absolute;
   background-color: $white;
   z-index: 1000;
-  right: 15%;
-  top: 63%;
+  top: 100%;
+  left: 8%;
   border-radius: 20px;
   padding: 2rem;
-  @media (max-width: 991px) {
-    top: 84%;
-  }
-  @media (max-width: 891px) {
-    top: 87%;
-  }
-  @media (max-width: 767px) {
-    top: 84%;
-  }
-  @media (max-width: 686px) {
-    top: 86%;
-  }
-  @media (max-width: 567px) {
-    top: 88%;
-    width: 80%;
-    right: 13.5%;
-  }
-  @media (max-width: 550px) {
-    top: 82%;
-  }
-  @media (max-width: 513px) {
-    top: 84%;
-  }
-  @media (max-width: 513px) {
-    top: 86%;
-  }
-  @media (max-width: 441px) {
-    top: 89%;
-    width: 78%;
-    right: 16%;
-  }
-  @media (max-width: 372px) {
-    top: 92%;
-  }
-  @media (max-width: 366px) {
-    top: 94%;
-  }
-  @media (max-width: 342px) {
-    top: 97%;
-    right: 17%;
-  }
-  @media (max-width: 331px) {
-    top: 100%;
-    right: 17%;
-  }
 }
 .search-box-icon {
   font-size: 3rem;

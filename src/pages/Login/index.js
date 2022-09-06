@@ -3,7 +3,7 @@ import Login from "../../components/Login";
 
 const LoginScreen = () => {
   return (
-    <div>
+    <div className="bg-lightGreenMask">
       <Login />
     </div>
   );

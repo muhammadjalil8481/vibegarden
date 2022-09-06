@@ -31,7 +31,7 @@ const Payment = () => {
           <GreenButton paddingX text="Confirm" />
         </Link>
       </div>
-      <div>
+      <div className="payment-price">
         <img src={images.paymentOptions} />
       </div>
     </div>

@@ -19,12 +19,12 @@ const Schedule = () => {
         <div className="teacher-schedule-info">
           <h3 className="teacher-heading">Teacher Name</h3>
           <div className="row d-flex teacher-row">
-            <div className="col-md-4">
+            <div className="col-lg-4 col-md-6 teacher-img-col">
               <div className="teacher-image">
                 <img src={images.teacher1} />
               </div>
             </div>
-            <div className="col-md-7">
+            <div className="col-lg-8 col-md-6">
               <p className="teacher-desc">
                 Body copy style for white text on dark or gradient backgrounds
                 (Medium Weight) Lorem ipsum dolor sit amet, consectetur
@@ -44,7 +44,7 @@ const Schedule = () => {
       <div className="teacher-schedule-video">
         <VidCard />
       </div>
-      <div className="container">
+      <div className="container-xl">
         <div className="row ">
           <div className="col-md-7 schedule-left">
             <h4 className="schedule-heading">Kati Schedule</h4>

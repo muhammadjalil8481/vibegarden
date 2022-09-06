@@ -10,8 +10,13 @@ import BrowseByTags from "../../components/BrowseByTags";
 import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 import BigImageSection from "../../components/BigImageSection";
 import Footer from "../../components/Footer";
+import { useLocation } from "react-router-dom";
+import { CollectionsOutlined } from "@mui/icons-material";
 
 const HomeLoggedIn = () => {
+  const location = useLocation();
+  console.log(location);
+
   return (
     <>
       <NavBar />
@@ -35,18 +40,20 @@ const HomeLoggedIn = () => {
           height="270px"
         />
       </div>
-      <div className="bg-gradient-greenMask">
-        <WhiteImageInfoSection
-          noHeading
-          topHeading
-          videoCardWidth="350px"
-          height="270px"
-          orderReverse
-          rightAlignBtn
-          rightAlignHeading
-          whiteHeading
-          whitePara
-        />
+      <div className="remove-overflow">
+        <div className="bg-gradient-greenMask">
+          <WhiteImageInfoSection
+            noHeading
+            topHeading
+            videoCardWidth="350px"
+            height="270px"
+            orderReverse
+            rightAlignBtn
+            rightAlignHeading
+            whiteHeading
+            whitePara
+          />
+        </div>
       </div>
       <div className="my70">
         <LineBreak />

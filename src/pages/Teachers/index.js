@@ -7,6 +7,7 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { green } from "@mui/material/colors";
 import TeacherInfo from "../../components/TeacherInfo";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const Teachers = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -50,39 +51,42 @@ const Teachers = () => {
           >
             <FilterAltIcon fontSize="large" sx={{ color: green[700] }} />
           </div>
+          {searchValue && (
+            <div className="search-box">
+              <Link to="/individualGroundWork">
+                <div className="search-box-container">
+                  <div className="search-box-icon">#</div>
+                  <div className="search-box-info">
+                    <h5>Buddhism</h5>
+                    <p>Topic Page</p>
+                  </div>
+                </div>
+              </Link>
+              <div className="search-box-container">
+                <div className="search-box-icon">#</div>
+                <div className="search-box-info">
+                  <h5>Buddhism</h5>
+                  <p>Topic Page</p>
+                </div>
+              </div>
+              <div className="search-box-container">
+                <div className="search-box-icon">#</div>
+                <div className="search-box-info">
+                  <h5>Buddhism</h5>
+                  <p>Topic Page</p>
+                </div>
+              </div>
+              <div className="search-box-container">
+                <div className="search-box-icon">#</div>
+                <div className="search-box-info">
+                  <h5>Buddhism</h5>
+                  <p>Topic Page</p>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
-        {searchValue && (
-          <div className="search-box">
-            <div className="search-box-container">
-              <div className="search-box-icon">#</div>
-              <div className="search-box-info">
-                <h5>Buddhism</h5>
-                <p>Topic Page</p>
-              </div>
-            </div>
-            <div className="search-box-container">
-              <div className="search-box-icon">#</div>
-              <div className="search-box-info">
-                <h5>Buddhism</h5>
-                <p>Topic Page</p>
-              </div>
-            </div>
-            <div className="search-box-container">
-              <div className="search-box-icon">#</div>
-              <div className="search-box-info">
-                <h5>Buddhism</h5>
-                <p>Topic Page</p>
-              </div>
-            </div>
-            <div className="search-box-container">
-              <div className="search-box-icon">#</div>
-              <div className="search-box-info">
-                <h5>Buddhism</h5>
-                <p>Topic Page</p>
-              </div>
-            </div>
-          </div>
-        )}
+
         <section className="teachers-info bg-lightGreen">
           <TeacherInfo />
         </section>

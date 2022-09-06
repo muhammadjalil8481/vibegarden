@@ -13,7 +13,7 @@ const SearchPage = () => {
   return (
     <section className="searchpage">
       <NavBar />
-      <div className="container sp">
+      <div className="container-md sp">
         <div className="sp-top">
           <div className="sp-top-headingAndCount">
             <h3 className="sp-top-heading">Groundwork</h3>
@@ -63,7 +63,7 @@ const SearchPage = () => {
         </div>
         <h4 className="sp-result">{activeTab} Result</h4>
         <div className="row sp-row">
-          <div className="col-md-7 sp-left-col">
+          <div className="col-lg-7 sp-left-col">
             <div className="sp-item">
               <div className="sp-item-video">
                 <VidCard />
@@ -131,7 +131,7 @@ const SearchPage = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-5 sp-right-col">
+          <div className="col-lg-5 sp-right-col">
             <div className="sp-mobile-app">
               <img src={images.mobileapp} alt="" />
             </div>

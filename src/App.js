@@ -1,11 +1,38 @@
 import Navigation from "./navigation/navigation";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./components/Navbar";
+import PleaseSignUpModal from "./components/pleaseSignUpModal";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  const [user, setUser] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const location = useLocation();
+  const [path, setPath] = useState(location.pathname);
+  useEffect(() => {
+    setPath(location.pathname);
+    console.log(path);
+    setShowModal(false);
+    setTimeout(() => {
+      !user && setShowModal(true);
+    }, 3000);
+  }, [location.pathname]);
+  setTimeout(() => {
+    !user && setShowModal(true);
+  }, 3000);
   return (
     <div className="App">
-      {/* <NavBar /> */}
+      {/* {!user &&
+        showModal &&
+        path !== "/" &&
+        path !== "/home" &&
+        path !== "/join-us" &&
+        path !== "/login" &&
+        path !== "/email-confirmation" && (
+          <div className="please-sign-up-modal-container">
+            <PleaseSignUpModal />
+          </div>
+        )} */}
       <Navigation />
     </div>
   );

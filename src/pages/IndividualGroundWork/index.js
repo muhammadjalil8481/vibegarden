@@ -43,8 +43,6 @@ function myArrow({ type, onClick, isEdge }) {
 }
 
 const IndividualGroundWork = () => {
-  const location = useLocation();
-  //   console.log(location.state);
   const breakPoints = [{ width: 1, itemsToShow: 1 }];
 
   return (

@@ -2,6 +2,7 @@
 
 .navbar {
   background-color: $white;
+
   .brand {
     cursor: pointer;
     @media (max-width: 991px) {
@@ -54,10 +55,11 @@
 }
 .navbar-actions {
   display: flex;
+  // background-color: cadetblue;
+  position: relative;
   @media (max-width: 991px) {
     flex-direction: column;
   }
-
 }
 .expandedBar {
   background-color: $white;
@@ -66,8 +68,8 @@
   padding: 1rem 1.8rem;
   border-radius: 18px;
   position: absolute;
-  right: 5%;
-  top: 94%;
+  top: 120%;
+  left: 10%;
   .list_item-expanded {
     color: $primary;
     font-size: 1.6rem;
