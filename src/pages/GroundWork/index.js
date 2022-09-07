@@ -28,7 +28,7 @@ const GroundWork = () => {
         searchInput
         heading="Essentials"
         dataArray={array4}
-        seeAllOnClick={() => navigate("/essentials")}
+        linkDestination="/essentials"
       />
       <div className="bg-gradient-greenMask">
         <FourColumnVideoLayout
@@ -38,13 +38,13 @@ const GroundWork = () => {
           whiteSubText
           heading="Building Slocks"
           dataArray={array4}
-          seeAllOnClick={() => navigate("/buildingslocks")}
+          linkDestination="/buildingslocks"
         />
       </div>
       <FourColumnVideoLayout
         heading="Deeper Cuts"
         dataArray={array4}
-        seeAllOnClick={() => navigate("/deepercuts")}
+        linkDestination="/deepercuts"
       />
       <div
         style={{
@@ -58,6 +58,7 @@ const GroundWork = () => {
         heading="Play"
         dataArray={array4}
         seeAllOnClick={() => navigate("/play")}
+        linkDestination="/play"
       />
       <BrowseByTags />
       <Footer />

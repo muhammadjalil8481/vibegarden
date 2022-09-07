@@ -7,7 +7,7 @@ import UserButton from "../userButton.js";
 
 const NavBar = ({ onlyBrand }) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
@@ -28,37 +28,44 @@ const NavBar = ({ onlyBrand }) => {
   return (
     <Navbar expand="lg" className="navbar">
       <div className="container-lg">
-        <Navbar.Brand className="brand" onClick={() => navigate("/")}>
-          <img src={images.logo} alt="Vibe Garden Logo" />
-        </Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand className="brand">
+            <img src={images.logo} alt="Vibe Garden Logo" />
+          </Navbar.Brand>
+        </Link>
         {!onlyBrand && (
           <>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
-                <NavLink onClick={() => navigate("/groundwork")}>
-                  <div className="list_item">Groundwork</div>
+                <NavLink>
+                  <Link to="/groundwork">
+                    <div className="list_item">Groundwork</div>
+                  </Link>
                 </NavLink>
-                <NavLink onClick={() => navigate("/tools")}>
-                  <div className="list_item">Tools</div>
+                <NavLink>
+                  <Link to="/tools">
+                    <div className="list_item">Tools</div>
+                  </Link>
                 </NavLink>
-                <NavLink onClick={() => navigate("/guides")}>
-                  <div className="list_item">Guides</div>
+                <NavLink>
+                  <Link to="/guides">
+                    <div className="list_item">Guides</div>
+                  </Link>
                 </NavLink>
-                <NavLink onClick={() => navigate("/community-garden")}>
-                  <div className="list_item">Community Garden</div>
+                <NavLink>
+                  <Link to="/community-garden">
+                    <div className="list_item">Community Garden</div>
+                  </Link>
                 </NavLink>
               </Nav>
               {!user && (
                 <Nav className="ms-auto">
                   <div className="navbar-actions">
                     <NavLink>
-                      <div
-                        className="list_item"
-                        onClick={() => navigate("/login")}
-                      >
-                        Login
-                      </div>
+                      <Link to="/login">
+                        <div className="list_item">Login</div>
+                      </Link>
                     </NavLink>
                     <div className="nav-btn">
                       <Link to={"/join-us"}>
@@ -78,12 +85,16 @@ const NavBar = ({ onlyBrand }) => {
                     {expanded && dimensions.width >= 992 && (
                       <div className="expandedBar">
                         <NavLink onClick={() => navigate("profile")}>
-                          <div className="list_item-expanded">
-                            Profile Settings
-                          </div>
+                          <Link to="/profile">
+                            <div className="list_item-expanded">
+                              Profile Settings
+                            </div>
+                          </Link>
                         </NavLink>
                         <NavLink>
-                          <div className="list_item-expanded ">Logout</div>
+                          <Link to="/login">
+                            <div className="list_item-expanded ">Logout</div>
+                          </Link>
                         </NavLink>
                       </div>
                     )}

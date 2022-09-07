@@ -5,7 +5,7 @@ import images from "../../constants/images";
 import FormGroupAuth from "../FormInputAuth";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { green } from "@mui/material/colors";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const FourColumnVideoLayout = ({
   leftHeading,
@@ -21,6 +21,7 @@ const FourColumnVideoLayout = ({
   dataArray = [],
   seeAllOnClick = () => null,
   backLink,
+  linkDestination = "#",
 }) => {
   const navigate = useNavigate();
   return (
@@ -72,10 +73,6 @@ const FourColumnVideoLayout = ({
                   onClick={() =>
                     navigate("/individualGroundWork", {
                       state: {
-                        // title: video.title,
-                        // desc: video.description,
-                        // image: video.image,
-                        // video: video.video,
                         ...video,
                       },
                     })
@@ -90,24 +87,24 @@ const FourColumnVideoLayout = ({
             </div>
           ))}
         </div>
-        {/* <Link to={`${seeAllDestination}`}> */}
-        {!backLink && (
-          <h5
-            className={`fcvl-link ${whiteLink && "color-white"}`}
-            onClick={() => seeAllOnClick()}
-          >
-            {`See All >`}
-          </h5>
-        )}
-        {backLink && (
-          <h5
-            className={`fcvl-link ${whiteLink && "color-white"}`}
-            onClick={() => seeAllOnClick()}
-          >
-            {`< Back To All GroundWork`}
-          </h5>
-        )}
-        {/* </Link> */}
+        <Link to={`${linkDestination}`}>
+          {!backLink && (
+            <h5
+              className={`fcvl-link ${whiteLink && "color-white"}`}
+              // onClick={() => seeAllOnClick()}
+            >
+              {`See All >`}
+            </h5>
+          )}
+          {backLink && (
+            <h5
+              className={`fcvl-link ${whiteLink && "color-white"}`}
+              onClick={() => seeAllOnClick()}
+            >
+              {`< Back To All GroundWork`}
+            </h5>
+          )}
+        </Link>
       </div>
     </section>
   );

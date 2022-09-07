@@ -16,6 +16,7 @@ const JoinUs = () => {
   let isEmailVerified = null;
   if (location.state && location.state.isEmailVerified) isEmailVerified = "yes";
  
+  
 
   return (
     <div className="join-us">

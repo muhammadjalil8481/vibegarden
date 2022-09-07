@@ -106,9 +106,7 @@ const ProfileScreen = () => {
       </section>
       <Footer />
       {showModal && (
-        // <div onClick={() => setShowModal(false)}>
         <ProfileModal showModal={showModal} setShowModal={setShowModal} />
-        // </div>
       )}
     </>
   );

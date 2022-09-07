@@ -20,13 +20,12 @@ const Footer = () => {
             <p className="footer-para">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-            <button
-              className="footer-button bg-gradient-pink footer-app-btn"
-              onClick={() => navigate("/appDownload")}
-            >
-              <img src={androidIcon} />
-              VibeBloom App
-            </button>
+            <Link to="/appDownload">
+              <button className="footer-button bg-gradient-pink footer-app-btn">
+                <img src={androidIcon} />
+                VibeBloom App
+              </button>
+            </Link>
             <button className="footer-button">
               <img src={appleIcon} />
               Download
@@ -39,13 +38,18 @@ const Footer = () => {
           <div class="col-md-4 col-sm-3 col-lg-3  mb-4 footer-links-col">
             <h4 class="footer-list-heading">Quick Links</h4>
             <ul class="footer-list">
-              <li onClick={() => navigate("/groundwork")}>Groundwork</li>
-              <li onClick={() => navigate("/tools")}>Tools</li>
-              <li onClick={() => navigate("/guides")}>Guides</li>
-              <li onClick={() => navigate("/community-garden")}>
-                Community Garden
-              </li>
-              <li onClick={() => navigate("/about-us")}>About Us</li>
+              <Link to="/groundwork">
+                <li>Groundwork</li>
+              </Link>
+              <Link to="/guides">
+                <li>Guides</li>
+              </Link>
+              <Link to="/community-garden">
+                <li>Community Garden</li>
+              </Link>
+              <Link to="/about-us">
+                <li>About Us</li>
+              </Link>
             </ul>
           </div>
           <div class="col-md-4 col-sm-3 col-lg-3 mb-md-0 mb-4 footer-links-col">
@@ -87,10 +91,12 @@ const Footer = () => {
             <img src={images.paymentOptions} />
           </div>
           <div className="col-md-6 footer-links">
-            <li onClick={() => navigate("/termsandconditions")}>
-              Terms And Conditions
-            </li>
-            <li onClick={() => navigate("/privacypolicy")}>Privacy Policy</li>
+            <Link to="/termsandconditions">
+              <li>Terms And Conditions</li>
+            </Link>
+            <Link to="/privacypolicy">
+              <li>Privacy Policy</li>
+            </Link>
           </div>
         </div>
         <div className="footer-line-break"></div>
