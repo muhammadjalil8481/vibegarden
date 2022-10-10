@@ -7,7 +7,7 @@ const MoreVG = () => {
   return (
     <section className="mvg py-5 gx-xl-0 gx-lg-1">
       <ContainerSection isFluid={"yes"}>
-        <h2 className="mvg-heading mb-5">More About Vibe garden</h2>
+        <h2 className="mvg-heading mb-5">More About VibeGarden</h2>
         <div className="container-lg mvg-container">
           <div className="row mvg-row ">
             <div className="col-md-4 mvg-item ">

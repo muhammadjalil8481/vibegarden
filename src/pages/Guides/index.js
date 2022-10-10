@@ -22,10 +22,16 @@ const Guides = () => {
           quote2ndPart="lorem ipsum lorem ipsum.”"
           quote1stPart="“Lorem ipsum lorem ipsum lorem;"
           greenColor
+          author="– Lorem Ipsum Dolar"
+          heading="Lorem Ipsum"
         />
       </div>
       <div className="bg-gradient-pink">
-        <GradientImageInfoSection videoCardLeftMargin={"30px"} noButton />
+        <GradientImageInfoSection
+          videoCardLeftMargin={"30px"}
+          noButton
+          heading="Vibe Guides"
+        />
       </div>
       <ScheduleSection />
       <GreenLineBreak />

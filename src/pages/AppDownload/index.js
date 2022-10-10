@@ -15,8 +15,8 @@ const AppDownload = () => {
           className="icon"
         />
       </div>
-      <div className="ad-card-container">
-        <div className="ad-card card border-0">
+      <div className="add-card-container">
+        <div className="add-card card border-0">
           <h4>You're invited to meditate on Vibe Garden</h4>
           <p>Scan QR to download the app</p>
           <div className="ad-card-qrcode">
@@ -27,6 +27,19 @@ const AppDownload = () => {
           <img src={images.logo4} />
         </div>
       </div>
+      {/* <h1>dxms</h1> */}
+      {/* <div className="ad-card-container">
+        <div className="ad-card card border-0">
+          <h4>You're invited to meditate on Vibe Garden</h4>
+          <p>Scan QR to download the app</p>
+          <div className="ad-card-qrcode">
+            <img src={images.qrCode} />
+          </div>
+        </div>
+        <div className="circle-img">
+          <img src={images.logo4} />
+        </div>
+      </div> */}
     </section>
   );
 };

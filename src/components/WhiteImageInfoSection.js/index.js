@@ -34,6 +34,7 @@ const WhiteImageInfoSection = ({
   heading = "Go Deeper - Vibe Guides",
   rightAlignBtn,
   blackHeading,
+  vidHeading,
 }) => {
   return (
     <section className="wiis">
@@ -58,11 +59,9 @@ const WhiteImageInfoSection = ({
               {doubleHeading && (
                 <div className="wiis-heading-double-container">
                   <h3 className="wiis-heading-double">
-                    Embodying Your Fullness
+                    A New Kind Of Health Club
                   </h3>
-                  <h3 className="wiis-heading-double">
-                    Embodying Your Fullness
-                  </h3>
+                  <h3 className="wiis-heading-double">A New Kind Of Church</h3>
                 </div>
               )}
               <p className={`${whitePara && "text-white"} wiis-para mt-5 mb-5`}>
@@ -111,6 +110,9 @@ const WhiteImageInfoSection = ({
                 (orderReverse || orderReverseWithButton) && "order-md-3"
               }`}
             >
+              {vidHeading && (
+                <h4 className="wiis-vid-cardHeading">What Next?</h4>
+              )}
               <div
                 className={`wiis-vid-card ${
                   orderReverse && "wiis-vid-card-margin"
@@ -130,7 +132,7 @@ const WhiteImageInfoSection = ({
               <h4 className="wiis-bottomHeading">
                 Register Your Interest; Shad Your Ideas
               </h4>
-              <ButtonFilled bgGradient={"yes"} paddingX />
+              <ButtonFilled bgGradient={"yes"} text={btnText} />
             </div>
           )}
         </div>

@@ -5,19 +5,21 @@ import Footer from "../../components/Footer";
 import { dummyVideodata } from "../../constants/dummyVideoData";
 import { Link, useNavigate } from "react-router-dom";
 
-const BuildingSlocks = () => {
+const ToolsForConnection = () => {
   return (
     <div className="fcvl-caller">
       <NavBar />
       <FourColumnVideoLayout
         searchInput
-        heading="Building Slocks"
+        heading="Tools For Connection "
         dataArray={dummyVideodata}
         backLink
+        linkDestination="/tools"
+        backText="Tools"
       />
       <Footer />
     </div>
   );
 };
 
-export default BuildingSlocks;
+export default ToolsForConnection;

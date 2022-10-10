@@ -1,14 +1,13 @@
 import React from "react";
 import ScheduleCard from "../ScheduleCard";
 
-
 const ScheduleSection = () => {
   return (
     <div className="container ss-container">
       <div className="row ss-row">
         <div className="col-md-5 ss-col">
           <div className="ss-card-container">
-            <ScheduleCard />
+            <ScheduleCard name="Erin" />
           </div>
         </div>
         <div className="col-md-1 line-break-container">
@@ -16,7 +15,7 @@ const ScheduleSection = () => {
         </div>
         <div className="col-md-5 ss-col">
           <div className="ss-card-container">
-            <ScheduleCard />
+            <ScheduleCard name="Kate" />
           </div>
         </div>
       </div>

@@ -29,6 +29,9 @@ import Teachers from "../pages/Teachers";
 import Topic from "../pages/Topic";
 import Schedule from "../pages/Schedule";
 import Payment from "../pages/Payment/Payment";
+import ToolsForConnecting from "../pages/ToolsForConnecting";
+import ToolsForWorker from "../pages/ToolsForWorker";
+import ToolsForConnection from "../pages/ToolsForConnection";
 
 const Navigation = () => {
   return (
@@ -56,6 +59,9 @@ const Navigation = () => {
       <Route element={<BuildingSlocks />} path="/buildingslocks" />
       <Route element={<DeeperCuts />} path="/deepercuts" />
       <Route element={<Play />} path="/play" />
+      <Route element={<ToolsForConnecting />} path="/toolsforconnecting" />
+      <Route element={<ToolsForWorker />} path="/toolsforworker" />
+      <Route element={<ToolsForConnection />} path="/toolsforconnection" />
       <Route element={<IndividualGroundWork />} path="/individualGroundWork" />
       <Route element={<Teachers />} path="/teachers" />
       <Route element={<Topic />} path="/topic" />

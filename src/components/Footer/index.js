@@ -35,7 +35,7 @@ const Footer = () => {
               Download
             </button>
           </div>
-          <div class="col-md-4 col-sm-3 col-lg-3  mb-4 footer-links-col">
+          <div class="col-md-4 col-sm-3 col-lg-3  mb-4 footer-links-col footer-links-col-1">
             <h4 class="footer-list-heading">Quick Links</h4>
             <ul class="footer-list">
               <Link to="/groundwork">
@@ -52,7 +52,7 @@ const Footer = () => {
               </Link>
             </ul>
           </div>
-          <div class="col-md-4 col-sm-3 col-lg-3 mb-md-0 mb-4 footer-links-col">
+          <div class="col-md-4 col-sm-3 col-lg-3 mb-md-0 mb-4 footer-links-col footer-links-col-2">
             <h4 class="footer-list-heading">Contact Us</h4>
             <ul class="footer-list">
               <li>Sample@mail.com</li>

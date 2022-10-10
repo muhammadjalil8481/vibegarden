@@ -15,7 +15,7 @@ import images from "../../constants/images";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="remove-overflow">
       <NavBar />
       <div className="bg-gradient-blueflowers">
         <Hero
@@ -44,7 +44,7 @@ const HomePage = () => {
         <StayInTouch />'
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

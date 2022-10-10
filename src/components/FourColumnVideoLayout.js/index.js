@@ -22,6 +22,7 @@ const FourColumnVideoLayout = ({
   seeAllOnClick = () => null,
   backLink,
   linkDestination = "#",
+  backText = "Ground Work",
 }) => {
   const navigate = useNavigate();
   return (
@@ -97,11 +98,8 @@ const FourColumnVideoLayout = ({
             </h5>
           )}
           {backLink && (
-            <h5
-              className={`fcvl-link ${whiteLink && "color-white"}`}
-              onClick={() => seeAllOnClick()}
-            >
-              {`< Back To All GroundWork`}
+            <h5 className={`fcvl-link ${whiteLink && "color-white"}`}>
+              {`< Back To All ${backText}`}
             </h5>
           )}
         </Link>

@@ -17,7 +17,7 @@ const Schedule = () => {
       <NavBar />
       <div className="container">
         <div className="teacher-schedule-info">
-          <h3 className="teacher-heading">Teacher Name</h3>
+          <h3 className="teacher-heading">Katie Scater</h3>
           <div className="row d-flex teacher-row">
             <div className="col-lg-4 col-md-6 teacher-img-col">
               <div className="teacher-image">
@@ -57,7 +57,7 @@ const Schedule = () => {
             </div>
           </div>
           <div className="col-md-5 schedule-right">
-            <h4 className="schedule-heading">Kati Schedule</h4>
+            <h4 className="schedule-heading">Session Length</h4>
             <div className="schedule-right-timeSelect">
               <div className="schedule-right-timeBtn ">
                 <div

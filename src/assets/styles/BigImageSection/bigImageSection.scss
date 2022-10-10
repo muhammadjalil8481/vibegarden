@@ -9,11 +9,25 @@
   }
   .bis-video-card {
     width: 50%;
+    height: 40rem;
+
     @media (max-width: 991px) {
       width: 80%;
     }
-    @media (max-width: 520px) {
+    @media (max-width: 767px) {
       width: 90%;
+    }
+    @media (max-width: 575px) {
+      height: 35rem;
+    }
+    @media (max-width: 490px) {
+      height: 32rem;
+    }
+    @media (max-width: 420px) {
+      height: 30rem;
+    }
+    @media (max-width: 360px) {
+      height: 28rem;
     }
   }
   .bis-heading {

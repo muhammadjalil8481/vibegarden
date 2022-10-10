@@ -28,7 +28,7 @@ const TeacherInfo = () => {
         </div>
       </div>
       <div className="teacher-content-slider container">
-        <VideoCardSlider />
+        <VideoCardSlider heading="Related Content" />
       </div>
       <div className="teacher-info-reels container">
         <h2>Nightlight Reels</h2>

@@ -18,10 +18,15 @@ const HomeLoggedIn = () => {
   console.log(location);
 
   return (
-    <>
+    <div className="remove-overflow">
       <NavBar />
       <div className="bg-gradient-blueflowers">
-        <Hero />
+        <Hero
+          quote1stPart={`"You can put all the flowers`}
+          quote2ndPart={`but you can't stop the spring"`}
+          author="P.Neauda"
+          heading="Welcome Back, You"
+        />
       </div>
       <WhiteImageInfoSection2 />
       <div className="bg-gradient-green">
@@ -29,7 +34,7 @@ const HomeLoggedIn = () => {
       </div>
       <GroundWorkEssentials />
       <LineBreak />
-      <FeaturedTools leftHeading heading="Your Recent Vibes" />
+      <FeaturedTools leftHeading heading="Your Recent Vibes" noPara />
       <HowItWorks />
       <BrowseByTags />
       <div className="bg-gradient-pinkMask">
@@ -38,6 +43,7 @@ const HomeLoggedIn = () => {
           topHeading
           videoCardWidth="350px"
           height="270px"
+          btnText="See More"
         />
       </div>
       <div className="remove-overflow">
@@ -52,6 +58,7 @@ const HomeLoggedIn = () => {
             rightAlignHeading
             whiteHeading
             whitePara
+            btnText="See More"
           />
         </div>
       </div>
@@ -60,7 +67,7 @@ const HomeLoggedIn = () => {
       </div>
       <BigImageSection />
       <Footer />
-    </>
+    </div>
   );
 };
 

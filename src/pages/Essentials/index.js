@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Essentials = () => {
   return (
-    <>
+    <div className="fcvl-caller">
       <NavBar />
       <FourColumnVideoLayout
         searchInput
@@ -16,7 +16,7 @@ const Essentials = () => {
         backLink
       />
       <Footer />
-    </>
+    </div>
   );
 };
 

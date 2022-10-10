@@ -31,7 +31,7 @@ const HowItWorks = () => {
             </div>
             <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
               <div className="hiw-img-container">
-                <img src={howItWorks1} className="hiw-img" />
+                <img src={howItWorks2} className="hiw-img" />
               </div>
               <div className="hiw-text-container">
                 <h5 className="hiw-text-heading">Column Header Green</h5>
@@ -46,7 +46,7 @@ const HowItWorks = () => {
             </div>
             <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
               <div className="hiw-img-container">
-                <img src={howItWorks1} className="hiw-img" />
+                <img src={howItWorks3} className="hiw-img" />
               </div>
               <div className="hiw-text-container">
                 <h5 className="hiw-text-heading">Column Header Green</h5>
@@ -57,11 +57,11 @@ const HowItWorks = () => {
               </div>
             </div>
             <div className="col-md-1 col-sm-2 col-3 hiw-small-col">
-              <img src={plusSign} />
+              <img src={equalsSign} />
             </div>
             <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
               <div className="hiw-img-container">
-                <img src={howItWorks1} className="hiw-img" />
+                <img src={howItWorks4} className="hiw-img" />
               </div>
               <div className="hiw-text-container">
                 <h5 className="hiw-text-heading">Column Header Green</h5>

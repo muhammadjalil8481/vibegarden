@@ -26,7 +26,7 @@ const ThankYou = () => {
       </p>
       <div>
         <Link to="/schedule">
-        <ButtonFilled text="Done" bgGradient={"yes"} paddingX />
+          <ButtonFilled text="Done" bgGradient={"yes"} paddingX />
         </Link>
       </div>
     </div>

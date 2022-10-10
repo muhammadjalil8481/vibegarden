@@ -7,7 +7,7 @@ import VidCard from "../VidCard";
 
 const BigImageSection = () => {
   return (
-    <section className="bis text-center">
+    <section className="bis text-center ">
       <ContainerSection isFluid={"yes"}>
         <div className="container bis-container ">
           <h2 className="bis-heading">Vibe Bloom</h2>
@@ -17,7 +17,7 @@ const BigImageSection = () => {
             elit. a.Body copy style for white text on dark or gradiennulla.
           </p>
           <div className="bis-video-card">
-            <VidCard />
+            <VidCard image={images.placeholder2} />
           </div>
         </div>
       </ContainerSection>

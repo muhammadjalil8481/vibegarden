@@ -7,17 +7,16 @@ import { Link, useNavigate } from "react-router-dom";
 
 const DeeperCuts = () => {
   return (
-    <>
+    <div className="fcvl-caller">
       <NavBar />
       <FourColumnVideoLayout
         searchInput
         heading="Deeper Cuts"
         dataArray={dummyVideodata}
         backLink
-        
       />
       <Footer />
-    </>
+    </div>
   );
 };
 

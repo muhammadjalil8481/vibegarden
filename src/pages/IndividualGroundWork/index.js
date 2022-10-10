@@ -98,7 +98,7 @@ const IndividualGroundWork = () => {
         </div>
       </section>
       <div className="idgw3-video-slider container-xxl">
-        <VideoCardSlider />
+        <VideoCardSlider heading="Related Content" />
       </div>
       <section className="container-lg idgw-links">
         <h2>Additional Resource</h2>

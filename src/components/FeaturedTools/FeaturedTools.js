@@ -19,7 +19,7 @@ const FeaturedTools = ({
           <h2
             className={`ft-heading ${!leftHeading && "text-center"} ${
               whiteHeading && "color-white"
-            }`}
+            } ${noPara && "mb-5"}`}
           >
             {heading}
           </h2>

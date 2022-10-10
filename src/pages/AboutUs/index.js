@@ -18,13 +18,23 @@ const AboutUs = () => {
       </div>
       <div className="au-wiis-section">
         <div className="au-wiis-reverse">
-          <WhiteImageInfoSection noButton />
+          <WhiteImageInfoSection
+            noButton
+            mainHeading="H3 Headline Style Green"
+          />
         </div>
         <div className="au-wiis">
-          <WhiteImageInfoSection noButton orderReverseWithButton />
+          <WhiteImageInfoSection
+            noButton
+            orderReverseWithButton
+            mainHeading="H3 Headline Style Green"
+          />
         </div>
         <div className="au-wiis-reverse">
-          <WhiteImageInfoSection noButton />
+          <WhiteImageInfoSection
+            noButton
+            mainHeading="H3 Headline Style Green"
+          />
         </div>
       </div>
 

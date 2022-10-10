@@ -21,12 +21,21 @@ const CommunityGarden = () => {
           quote2ndPart="lorem ipsum lorem ipsum.”"
           quote1stPart="“Lorem ipsum lorem ipsum lorem;"
           greenColor
+          author="– Lorem Ipsum Dolar"
+          heading="Lorem Ipsum"
         />
       </div>
       <div className="bg-gradient-green">
-        <GradientImageInfoSection videoCardLeftMargin={"30px"} noButton />
+        <GradientImageInfoSection
+          videoCardLeftMargin={"30px"}
+          noButton
+          heading="Coming Home Together A Beginning"
+        />
       </div>
-      <FourColumnVideoLayout dataArray={array4} />
+      <FourColumnVideoLayout
+        dataArray={array4}
+        heading="Featured Tool For Connection"
+      />
       <GreenLineBreak />
       <WhiteImageInfoSection
         noButton
@@ -34,6 +43,8 @@ const CommunityGarden = () => {
         doubleHeading
         videoCardTopHeading
         bottomInfo
+        vidHeading
+        btnText="Take A Survey"
       />
       <GreenLineBreak />
       <ButtonAndHeading2 />
