@@ -24,7 +24,7 @@ const BpIcon = styled("span")(({ theme }) => ({
   },
   "input:hover ~ &": {
     backgroundColor:
-      theme.palette.mode === "dark" ? "#30404d" : "rgba(255, 84, 90, 1)",
+      theme.palette.mode === "dark" ? "#30404d" : "rgba(27, 91, 47, 1)",
   },
   "input:disabled ~ &": {
     boxShadow: "none",
@@ -50,7 +50,7 @@ const BpCheckedIcon = styled(BpIcon)({
     content: '""',
   },
   "input:hover ~ &": {
-    backgroundColor: "rgba(255, 84, 90, 1)",
+    backgroundColor: "rgba(27, 91, 47, 1)",
   },
 });
 

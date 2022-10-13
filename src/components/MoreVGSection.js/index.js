@@ -15,6 +15,7 @@ const MoreVG = () => {
                 btnText="Explorer Groundwork"
                 heading="A Creation Story"
                 image={images.placeholder3}
+                linkText="/groundwork"
               />
             </div>
             <div className="col-md-4 mvg-item ">
@@ -29,6 +30,7 @@ const MoreVG = () => {
                 heading="Teachers"
                 btnText="Visit Teacher"
                 image={images.placeholder5}
+                linkText="/teachers"
               />
             </div>
           </div>

@@ -7,6 +7,8 @@ import PinkIcon from "../../assets/images/pink-icon.svg";
 import images from "../../constants/images";
 import GreenButton from "../../components/Button/GreenButton";
 import Footer from "../../components/Footer";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import { green } from "@mui/material/colors";
 
 const SearchPage = () => {
   const [activeTab, setActiveTab] = useState("top");
@@ -16,9 +18,10 @@ const SearchPage = () => {
       <div className="container-md sp">
         <div className="sp-top">
           <div className="sp-top-headingAndCount">
-            <h3 className="sp-top-heading">Groundwork</h3>
+            <h3 className="sp-top-heading">{activeTab} Results</h3>
             <p className="sp-top-count">37 Result</p>
           </div>
+
           <div className="sp-top-search">
             <FormGroupAuth noLabel placeHolder="Search..." icon />
           </div>
@@ -61,7 +64,12 @@ const SearchPage = () => {
             <p>Tools For Connection</p>
           </div>
         </div>
-        <h4 className="sp-result">{activeTab} Result</h4>
+        <div className="sp-resultAndFilter">
+          <h4 className="sp-result">{activeTab} Results</h4>
+          <div className="sp-filter">
+            <FilterAltIcon fontSize="large" sx={{ color: green[700] }} />
+          </div>
+        </div>
         <div className="row sp-row">
           <div className="col-lg-7 sp-left-col">
             <div className="sp-item">

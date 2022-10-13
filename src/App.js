@@ -13,6 +13,7 @@ function App() {
     setPath(location.pathname);
     console.log(path);
     setShowModal(false);
+    window.scrollTo(0, 0);
     setTimeout(() => {
       !user && setShowModal(true);
     }, 3000);

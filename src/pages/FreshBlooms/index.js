@@ -34,7 +34,12 @@ const FreshBlooms = () => {
         />
       </div>
       <div className="au-wiis">
-        <WhiteImageInfoSection noButton lightButton postedDate />
+        <WhiteImageInfoSection
+          noButton
+          lightButton
+          postedDate
+          mainHeading="H3 Headline Style Green"
+        />
       </div>
       <div className="au-wiis-reverse fb-reverse">
         <WhiteImageInfoSection
@@ -45,9 +50,8 @@ const FreshBlooms = () => {
           mainHeading="H3 Headline Style Green"
         />
       </div>
-      <div className="au-wiis-reverse fb-reverse">
+      <div className="au-wiis">
         <WhiteImageInfoSection
-          orderReverseWithButton
           noButton
           lightButton
           postedDate

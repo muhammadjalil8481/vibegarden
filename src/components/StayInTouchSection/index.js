@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import images from "../../constants/images";
 import ButtonFilled from "../Button/ButtonFilled";
+import ThankYouSubModal from "../ThankYouSubModel";
 
 // const sectionStyle = {
 //   backgroundImage: `url(${images.pinkMask})`,
 //   //   backgroundColor: "red",
 // };
 const StayInTouch = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <Container
       fluid
@@ -25,7 +27,12 @@ const StayInTouch = () => {
         placeholder="Enter your email address"
         className="sit-input"
       />
-      <ButtonFilled text="Subscribe" bgGradient="yes" paddingX="60px" />
+      <div onClick={() => setShowModal(true)}>
+        <ButtonFilled text="Subscribe" bgGradient="yes" paddingX="60px" />
+      </div>
+      {showModal && (
+        <ThankYouSubModal showModal={showModal} setShowModal={setShowModal} />
+      )}
     </Container>
   );
 };

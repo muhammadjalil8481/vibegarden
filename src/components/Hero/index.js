@@ -12,9 +12,13 @@ const Hero = ({
   author = "Author Name",
   heading = "Hi, You",
   greenColor,
+  shortPadding,
 }) => {
   return (
-    <Container fluid className={`hero text-center px-4 `}>
+    <Container
+      fluid
+      className={`hero text-center px-4 ${shortPadding && "short-padding"}`}
+    >
       <h2 className={`hero-quote ${greenColor && "text-green"}`}>
         {quote1stPart}
       </h2>

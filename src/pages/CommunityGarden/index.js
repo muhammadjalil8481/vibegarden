@@ -23,6 +23,7 @@ const CommunityGarden = () => {
           greenColor
           author="– Lorem Ipsum Dolar"
           heading="Lorem Ipsum"
+          shortPadding
         />
       </div>
       <div className="bg-gradient-green">
