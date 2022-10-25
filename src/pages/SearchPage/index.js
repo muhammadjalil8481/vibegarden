@@ -11,7 +11,7 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { green } from "@mui/material/colors";
 
 const SearchPage = () => {
-  const [activeTab, setActiveTab] = useState("top");
+  const [activeTab, setActiveTab] = useState("all");
   return (
     <section className="searchpage">
       <NavBar />
@@ -19,7 +19,7 @@ const SearchPage = () => {
         <div className="sp-top">
           <div className="sp-top-headingAndCount">
             <h3 className="sp-top-heading">{activeTab} Results</h3>
-            <p className="sp-top-count">37 Result</p>
+            <p className="sp-top-count">37 Results</p>
           </div>
 
           <div className="sp-top-search">
@@ -28,10 +28,10 @@ const SearchPage = () => {
         </div>
         <div className="sp-tabs">
           <div
-            className={`${activeTab === "top" && "active-tab"} sp-tab`}
-            onClick={() => setActiveTab("top")}
+            className={`${activeTab === "all" && "active-tab"} sp-tab`}
+            onClick={() => setActiveTab("all")}
           >
-            <p>Top</p>
+            <p>All</p>
           </div>
           <div
             className={`${activeTab === "groundwork" && "active-tab"} sp-tab`}

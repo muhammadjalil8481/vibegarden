@@ -1,5 +1,6 @@
 const images = {
   logo: require("../assets/images/logo.png"),
+  logoSVG: require("../assets/images/vibegarden_logo.svg"),
   logo2: require("../assets/images/logo-2.png"),
   logo4: require("../assets/images/logo-3.png"),
   hero: require("../assets/images/hero.png"),
@@ -42,6 +43,8 @@ const images = {
   logo3: require("../assets/images/logo3.png"),
   teacher2: require("../assets/images/teacher2.png"),
   mobileapp: require("../assets/images/mobileapp.png"),
+  resonanceStar: require("../assets/images/resonance-star.png"),
+  resonanceRainbow: require("../assets/images/resonance-rainbow.png"),
 };
 
 export default images;

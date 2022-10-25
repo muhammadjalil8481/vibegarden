@@ -16,6 +16,8 @@ const ButtonFilled = ({
   paddingYSmall,
   padXResponsive,
   padYResponsive,
+  padXBig,
+  padYBig,
   // onPressFunction = () => null,
 }) => {
   return (
@@ -24,7 +26,7 @@ const ButtonFilled = ({
         padYResponsive && "pd-y-res"
       } ${padXResponsive && "pd-x-res"} ${paddingYSmall && "pd-y-small"} ${
         paddingXSmall && "pd-x-small"
-      } btn-filled`}
+      } ${padXBig && "pd-x-big"} ${padYBig && "pd-y-big"} btn-filled`}
       style={bgGradient === "yes" ? gradientBackground : null}
       // onPress={onPressFunction}
     >

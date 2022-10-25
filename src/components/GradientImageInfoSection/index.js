@@ -35,7 +35,7 @@ const GradientImageInfoSection = ({
             <p className="white-text section-text mt-2 mb-5">{desc}</p>
             {!noButton && (
               <div className="giid-btn-container">
-                <ButtonFilled text={buttonText} paddingYSmall />
+                <ButtonFilled text={buttonText} paddingYSmall padXResponsive />
               </div>
             )}
           </div>

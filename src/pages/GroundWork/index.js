@@ -21,6 +21,7 @@ const GroundWork = () => {
           greenColor
           author="– Lorem Ipsum Dolar"
           heading="Lorem Ipsum"
+          // reduceFont
           shortPadding
         />
       </div>

@@ -2,13 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav, NavLink } from "react-bootstrap";
 import ButtonOutline from "../Button/ButtonOutline";
 import images from "../../constants/images";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import UserButton from "../userButton.js";
+import VibeGardenLogo from "../../assets/images/vibegarden_logo.svg";
+import { IoNotificationsSharp, IoAddOutline } from "react-icons/io5";
+import NotificationPopUp from "../NotificationPopUp";
 
-const NavBar = ({ onlyBrand }) => {
+const NavBar = ({ onlyBrand, userNav = false }) => {
+  let location = useLocation();
   const navigate = useNavigate();
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(userNav);
   const [expanded, setExpanded] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth,
@@ -24,13 +29,23 @@ const NavBar = ({ onlyBrand }) => {
     updateSize();
     return () => window.removeEventListener("resize", updateSize);
   }, []);
+  useEffect(() => {
+    if (location.pathname === "/homepage" || location.pathname === "/tools")
+      setUser(true);
+  }, [location]);
 
   return (
     <Navbar expand="lg" className="navbar">
-      <div className="container-lg">
+      <div className="container-xl">
         <Link to="/">
           <Navbar.Brand className="brand">
-            <img src={images.logo} alt="Vibe Garden Logo" />
+            <div>
+              <img
+                src={VibeGardenLogo}
+                alt="Vibe Garden Logo"
+                style={{ width: "80%" }}
+              />
+            </div>
           </Navbar.Brand>
         </Link>
         {!onlyBrand && (
@@ -38,6 +53,7 @@ const NavBar = ({ onlyBrand }) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
+                {/* <NotificationPopUp /> */}
                 <NavLink>
                   <Link to="/groundwork">
                     <div className="list_item">Groundwork</div>
@@ -77,11 +93,28 @@ const NavBar = ({ onlyBrand }) => {
               )}
               {user && dimensions.width >= 992 && (
                 <Nav className="ms-auto">
-                  <div
-                    className="navbar-actions"
-                    onClick={() => setExpanded(!expanded)}
-                  >
-                    <UserButton />
+                  <div className="navbar-actions">
+                    <span className="navbar-tools-icon">
+                      <Link to="/resonance">
+                        <IoAddOutline size={25} />
+                      </Link>
+                    </span>
+
+                    <span className="navbar-actions-icon">
+                      <span
+                        onClick={() => setShowNotification(!showNotification)}
+                      >
+                        <IoNotificationsSharp
+                          size={25}
+                          fill="rgba(27, 91, 47, 1)"
+                          cursor="pointer"
+                        />
+                      </span>
+                      <span className="notification-dot"></span>
+                    </span>
+                    <UserButton
+                      onClickFunction={() => setExpanded(!expanded)}
+                    />
                     {expanded && dimensions.width >= 992 && (
                       <div className="expandedBar">
                         <NavLink onClick={() => navigate("profile")}>
@@ -98,6 +131,11 @@ const NavBar = ({ onlyBrand }) => {
                         </NavLink>
                       </div>
                     )}
+                    {showNotification && (
+                      <div className="nav-not">
+                        <NotificationPopUp />
+                      </div>
+                    )}
                   </div>
                 </Nav>
               )}
@@ -108,8 +146,22 @@ const NavBar = ({ onlyBrand }) => {
                       <div className="list_item">Profile Settings</div>
                     </NavLink>
                     <NavLink>
-                      <div className="list_item">Logout</div>
+                      <div className="list_item">Logo</div>
                     </NavLink>
+                    <NavLink>
+                      <div className="list_item">Resonance</div>
+                    </NavLink>
+                    <NavLink>
+                      <div
+                        className="list_item"
+                        // onClick={() => setShowNotification(!showNotification)}
+                      >
+                        Notification
+                      </div>
+                    </NavLink>
+                    {/* <div className="mobile-nav-not"> */}
+                    {/* <NotificationPopUp /> */}
+                    {/* </div> */}
                   </div>
                 </Nav>
               )}

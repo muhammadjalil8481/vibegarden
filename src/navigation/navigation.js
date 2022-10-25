@@ -32,6 +32,8 @@ import Payment from "../pages/Payment/Payment";
 import ToolsForConnecting from "../pages/ToolsForConnecting";
 import ToolsForWorker from "../pages/ToolsForWorker";
 import ToolsForConnection from "../pages/ToolsForConnection";
+import Resonance from "../pages/Resonance";
+import ResonanceFinder from "../pages/ResonanceFinder";
 
 const Navigation = () => {
   return (
@@ -69,6 +71,9 @@ const Navigation = () => {
       <Route element={<Payment />} path="/payment" />
       <Route element={<ThankYou />} path="/thankyou" />
       <Route element={<SearchPage />} path="/searchpage" />
+      <Route element={<Resonance />} path="/resonance" />
+      <Route element={<Resonance />} path="/resonance" />
+      <Route element={<ResonanceFinder />} path="/resonancefinder" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );

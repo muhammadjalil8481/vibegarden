@@ -6,9 +6,10 @@ import { red } from "@mui/material/colors";
 const UserButton = ({
   userImage = images.userImage,
   username = "Alex Gree",
+  onClickFunction = () => null,
 }) => {
   return (
-    <div className="user-btn">
+    <div className="user-btn" onClick={() => onClickFunction()}>
       <img src={userImage} className="user-btn-image" />
       <p className="user-btn-name">{username}</p>
       <KeyboardArrowDownIcon
