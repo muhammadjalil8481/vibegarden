@@ -20,8 +20,7 @@ const Tools = () => {
           greenColor
           author="– Lorem Ipsum Dolar"
           heading="Lorem Ipsum"
-          shortPadding
-          // reduceFont
+          topPadding
         />
       </div>
       <div className="bg-gradient-green">
@@ -36,7 +35,7 @@ const Tools = () => {
         leftHeading
         leftPara
         dataArray={array8}
-        heading="Tools For Connecting With Our Life"
+        heading="Tools For Light"
         linkDestination="/toolsforconnecting"
       />
       <div className="bg-gradient-pinkMask">

@@ -10,6 +10,7 @@ import VidCard from "../../components/VidCard";
 import images from "../../constants/images";
 import QuestionsData from "../../constants/dummyQuestions";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 const ResonanceFinder = () => {
   const [count, setCount] = useState(1);
@@ -45,7 +46,7 @@ const ResonanceFinder = () => {
             <div className="rf-top">
               <h4>Resonance Finder</h4>
               <span className="rf-topright">
-                <Link to="/home">
+                <Link to="/homepage">
                   <span>&#10005;</span>
                 </Link>
               </span>
@@ -113,7 +114,7 @@ const ResonanceFinder = () => {
                 >
                   <ButtonFilled
                     bgGradient={"yes"}
-                    text="Save"
+                    text={count < 4 ? "Next" : "See Results"}
                     padXBig
                     paddingY
                   />
@@ -201,6 +202,7 @@ const ResonanceFinder = () => {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

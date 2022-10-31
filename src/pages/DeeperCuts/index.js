@@ -14,6 +14,7 @@ const DeeperCuts = () => {
         heading="Deeper Cuts"
         dataArray={dummyVideodata}
         backLink
+        linkDestination="/groundwork"
       />
       <Footer />
     </div>

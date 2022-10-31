@@ -66,7 +66,7 @@ const Resonance = () => {
           </div>
         </div>
         <div className="resonance-btn">
-          <Link to="/resonancefinder">
+          <Link to="/homepage">
             <ButtonFilled
               bgGradient={"yes"}
               text="Save"

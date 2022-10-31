@@ -12,7 +12,7 @@ const GroundWork = () => {
   const array4 = dummyVideodata.slice(0, 4);
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="groundwork">
       <NavBar />
       <div className="bg-lightFlower ">
         <Hero
@@ -21,8 +21,7 @@ const GroundWork = () => {
           greenColor
           author="– Lorem Ipsum Dolar"
           heading="Lorem Ipsum"
-          // reduceFont
-          shortPadding
+          topPadding
         />
       </div>
       <div className="bg-gradient-pink">

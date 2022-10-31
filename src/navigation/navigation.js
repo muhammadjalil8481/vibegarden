@@ -34,6 +34,11 @@ import ToolsForWorker from "../pages/ToolsForWorker";
 import ToolsForConnection from "../pages/ToolsForConnection";
 import Resonance from "../pages/Resonance";
 import ResonanceFinder from "../pages/ResonanceFinder";
+import SelectAvatar from "../pages/SelectAvatar";
+import AvatarInfo from "../pages/AvatarInfo";
+import SelectBloom from "../pages/SelectBloom";
+import BloomInfo from "../pages/BloomInfo";
+import BloomCheck from "../pages/BloomCheck";
 
 const Navigation = () => {
   return (
@@ -74,6 +79,12 @@ const Navigation = () => {
       <Route element={<Resonance />} path="/resonance" />
       <Route element={<Resonance />} path="/resonance" />
       <Route element={<ResonanceFinder />} path="/resonancefinder" />
+      <Route element={<SelectAvatar />} path="/selectavatar" />
+      <Route element={<AvatarInfo />} path="/avatarinfo" />
+      <Route element={<SelectBloom />} path="/selectbloom" />
+      <Route element={<BloomInfo />} path="/bloominfo" />
+      <Route element={<BloomInfo />} path="/bloominfo" />
+      <Route element={<BloomCheck />} path="/bloomcheck" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );

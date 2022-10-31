@@ -44,14 +44,15 @@ function myArrow({ type, onClick, isEdge }) {
 
 const IndividualGroundWork = () => {
   const breakPoints = [{ width: 1, itemsToShow: 1 }];
+  const { state } = useLocation();
 
   return (
-    <>
+    <div className="indi vidual-groundwork">
       <NavBar />
       <section className="container idgw-1">
         <div className="idgw-1-headingAnIcon">
           <img src={pinkIcon} />
-          <h2>Family Of Light</h2>
+          <h2>{state?.heading || "heading"}</h2>
         </div>
         <p className="idgw-1-desc">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -170,7 +171,7 @@ const IndividualGroundWork = () => {
         text="Schedule Vibrguides"
       />
       <Footer />
-    </>
+    </div>
   );
 };
 

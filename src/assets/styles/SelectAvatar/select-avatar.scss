@@ -1,0 +1,105 @@
+@import "../variables.scss";
+
+.select-avatar {
+  //   background-color: salmon;
+  //   padding: 20rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  h2 {
+    color: $secondary;
+    text-align: center;
+  }
+  .avatar-container {
+    display: flex;
+    // background-color: sandybrown;
+    justify-content: center;
+    margin: 5rem 0;
+    .sa-imageAndText {
+      //   background-color: lawngreen;
+      margin: 0 2rem;
+      text-align: center;
+      .sa-choice-checked {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      p {
+        font-family: "josefin sans";
+        font-weight: 700;
+        color: rgba($black-3, 1);
+        margin-top: 1rem;
+        cursor: pointer;
+      }
+      .sa-image {
+        width: 12rem;
+        height: 12rem;
+        cursor: pointer;
+        // background-color: darkcyan;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.avatar-infoAndImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //   background-color: sandybrown;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url("../../images/light-flower-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  .avatar-back {
+    background-color: $secondary;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    cursor: pointer;
+  }
+  .avatar-info {
+    // background-color: darkcyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    h2 {
+      color: $secondary;
+      font-family: "josefin sans";
+      font-size: 7rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-family: "josefin sans";
+      font-size: 2rem;
+      width: 80%;
+      text-align: right;
+    }
+  }
+  .avatar-img {
+    // background-color: salmon;
+    width: 30%;
+    margin-left: 2rem;
+    img {
+      width: 100%;
+    }
+  }
+}

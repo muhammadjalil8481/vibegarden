@@ -16,6 +16,7 @@ const GroundWorkEssentials = () => {
           </p>
           <div className="ge-cards">
             <ThreeColumnWhiteVideoInfoLayout
+              noRedirect
               title1="A Creation Story"
               title2="A Creation Story"
               title3="A Creation Story"

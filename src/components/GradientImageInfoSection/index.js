@@ -4,6 +4,7 @@ import ButtonFilled from "../Button/ButtonFilled";
 import images from "../../constants/images";
 import VideoCard from "../VideoCard/VideoCard";
 import VidCard from "../VidCard";
+import { Link } from "react-router-dom";
 
 const para = `Body copy style for white text on dark or gradient backgrounds
 (Medium Weight) Lorem ipsum dolor sit amet, consectetur
@@ -23,6 +24,7 @@ const GradientImageInfoSection = ({
   heading = "Heading",
   desc = para,
   buttonText = "Button",
+  btnLink = "#",
 }) => {
   return (
     <section className="giid">
@@ -34,9 +36,15 @@ const GradientImageInfoSection = ({
             <h2 className="giid-heading ">{heading}</h2>
             <p className="white-text section-text mt-2 mb-5">{desc}</p>
             {!noButton && (
-              <div className="giid-btn-container">
-                <ButtonFilled text={buttonText} paddingYSmall padXResponsive />
-              </div>
+              <Link to={btnLink}>
+                <div className="giid-btn-container">
+                  <ButtonFilled
+                    text={buttonText}
+                    paddingYSmall
+                    padXResponsive
+                  />
+                </div>
+              </Link>
             )}
           </div>
           <div class="col-sm-6 giid-col giid-right-col">

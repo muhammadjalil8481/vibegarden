@@ -14,6 +14,7 @@ const Essentials = () => {
         heading="Essentials"
         dataArray={dummyVideodata}
         backLink
+        linkDestination="/groundwork"
       />
       <Footer />
     </div>

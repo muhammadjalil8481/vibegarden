@@ -11,7 +11,7 @@ const ToolsForConnecting = () => {
       <NavBar />
       <FourColumnVideoLayout
         searchInput
-        heading="Tools For Connecting With Our Life"
+        heading="Tools For Light"
         dataArray={dummyVideodata}
         backLink
         linkDestination="/tools"

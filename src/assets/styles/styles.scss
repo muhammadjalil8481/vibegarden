@@ -1,6 +1,8 @@
 @import "./NavBar/NavBar.scss";
 @import "./variables.scss";
 @import "./Hero/hero.scss";
+@import "./SelectAvatar/select-avatar.scss";
+@import "./HomeLoggedIn/HomeLoggedIn.scss";
 @import "./GradientImageInfoSection/GradientImageInfoSection.scss";
 @import "WhiteImageInfoSection/WhiteImageInfoSecion.scss";
 @import "./Button/button.scss";
@@ -240,9 +242,15 @@ button {
 .bg-lightFlower {
   background-image: url("../images/light-flower-bg.svg");
   background-repeat: no-repeat;
-  // background-size: cover;
   background-position: center;
 }
+.groundwork .bg-lightFlower,
+.tools .bg-lightFlower,
+.guides .bg-lightFlower,
+.community-garden .bg-lightFlower {
+  background-size: contain;
+}
+
 .text-end {
   text-align: end;
 }
@@ -317,10 +325,11 @@ a {
 }
 .psup {
   background-color: $white-2;
+  // background-color: salmon;
   border-radius: 2rem;
-  -webkit-box-shadow: -2px 2px 17px 0px rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: -2px 2px 17px 0px rgba(0, 0, 0, 0.24);
-  box-shadow: -2px 2px 17px 0px rgba(0, 0, 0, 0.24);
+  // -webkit-box-shadow: -2px 2px 17px 0px rgba(0, 0, 0, 0.24);
+  // -moz-box-shadow: -2px 2px 17px 0px rgba(0, 0, 0, 0.24);
+  // box-shadow: -2px 2px 17px 0px rgba(0, 0, 0, 0.24);
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -371,9 +380,9 @@ a {
   align-items: center;
   border-radius: 50%;
   position: absolute;
-  top: -15%;
+  top: -18%;
   @media (max-width: 570px) {
-    top: -20%;
+    top: -22%;
   }
   img {
     width: 100%;

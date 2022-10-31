@@ -29,10 +29,12 @@ const VideoCardShifted = ({
             </div>
             <p className="vcs-para">{desc}</p>
             <a className="vcs-link">
-              SEE MORE
-              <span className="vcs-link-icon">
-                <ArrowForwardIcon fontSize="large" />
-              </span>
+              <Link to="/individualgroundwork" state={{ heading: "Tonglen" }}>
+                SEE MORE
+                <span className="vcs-link-icon">
+                  <ArrowForwardIcon fontSize="large" />
+                </span>
+              </Link>
             </a>
           </div>
           <div className="vcs-video-card">

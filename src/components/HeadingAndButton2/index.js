@@ -6,7 +6,7 @@ const HeadingAndButton2 = ({ noHeading, noPara, noInput, noButton }) => {
   return (
     <div className="buttonAndHeading2">
       {!noHeading && (
-        <h2 className="bah2-heading">Stay In The Community Loop</h2>
+        <h2 className="bah2-heading">Stay In The Community Garden Loop</h2>
       )}
       {!noPara && (
         <p className="bah2-para">

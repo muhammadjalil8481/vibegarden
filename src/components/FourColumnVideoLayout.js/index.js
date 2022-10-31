@@ -23,6 +23,7 @@ const FourColumnVideoLayout = ({
   backLink,
   linkDestination = "#",
   backText = "Ground Work",
+  linkTo = "/",
 }) => {
   const navigate = useNavigate();
   return (
@@ -39,9 +40,9 @@ const FourColumnVideoLayout = ({
           <div className="fcvl-search-input-container">
             <div className="fcvl-search-input">
               <FormGroupAuth noLabel placeHolder="Search..." icon />
-              <div className="fcvl-search-input-icon-container">
-                <FilterAltIcon fontSize="large" sx={{ color: green[700] }} />
-              </div>
+              {/* <div className="fcvl-search-input-icon-container"> */}
+              {/* <FilterAltIcon fontSize="large" sx={{ color: green[700] }} /> */}
+              {/* </div> */}
             </div>
           </div>
         )}

@@ -24,8 +24,7 @@ const Guides = () => {
           greenColor
           author="– Lorem Ipsum Dolar"
           heading="Lorem Ipsum"
-          shortPadding
-          // reduceFont
+          topPadding
         />
       </div>
       <div className="bg-gradient-pink">

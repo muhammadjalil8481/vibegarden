@@ -81,18 +81,22 @@
   }
   .navbar-tools-icon {
     // padding: 0.5rem 0.5rem;
-    background-color: $secondary;
+    // background-color: $secondary;
+    // background-color: darkgoldenrod;
     border-radius: 50%;
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    // color: white;
     align-self: center;
     margin-right: 1.5rem;
     a {
-      color: white;
+      // color: white;
+    }
+    img {
+      width: 110%;
     }
   }
 }
@@ -120,7 +124,14 @@
   top: 120%;
   left: -70%;
 }
-
+.nav-links {
+  @media (min-width: 992px) {
+    // margin-left: -1rem !important;
+    // background-color: salmon !important;
+    position: relative !important;
+    left: -2.5rem !important;
+  }
+}
 .notification-popup {
   background-color: white;
   // border: 1px solid black;

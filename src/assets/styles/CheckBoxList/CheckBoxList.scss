@@ -2,10 +2,10 @@
 
 .form-group {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   .form-group-label {
     font-size: 1.4rem;
-    margin-top: 1.5rem;
+    margin-top: 0.6rem;
     color: $black-3;
   }
 }

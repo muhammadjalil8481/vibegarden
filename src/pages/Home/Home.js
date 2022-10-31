@@ -29,11 +29,13 @@ const HomePage = () => {
           videoCardLeftMargin={"30px"}
           heading="Embodying Your Fullness"
           buttonText="Explorer Tools"
+          btnLink="/tools"
         />
       </div>
       <WhiteImageInfoSection
         mainHeading="Coming Home Together"
         btnText="Join Us"
+        link="/join-us"
       />
       <HowItWorks />
       <FourColumnInfoSection />

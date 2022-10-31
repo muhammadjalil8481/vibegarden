@@ -45,6 +45,21 @@ const images = {
   mobileapp: require("../assets/images/mobileapp.png"),
   resonanceStar: require("../assets/images/resonance-star.png"),
   resonanceRainbow: require("../assets/images/resonance-rainbow.png"),
+  spiral: require("../assets/images/spiral.png"),
+  avatarWolf: require("../assets/images/avatar-wolf.png"),
+  avatarBear: require("../assets/images/avatar-bear.png"),
+  avatarLeopard: require("../assets/images/avatar-leopard.png"),
+  avatarDuck: require("../assets/images/avatar-duck.png"),
+  avatarDolphin: require("../assets/images/avatar-dolphin.png"),
+  wolfWoman: require("../assets/images/wolfwoman.png"),
+  bloomLotus: require("../assets/images/bloom-lotus.png"),
+  bloomRoss: require("../assets/images/bloom-ross.png"),
+  bloomMushroom: require("../assets/images/bloom-mushroom.png"),
+  bloomChu: require("../assets/images/bloom-chuchu.png"),
+  blueLotus: require("../assets/images/blue-lotus.png"),
+  divineRoss: require("../assets/images/divine-ross.png"),
+  mushroom: require("../assets/images/mushroom.png"),
+  chuchu: require("../assets/images/chuchu.png"),
 };
 
 export default images;

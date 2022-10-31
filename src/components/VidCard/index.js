@@ -14,6 +14,7 @@ const VidCard = ({
   subText,
   noTitle,
   pinkVideoIcon,
+  recentVibes,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -21,7 +22,7 @@ const VidCard = ({
     <>
       <div
         className="card vid-card border-0"
-        onClick={() => setShowModal(true)}
+        onClick={() => !recentVibes && setShowModal(true)}
       >
         <img src={image} className="vid-card-image" />
         {/* <div className="card-img-overlay"> */}

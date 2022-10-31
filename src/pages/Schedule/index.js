@@ -100,7 +100,7 @@ const Schedule = () => {
                 </div>
               </div>
               <div className="schedule-time-evening">
-                <h5>Evening</h5>
+                <h5>Afternoon</h5>
                 <div
                   className={`schedule-time-btn ${
                     selectedTime === "12:30 PM" && "active-time-btn"

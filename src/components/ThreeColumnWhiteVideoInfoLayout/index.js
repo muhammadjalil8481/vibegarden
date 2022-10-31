@@ -5,13 +5,15 @@ import VideoIcon from "../../assets/images/video-icon.svg";
 import PinkIcon from "../../assets/images/pink-icon.svg";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 import VidCard from "../VidCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ThreeColumnWhiteVideoInfoLayout = ({
   title1 = "Title1",
   title2 = "Title2",
   title3 = "Title3",
+  noRedirect,
 }) => {
+  const navigate = useNavigate();
   return (
     <div className="container-lg tcwvil">
       <div className="row tcwvil-row">
@@ -29,19 +31,27 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               elit. Mauris placerat euismod porttitor.
             </p>
             <div className="tcwvil-video">
-              <VidCard image={images.placeholder} />
+              {!noRedirect ? (
+                <VidCard image={images.placeholder} />
+              ) : (
+                <Link to="/individualgroundwork" state={{ heading: title1 }}>
+                  <VidCard image={images.placeholder} recentVibes />
+                </Link>
+              )}
             </div>
             <div className="tcwvil-subtext-container">
-              <Link to="/individualgroundwork">
+              <Link to="/individualgroundwork" state={{ heading: title1 }}>
                 <p className="tcwvil-subtext">Details</p>
               </Link>
               <Link to="/topic">
                 <p className="tcwvil-subtext">#Tag</p>
               </Link>
             </div>
-            <div className="tcwvil-btn">
-              <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
-            </div>
+            <Link to="/individualgroundwork" state={{ heading: title1 }}>
+              <div className="tcwvil-btn">
+                <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="col-md-4  tcwvil-card-container">
@@ -58,19 +68,27 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               elit. Mauris placerat euismod porttitor.
             </p>
             <div className="tcwvil-video">
-              <VidCard />
+              {!noRedirect ? (
+                <VidCard />
+              ) : (
+                <Link to="/individualgroundwork" state={{ heading: title2 }}>
+                  <VidCard recentVibes />
+                </Link>
+              )}
             </div>
             <div className="tcwvil-subtext-container">
-              <Link to="/individualgroundwork">
+              <Link to="/individualgroundwork" state={{ heading: title2 }}>
                 <p className="tcwvil-subtext">Details</p>
               </Link>
               <Link to="/topic">
                 <p className="tcwvil-subtext">#Tag</p>
               </Link>
             </div>
-            <div className="tcwvil-btn">
-              <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
-            </div>
+            <Link to="/individualgroundwork" state={{ heading: title2 }}>
+              <div className="tcwvil-btn">
+                <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="col-md-4 tcwvil-card-container">
@@ -87,19 +105,27 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               elit. Mauris placerat euismod porttitor.
             </p>
             <div className="tcwvil-video">
-              <VidCard image={images.placeholder4} />
+              {!noRedirect ? (
+                <VidCard image={images.placeholder4} />
+              ) : (
+                <Link to="/individualgroundwork" state={{ heading: title3 }}>
+                  <VidCard recentVibes image={images.placeholder4} />
+                </Link>
+              )}
             </div>
             <div className="tcwvil-subtext-container">
-              <Link to="/individualgroundwork">
+              <Link to="/individualgroundwork" state={{ heading: title3 }}>
                 <p className="tcwvil-subtext">Details</p>
               </Link>
               <Link to="/topic">
                 <p className="tcwvil-subtext">#Tag</p>
               </Link>
             </div>
-            <div className="tcwvil-btn">
-              <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
-            </div>
+            <Link to="/individualgroundwork" state={{ heading: title3 }}>
+              <div className="tcwvil-btn">
+                <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

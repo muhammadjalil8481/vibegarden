@@ -11,14 +11,15 @@ import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 import BigImageSection from "../../components/BigImageSection";
 import Footer from "../../components/Footer";
 import { useLocation } from "react-router-dom";
-import { CollectionsOutlined } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import ButtonFilled from "../../components/Button/ButtonFilled";
 
 const HomeLoggedIn = () => {
   const location = useLocation();
   console.log(location);
 
   return (
-    <div className="remove-overflow">
+    <div className="remove-overflow ">
       <NavBar />
       <div className="bg-gradient-blueflowers">
         <Hero
@@ -29,21 +30,47 @@ const HomeLoggedIn = () => {
         />
       </div>
       <WhiteImageInfoSection2 />
-      <div className="bg-gradient-green">
-        <FeaturedTools whiteHeading whitePara />
+      <div className="resonance-line bg-gradient-pinkMask">
+        <p>
+          Check your resonance; from Buddhism to Quantum Physics, see which
+          Topics you’ll vibe with most!
+        </p>
+        <Link to="/resonancefinder">
+          <ButtonFilled
+            paddingXSmall
+            text="Try Resonance Finder"
+            bgGradient="yes"
+          />
+        </Link>
+      </div>
+      <div className="bg-gradient-green homeloggedin-ft">
+        <FeaturedTools
+          whiteHeading
+          whitePara
+          recentVibes
+          idgwHeading="Tools Tag Video"
+        />
       </div>
       <GroundWorkEssentials />
       <LineBreak />
-      <FeaturedTools leftHeading heading="Your Recent Vibes" noPara />
+      <FeaturedTools
+        leftHeading
+        heading="Your Recent Vibes"
+        noPara
+        recentVibes
+        idgwHeading="Recent Vibes Video"
+      />
       <HowItWorks />
       <BrowseByTags />
-      <div className="bg-gradient-pinkMask">
+      <div className="bg-gradient-pinkMask ">
         <WhiteImageInfoSection
           noHeading
           topHeading
           videoCardWidth="350px"
           height="270px"
           btnText="See More"
+          homeLogged
+          link="/guides"
         />
       </div>
       <div className="remove-overflow">
@@ -59,6 +86,7 @@ const HomeLoggedIn = () => {
             whiteHeading
             whitePara
             btnText="See More"
+            link="/guides"
           />
         </div>
       </div>

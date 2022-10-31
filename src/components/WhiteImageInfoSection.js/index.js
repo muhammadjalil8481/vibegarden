@@ -35,6 +35,7 @@ const WhiteImageInfoSection = ({
   rightAlignBtn,
   blackHeading,
   vidHeading,
+  homeLogged,
 }) => {
   return (
     <section className="wiis">
@@ -42,9 +43,11 @@ const WhiteImageInfoSection = ({
         <div class="container wiis-container py80">
           {topHeading && (
             <h3
-              className={`wiis-top-heading  ${whiteHeading && "text-white"}  ${
-                rightAlignHeading && "wiis-text-align"
-              } ${rightAlignHeading && "wiis-top-headingMargin"}`}
+              className={`wiis-top-heading  ${whiteHeading && "text-white"} ${
+                homeLogged && "homeloggedin-heading"
+              }  ${rightAlignHeading && "wiis-text-align"} ${
+                rightAlignHeading && "wiis-top-headingMargin"
+              }`}
             >
               {heading}
             </h3>

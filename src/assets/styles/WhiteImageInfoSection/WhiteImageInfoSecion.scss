@@ -297,6 +297,9 @@
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
+.homeloggedin-heading {
+  margin-left: 2rem;
+}
 
 .wiis-bottomHeadingAndButton {
   display: flex;
@@ -322,7 +325,11 @@
     }
   }
 }
-
+.community-garden .wiis-bottomHeadingAndButton {
+  @media (min-width: 991px) {
+    margin-left: 3rem;
+  }
+}
 .wiis-lightBtnContainer {
   // background-color: lightcoral;
   display: flex;
@@ -338,6 +345,10 @@
 
 .wiis-postedDate {
   margin-top: 0.5rem;
+  @media (min-width: 992px) {
+    position: relative;
+    left: 2.5rem;
+  }
   p {
     font-size: 1.2rem;
     color: $black-3;

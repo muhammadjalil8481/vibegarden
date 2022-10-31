@@ -10,7 +10,7 @@ const ProfileModal = ({ showModal, setShowModal }) => {
         <div className="profile-modalComp-icon">
           <img src={images.logo4} />
         </div>
-        <h4>Changed Saved</h4>
+        <h4>Changes Saved</h4>
         <div onClick={() => setShowModal(false)}>
           <ButtonFilled bgGradient={"yes"} text="Close" paddingX />
         </div>

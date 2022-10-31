@@ -52,7 +52,7 @@ const NavBar = ({ onlyBrand, userNav = false }) => {
           <>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto">
+              <Nav className="ms-auto nav-links">
                 {/* <NotificationPopUp /> */}
                 <NavLink>
                   <Link to="/groundwork">
@@ -96,7 +96,8 @@ const NavBar = ({ onlyBrand, userNav = false }) => {
                   <div className="navbar-actions">
                     <span className="navbar-tools-icon">
                       <Link to="/resonance">
-                        <IoAddOutline size={25} />
+                        {/* <IoAddOutline size={25} /> */}
+                        <img src={images.spiral} />
                       </Link>
                     </span>
 
@@ -117,7 +118,7 @@ const NavBar = ({ onlyBrand, userNav = false }) => {
                     />
                     {expanded && dimensions.width >= 992 && (
                       <div className="expandedBar">
-                        <NavLink onClick={() => navigate("profile")}>
+                        <NavLink>
                           <Link to="/profile">
                             <div className="list_item-expanded">
                               Profile Settings

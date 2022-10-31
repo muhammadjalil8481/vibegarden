@@ -4,6 +4,7 @@ import images from "../../constants/images";
 import VideoIcon2nd from "../../assets/images/video-tag-icon.svg";
 import VideoIcon from "../../assets/images/video-icon.svg";
 import VidCard from "../VidCard";
+import { Link } from "react-router-dom";
 
 const FeaturedTools = ({
   leftHeading,
@@ -11,6 +12,8 @@ const FeaturedTools = ({
   whiteHeading,
   whitePara,
   heading = "Featured Tools",
+  recentVibes,
+  idgwHeading = "Heading",
 }) => {
   return (
     <section className="ft">
@@ -37,24 +40,80 @@ const FeaturedTools = ({
           )}
           <div className="ft-row row">
             <div className="col-lg-3 col-sm-6 ft-col-container">
-              <div className="ft-col">
-                <VidCard titleIcon image={images.placeholder} />
-              </div>
+              {recentVibes ? (
+                <Link
+                  to="/individualgroundwork"
+                  state={{ heading: idgwHeading }}
+                >
+                  <div className="ft-col">
+                    <VidCard titleIcon image={images.placeholder} recentVibes />
+                  </div>
+                </Link>
+              ) : (
+                <div className="ft-col">
+                  <VidCard titleIcon image={images.placeholder} />
+                </div>
+              )}
             </div>
             <div className="col-lg-3 col-sm-6 ft-col-container">
-              <div className="ft-col">
-                <VidCard titleIcon image={images.placeholder2} />
-              </div>
+              {recentVibes ? (
+                <Link
+                  to="/individualgroundwork"
+                  state={{ heading: idgwHeading }}
+                >
+                  <div className="ft-col">
+                    <VidCard
+                      titleIcon
+                      image={images.placeholder2}
+                      recentVibes
+                    />
+                  </div>
+                </Link>
+              ) : (
+                <div className="ft-col">
+                  <VidCard titleIcon image={images.placeholder2} />
+                </div>
+              )}
             </div>
             <div className="col-lg-3 col-sm-6 ft-col-container">
-              <div className="ft-col">
-                <VidCard titleIcon image={images.placeholder3} />
-              </div>
+              {recentVibes ? (
+                <Link
+                  to="/individualgroundwork"
+                  state={{ heading: idgwHeading }}
+                >
+                  <div className="ft-col">
+                    <VidCard
+                      titleIcon
+                      image={images.placeholder3}
+                      recentVibes
+                    />
+                  </div>
+                </Link>
+              ) : (
+                <div className="ft-col">
+                  <VidCard titleIcon image={images.placeholder3} />
+                </div>
+              )}
             </div>
             <div className="col-lg-3 col-sm-6 ft-col-container">
-              <div className="ft-col">
-                <VidCard titleIcon image={images.placeholder4} />
-              </div>
+              {recentVibes ? (
+                <Link
+                  to="/individualgroundwork"
+                  state={{ heading: idgwHeading }}
+                >
+                  <div className="ft-col">
+                    <VidCard
+                      titleIcon
+                      image={images.placeholder4}
+                      recentVibes
+                    />
+                  </div>
+                </Link>
+              ) : (
+                <div className="ft-col">
+                  <VidCard titleIcon image={images.placeholder4} />
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -15,11 +15,14 @@ const Hero = ({
   greenColor,
   shortPadding,
   reduceFont,
+  topPadding,
 }) => {
   return (
     <Container
       fluid
-      className={`hero text-center px-4 ${shortPadding && "short-padding"}`}
+      className={`hero text-center px-4 ${shortPadding && "short-padding"} ${
+        topPadding && "top-padding"
+      }`}
     >
       <h2
         className={`hero-quote ${greenColor && "text-green"} ${
@@ -44,8 +47,8 @@ const Hero = ({
       </p>
       <h1
         className={`hero-heading ${greenColor && "text-green"} ${
-          reduceFont && "hero-font-heading"
-        }`}
+          topPadding && "hero-heading-pad"
+        } ${reduceFont && "hero-font-heading"}`}
       >
         {heading}
       </h1>

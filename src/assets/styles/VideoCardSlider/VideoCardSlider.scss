@@ -4,7 +4,7 @@
   // background-color: saddlebrown;
 }
 .video-slider-heading {
-  margin-left: 11rem;
+  // margin-left: 11rem;
   // @media (max-width: 1399px) {
   //   margin-left: 13rem;
   // }
@@ -15,7 +15,9 @@
     text-align: center;
   }
 }
-
+.teacher-info .video-slider-heading {
+  margin-left: 0;
+}
 .rec.rec-dot {
   visibility: hidden;
 }

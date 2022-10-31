@@ -12,10 +12,10 @@ const MoreVG = () => {
           <div className="row mvg-row ">
             <div className="col-md-4 mvg-item ">
               <WhiteInfoCard
-                btnText="Explorer Groundwork"
+                btnText="More About"
                 heading="A Creation Story"
                 image={images.placeholder3}
-                linkText="/groundwork"
+                linkText="/about-us"
               />
             </div>
             <div className="col-md-4 mvg-item ">
@@ -23,6 +23,7 @@ const MoreVG = () => {
                 heading="The Vibe Bloom App"
                 btnText="Begin Your Quest"
                 image={images.placeholder4}
+                linkText="/appdownload"
               />
             </div>
             <div className="col-md-4 mvg-item ">

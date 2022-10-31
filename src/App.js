@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./components/Navbar";
 import PleaseSignUpModal from "./components/pleaseSignUpModal";
 import { useLocation } from "react-router-dom";
+import SelectAvatar from "./pages/SelectAvatar";
+import AvatarInfo from "./pages/AvatarInfo";
 
 function App() {
   const [user, setUser] = useState(false);
@@ -34,7 +36,10 @@ function App() {
             <PleaseSignUpModal />
           </div>
         )} */}
+
       <Navigation />
+      {/* <SelectAvatar /> */}
+      {/* <AvatarInfo /> */}
       {/* <NavBar /> */}
     </div>
   );

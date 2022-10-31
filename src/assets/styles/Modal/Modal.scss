@@ -103,7 +103,22 @@
     // aspect-ratio: 17/10;
   }
 }
-
+.vjs-control-bar {
+  background-color: black !important;
+  margin-bottom: 0 !important;
+  font-size: 1.4rem !important;
+  @media (max-width: 767px) {
+    font-size: 1.2rem;
+  }
+}
+// .vjs-button {
+//   width: 4rem !important;
+// }
+// .vjs-play-control {
+//   font-size: 1.3rem !important;
+// }
+.vjs-control-bar {
+}
 .profile-modalComp {
   background: rgba($secondary, 0.4);
   position: fixed;

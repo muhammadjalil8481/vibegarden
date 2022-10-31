@@ -1,6 +1,7 @@
 import React from "react";
 import FormGroupAuth from "../../components/FormInputAuth";
 import GreenButton from "../../components/Button/GreenButton";
+import { Link } from "react-router-dom";
 
 const UpdatePassword = () => {
   return (
@@ -12,9 +13,13 @@ const UpdatePassword = () => {
           <FormGroupAuth showPasswordIcon label="New Password" />
           <FormGroupAuth showPasswordIcon label="Confirm Password" />
         </div>
-        <GreenButton paddingX text="Update" />
+        <Link to="/profile">
+          <GreenButton paddingX text="Update" />
+        </Link>
         <p className="update-password-or">Or</p>
-        <p className="update-password-forgot-password">Forgot Password?</p>
+        <Link to="/resetpassword">
+          <p className="update-password-forgot-password">Forgot Password?</p>
+        </Link>
       </div>
     </section>
   );
