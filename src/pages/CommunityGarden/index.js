@@ -36,6 +36,7 @@ const CommunityGarden = () => {
       <FourColumnVideoLayout
         dataArray={array4}
         heading="Featured Tool For Connection"
+        tools
       />
       <GreenLineBreak />
       <WhiteImageInfoSection

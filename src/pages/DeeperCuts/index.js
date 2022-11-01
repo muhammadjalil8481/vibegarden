@@ -15,6 +15,7 @@ const DeeperCuts = () => {
         dataArray={dummyVideodata}
         backLink
         linkDestination="/groundwork"
+        groundWork
       />
       <Footer />
     </div>

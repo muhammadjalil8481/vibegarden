@@ -100,7 +100,7 @@ const Login = () => {
               </p>
             </div>
             <div className="login-button">
-              <Link to="/homepage">
+              <Link to="/selectavatar">
                 <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
               </Link>
             </div>

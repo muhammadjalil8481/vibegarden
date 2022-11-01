@@ -4,13 +4,19 @@ import images from "../../constants/images";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 import { BsCheckLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { RiArrowLeftLine } from "react-icons/ri";
 
 const SelectBloom = () => {
   const [choice, setChoice] = useState("");
   return (
     <div className="selectavatar">
-      <NavBar onlyBrand />
+      {/* <NavBar onlyBrand /> */}
       <div className="select-avatar bg-lightGreenMask">
+        <Link to="/selectavatar">
+          <span className="bc-back">
+            <RiArrowLeftLine size={30} fill="white" />
+          </span>
+        </Link>
         <h2>
           Brilliant! And Now which Blooms <br />
           Speaks To your heart?
@@ -99,7 +105,12 @@ const SelectBloom = () => {
           </div>
         </div>
         <Link to="/bloomcheck">
-          <ButtonFilled text="Continue" bgGradient={"yes"} paddingX />
+          <ButtonFilled
+            text="Continue"
+            bgGradient={"yes"}
+            padXResponsive
+            padYResponsive
+          />
         </Link>
       </div>
       {/* <Footer /> */}

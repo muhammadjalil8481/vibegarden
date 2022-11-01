@@ -29,7 +29,7 @@ const HomeLoggedIn = () => {
           heading="Welcome Back, You"
         />
       </div>
-      <WhiteImageInfoSection2 />
+      <WhiteImageInfoSection2 freshBlooms />
       <div className="resonance-line bg-gradient-pinkMask">
         <p>
           Check your resonance; from Buddhism to Quantum Physics, see which
@@ -49,6 +49,7 @@ const HomeLoggedIn = () => {
           whitePara
           recentVibes
           idgwHeading="Tools Tag Video"
+          tool
         />
       </div>
       <GroundWorkEssentials />
@@ -59,6 +60,7 @@ const HomeLoggedIn = () => {
         noPara
         recentVibes
         idgwHeading="Recent Vibes Video"
+        toolDummy
       />
       <HowItWorks />
       <BrowseByTags />

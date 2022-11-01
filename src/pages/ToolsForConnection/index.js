@@ -16,6 +16,7 @@ const ToolsForConnection = () => {
         backLink
         linkDestination="/tools"
         backText="Tools"
+        tools
       />
       <Footer />
     </div>

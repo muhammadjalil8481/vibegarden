@@ -15,6 +15,7 @@ const BuildingSlocks = () => {
         dataArray={dummyVideodata}
         backLink
         linkDestination="/groundwork"
+        groundWork
       />
       <Footer />
     </div>

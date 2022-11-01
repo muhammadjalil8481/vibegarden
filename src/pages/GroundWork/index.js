@@ -36,6 +36,7 @@ const GroundWork = () => {
         heading="Essentials"
         dataArray={array4}
         linkDestination="/essentials"
+        groundWork
       />
       <div className="bg-gradient-greenMask">
         <FourColumnVideoLayout
@@ -46,12 +47,14 @@ const GroundWork = () => {
           heading="Building Slocks"
           dataArray={array4}
           linkDestination="/buildingslocks"
+          groundWork
         />
       </div>
       <FourColumnVideoLayout
         heading="Deeper Cuts"
         dataArray={array4}
         linkDestination="/deepercuts"
+        groundWork
       />
       <div
         style={{
@@ -66,6 +69,7 @@ const GroundWork = () => {
         dataArray={array4}
         seeAllOnClick={() => navigate("/play")}
         linkDestination="/play"
+        groundWork
       />
       <BrowseByTags />
       <Footer />

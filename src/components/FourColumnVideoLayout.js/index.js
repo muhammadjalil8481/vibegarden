@@ -24,6 +24,8 @@ const FourColumnVideoLayout = ({
   linkDestination = "#",
   backText = "Ground Work",
   linkTo = "/",
+  groundWork,
+  tools,
 }) => {
   const navigate = useNavigate();
   return (
@@ -67,21 +69,19 @@ const FourColumnVideoLayout = ({
                   blackTitle
                   title={video.title}
                   time={video.duration}
+                  groundwork={groundWork ? true : false}
+                  tool={tools ? true : false}
                 />
               </div>
               <div className="subtext-container">
-                <p
-                  className={`subtext ${whiteSubText && "color-white"}`}
-                  onClick={() =>
-                    navigate("/individualGroundWork", {
-                      state: {
-                        ...video,
-                      },
-                    })
-                  }
+                <Link
+                  to="/individualgroundwork"
+                  state={{ tool: tools ? true : false }}
                 >
-                  {`Details`}
-                </p>
+                  <p className={`subtext ${whiteSubText && "color-white"}`}>
+                    {`Details`}
+                  </p>
+                </Link>
                 <p className={`subtext ${whiteSubText && "color-white"}`}>
                   {`#Tag`}
                 </p>

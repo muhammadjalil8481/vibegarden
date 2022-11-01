@@ -36,6 +36,7 @@ const WhiteImageInfoSection = ({
   blackHeading,
   vidHeading,
   homeLogged,
+  freshBlooms,
 }) => {
   return (
     <section className="wiis">
@@ -82,7 +83,7 @@ const WhiteImageInfoSection = ({
                 <div className="wiis-lightBtnContainer">
                   <div className="wiis-lightBtn">
                     <Link to="/individualgroundwork">
-                      <LightButton text="Deatils" />
+                      <LightButton text="Details" />
                     </Link>
                   </div>
                   <div className="wiis-lightBtn">
@@ -121,7 +122,10 @@ const WhiteImageInfoSection = ({
                   orderReverse && "wiis-vid-card-margin"
                 }`}
               >
-                <VidCard image={images.placeholder} />
+                <VidCard
+                  image={images.placeholder}
+                  freshBlooms={freshBlooms ? true : false}
+                />
               </div>
               {postedDate && (
                 <div className="wiis-postedDate">

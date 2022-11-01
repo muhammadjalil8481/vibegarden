@@ -9,9 +9,23 @@ import EditIcon from "../../assets/images/editIcon.svg";
 import Footer from "../../components/Footer";
 import ProfileModal from "../../components/Modal/profileModal";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  BsPlusLg,
+  BsHeartFill,
+  BsHeart,
+  BsFillStarFill,
+  BsStarFill,
+  BsStar,
+  BsChevronUp,
+  BsChevronDown,
+  BsCaretUpFill,
+  BsCaretDownFill,
+} from "react-icons/bs";
+import { TbArrowBack } from "react-icons/tb";
 
 const ProfileScreen = () => {
   const [showModal, setShowModal] = useState(false);
+  const [library, setLibrary] = useState(false);
   return (
     <>
       <NavBar />
@@ -28,18 +42,68 @@ const ProfileScreen = () => {
                   <p className="ps-top-subscription">
                     Monthly Package <span>Activated</span>
                   </p>
+                  {/* <p className="ps-library">Library : </p> */}
                 </div>
               </div>
-              <div className="ps-top-buttons">
-                <div className="ps-top-btn" onClick={() => setShowModal(true)}>
-                  <GreenButton outline text="Save" padXResponsive />
+              <div className="ps-topright">
+                <div className="ps-top-buttons">
+                  <span
+                    className="ps-library-btn"
+                    onClick={() => setLibrary(!library)}
+                  >
+                    <p className="mx-2">Library</p>
+                    {!library ? (
+                      <BsCaretDownFill color="rgba(255, 84, 90, 1)" size={15} />
+                    ) : (
+                      <BsCaretUpFill color="rgba(255, 84, 90, 1)" size={15} />
+                    )}
+                  </span>
+                  <div
+                    className="ps-top-btn"
+                    onClick={() => setShowModal(true)}
+                  >
+                    <GreenButton outline text="Save" padXResponsive />
+                  </div>
+                  <ButtonFilled
+                    padXResponsive
+                    bgGradient={"yes"}
+                    text="Cancel"
+                  />
                 </div>
-                <ButtonFilled
-                  padXResponsive
-                  bgGradient={"yes"}
-                  X
-                  text="Cancel"
-                />
+                {library && (
+                  <div className="ps-library-items">
+                    <div className="ps-library-item">
+                      <span>
+                        <BsPlusLg size={17} color="rgba(27, 91, 47, 1)" />
+                      </span>
+                      <p>Tools To Try</p>
+                    </div>
+                    <div className="ps-library-item">
+                      <span>
+                        <TbArrowBack size={22} color="rgba(27, 91, 47, 1)" />
+                      </span>
+                      <p>Recent Content</p>
+                    </div>
+                    <div className="ps-library-item">
+                      <span>
+                        <BsHeart size={18} color="rgba(27, 91, 47, 1)" />
+                      </span>
+                      <p>Favorites</p>
+                    </div>
+                    <div className="ps-library-item">
+                      <span>
+                        <BsStar size={20} color="rgba(27, 91, 47, 1)" />
+                      </span>
+                      <p>Top Tools</p>
+                    </div>
+                    <div className="ps-library-item">
+                      <span>
+                        <img src={images.spiral} />
+                      </span>
+                      <p>Your Resonance Finder Result</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
             <div className="col-md-6 ps-aboutForm">

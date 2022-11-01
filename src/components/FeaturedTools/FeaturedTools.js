@@ -14,6 +14,8 @@ const FeaturedTools = ({
   heading = "Featured Tools",
   recentVibes,
   idgwHeading = "Heading",
+  tool,
+  toolDummy,
 }) => {
   return (
     <section className="ft">
@@ -43,15 +45,25 @@ const FeaturedTools = ({
               {recentVibes ? (
                 <Link
                   to="/individualgroundwork"
-                  state={{ heading: idgwHeading }}
+                  state={{ heading: idgwHeading, tool: tool ? true : false }}
                 >
                   <div className="ft-col">
-                    <VidCard titleIcon image={images.placeholder} recentVibes />
+                    <VidCard
+                      titleIcon
+                      image={images.placeholder}
+                      recentVibes
+                      tool={tool ? true : false}
+                      groundwork
+                    />
                   </div>
                 </Link>
               ) : (
                 <div className="ft-col">
-                  <VidCard titleIcon image={images.placeholder} />
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder}
+                    tool={tool ? true : false}
+                  />
                 </div>
               )}
             </div>
@@ -59,19 +71,27 @@ const FeaturedTools = ({
               {recentVibes ? (
                 <Link
                   to="/individualgroundwork"
-                  state={{ heading: idgwHeading }}
+                  state={{
+                    heading: idgwHeading,
+                    tool: tool || toolDummy ? true : false,
+                  }}
                 >
                   <div className="ft-col">
                     <VidCard
                       titleIcon
                       image={images.placeholder2}
                       recentVibes
+                      tool={tool || toolDummy ? true : false}
                     />
                   </div>
                 </Link>
               ) : (
                 <div className="ft-col">
-                  <VidCard titleIcon image={images.placeholder2} />
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder2}
+                    tool={tool ? true : false}
+                  />
                 </div>
               )}
             </div>
@@ -79,19 +99,25 @@ const FeaturedTools = ({
               {recentVibes ? (
                 <Link
                   to="/individualgroundwork"
-                  state={{ heading: idgwHeading }}
+                  state={{ heading: idgwHeading, tool: tool ? true : false }}
                 >
                   <div className="ft-col">
                     <VidCard
                       titleIcon
                       image={images.placeholder3}
                       recentVibes
+                      tool={tool ? true : false}
+                      groundwork
                     />
                   </div>
                 </Link>
               ) : (
                 <div className="ft-col">
-                  <VidCard titleIcon image={images.placeholder3} />
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder3}
+                    tool={tool ? true : false}
+                  />
                 </div>
               )}
             </div>
@@ -99,19 +125,27 @@ const FeaturedTools = ({
               {recentVibes ? (
                 <Link
                   to="/individualgroundwork"
-                  state={{ heading: idgwHeading }}
+                  state={{
+                    heading: idgwHeading,
+                    tool: tool || toolDummy ? true : false,
+                  }}
                 >
                   <div className="ft-col">
                     <VidCard
                       titleIcon
                       image={images.placeholder4}
                       recentVibes
+                      tool={tool || toolDummy ? true : false}
                     />
                   </div>
                 </Link>
               ) : (
                 <div className="ft-col">
-                  <VidCard titleIcon image={images.placeholder4} />
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder4}
+                    tool={tool ? true : false}
+                  />
                 </div>
               )}
             </div>

@@ -15,6 +15,7 @@ const Play = () => {
         dataArray={dummyVideodata}
         backLink
         linkDestination="/groundwork"
+        groundWork
       />
       <Footer />
     </div>

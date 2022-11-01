@@ -22,6 +22,7 @@ const FreshBlooms = () => {
           lightButton
           postedDate
           mainHeading="H3 Headline Style Green"
+          freshBlooms
         />
       </div>
       <div className="au-wiis-reverse fb-reverse">
@@ -31,6 +32,7 @@ const FreshBlooms = () => {
           lightButton
           postedDate
           mainHeading="H3 Headline Style Green"
+          freshBlooms
         />
       </div>
       <div className="au-wiis">
@@ -39,6 +41,7 @@ const FreshBlooms = () => {
           lightButton
           postedDate
           mainHeading="H3 Headline Style Green"
+          freshBlooms
         />
       </div>
       <div className="au-wiis-reverse fb-reverse">
@@ -48,6 +51,7 @@ const FreshBlooms = () => {
           lightButton
           postedDate
           mainHeading="H3 Headline Style Green"
+          freshBlooms
         />
       </div>
       <div className="au-wiis">
@@ -56,6 +60,7 @@ const FreshBlooms = () => {
           lightButton
           postedDate
           mainHeading="H3 Headline Style Green"
+          freshBlooms
         />
       </div>
       <Footer />

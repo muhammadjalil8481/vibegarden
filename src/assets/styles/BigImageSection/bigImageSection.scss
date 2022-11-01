@@ -48,6 +48,15 @@
   height: 100%;
   background-color: transparent;
   cursor: pointer;
+  .vid-card-heart {
+    background-color: white;
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 50%;
+    width: fit-content;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+  }
 
   .vid-card-image {
     width: 100%;

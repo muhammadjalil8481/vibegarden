@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import NavBar from "../../components/Navbar";
 import pinkIcon from "../../assets/images/pink-icon.svg";
@@ -15,6 +15,13 @@ import images from "../../constants/images";
 import Footer from "../../components/Footer";
 import ButtonAndHeading from "../../components/HeadingAndButton.js";
 import VideoCardSlider from "../../components/VideoCardSlider";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { AiFillPlusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import res1 from "../../assets/images/reson1.svg";
+import res2 from "../../assets/images/reson2.svg";
+import res3 from "../../assets/images/reson3.svg";
+import res4 from "../../assets/images/reson4.svg";
+import { BsChevronUp, BsChevronDown, BsCheckLg } from "react-icons/bs";
 
 function myArrow({ type, onClick, isEdge }) {
   const pointer =
@@ -42,9 +49,12 @@ function myArrow({ type, onClick, isEdge }) {
   );
 }
 
-const IndividualGroundWork = () => {
+const IndividualGroundWork = ({ groundWork, freshBloom }) => {
   const breakPoints = [{ width: 1, itemsToShow: 1 }];
   const { state } = useLocation();
+  const [isFav, setIsFav] = useState(false);
+  const [addTool, setAddTool] = useState(false);
+  const [rating, setRating] = useState(0);
 
   return (
     <div className="indi vidual-groundwork">
@@ -63,10 +73,89 @@ const IndividualGroundWork = () => {
         <div className="idgw-1-video">
           <VidCard />
         </div>
-        <div className="idgw-1-subtext">
-          <p>Lorem</p>
-          <p>Lorem</p>
-          <p>Lorem</p>
+        <div className="idgw-1-videoSubInfo">
+          <div className="idgw-1-subtext">
+            <p>Lorem</p>
+            <p>Lorem</p>
+            <p>Lorem</p>
+          </div>
+          {/* {(groundWork || freshBloom) && ( */}
+          <div className="idgw-1-icons">
+            <div className="idgw-1-icon" onClick={() => setIsFav(!isFav)}>
+              {!isFav ? (
+                <BsHeart size={25} color="rgba(255, 84, 90, 1)" />
+              ) : (
+                <BsHeartFill size={25} color="rgba(255, 84, 90, 1)" />
+              )}
+            </div>
+            {/* )} */}
+
+            {state?.tool && (
+              <div
+                className="idgw-1-icon tool-icon"
+                onClick={() => setAddTool(!addTool)}
+              >
+                {!addTool ? (
+                  <AiOutlinePlusCircle size={28} color="rgba(255, 84, 90, 1)" />
+                ) : (
+                  <AiFillPlusCircle size={28} color="rgba(255, 84, 90, 1)" />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      <section className="idgw-ratings">
+        <h4>Did Your Try This Tool ?</h4>
+        <div className="idgw-rating-items">
+          <div className="idgw-rating-item">
+            {rating === 1 ? (
+              <span className="idgw-rating-checked bg-gradient-pink">
+                <BsCheckLg size={25} fill="white" />
+              </span>
+            ) : (
+              <span onClick={() => setRating(1)}>
+                <img src={res1} />
+              </span>
+            )}
+            <p>Not Really</p>
+          </div>
+          <div className="idgw-rating-item">
+            {rating === 2 ? (
+              <span className="idgw-rating-checked bg-gradient-pink">
+                <BsCheckLg size={25} fill="white" />
+              </span>
+            ) : (
+              <span onClick={() => setRating(2)}>
+                <img src={res2} />
+              </span>
+            )}
+            <p>Baby Bloom</p>
+          </div>
+          <div className="idgw-rating-item">
+            {rating === 3 ? (
+              <span className="idgw-rating-checked bg-gradient-pink">
+                <BsCheckLg size={25} fill="white" />
+              </span>
+            ) : (
+              <span onClick={() => setRating(3)}>
+                <img src={res3} />
+              </span>
+            )}
+            <p>Solid Bloom</p>
+          </div>
+          <div className="idgw-rating-item">
+            {rating === 4 ? (
+              <span className="idgw-rating-checked bg-gradient-pink">
+                <BsCheckLg size={25} fill="white" />
+              </span>
+            ) : (
+              <span onClick={() => setRating(4)}>
+                <img src={res4} />
+              </span>
+            )}
+            <p>Big Bloom</p>
+          </div>
         </div>
       </section>
       <GreenLineBreak />

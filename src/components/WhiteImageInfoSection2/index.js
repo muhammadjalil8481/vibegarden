@@ -14,6 +14,9 @@ const WhiteImageInfoSection2 = ({
   videoCardRightMargin,
   videoWidth = "450px",
   videoHeight = "256px",
+  freshBlooms,
+  groundWork,
+  tool,
 }) => {
   return (
     <section className="wiis2">
@@ -48,11 +51,12 @@ const WhiteImageInfoSection2 = ({
                   time="3:15"
                   image={images.placeholder2}
                   title="Title"
+                  freshBlooms={freshBlooms ? true : false}
                 />
               </div>
               <div className="wiis2-right-col-btn-container ">
                 <div className="wiis2-right-col-btn ">
-                  <Link to="/individualgroundwork">
+                  <Link to="/individualgroundwork" state={{ tool: true }}>
                     <LightButton text="Details" />
                   </Link>
                 </div>

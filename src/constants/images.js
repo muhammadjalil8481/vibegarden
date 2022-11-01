@@ -60,6 +60,14 @@ const images = {
   divineRoss: require("../assets/images/divine-ross.png"),
   mushroom: require("../assets/images/mushroom.png"),
   chuchu: require("../assets/images/chuchu.png"),
+  bloomPercent1: require("../assets/images/bloomPercent1.png"),
+  bloomPercent2: require("../assets/images/bloomPercent2.png"),
+  bloomPercent3: require("../assets/images/bloomPercent3.png"),
+  bloomPercent4: require("../assets/images/bloomPercent4.png"),
+  bloomPercent1Big: require("../assets/images/bloomPercent1Big.png"),
+  bloomPercent2Big: require("../assets/images/bloomPercent2Big.png"),
+  bloomPercent3Big: require("../assets/images/bloomPercent3Big.png"),
+  bloomPercent4Big: require("../assets/images/bloomPercent4Big.png"),
 };
 
 export default images;

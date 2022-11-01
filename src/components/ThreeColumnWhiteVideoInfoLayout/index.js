@@ -12,6 +12,7 @@ const ThreeColumnWhiteVideoInfoLayout = ({
   title2 = "Title2",
   title3 = "Title3",
   noRedirect,
+  groundWork,
 }) => {
   const navigate = useNavigate();
   return (
@@ -32,10 +33,17 @@ const ThreeColumnWhiteVideoInfoLayout = ({
             </p>
             <div className="tcwvil-video">
               {!noRedirect ? (
-                <VidCard image={images.placeholder} />
+                <VidCard
+                  image={images.placeholder}
+                  groundwork={groundWork ? true : false}
+                />
               ) : (
                 <Link to="/individualgroundwork" state={{ heading: title1 }}>
-                  <VidCard image={images.placeholder} recentVibes />
+                  <VidCard
+                    image={images.placeholder}
+                    recentVibes
+                    groundwork={groundWork ? true : false}
+                  />
                 </Link>
               )}
             </div>
@@ -69,10 +77,10 @@ const ThreeColumnWhiteVideoInfoLayout = ({
             </p>
             <div className="tcwvil-video">
               {!noRedirect ? (
-                <VidCard />
+                <VidCard groundwork={groundWork ? true : false} />
               ) : (
                 <Link to="/individualgroundwork" state={{ heading: title2 }}>
-                  <VidCard recentVibes />
+                  <VidCard recentVibes groundwork={groundWork ? true : false} />
                 </Link>
               )}
             </div>
@@ -106,10 +114,17 @@ const ThreeColumnWhiteVideoInfoLayout = ({
             </p>
             <div className="tcwvil-video">
               {!noRedirect ? (
-                <VidCard image={images.placeholder4} />
+                <VidCard
+                  image={images.placeholder4}
+                  groundwork={groundWork ? true : false}
+                />
               ) : (
                 <Link to="/individualgroundwork" state={{ heading: title3 }}>
-                  <VidCard recentVibes image={images.placeholder4} />
+                  <VidCard
+                    recentVibes
+                    image={images.placeholder4}
+                    groundwork={groundWork ? true : false}
+                  />
                 </Link>
               )}
             </div>

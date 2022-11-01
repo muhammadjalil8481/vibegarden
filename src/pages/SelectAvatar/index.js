@@ -10,7 +10,7 @@ const SelectAvatar = () => {
   const [choice, setChoice] = useState("");
   return (
     <div className="selectavatar">
-      <NavBar onlyBrand />
+      {/* <NavBar onlyBrand /> */}
       <div className="select-avatar bg-lightGreenMask">
         <h2>
           Which of these avatars
@@ -120,7 +120,12 @@ const SelectAvatar = () => {
           </div>
         </div>
         <Link to="/selectbloom">
-          <ButtonFilled text="Continue" bgGradient={"yes"} paddingX />
+          <ButtonFilled
+            text="Continue"
+            bgGradient={"yes"}
+            padXResponsive
+            padYResponsive
+          />
         </Link>
       </div>
       {/* <Footer /> */}

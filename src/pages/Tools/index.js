@@ -37,18 +37,21 @@ const Tools = () => {
         dataArray={array8}
         heading="Tools For Light"
         linkDestination="/toolsforconnecting"
+        tools
       />
       <div className="bg-gradient-pinkMask">
         <FourColumnVideoLayout
           dataArray={array8}
           heading={`Tools For Worker & Shadow`}
           linkDestination="/toolsforworker"
+          tools
         />
       </div>
       <FourColumnVideoLayout
         dataArray={array8}
         heading={`Tools For Connection`}
         linkDestination="/toolsforconnection"
+        tools
       />
       <BrowseByTags />
       <Footer />

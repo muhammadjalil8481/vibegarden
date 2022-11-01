@@ -1,0 +1,121 @@
+@import "../variables.scss";
+
+.bloom-check {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  h2 {
+    color: $secondary;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .bloom-check-text {
+    color: $black-3;
+    font-family: "josefin sans";
+    text-align: center;
+  }
+  .bc-container {
+    // background-color: salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    .bc-imageAndText {
+      //   background-color: sandybrown;
+      margin: 0 0.5rem;
+      p {
+        color: $secondary;
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+      .bc-image-big-text {
+        margin-top: 0.5rem;
+      }
+      .bc-image {
+        // background-color: seagreen;
+        width: 9rem;
+        height: 9rem;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
+      }
+      .bc-image-big {
+        // background-color: aqua;
+        width: 11rem;
+        height: 11rem;
+        margin-top: -1rem;
+      }
+    }
+  }
+}
+
+.bc-choice-checked {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bc-check-big {
+  width: 10rem;
+  height: 10rem;
+}
+
+.bc-manual-percent {
+  //   background-color: sandybrown;
+  //   border: 1px solid black;
+  //   box-shadow: #ff40533d 10px 20px 30px;
+  //   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: fit-content;
+  padding: 2rem 4rem;
+  text-align: left;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  h4 {
+    text-align: center;
+    font-family: "josefin sans";
+  }
+  .bc-manual-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    p {
+      margin: 0 1.5rem;
+      //   font-family: "josefin sans";
+      font-weight: 700;
+      color: $grey;
+      font-size: 2.4rem;
+    }
+    .bc-manual-icons {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.bc-back {
+  background-color: $secondary;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  cursor: pointer;
+}

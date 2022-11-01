@@ -39,6 +39,7 @@ import AvatarInfo from "../pages/AvatarInfo";
 import SelectBloom from "../pages/SelectBloom";
 import BloomInfo from "../pages/BloomInfo";
 import BloomCheck from "../pages/BloomCheck";
+import BloomResult from "../pages/BloomResult";
 
 const Navigation = () => {
   return (
@@ -85,6 +86,7 @@ const Navigation = () => {
       <Route element={<BloomInfo />} path="/bloominfo" />
       <Route element={<BloomInfo />} path="/bloominfo" />
       <Route element={<BloomCheck />} path="/bloomcheck" />
+      <Route element={<BloomResult />} path="/bloomresult" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );
