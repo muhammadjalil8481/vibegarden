@@ -14,9 +14,10 @@ const FormGroupAuth = ({
   noLabel,
   placeHolder = "",
   icon,
-  showPasswordIcon,
+  showPasswordIcon = false,
   value,
   setValue,
+  disabled = false,
 }) => {
   const [inputTypeState, setInputTypeState] = useState(inputType);
   const showPasswordText = () => {
@@ -32,6 +33,7 @@ const FormGroupAuth = ({
           placeholder={placeHolder}
           value={value}
           onChange={(event) => setValue(event.target.value)}
+          disabled={disabled}
         />
         {icon && (
           <div
@@ -64,7 +66,12 @@ const FormGroupAuth = ({
     <div className="fga-form-group">
       <p className="fga-form-label">{label}</p>
       {/* <input type={inputType} className="fga-form-input" /> */}
-      <select id={selectId} name={selectName} className="fga-form-input">
+      <select
+        id={selectId}
+        name={selectName}
+        className="fga-form-input"
+        disabled={disabled}
+      >
         {/* <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
         <option value="fiat">Fiat</option>

@@ -4,12 +4,20 @@ import NavBar from "../../components/Navbar";
 import images from "../../constants/images";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 import { BsCheckLg } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import AlertModal from "../../components/Modal/AlertModal";
 
 const SelectAvatar = () => {
   const [choice, setChoice] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="selectavatar">
+      <AlertModal
+        message="Please select an avatar"
+        state={showModal}
+        setState={setShowModal}
+      />
       {/* <NavBar onlyBrand /> */}
       <div className="select-avatar bg-lightGreenMask">
         <h2>
@@ -50,7 +58,7 @@ const SelectAvatar = () => {
             )}
             <Link
               to="/avatarinfo"
-              state={{ heading: "Bear Man", image: images.wolfWoman }}
+              state={{ heading: "Bear Man", image: images.bearMan }}
             >
               <p>
                 Meet <br />
@@ -70,7 +78,7 @@ const SelectAvatar = () => {
             )}
             <Link
               to="/avatarinfo"
-              state={{ heading: "Jaguar Being", image: images.wolfWoman }}
+              state={{ heading: "Jaguar Being", image: images.jaguarBeing }}
             >
               <p>
                 Meet <br />
@@ -90,7 +98,7 @@ const SelectAvatar = () => {
             )}
             <Link
               to="/avatarinfo"
-              state={{ heading: "Bird Women", image: images.wolfWoman }}
+              state={{ heading: "Bird Women", image: images.birdWomen }}
             >
               <p>
                 Meet <br />
@@ -110,7 +118,7 @@ const SelectAvatar = () => {
             )}
             <Link
               to="/avatarinfo"
-              state={{ heading: "Dolphin Being", image: images.wolfWoman }}
+              state={{ heading: "Dolphin Being", image: images.dolphinBeing }}
             >
               <p>
                 Meet <br />
@@ -119,14 +127,21 @@ const SelectAvatar = () => {
             </Link>
           </div>
         </div>
-        <Link to="/selectbloom">
+        {/* <Link to="/selectbloom"> */}
+        <span
+          onClick={() => {
+            !choice && setShowModal(true);
+            choice && navigate("/selectbloom");
+          }}
+        >
           <ButtonFilled
             text="Continue"
             bgGradient={"yes"}
             padXResponsive
             padYResponsive
           />
-        </Link>
+        </span>
+        {/* </Link> */}
       </div>
       {/* <Footer /> */}
     </div>

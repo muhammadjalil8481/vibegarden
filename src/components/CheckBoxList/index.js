@@ -54,53 +54,26 @@ const BpCheckedIcon = styled(BpIcon)({
   },
 });
 
-const CheckBoxList = () => {
+const CheckBoxList = ({ checked = false }) => {
   return (
     <section className="checkbox-list ">
       <FormGroup>
         <div className="row">
-          <div className="form-group col-md-6">
-            <Checkbox icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} />
-            <p className="form-group-label">
-              Default body copy style for text on white / light color
-              backgrounds
-            </p>
-          </div>
-          <div className="form-group col-md-6">
-            <Checkbox icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} />
-            <p className="form-group-label">
-              Default body copy style for text on white / light color
-              backgrounds
-            </p>
-          </div>
-          <div className="form-group col-md-6">
-            <Checkbox icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} />
-            <p className="form-group-label">
-              Default body copy style for text on white / light color
-              backgrounds
-            </p>
-          </div>
-          <div className="form-group col-md-6">
-            <Checkbox icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} />
-            <p className="form-group-label">
-              Default body copy style for text on white / light color
-              backgrounds
-            </p>
-          </div>
-          <div className="form-group col-md-6">
-            <Checkbox icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} />
-            <p className="form-group-label">
-              Default body copy style for text on white / light color
-              backgrounds
-            </p>
-          </div>
-          <div className="form-group col-md-6">
-            <Checkbox icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} />
-            <p className="form-group-label">
-              Default body copy style for text on white / light color
-              backgrounds
-            </p>
-          </div>
+          {new Array(6).fill(null).map((item) => {
+            return (
+              <div className="form-group col-md-6">
+                <Checkbox
+                  icon={<BpIcon />}
+                  checkedIcon={<BpCheckedIcon />}
+                  checked={checked}
+                />
+                <p className="form-group-label">
+                  Default body copy style for text on white / light color
+                  backgrounds
+                </p>
+              </div>
+            );
+          })}
         </div>
       </FormGroup>
     </section>

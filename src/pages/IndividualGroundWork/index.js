@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate, Link, useLocation, useParams } from "react-router-dom";
 import NavBar from "../../components/Navbar";
 import pinkIcon from "../../assets/images/pink-icon.svg";
 import VidCard from "../../components/VidCard";
@@ -50,19 +50,21 @@ function myArrow({ type, onClick, isEdge }) {
 }
 
 const IndividualGroundWork = ({ groundWork, freshBloom }) => {
+  const params = useParams().name.replaceAll("-", " ");
   const breakPoints = [{ width: 1, itemsToShow: 1 }];
-  const { state } = useLocation();
+  const { state, pathname } = useLocation();
+  const route = pathname.slice(0, pathname.lastIndexOf("/"));
   const [isFav, setIsFav] = useState(false);
   const [addTool, setAddTool] = useState(false);
   const [rating, setRating] = useState(0);
 
   return (
-    <div className="indi vidual-groundwork">
+    <div className="individual-groundwork">
       <NavBar />
       <section className="container idgw-1">
         <div className="idgw-1-headingAnIcon">
           <img src={pinkIcon} />
-          <h2>{state?.heading || "heading"}</h2>
+          <h2>{params || "heading"}</h2>
         </div>
         <p className="idgw-1-desc">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -90,7 +92,7 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
             </div>
             {/* )} */}
 
-            {state?.tool && (
+            {route === "/tools" && (
               <div
                 className="idgw-1-icon tool-icon"
                 onClick={() => setAddTool(!addTool)}
@@ -105,59 +107,62 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
           </div>
         </div>
       </section>
-      <section className="idgw-ratings">
-        <h4>Did Your Try This Tool ?</h4>
-        <div className="idgw-rating-items">
-          <div className="idgw-rating-item">
-            {rating === 1 ? (
-              <span className="idgw-rating-checked bg-gradient-pink">
-                <BsCheckLg size={25} fill="white" />
-              </span>
-            ) : (
-              <span onClick={() => setRating(1)}>
-                <img src={res1} />
-              </span>
-            )}
-            <p>Not Really</p>
+      {/* {route === "/tools" && <GreenLineBreak />} */}
+      {route === "/tools" && (
+        <section className="idgw-ratings">
+          <h4>Did This Tool Bloom Your Vibe ?</h4>
+          <div className="idgw-rating-items">
+            <div className="idgw-rating-item">
+              {rating === 1 ? (
+                <span className="idgw-rating-checked bg-gradient-pink">
+                  <BsCheckLg size={25} fill="white" />
+                </span>
+              ) : (
+                <span onClick={() => setRating(1)}>
+                  <img src={res1} />
+                </span>
+              )}
+              <p>Not Really</p>
+            </div>
+            <div className="idgw-rating-item">
+              {rating === 2 ? (
+                <span className="idgw-rating-checked bg-gradient-pink">
+                  <BsCheckLg size={25} fill="white" />
+                </span>
+              ) : (
+                <span onClick={() => setRating(2)}>
+                  <img src={res2} />
+                </span>
+              )}
+              <p>Baby Bloom</p>
+            </div>
+            <div className="idgw-rating-item">
+              {rating === 3 ? (
+                <span className="idgw-rating-checked bg-gradient-pink">
+                  <BsCheckLg size={25} fill="white" />
+                </span>
+              ) : (
+                <span onClick={() => setRating(3)}>
+                  <img src={res3} />
+                </span>
+              )}
+              <p>Solid Bloom</p>
+            </div>
+            <div className="idgw-rating-item">
+              {rating === 4 ? (
+                <span className="idgw-rating-checked bg-gradient-pink">
+                  <BsCheckLg size={25} fill="white" />
+                </span>
+              ) : (
+                <span onClick={() => setRating(4)}>
+                  <img src={res4} />
+                </span>
+              )}
+              <p>Big Bloom</p>
+            </div>
           </div>
-          <div className="idgw-rating-item">
-            {rating === 2 ? (
-              <span className="idgw-rating-checked bg-gradient-pink">
-                <BsCheckLg size={25} fill="white" />
-              </span>
-            ) : (
-              <span onClick={() => setRating(2)}>
-                <img src={res2} />
-              </span>
-            )}
-            <p>Baby Bloom</p>
-          </div>
-          <div className="idgw-rating-item">
-            {rating === 3 ? (
-              <span className="idgw-rating-checked bg-gradient-pink">
-                <BsCheckLg size={25} fill="white" />
-              </span>
-            ) : (
-              <span onClick={() => setRating(3)}>
-                <img src={res3} />
-              </span>
-            )}
-            <p>Solid Bloom</p>
-          </div>
-          <div className="idgw-rating-item">
-            {rating === 4 ? (
-              <span className="idgw-rating-checked bg-gradient-pink">
-                <BsCheckLg size={25} fill="white" />
-              </span>
-            ) : (
-              <span onClick={() => setRating(4)}>
-                <img src={res4} />
-              </span>
-            )}
-            <p>Big Bloom</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
       <GreenLineBreak />
       <section className="idgw-2 container-lg">
         <div className="idgw-2-headingAndRating">

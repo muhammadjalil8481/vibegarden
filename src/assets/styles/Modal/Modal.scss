@@ -110,6 +110,9 @@
   @media (max-width: 767px) {
     font-size: 1.2rem;
   }
+  @media (max-width: 576px) {
+    font-size: 1rem !important;
+  }
 }
 // .vjs-button {
 //   width: 4rem !important;
@@ -251,5 +254,282 @@
     font-size: 2.5rem;
     margin-top: 3rem;
     margin-bottom: 6rem;
+  }
+}
+
+.alertModal-overlay {
+  position: fixed;
+  background-color: rgba($secondary, 0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .alertModal {
+    width: 50rem;
+    height: 20rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    @media (max-width: 550px) {
+      width: 90%;
+    }
+    h4 {
+      color: $secondary;
+      font-family: "josefin sans";
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-transform: capitalize;
+      text-align: center;
+    }
+  }
+}
+
+.sub-modal-overlay {
+  position: fixed;
+  background-color: rgba($secondary, 0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .sub-modal {
+    width: 40rem;
+    height: 30rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    padding: 4rem;
+    border-radius: 10px;
+    // @media (max-width: 550px) {
+    //   width: 90%;
+    // }
+    .sub-modal-package {
+      // background-color: darkcyan;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid $grey-3;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      .sbm-icon {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .sbm-grey {
+        background-color: grey;
+      }
+      h4 {
+        color: $grey;
+        font-family: "josefin sans";
+        padding-bottom: 0.5rem;
+        font-size: 2rem;
+        // background-color: darkcyan;
+        width: max-content;
+        span {
+          font-family: "lato";
+          font-weight: 700;
+        }
+        // span {
+        //   font-family: "lato";
+        // }
+        // font-weight: 700;
+      }
+      .sbmh-green {
+        color: $secondary;
+      }
+    }
+    .sbm-btn {
+      align-self: center;
+      margin-top: 3rem;
+    }
+  }
+}
+
+.md-close {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($secondary, 1);
+  border-radius: 50%;
+  position: absolute;
+  right: 3%;
+  top: 5%;
+  cursor: pointer;
+}
+
+.pay-modal-overlay {
+  position: fixed;
+  background-color: rgba($secondary, 0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .pay-modal {
+    width: 60rem;
+    height: 30rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+
+    .pm-pricetag {
+      // background-color: darkkhaki;
+      background-color: white;
+      border: 1px solid $secondary;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 2rem 2rem;
+      text-align: center;
+      h5 {
+        // background-color: lightblue;
+        font-family: "josefin sans";
+        color: $secondary;
+        text-transform: capitalize;
+      }
+      h2 {
+        // background-color: lightcoral;
+        font-size: 3.6rem;
+        margin: 2rem 0;
+        span {
+          font-family: "lato";
+          font-weight: 500;
+          font-size: 4rem;
+        }
+      }
+      p {
+        // background-color: lightgreen;
+        font-family: "josefin sans";
+        font-size: 1.8rem;
+      }
+    }
+    .vertical-separator {
+      width: 1px;
+      height: 100%;
+      background-color: $secondary;
+      margin: 0 3rem;
+    }
+    .pm-payment {
+      // background-color: hotpink;
+      h5 {
+        font-family: "josefin sans";
+        color: $grey-2;
+        font-size: 1.6rem;
+        // margin-top: 0.3rem;
+      }
+      .pm-cardNumber {
+        font-weight: 600;
+        color: $black-3;
+        letter-spacing: 2px;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        line-height: normal;
+      }
+      .pm-newCard {
+        color: #1492e6;
+        font-family: "josefin sans";
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.paysuc-modal-overlay {
+  position: fixed;
+  background-color: rgba($secondary, 0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .paysuc-modal {
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    h3 {
+      font-size: 2.8rem;
+      font-family: "josefin sans";
+      color: $black-3;
+      letter-spacing: 1px;
+      margin-top: 2rem;
+    }
+    p {
+      font-size: 1.6rem;
+      font-family: "josefin sans";
+      color: #1492e6;
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem;
+      span {
+        width: 1.6rem;
+        height: 1.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #1492e6;
+        color: white;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.loader-overlay {
+  position: fixed;
+  background-color: rgba($black-3, 0.3);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .loader-container {
+    background-color: white;
+    padding: 4rem;
+    border-radius: 1rem;
   }
 }

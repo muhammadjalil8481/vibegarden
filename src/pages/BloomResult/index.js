@@ -34,9 +34,9 @@ const BloomResult = () => {
       <Link to="/homepage">
         <ButtonFilled
           text="Take Me To the Garden"
-          paddingX
+          padXResponsive
           bgGradient={"yes"}
-          paddingY
+          padYResponsive
         />
       </Link>
     </div>

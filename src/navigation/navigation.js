@@ -39,7 +39,15 @@ import AvatarInfo from "../pages/AvatarInfo";
 import SelectBloom from "../pages/SelectBloom";
 import BloomInfo from "../pages/BloomInfo";
 import BloomCheck from "../pages/BloomCheck";
+import UpdateBloomCheck from "../pages/UpdateBloomCheck";
 import BloomResult from "../pages/BloomResult";
+import UpdatePayment from "../pages/UpdatePayment";
+import CancelSubscription from "../pages/CancelSubscription";
+import ToolsToTry from "../pages/ToolsToTry";
+import RecentContent from "../pages/RecentContent";
+import Favorites from "../pages/Favourites";
+import TopTools from "../pages/TopTools";
+import ResonanceResult from "../pages/ResonanceResult.js";
 
 const Navigation = () => {
   return (
@@ -52,7 +60,9 @@ const Navigation = () => {
       <Route element={<EmailConfirmation />} path="/email-confirmation" />
       <Route element={<HomeLoggedIn />} path="/homepage" />
       <Route element={<GroundWork />} path="/groundwork" />
+      <Route element={<IndividualGroundWork />} path="/groundwork/:name" />
       <Route element={<Tools />} path="/tools" />
+      <Route element={<IndividualGroundWork />} path="/tools/:name" />
       <Route element={<Guides />} path="/guides" />
       <Route element={<CommunityGarden />} path="/community-garden" />
       <Route element={<AboutUs />} path="/about-us" />
@@ -70,7 +80,6 @@ const Navigation = () => {
       <Route element={<ToolsForConnecting />} path="/toolsforconnecting" />
       <Route element={<ToolsForWorker />} path="/toolsforworker" />
       <Route element={<ToolsForConnection />} path="/toolsforconnection" />
-      <Route element={<IndividualGroundWork />} path="/individualGroundWork" />
       <Route element={<Teachers />} path="/teachers" />
       <Route element={<Topic />} path="/topic" />
       <Route element={<Schedule />} path="/schedule" />
@@ -80,13 +89,21 @@ const Navigation = () => {
       <Route element={<Resonance />} path="/resonance" />
       <Route element={<Resonance />} path="/resonance" />
       <Route element={<ResonanceFinder />} path="/resonancefinder" />
+      <Route element={<ResonanceResult />} path="/resonanceresult" />
       <Route element={<SelectAvatar />} path="/selectavatar" />
       <Route element={<AvatarInfo />} path="/avatarinfo" />
       <Route element={<SelectBloom />} path="/selectbloom" />
       <Route element={<BloomInfo />} path="/bloominfo" />
       <Route element={<BloomInfo />} path="/bloominfo" />
       <Route element={<BloomCheck />} path="/bloomcheck" />
+      <Route element={<UpdateBloomCheck />} path="/updatebloomcheck" />
       <Route element={<BloomResult />} path="/bloomresult" />
+      <Route element={<UpdatePayment />} path="/updatepayment" />
+      <Route element={<CancelSubscription />} path="/cancelsubscription" />
+      <Route element={<ToolsToTry />} path="/toolstotry" />
+      <Route element={<RecentContent />} path="/recentcontent" />
+      <Route element={<Favorites />} path="/favorites" />
+      <Route element={<TopTools />} path="/toptools" />
       <Route element={<h1>This page is not defined</h1>} path="*" />
     </Routes>
   );

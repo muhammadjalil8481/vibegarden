@@ -10,18 +10,23 @@
   position: relative;
   padding: 0.2rem;
   cursor: pointer;
+  .user-btn-img-container {
+    width: 4rem;
+    height: 4rem;
+    border: 50%;
+    img {
+      width: 100%;
+    }
+  }
   .user-btn-name {
     color: $primary;
     position: relative;
     font-family: "josefin sans";
     top: 16%;
-    margin-left: 1.6rem;
+    margin-left: 1rem;
     // background-color: darkgoldenrod;
   }
   .user-btn-icon {
     margin-top: 0.2rem;
-  }
-  img {
-    width: 25%;
   }
 }

@@ -27,6 +27,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1199px) {
+      width: 65%;
+    }
+    @media (max-width: 991px) {
+      width: 80%;
+    }
+    @media (max-width: 560px) {
+      width: 90%;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+    }
     .idgw-1-icons {
       // background-color: sandybrown;
       display: flex;
@@ -51,6 +63,7 @@
     h2 {
       margin-top: 1rem;
       margin-left: 1.5rem;
+      text-transform: capitalize;
       @media (max-width: 575px) {
         // text-align: center;
         font-size: 3rem;
@@ -91,23 +104,26 @@
     align-self: flex-start;
     // margin-left: 32rem;
     margin-top: 1rem;
-    @media (max-width: 1399px) {
-      margin-left: 24rem;
-    }
-    @media (max-width: 1199px) {
-      margin-left: 15rem;
-    }
-    @media (max-width: 991px) {
-      margin-left: 4rem;
-    }
-    @media (max-width: 450px) {
-      margin-left: 2rem;
-    }
+    // @media (max-width: 1399px) {
+    //   margin-left: 24rem;
+    // }
+    // @media (max-width: 1199px) {
+    //   margin-left: 15rem;
+    // }
+    // @media (max-width: 991px) {
+    //   margin-left: 4rem;
+    // }
+    // @media (max-width: 450px) {
+    //   margin-left: 2rem;
+    // }
     p {
       margin-right: 2rem;
       color: $primary;
       font-weight: 700;
       font-family: "josefin sans";
+      @media (max-width: 460px) {
+        font-size: 1.6rem;
+      }
     }
   }
 }
@@ -491,36 +507,51 @@ textarea::placeholder {
   }
 }
 .idgw-ratings {
-  // background-color: salmon;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 5rem 0;
+  // background-color: darkcyan;
+  @media (max-width: 576px) {
+    margin: 3rem 0;
+  }
   h4 {
     font-size: 3rem;
     font-family: "josefin sans";
     text-align: center;
-    color: $secondary;
+    color: $black-3;
+    font-weight: 400;
+    text-align: center;
     margin-bottom: 1rem;
+    @media (max-width: 576px) {
+      font-size: 2.4rem;
+    }
   }
 }
 .idgw-rating-items {
   display: flex;
-  // background-color: cadetblue;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  // background-color: fuchsia;
 }
 .idgw-rating-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 1.5rem;
+  &:not(:last-child) {
+    margin-right: 3rem;
+  }
+  @media (max-width: 576px) {
+    margin-right: 1rem;
+  }
   span {
     width: 7.5rem;
     height: 7.5rem;
-    @media (max-width: 500px) {
-      width: 5rem;
-      height: 5rem;
+    @media (max-width: 576px) {
+      width: 6rem;
+      height: 6rem;
     }
     display: flex;
     justify-content: center;

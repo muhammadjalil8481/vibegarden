@@ -29,7 +29,7 @@ const VideoCardShifted = ({
             </div>
             <p className="vcs-para">{desc}</p>
             <a className="vcs-link">
-              <Link to="/individualgroundwork" state={{ heading: "Tonglen" }}>
+              <Link to="/tools/tonglen">
                 SEE MORE
                 <span className="vcs-link-icon">
                   <ArrowForwardIcon fontSize="large" />
@@ -40,7 +40,7 @@ const VideoCardShifted = ({
           <div className="vcs-video-card">
             <VidCard image={image} noTitle />
             <div className="vcs-video-card-subText">
-              <Link to="/individualGroundWork">
+              <Link to="/tools/tonglen">
                 <p>Details</p>
               </Link>
               <Link to="/topic">

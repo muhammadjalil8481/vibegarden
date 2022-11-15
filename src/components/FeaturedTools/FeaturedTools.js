@@ -44,7 +44,11 @@ const FeaturedTools = ({
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
                 <Link
-                  to="/individualgroundwork"
+                  to={
+                    recentVibes
+                      ? `/groundwork/family-of-light`
+                      : `/tools/tonglen`
+                  }
                   state={{ heading: idgwHeading, tool: tool ? true : false }}
                 >
                   <div className="ft-col">
@@ -70,7 +74,7 @@ const FeaturedTools = ({
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
                 <Link
-                  to="/individualgroundwork"
+                  to="/tools/tonglen"
                   state={{
                     heading: idgwHeading,
                     tool: tool || toolDummy ? true : false,
@@ -98,7 +102,11 @@ const FeaturedTools = ({
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
                 <Link
-                  to="/individualgroundwork"
+                  to={
+                    recentVibes
+                      ? `/groundwork/family-of-light`
+                      : `/tools/tonglen`
+                  }
                   state={{ heading: idgwHeading, tool: tool ? true : false }}
                 >
                   <div className="ft-col">
@@ -124,7 +132,7 @@ const FeaturedTools = ({
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
                 <Link
-                  to="/individualgroundwork"
+                  to="/tools/tonglen"
                   state={{
                     heading: idgwHeading,
                     tool: tool || toolDummy ? true : false,

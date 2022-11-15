@@ -60,7 +60,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -77,7 +77,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -96,7 +96,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -113,7 +113,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -147,7 +147,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -164,7 +164,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -183,7 +183,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -200,7 +200,7 @@ const VideoCardSlider = ({
                       <VidCard titleIcon />
                     </div>
                     <div className="vid-card-subTexts">
-                      <Link to="/individualgroundwork">
+                      <Link to="/groundwork/family-of-light">
                         <p>Details</p>
                       </Link>
                       <Link to="/topic">
@@ -231,7 +231,7 @@ const VideoCardSlider = ({
                 <VidCard titleIcon />
               </div>
               <div className="vid-card-subTexts">
-                <Link to="/individualgroundwork">
+                <Link to="/groundwork/family-of-light">
                   <p>Details</p>
                 </Link>
                 <Link to="/topic">

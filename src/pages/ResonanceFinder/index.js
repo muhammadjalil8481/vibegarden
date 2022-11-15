@@ -11,6 +11,7 @@ import images from "../../constants/images";
 import QuestionsData from "../../constants/dummyQuestions";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
+import ResonanceQuestion from "../../components/resonanceQuestion";
 
 const ResonanceFinder = () => {
   const [count, setCount] = useState(1);
@@ -42,7 +43,7 @@ const ResonanceFinder = () => {
       <NavBar />
       <div className="container-lg rf-container">
         <div className="rf-row row">
-          <div className={`rf-left ${count !== 5 && "col-lg-6 col-md-6"}`}>
+          <div className={`rf-left ${count !== 5 && "col-lg-7 col-md-6"}`}>
             <div className="rf-top">
               <h4>Resonance Finder</h4>
               <span className="rf-topright">
@@ -79,7 +80,7 @@ const ResonanceFinder = () => {
                 )}
                 <p className="rf-statement">Statement:</p>
                 <h3 className="rf-heading">{heading}</h3>
-                <div className="rf-choices">
+                {/* <div className="rf-choices">
                   {questions.map((ques) => {
                     return (
                       <span
@@ -105,6 +106,29 @@ const ResonanceFinder = () => {
                       </span>
                     );
                   })}
+                </div> */}
+                <div className="rf-choices2">
+                  {questions.map((ques) => {
+                    return (
+                      <div
+                        className="rf-choice2"
+                        onClick={() => setChoice(ques.question)}
+                      >
+                        {ques.question === choice ? (
+                          <ResonanceQuestion
+                            image={ques.image}
+                            text={ques.question}
+                            checked
+                          />
+                        ) : (
+                          <ResonanceQuestion
+                            image={ques.image}
+                            text={ques.question}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
                 <div
                   className="rf-btn"
@@ -118,6 +142,16 @@ const ResonanceFinder = () => {
                     padXBig
                     paddingY
                   />
+                  {/* {count < 4 ? (
+                    <ButtonFilled
+                      text=">"
+                      bgGradient={"yes"}
+                      padXBig
+                      paddingY
+                    />
+                  ) : (
+                    <ButtonFilled />
+                  )} */}
                 </div>
               </div>
             )}
@@ -194,7 +228,7 @@ const ResonanceFinder = () => {
           </div>
 
           {count === 1 && (
-            <div className="rf-right col-lg-6 col-md-6">
+            <div className="rf-right col-lg-5 col-md-6">
               <div className="rf-video">
                 <VidCard />
               </div>

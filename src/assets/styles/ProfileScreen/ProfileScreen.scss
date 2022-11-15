@@ -19,17 +19,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  @media (max-width: 1199px) {
+    flex-direction: column;
+  }
   @media (max-width: 991px) {
     padding: 0 3rem;
-  }
-  @media (max-width: 767px) {
-    flex-direction: column;
   }
   @media (max-width: 430px) {
     padding: 0 2rem;
   }
   .ps-top-image {
-    width: 38%;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
     @media (max-width: 767px) {
       width: 10rem;
     }
@@ -46,6 +48,12 @@
     // justify-content: center;
     align-items: center;
     // background-color: darkgoldenrod;
+    @media (max-width: 1199px) {
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
   }
   .ps-top-info {
     margin-left: 2rem;
@@ -71,22 +79,26 @@
   align-items: flex-start;
   justify-content: center;
   // background-color: lavender;
+  flex-wrap: wrap;
   @media (max-width: 767px) {
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-top: 2rem;
+    width: 70%;
   }
-  @media (max-width: 430px) {
-    justify-content: flex-end;
+  @media (max-width: 576px) {
+    width: 90%;
   }
-  @media (max-width: 400px) {
-    // flex-direction: column;
-    // align-items: center;
+  @media (max-width: 450px) {
+    width: 100%;
   }
 }
 .ps-top-btn {
   margin-right: 2rem;
-  @media (max-width: 430px) {
-    margin-bottom: 1rem;
+  @media (max-width: 767px) {
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 450px) {
+    margin-right: 1rem;
   }
 }
 
@@ -109,7 +121,8 @@
   flex-direction: column;
   // background-color: lawngreen;
   height: fit-content;
-  margin-top: -22rem;
+  margin-top: 5rem;
+  // margin-top: -22rem;
   @media (max-width: 767px) {
     margin-top: 5rem;
   }
@@ -133,6 +146,20 @@
 .ps-inputIcon {
   display: flex;
   align-items: center;
+
+  // background-color: firebrick;
+  span {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
 }
 .ps-editPassword {
   background: #1492e6;
@@ -140,12 +167,17 @@
   margin-top: 2rem;
   border-radius: 1rem;
   margin-left: 1.5rem;
+  position: absolute;
+  right: 20%;
+  top: 1%;
 }
 
 .ps-form {
   margin-left: 5rem;
   margin-top: 3rem;
+  // background-color: darkcyan;
   margin-bottom: 2rem;
+  position: relative;
   @media (max-width: 767px) {
     align-self: center;
     margin-left: 0rem;
@@ -168,13 +200,14 @@
   border-radius: 10px;
   padding: 1rem;
   margin-top: 2rem;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-left: 4rem;
+  // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   // width: 150%;
   .ps-library-item {
     display: flex;
     align-items: center;
     margin-right: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     // background-color: darkcyan;
@@ -184,6 +217,7 @@
       margin-top: 1.2rem;
       margin-left: 1rem;
       font-family: "josefin sans";
+      color: $black-3;
       // font-weight: 700;
     }
     span {
@@ -217,4 +251,46 @@
   display: flex;
   flex-direction: column;
   // background-color: salmon;
+  margin-right: 2rem;
+}
+
+.profile-bloom-check {
+  // background-color: forestgreen;
+  h4 {
+    // background-color: rosybrown;
+    font-family: "josefin sans";
+    color: $black-3;
+  }
+  .pbc-container {
+    // background-color: lemonchiffon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 2rem 0;
+    .pbc-img {
+      // background-color: hotpink;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    p {
+      margin: 0 1rem;
+      font-weight: 700;
+      color: $grey;
+      font-size: 2.2rem;
+    }
+    .pbc-icons {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+  }
+}
+
+.sub-btn {
+  margin-top: 3rem;
 }

@@ -82,7 +82,7 @@ const WhiteImageInfoSection = ({
               {lightButton && (
                 <div className="wiis-lightBtnContainer">
                   <div className="wiis-lightBtn">
-                    <Link to="/individualgroundwork">
+                    <Link to="/groundwork/family-of-light">
                       <LightButton text="Details" />
                     </Link>
                   </div>

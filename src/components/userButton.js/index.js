@@ -4,13 +4,13 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { red } from "@mui/material/colors";
 
 const UserButton = ({
-  userImage = images.userImage,
+  userImage = images.avatarLeopard,
   username = "Alex Gree",
   onClickFunction = () => null,
 }) => {
   return (
     <div className="user-btn" onClick={() => onClickFunction()}>
-      <img src={userImage} className="user-btn-image" />
+      <div className="user-btn-img-container"><img src={userImage} className="user-btn-image" /></div>
       <p className="user-btn-name">{username}</p>
       <KeyboardArrowDownIcon
         fontSize="large"

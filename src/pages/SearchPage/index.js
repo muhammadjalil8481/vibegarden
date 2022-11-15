@@ -12,10 +12,12 @@ import { green } from "@mui/material/colors";
 import { RiCloseFill } from "react-icons/ri";
 import Toggle from "react-styled-toggle";
 import { Link } from "react-router-dom";
+import ButtonFilled from "../../components/Button/ButtonFilled";
 
 const SearchPage = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [showFilterModal, setShowFilterModal] = useState(false);
+  const [filtered, setFiltered] = useState("all");
 
   return (
     <>
@@ -29,9 +31,9 @@ const SearchPage = () => {
               <RiCloseFill size={20} fill="white" />
             </span>
             <div class="sfm-topicItemContainer">
-              <h4 className="sfm-topicheading ">Topics</h4>;
+              <h4 className={`sfm-topicheading `}>Category</h4>;
               <div class="sfm-topic">
-                {new Array(10).fill(null).map((topic) => {
+                {new Array(5).fill(null).map((topic) => {
                   return (
                     <div class="sfm-topicItem ">
                       <Toggle
@@ -41,8 +43,9 @@ const SearchPage = () => {
                         sliderHeight={20}
                         width={55}
                         height={28}
+                        onChange={() => setFiltered("buddhism")}
                       />
-                      <label className="sfm-topicLabel">Topic</label>
+                      <label className="sfm-topicLabel">Category</label>
                     </div>
                   );
                 })}
@@ -50,9 +53,9 @@ const SearchPage = () => {
             </div>
             {(activeTab === "tools" || activeTab === "groundwork") && (
               <div class="sfm-topicItemContainer">
-                <h4 className="sfm-topicheading ">Types</h4>;
+                <h4 className="sfm-topicheading ">Topic</h4>;
                 <div class="sfm-topic">
-                  {new Array(10).fill(null).map((topic) => {
+                  {new Array(15).fill(null).map((topic) => {
                     return (
                       <div class="sfm-topicItem ">
                         <Toggle
@@ -62,17 +65,38 @@ const SearchPage = () => {
                           sliderHeight={20}
                           width={55}
                           height={28}
+                          onChange={() => setFiltered("tonglen")}
                         />
-                        <label className="sfm-topicLabel">Type</label>
+                        <label className="sfm-topicLabel">Topic</label>
                       </div>
                     );
                   })}
                 </div>
               </div>
             )}
-            <div className="sfm-btn" onClick={() => setShowFilterModal(false)}>
-              <GreenButton text="Apply Filter" />
+            <div className="sfm-btnContainer">
+              <div
+                className="sfm-btn"
+                onClick={() => setShowFilterModal(false)}
+              >
+                <GreenButton text="Apply Filter" />
+              </div>
+              {/* <div
+                className="sfm-btn"
+                onClick={() => setShowFilterModal(false)}
+              >
+                <ButtonFilled bgGradient={"yes"} />
+              </div> */}
             </div>
+            {(activeTab === "tools" || activeTab === "groundwork") && (
+              <div className="rf-option">
+                <Link to="/resonancefinder">
+                  <p>
+                    Not Sure ? <span>Try Resonance Finder</span>
+                  </p>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -126,7 +150,9 @@ const SearchPage = () => {
           <div className="row sp-row">
             <div className="col-lg-7 sp-left-col">
               <div className="sp-resultAndFilter">
-                <h4 className="sp-result">{activeTab} Results</h4>
+                <h4 className="sp-result">
+                  Showing results for {filtered} topics
+                </h4>
                 <div
                   className="sp-filter"
                   onClick={() => setShowFilterModal(true)}
@@ -144,7 +170,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard groundwork />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -160,7 +186,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "GroundWork Video" }}
                         >
                           <p>Details</p>
@@ -173,7 +199,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard groundwork />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -189,7 +215,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "GroundWork Video" }}
                         >
                           <p>Details</p>
@@ -202,7 +228,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard groundwork />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -218,7 +244,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "GroundWork Video" }}
                         >
                           <p>Details</p>
@@ -241,7 +267,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard tool />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -257,7 +283,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "Tools Video" }}
                         >
                           <p>Details</p>
@@ -270,7 +296,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard tool />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -286,7 +312,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "Tools Video" }}
                         >
                           <p>Details</p>
@@ -299,7 +325,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard tool />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -315,7 +341,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "Tools Video" }}
                         >
                           <p>Details</p>
@@ -338,7 +364,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard groundwork />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -354,7 +380,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "Fresh Blooms Video" }}
                         >
                           <p>Details</p>
@@ -367,7 +393,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard groundwork />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -383,7 +409,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "Fresh Blooms Video" }}
                         >
                           <p>Details</p>
@@ -396,7 +422,7 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard />
+                      <VidCard groundwork />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -412,7 +438,7 @@ const SearchPage = () => {
                       </p>
                       <div className="sp-item-info-subtext">
                         <Link
-                          to="/individualGroundWork"
+                          to="/groundwork/family-of-light"
                           state={{ heading: "Fresh Blooms Video" }}
                         >
                           <p>Details</p>

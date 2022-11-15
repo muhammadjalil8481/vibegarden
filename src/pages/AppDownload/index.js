@@ -7,7 +7,7 @@ import { green } from "@mui/material/colors";
 const AppDownload = () => {
   const navigate = useNavigate();
   return (
-    <section className="app-download bg-flowers">
+    <section className="app-download bg-greenMask-light">
       <div className="rotatedIcon" onClick={() => navigate(-1)}>
         <ArrowBackIosRoundedIcon
           // fontSize="large"
@@ -27,6 +27,7 @@ const AppDownload = () => {
           <img src={images.logo4} />
         </div>
       </div>
+
       {/* <h1>dxms</h1> */}
       {/* <div className="ad-card-container">
         <div className="ad-card card border-0">

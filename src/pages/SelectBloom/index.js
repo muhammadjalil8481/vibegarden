@@ -3,14 +3,22 @@ import NavBar from "../../components/Navbar";
 import images from "../../constants/images";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 import { BsCheckLg } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
+import AlertModal from "../../components/Modal/AlertModal";
 
 const SelectBloom = () => {
   const [choice, setChoice] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="selectavatar">
       {/* <NavBar onlyBrand /> */}
+      <AlertModal
+        message="Please select a bloom"
+        state={showModal}
+        setState={setShowModal}
+      />
       <div className="select-avatar bg-lightGreenMask">
         <Link to="/selectavatar">
           <span className="bc-back">
@@ -104,14 +112,21 @@ const SelectBloom = () => {
             </Link>
           </div>
         </div>
-        <Link to="/bloomcheck">
+        {/* <Link to="/bloomcheck"> */}
+        <span
+          onClick={() => {
+            !choice && setShowModal(true);
+            choice && navigate("/bloomcheck");
+          }}
+        >
           <ButtonFilled
             text="Continue"
             bgGradient={"yes"}
             padXResponsive
             padYResponsive
           />
-        </Link>
+        </span>
+        {/* </Link> */}
       </div>
       {/* <Footer /> */}
     </div>

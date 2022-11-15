@@ -75,7 +75,7 @@ const FourColumnVideoLayout = ({
               </div>
               <div className="subtext-container">
                 <Link
-                  to="/individualgroundwork"
+                  to={!tools ? `/groundwork/family-of-light` : `/tools/tonglen`}
                   state={{ tool: tools ? true : false }}
                 >
                   <p className={`subtext ${whiteSubText && "color-white"}`}>

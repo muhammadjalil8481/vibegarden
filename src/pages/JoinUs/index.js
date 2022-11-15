@@ -26,7 +26,7 @@ const JoinUs = () => {
               <h2>Brilliant Choice You !</h2>
             </div>
             <div className="join-us-checkbox-list my-5">
-              <CheckBoxList />
+              <CheckBoxList checked={true} />
             </div>
             <div className="join-us-video-card">
               {/* <EmptyVideoCard width="450px" /> */}

@@ -53,7 +53,7 @@ const Teachers = () => {
           </div>
           {searchValue && (
             <div className="search-box">
-              <Link to="/individualGroundWork">
+              <Link to="/groundwork/family-of-light">
                 <div className="search-box-container">
                   <div className="search-box-icon">#</div>
                   <div className="search-box-info">

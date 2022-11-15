@@ -56,7 +56,7 @@ const WhiteImageInfoSection2 = ({
               </div>
               <div className="wiis2-right-col-btn-container ">
                 <div className="wiis2-right-col-btn ">
-                  <Link to="/individualgroundwork" state={{ tool: true }}>
+                  <Link to="/groundwork/family-of-light" state={{ tool: true }}>
                     <LightButton text="Details" />
                   </Link>
                 </div>

@@ -7,6 +7,7 @@ import UserButton from "../userButton.js";
 import VibeGardenLogo from "../../assets/images/vibegarden_logo.svg";
 import { IoNotificationsSharp, IoAddOutline } from "react-icons/io5";
 import NotificationPopUp from "../NotificationPopUp";
+import Spiral from "../../assets/images/spiral.svg";
 
 const NavBar = ({ onlyBrand, userNav = false }) => {
   let location = useLocation();
@@ -30,7 +31,11 @@ const NavBar = ({ onlyBrand, userNav = false }) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
   useEffect(() => {
-    if (location.pathname === "/homepage" || location.pathname === "/tools")
+    if (
+      location.pathname === "/homepage" ||
+      location.pathname === "/tools" ||
+      location.pathname === "/profile"
+    )
       setUser(true);
   }, [location]);
 
@@ -95,10 +100,23 @@ const NavBar = ({ onlyBrand, userNav = false }) => {
                 <Nav className="ms-auto">
                   <div className="navbar-actions">
                     <span className="navbar-tools-icon">
-                      <Link to="/resonance">
-                        {/* <IoAddOutline size={25} /> */}
-                        <img src={images.spiral} />
-                      </Link>
+                      {/* <Link to="/resonance"> */}
+                      {/* <IoAddOutline size={25} /> */}
+                      {location.pathname !== "/profile" && (
+                        <Link to="/resonancefinder">
+                          <div className="profile-spiral">
+                            <img src={Spiral} />
+                          </div>
+                        </Link>
+                      )}
+                      {location.pathname === "/profile" && (
+                        <Link to="/updatebloomcheck">
+                          <div className="profile-bloom">
+                            <img src={images.bloomChu} />
+                          </div>
+                        </Link>
+                      )}
+                      {/* </Link> */}
                     </span>
 
                     <span className="navbar-actions-icon">
@@ -120,9 +138,7 @@ const NavBar = ({ onlyBrand, userNav = false }) => {
                       <div className="expandedBar">
                         <NavLink>
                           <Link to="/profile">
-                            <div className="list_item-expanded">
-                              Profile Settings
-                            </div>
+                            <div className="list_item-expanded">Profile</div>
                           </Link>
                         </NavLink>
                         <NavLink>

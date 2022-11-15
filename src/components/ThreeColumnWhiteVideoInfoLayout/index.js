@@ -38,7 +38,10 @@ const ThreeColumnWhiteVideoInfoLayout = ({
                   groundwork={groundWork ? true : false}
                 />
               ) : (
-                <Link to="/individualgroundwork" state={{ heading: title1 }}>
+                <Link
+                  to="/groundwork/family-of-light"
+                  state={{ heading: title1 }}
+                >
                   <VidCard
                     image={images.placeholder}
                     recentVibes
@@ -48,14 +51,17 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               )}
             </div>
             <div className="tcwvil-subtext-container">
-              <Link to="/individualgroundwork" state={{ heading: title1 }}>
+              <Link
+                to="/groundwork/family-of-light"
+                state={{ heading: title1 }}
+              >
                 <p className="tcwvil-subtext">Details</p>
               </Link>
               <Link to="/topic">
                 <p className="tcwvil-subtext">#Tag</p>
               </Link>
             </div>
-            <Link to="/individualgroundwork" state={{ heading: title1 }}>
+            <Link to="/groundwork/family-of-light" state={{ heading: title1 }}>
               <div className="tcwvil-btn">
                 <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
               </div>
@@ -79,20 +85,26 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               {!noRedirect ? (
                 <VidCard groundwork={groundWork ? true : false} />
               ) : (
-                <Link to="/individualgroundwork" state={{ heading: title2 }}>
+                <Link
+                  to="/groundwork/family-of-light"
+                  state={{ heading: title2 }}
+                >
                   <VidCard recentVibes groundwork={groundWork ? true : false} />
                 </Link>
               )}
             </div>
             <div className="tcwvil-subtext-container">
-              <Link to="/individualgroundwork" state={{ heading: title2 }}>
+              <Link
+                to="/groundwork/family-of-light"
+                state={{ heading: title2 }}
+              >
                 <p className="tcwvil-subtext">Details</p>
               </Link>
               <Link to="/topic">
                 <p className="tcwvil-subtext">#Tag</p>
               </Link>
             </div>
-            <Link to="/individualgroundwork" state={{ heading: title2 }}>
+            <Link to="/groundwork/family-of-light" state={{ heading: title2 }}>
               <div className="tcwvil-btn">
                 <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
               </div>
@@ -119,7 +131,10 @@ const ThreeColumnWhiteVideoInfoLayout = ({
                   groundwork={groundWork ? true : false}
                 />
               ) : (
-                <Link to="/individualgroundwork" state={{ heading: title3 }}>
+                <Link
+                  to="/groundwork/family-of-light"
+                  state={{ heading: title3 }}
+                >
                   <VidCard
                     recentVibes
                     image={images.placeholder4}
@@ -129,14 +144,17 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               )}
             </div>
             <div className="tcwvil-subtext-container">
-              <Link to="/individualgroundwork" state={{ heading: title3 }}>
+              <Link
+                to="/groundwork/family-of-light"
+                state={{ heading: title3 }}
+              >
                 <p className="tcwvil-subtext">Details</p>
               </Link>
               <Link to="/topic">
                 <p className="tcwvil-subtext">#Tag</p>
               </Link>
             </div>
-            <Link to="/individualgroundwork" state={{ heading: title3 }}>
+            <Link to="/groundwork/family-of-light" state={{ heading: title3 }}>
               <div className="tcwvil-btn">
                 <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
               </div>

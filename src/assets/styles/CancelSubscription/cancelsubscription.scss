@@ -1,0 +1,59 @@
+.cs {
+  //   background-color: wheat;
+  width: 100vw;
+  height: 100vh;
+  .cs-container {
+    // background-color: rosybrown;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      //   background-color: royalblue;
+      font-family: "josefin sans";
+      font-size: 5rem;
+      margin-bottom: 5rem;
+    }
+    .cs-row {
+      //   background-color: lemonchiffon;
+      justify-content: center;
+      .cs-col {
+        // border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+      }
+      .cs-col-1 {
+        p {
+          font-family: "josefin sans";
+          color: $black-3;
+          font-size: 1.6rem;
+          margin-top: 2rem;
+        }
+        .vid-card {
+          p {
+            color: white;
+          }
+        }
+      }
+      .cs-line {
+        background-color: $secondary;
+        height: 100%;
+        width: 1px;
+        margin: auto;
+      }
+      .cs-col-3 {
+        h5 {
+          font-family: "josefin sans";
+          color: $black-3;
+          font-size: 2.2rem;
+        }
+      }
+    }
+    .cs-btn {
+      margin-top: 5rem;
+    }
+  }
+}

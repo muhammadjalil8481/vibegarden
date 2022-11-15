@@ -13,6 +13,7 @@
   background-color: aqua;
   text-align: center;
   position: relative;
+
   // width: 200px;
   // height: 200px;
   width: 40rem;
@@ -227,4 +228,8 @@
       width: 100%;
     }
   }
+}
+
+.ad-bg{
+  background-image: url("../../images/green-mask.png");
 }

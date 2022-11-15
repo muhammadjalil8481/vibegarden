@@ -7,25 +7,34 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  // background-color: salmon;
   h2 {
     color: $secondary;
     text-align: center;
     margin-bottom: 2rem;
+    // background-color: magenta;
   }
   .bloom-check-text {
     color: $black-3;
     font-family: "josefin sans";
     text-align: center;
+    // background-color: maroon;
   }
   .bc-container {
     // background-color: salmon;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin: 4rem 0;
+    // background-color: mediumaquamarine;
+
     .bc-imageAndText {
-      //   background-color: sandybrown;
+      // background-color: sandybrown;
       margin: 0 0.5rem;
+      @media (max-width: 430px) {
+        margin-bottom: 1rem;
+      }
       p {
         color: $secondary;
         font-size: 1.4rem;
@@ -69,7 +78,6 @@
 }
 
 .bc-manual-percent {
-  //   background-color: sandybrown;
   //   border: 1px solid black;
   //   box-shadow: #ff40533d 10px 20px 30px;
   //   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -83,21 +91,36 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  // background-color: sandybrown;
+  @media (max-width: 430px) {
+    padding: 2rem 1rem;
+  }
   h4 {
     text-align: center;
     font-family: "josefin sans";
+    // background-color: salmon;
+    @media (max-width: 430px) {
+      font-size: 2.2rem;
+    }
   }
   .bc-manual-select {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 4rem 0;
+    // background-color: cadetblue;
+    @media (max-width: 430px) {
+      margin: 2rem 0;
+    }
     p {
       margin: 0 1.5rem;
       //   font-family: "josefin sans";
       font-weight: 700;
       color: $grey;
       font-size: 2.4rem;
+      @media (max-width: 430px) {
+        font-size: 2rem;
+      }
     }
     .bc-manual-icons {
       display: flex;
