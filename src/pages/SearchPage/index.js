@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../../components/Navbar";
 import FormGroupAuth from "../../components/FormInputAuth";
 import { dummyVideodata } from "../../constants/dummyVideoData";
@@ -17,8 +17,46 @@ import ButtonFilled from "../../components/Button/ButtonFilled";
 const SearchPage = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [showFilterModal, setShowFilterModal] = useState(false);
-  const [filtered, setFiltered] = useState("all");
-
+  const [filtered, setFiltered] = useState([]);
+  const category = [
+    "category 1",
+    "category 2",
+    "category 3",
+    "category 4",
+    "category 5",
+  ];
+  const topics = [
+    "topic 1",
+    "topic 2",
+    "topic 3",
+    "topic 4",
+    "topic 5",
+    "topic 6",
+    "topic 7",
+    "topic 8",
+    "topic 9",
+    "topic 10",
+    "topic 11",
+    "topic 12",
+    "topic 13",
+    "topic 14",
+    "topic 15",
+  ];
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+  useEffect(() => {
+    function updateSize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
   return (
     <>
       {showFilterModal && (
@@ -30,50 +68,77 @@ const SearchPage = () => {
             >
               <RiCloseFill size={20} fill="white" />
             </span>
-            <div class="sfm-topicItemContainer">
-              <h4 className={`sfm-topicheading `}>Category</h4>;
-              <div class="sfm-topic">
-                {new Array(5).fill(null).map((topic) => {
-                  return (
-                    <div class="sfm-topicItem ">
-                      <Toggle
-                        backgroundColorChecked="rgba(27, 91, 47, 1)"
-                        backgroundColorUnchecked="#75997E"
-                        sliderWidth={20}
-                        sliderHeight={20}
-                        width={55}
-                        height={28}
-                        onChange={() => setFiltered("buddhism")}
-                      />
-                      <label className="sfm-topicLabel">Category</label>
-                    </div>
-                  );
-                })}
-              </div>
+            <div className="sfm-resonance">
+              <p>Select Topics Below Or Try Our </p>
+              <Link to="/resonancefinder">
+                <span>Resonance Finder</span>
+              </Link>
             </div>
-            {(activeTab === "tools" || activeTab === "groundwork") && (
+            <div className="sfm-main">
               <div class="sfm-topicItemContainer">
-                <h4 className="sfm-topicheading ">Topic</h4>;
+                {/* <h4 className={`sfm-topicheading `}>Category</h4>; */}
                 <div class="sfm-topic">
-                  {new Array(15).fill(null).map((topic) => {
+                  {category.map((cat) => {
                     return (
                       <div class="sfm-topicItem ">
                         <Toggle
                           backgroundColorChecked="rgba(27, 91, 47, 1)"
                           backgroundColorUnchecked="#75997E"
-                          sliderWidth={20}
-                          sliderHeight={20}
-                          width={55}
-                          height={28}
-                          onChange={() => setFiltered("tonglen")}
+                          sliderWidth={dimensions.width > 991 ? 20 : 12}
+                          sliderHeight={dimensions.width > 991 ? 20 : 12}
+                          width={dimensions.width > 991 ? 55 : 45}
+                          height={dimensions.width > 991 ? 28 : 25}
+                          checked={filtered.includes(cat) ? true : false}
+                          // onChange={() => setFiltered([...filtered, cat])}
+                          onChange={() => {
+                            if (filtered.includes(cat)) {
+                              setFiltered(
+                                filtered.filter((item) => item !== cat)
+                              );
+                            } else {
+                              setFiltered([...filtered, cat]);
+                            }
+                          }}
                         />
-                        <label className="sfm-topicLabel">Topic</label>
+                        <label className="sfm-topicLabel">{cat}</label>
                       </div>
                     );
                   })}
                 </div>
               </div>
-            )}
+              {(activeTab === "tools" || activeTab === "groundwork") && (
+                <div class="sfm-topicItemContainer">
+                  {/* <h4 className="sfm-topicheading ">Topic</h4>; */}
+                  <div class="sfm-topic">
+                    {topics.map((topic) => {
+                      return (
+                        <div class="sfm-topicItem ">
+                          <Toggle
+                            backgroundColorChecked="rgba(27, 91, 47, 1)"
+                            backgroundColorUnchecked="#75997E"
+                            sliderWidth={dimensions.width > 991 ? 20 : 12}
+                            sliderHeight={dimensions.width > 991 ? 20 : 12}
+                            width={dimensions.width > 991 ? 55 : 45}
+                            height={dimensions.width > 991 ? 28 : 25}
+                            checked={filtered.includes(topic) ? true : false}
+                            onChange={() => {
+                              if (filtered.includes(topic)) {
+                                setFiltered(
+                                  filtered.filter((item) => item !== topic)
+                                );
+                              } else {
+                                setFiltered([...filtered, topic]);
+                              }
+                            }}
+                          />
+                          <label className="sfm-topicLabel">{topic}</label>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
             <div className="sfm-btnContainer">
               <div
                 className="sfm-btn"
@@ -88,7 +153,7 @@ const SearchPage = () => {
                 <ButtonFilled bgGradient={"yes"} />
               </div> */}
             </div>
-            {(activeTab === "tools" || activeTab === "groundwork") && (
+            {/* {(activeTab === "tools" || activeTab === "groundwork") && (
               <div className="rf-option">
                 <Link to="/resonancefinder">
                   <p>
@@ -96,7 +161,7 @@ const SearchPage = () => {
                   </p>
                 </Link>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       )}
@@ -149,25 +214,65 @@ const SearchPage = () => {
           </div>
           <div className="row sp-row">
             <div className="col-lg-7 sp-left-col">
-              <div className="sp-resultAndFilter">
-                <h4 className="sp-result">
-                  Showing results for {filtered} topics
-                </h4>
-                <div
-                  className="sp-filter"
-                  onClick={() => setShowFilterModal(true)}
-                >
-                  <FilterAltIcon fontSize="large" sx={{ color: green[700] }} />
-                </div>
+              <div
+                className={`sp-resultAndFilter 
+                my-4
+                ${
+                  (activeTab === "groundwork" || activeTab === "tools") &&
+                  "my-5"
+                }
+                `}
+              >
+                {/* <h4 className="sp-result"> */}
+                {/* Showing results for {filtered} topics */}
+                {/* </h4> */}
+                {activeTab !== "teachers" &&
+                  activeTab !== "fresh blooms" &&
+                  activeTab !== "all" && (
+                    <div className="filter-tabs">
+                      {filtered.map((item) => {
+                        return (
+                          <span className="sp-filter-tab">
+                            {item}
+                            <span
+                              className="spft-close"
+                              onClick={() =>
+                                setFiltered(
+                                  filtered.filter((it) => it !== item)
+                                )
+                              }
+                            >
+                              <RiCloseFill size={15} />
+                            </span>
+                          </span>
+                        );
+                      })}
+                    </div>
+                  )}
+                {activeTab !== "teachers" &&
+                  activeTab !== "fresh blooms" &&
+                  activeTab !== "all" && (
+                    <div
+                      className="sp-filter"
+                      onClick={() => setShowFilterModal(true)}
+                    >
+                      <FilterAltIcon
+                        fontSize="large"
+                        sx={{ color: green[700] }}
+                      />
+                    </div>
+                  )}
               </div>
               {(activeTab === "all" || activeTab === "groundwork") && (
                 <div class="sp-type">
-                  <div class="search-type-heading-container">
-                    <h4 className="search-type-heading">Ground Work</h4>
-                    <Link to="/groundwork">
-                      <p>See All</p>
-                    </Link>
-                  </div>
+                  {/* {activeTab !== "all" && (
+                    // <div className="search-type-heading-container">
+                    //   <h4 className="search-type-heading">Ground Work</h4>
+                    //   <Link to="/groundwork">
+                    //     <p>See All</p>
+                    //   </Link>
+                    // </div>
+                  )} */}
                   <div className="sp-item">
                     <div className="sp-item-video">
                       <VidCard groundwork />
@@ -259,12 +364,14 @@ const SearchPage = () => {
               )}
               {(activeTab === "all" || activeTab === "tools") && (
                 <div class="sp-type">
-                  <div class="search-type-heading-container">
-                    <h4 className="search-type-heading">Tools</h4>
-                    <Link to="/tools">
-                      <p>See All</p>
-                    </Link>
-                  </div>
+                  {/* {activeTab !== "all" && (
+                    // <div class="search-type-heading-container">
+                    //   <h4 className="search-type-heading">Tools</h4>
+                    //   <Link to="/tools">
+                    //     <p>See All</p>
+                    //   </Link>
+                    // </div>
+                  )} */}
                   <div className="sp-item">
                     <div className="sp-item-video">
                       <VidCard tool />
@@ -356,12 +463,14 @@ const SearchPage = () => {
               )}
               {(activeTab === "all" || activeTab === "fresh blooms") && (
                 <div class="sp-type">
-                  <div class="search-type-heading-container">
-                    <h4 className="search-type-heading">Fresh Blooms</h4>
-                    <Link to="/freshblooms">
-                      <p>See All</p>
-                    </Link>
-                  </div>
+                  {/* {activeTab !== "all" && (
+                    <div class="search-type-heading-container">
+                      <h4 className="search-type-heading">Fresh Blooms</h4>
+                      <Link to="/freshblooms">
+                        <p>See All</p>
+                      </Link>
+                    </div>
+                  )} */}
                   <div className="sp-item">
                     <div className="sp-item-video">
                       <VidCard groundwork />
@@ -451,14 +560,14 @@ const SearchPage = () => {
                   </div>
                 </div>
               )}
-              {(activeTab === "all" || activeTab === "teachers") && (
+              {activeTab === "teachers" && (
                 <div class="sp-type">
-                  <div class="search-type-heading-container">
+                  {/* <div class="search-type-heading-container">
                     <h4 className="search-type-heading">Teachers</h4>
                     <Link to="/teachers">
                       <p>See All</p>
                     </Link>
-                  </div>
+                  </div> */}
                   <div class="sp-search-teachers">
                     <div className="teacher-infosearch-imgHeading">
                       <Link to="/schedule">

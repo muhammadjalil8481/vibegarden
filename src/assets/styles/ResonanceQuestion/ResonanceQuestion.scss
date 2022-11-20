@@ -22,6 +22,10 @@
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-right: 4rem;
+    @media (max-width: 1199px) {
+      margin-right: 2rem;
+    }
+
     &-container {
       // background-color: yellow;
       img {
@@ -52,4 +56,7 @@
 }
 .rq-img-checked {
   margin-right: -2.1rem !important;
+  @media (max-width: 1299px) {
+    margin-left: 0.5rem;
+  }
 }

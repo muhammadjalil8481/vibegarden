@@ -92,7 +92,7 @@ const ProfileScreen = () => {
       />
       <NavBar />
       <section className="profile-screen">
-        <div className="container-lg ps-container ">
+        <div className="container-xl ps-container ">
           <div className="row ps-row ">
             <div className="ps-top col-12">
               <div className="ps-top-imginfo">
@@ -127,34 +127,28 @@ const ProfileScreen = () => {
                     </div>
                   </div>
                 </div>
-                <div className="ps-top-buttons">
-                  {/* <span
-                    className="ps-library-btn"
-                    onClick={() => setLibrary(!library)}
-                  >
-                    <p className="mx-2">Library</p>
-                    {!library ? (
-                      <BsCaretDownFill color="rgba(255, 84, 90, 1)" size={15} />
-                    ) : (
-                      <BsCaretUpFill color="rgba(255, 84, 90, 1)" size={15} />
-                    )}
-                  </span> */}
-                  <div
-                    className="ps-top-btn"
-                    onClick={() => setShowModal(true)}
-                  >
+                {(editAbout || editBilling || editSubscription) && (
+                  <div className="ps-top-buttons">
+                    <div
+                      className="ps-top-btn"
+                      onClick={() => setShowModal(true)}
+                    >
+                      <span className="ps-btn-outline">
+                        <ButtonFilled
+                          // bgGradient={"yes"}
+                          text="Save"
+                          padXResponsive
+                          outline
+                        />
+                      </span>
+                    </div>
                     <ButtonFilled
-                      bgGradient={"yes"}
-                      text="Save"
                       padXResponsive
+                      bgGradient={"yes"}
+                      text="Cancel"
                     />
                   </div>
-                  {/* <ButtonFilled
-                    padXResponsive
-                    bgGradient={"yes"}
-                    text="Cancel"
-                  /> */}
-                </div>
+                )}
                 {library && (
                   <div className="ps-library-items">
                     <div className="ps-library-item">

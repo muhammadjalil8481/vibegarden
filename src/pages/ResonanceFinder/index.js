@@ -43,7 +43,7 @@ const ResonanceFinder = () => {
       <NavBar />
       <div className="container-lg rf-container">
         <div className="rf-row row">
-          <div className={`rf-left ${count !== 5 && "col-lg-7 col-md-6"}`}>
+          <div className={`rf-left ${count === 1 && "col-lg-7"}`}>
             <div className="rf-top">
               <h4>Resonance Finder</h4>
               <span className="rf-topright">
@@ -107,7 +107,7 @@ const ResonanceFinder = () => {
                     );
                   })}
                 </div> */}
-                <div className="rf-choices2">
+                <div className={`rf-choices2 ${count!==1 && 'rfc-smwidth'}`}>
                   {questions.map((ques) => {
                     return (
                       <div
@@ -158,7 +158,7 @@ const ResonanceFinder = () => {
             {count === 5 && (
               <div className="rf-result">
                 <div className="row rf-row">
-                  <div className="col-lg-4 col-md-6 rf-col-1">
+                  <div className="col-lg-4 rf-col-1">
                     <h4>Result!</h4>
                     <div className="rf-rainbow">
                       <img src={images.resonanceRainbow} />

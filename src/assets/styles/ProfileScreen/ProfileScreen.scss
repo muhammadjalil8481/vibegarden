@@ -3,8 +3,18 @@
 .profile-screen {
   // background-color: wheat;
   padding: 5rem 0;
+  @media (max-width: 991px) {
+    padding-top: 2rem;
+  }
   .ps-container {
-    // background-color: rosybrown;
+    background-color: rosybrown;
+    @media (max-width: 1199px) {
+      padding: 5rem 3rem;
+    }
+    @media (max-width: 600px) {
+      padding: 4rem 1rem;
+    }
+
     .ps-row {
       // background-color: royalblue;
 
@@ -14,32 +24,40 @@
 }
 
 .ps-top {
-  // background-color: teal;
+  background-color: teal;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  @media (max-width: 1199px) {
-    flex-direction: column;
-  }
-  @media (max-width: 991px) {
-    padding: 0 3rem;
-  }
-  @media (max-width: 430px) {
-    padding: 0 2rem;
-  }
+  // @media (max-width: 1199px) {
+  //   // flex-direction: column;
+  // }
+  // @media (max-width: 991px) {
+  //   padding: 0 rem;
+  // }
+  // @media (max-width: 430px) {
+  //   padding: 0 2rem;
+  // }
   .ps-top-image {
     width: 15rem;
     height: 15rem;
     border-radius: 50%;
+    background-color: darkcyan;
     @media (max-width: 767px) {
       width: 10rem;
+      height: 10rem;
     }
-    // @media (max-width: 430px) {
-    //   width: 8rem;
-    // }
+    @media (max-width: 500px) {
+      width: 8rem;
+      height: 8rem;
+    }
+    @media (max-width: 380px) {
+      width: 6rem;
+      height: 6rem;
+    }
     img {
       width: 100%;
+      height: 100%;
     }
   }
   .ps-top-imginfo {
@@ -47,7 +65,7 @@
     flex-direction: row;
     // justify-content: center;
     align-items: center;
-    // background-color: darkgoldenrod;
+    background-color: darkgoldenrod;
     @media (max-width: 1199px) {
       margin-bottom: 2rem;
     }
@@ -57,16 +75,27 @@
   }
   .ps-top-info {
     margin-left: 2rem;
+    background-color: salmon;
+    @media (max-width: 500px) {
+      margin-left: 1rem;
+      // width: 80%;
+    }
     .ps-top-heading {
       font-family: "josefin sans";
       @media (max-width: 767px) {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
+      }
+      @media (max-width: 500px) {
+        font-size: 1.8rem;
       }
     }
     .ps-top-subscription {
       color: $primary;
       font-size: 1.6rem;
       font-weight: 700;
+      @media (max-width: 500px) {
+        font-size: 1.4rem;
+      }
       span {
         color: $secondary;
       }
@@ -78,11 +107,14 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  // background-color: lavender;
+  background-color: lavender;
   flex-wrap: wrap;
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
   @media (max-width: 767px) {
     justify-content: flex-start;
-    margin-top: 2rem;
+    // margin-top: 2rem;
     width: 70%;
   }
   @media (max-width: 576px) {
@@ -94,8 +126,11 @@
 }
 .ps-top-btn {
   margin-right: 2rem;
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     margin-bottom: 1.5rem;
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
   }
   @media (max-width: 450px) {
     margin-right: 1rem;
@@ -170,6 +205,18 @@
   position: absolute;
   right: 20%;
   top: 1%;
+  cursor: pointer;
+  @media (max-width: 1099px) {
+    right: 10%;
+  }
+  @media (max-width: 991px) {
+    right: 0%;
+    top: -12%;
+  }
+  @media (max-width: 767px) {
+    right: -15%;
+    top: 1%;
+  }
 }
 
 .ps-form {
@@ -192,11 +239,14 @@
 }
 
 .ps-library-items {
-  // background-color: salmon;
+  background-color: salmon;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: fit-content;
+  @media (max-width: 767px) {
+    margin: 0 auto;
+  }
   border-radius: 10px;
   padding: 1rem;
   margin-top: 2rem;
@@ -250,28 +300,49 @@
 .ps-topright {
   display: flex;
   flex-direction: column;
-  // background-color: salmon;
+  background-color: salmon;
   margin-right: 2rem;
+  @media (max-width: 991px) {
+    margin-right: 0;
+  }
 }
 
 .profile-bloom-check {
-  // background-color: forestgreen;
+  background-color: forestgreen;
   h4 {
-    // background-color: rosybrown;
+    background-color: rosybrown;
     font-family: "josefin sans";
     color: $black-3;
+    text-align: center;
+    @media (max-width: 767px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 500px) {
+      font-size: 1.7rem;
+    }
   }
   .pbc-container {
-    // background-color: lemonchiffon;
+    background-color: lemonchiffon;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0 2rem 0;
+    margin: 2rem 0 3rem 0;
+    @media (max-width: 767px) {
+      margin: 1rem 0;
+    }
     .pbc-img {
       // background-color: hotpink;
       width: 10rem;
       height: 10rem;
       border-radius: 50%;
+      @media (max-width: 767px) {
+        width: 7rem;
+        height: 7rem;
+      }
+      @media (max-width: 500px) {
+        width: 5rem;
+        height: 5rem;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -282,6 +353,9 @@
       font-weight: 700;
       color: $grey;
       font-size: 2.2rem;
+      @media (max-width: 500px) {
+        font-size: 1.8rem;
+      }
     }
     .pbc-icons {
       display: flex;

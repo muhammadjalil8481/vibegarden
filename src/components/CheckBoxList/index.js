@@ -62,11 +62,15 @@ const CheckBoxList = ({ checked = false }) => {
           {new Array(6).fill(null).map((item) => {
             return (
               <div className="form-group col-md-6">
-                <Checkbox
-                  icon={<BpIcon />}
-                  checkedIcon={<BpCheckedIcon />}
-                  checked={checked}
-                />
+                {checked ? (
+                  <Checkbox
+                    icon={<BpIcon />}
+                    checkedIcon={<BpCheckedIcon />}
+                    checked={checked}
+                  />
+                ) : (
+                  <Checkbox icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} />
+                )}
                 <p className="form-group-label">
                   Default body copy style for text on white / light color
                   backgrounds

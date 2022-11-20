@@ -1,5 +1,5 @@
 .res-finder {
-  // background-color: wheat;
+  // background-color: royalblue;
   .rf-container {
     // background-color: rosybrown;
     padding: 4rem 0;
@@ -11,13 +11,19 @@
     }
 
     .rf-top {
-      //   background-color: salmon;
+      // background-color: salmon;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       position: absolute;
       width: 100%;
       top: 5%;
+      @media (max-width: 992px) {
+        // background-color: saddlebrown;
+        position: static;
+        padding: 0 2rem;
+        top: 2%;
+      }
       @media (max-width: 767px) {
         // background-color: saddlebrown;
         padding: 0 2rem;
@@ -29,9 +35,11 @@
         font-family: "josefin sans";
         font-size: 2.6rem;
         line-height: 1.5;
+        // background-color: tan;
       }
       .rf-topright {
         background-color: $secondary;
+        // background-color: teal;
         cursor: pointer;
         color: white;
         padding: 1.2rem 1.2rem;
@@ -41,7 +49,7 @@
           color: white;
         }
         @media (max-width: 991px) {
-          margin-right: 5rem;
+          // margin-right: 5rem;
         }
         @media (max-width: 767px) {
           margin-right: 0rem;
@@ -59,7 +67,7 @@
       font-weight: 700;
       margin-bottom: 3rem;
       margin-top: 4rem;
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         // background-color: saddlebrown;
         text-align: center;
         margin-bottom: 1rem;
@@ -68,7 +76,7 @@
     .rf-star {
       margin-bottom: 1rem;
       margin-top: -2rem;
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         text-align: center;
         margin-top: 1rem;
       }
@@ -77,7 +85,7 @@
       color: black;
       font-size: 2rem;
       font-family: "josefin sans";
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         text-align: center;
       }
       span {
@@ -96,7 +104,7 @@
       width: 55%;
       line-height: 1.7;
 
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         text-align: center;
         width: 60%;
         margin: 0 auto;
@@ -110,7 +118,7 @@
       color: #1c5c2e;
       font-family: "josefin sans";
       margin-top: 1.5rem;
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         text-align: center;
       }
     }
@@ -119,14 +127,14 @@
       letter-spacing: 1px;
       font-size: 3rem;
       margin-top: 1rem;
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         text-align: center;
       }
     }
     .rf-choices {
-      //   background-color: salmon;
+      // background-color: salmon;
       display: flex;
-      @media (max-width: 767px) {
+      @media (max-width: 991px) {
         margin-top: 3rem;
         justify-content: center;
       }
@@ -189,13 +197,13 @@
 
 .rf-btn {
   margin-top: 5rem;
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     text-align: center;
   }
 }
 .rf-left {
   // background-color: darkkhaki;
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -210,8 +218,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 767px) {
-    width: 80%;
+  @media (max-width: 991px) {
+    width: 70%;
   }
   @media (max-width: 400px) {
     width: 100%;
@@ -219,7 +227,8 @@
 }
 .rf-row {
   width: 100%;
-  @media (max-width: 767px) {
+  // background-color: wheat;
+  @media (max-width: 991px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,8 +322,30 @@
   // background-color: firebrick;
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 991px) {
+    width: 85%;
+    margin: 0 auto;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    width: 70%;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
   .rf-choice2 {
     // background-color: cadetblue;
     width: 50%;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}
+.rfc-smwidth {
+  width: 70%;
+  @media (max-width: 1199px) {
+    width: 100%;
   }
 }
