@@ -41,7 +41,7 @@ const ResonanceResult = () => {
   return (
     <div className="res-finder">
       <NavBar />
-      <div className="container-lg rf-container">
+      <div className="container-lg rf-container res-res">
         {/* <div className="rf-row row"> */}
         {/* <div className={`rf-left ${count !== 5 && "col-lg-7 col-md-6"}`}> */}
         <div className="rf-top">
@@ -54,8 +54,8 @@ const ResonanceResult = () => {
         </div>
 
         <div className="rf-result">
-          <div className="row rf-row">
-            <div className="col-lg-4 col-md-6 rf-col-1">
+          <div className="row rf-row rr-row">
+            <div className="col-md-6 rf-col-1 ">
               <h4>Result!</h4>
               <div className="rf-rainbow">
                 <img src={images.resonanceRainbow} />
@@ -105,7 +105,7 @@ const ResonanceResult = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 rf-col-2">
+            <div className="col-md-6  rf-col-2">
               <h4>Note:</h4>
               <p>
                 as You grow and heal your feelings of resonance will definitely

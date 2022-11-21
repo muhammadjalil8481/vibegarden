@@ -88,10 +88,10 @@ const Teachers = () => {
         </section>
 
         <section className="teachers-info bg-lightGreen">
-          <TeacherInfo />
+          <TeacherInfo tools />
         </section>
         <section className="teachers-info bg-lightPink">
-          <TeacherInfo />
+          <TeacherInfo groundwork />
         </section>
         <Footer />
       </div>

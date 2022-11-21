@@ -23,22 +23,42 @@ const Topic = () => {
       </div>
       <GreenLineBreak />
       <div className="topic-slider container-xxl">
-        <VideoCardSlider heading="Related GroundWork" twoRowsFour />
+        <VideoCardSlider
+          heading="Related GroundWork"
+          twoRowsFour
+          recentVibes
+          groundwork
+        />
       </div>
       <div className="topic-slider container-xxl">
-        <VideoCardSlider heading="Related Tools" twoRowsFour />
+        <VideoCardSlider
+          heading="Related Tools"
+          twoRowsFour
+          recentVibes
+          tools
+        />
       </div>
       <div className="topic-slider container-xl">
-        <VideoCardSlider heading="Related GroundWork" twoRowsThree />
+        <VideoCardSlider
+          heading="Related GroundWork"
+          twoRowsThree
+          recentVibes
+          groundwork
+        />
       </div>
       <div className="topic-slider container-xl">
-        <VideoCardSlider heading="Related Tools" twoRowsThree />
+        <VideoCardSlider
+          heading="Related Tools"
+          twoRowsThree
+          recentVibes
+          tools
+        />
       </div>
       <div className="topic-slider-single container-xl">
-        <VideoCardSlider heading="Related GroundWork" />
+        <VideoCardSlider heading="Related GroundWork" recentVibes tools />
       </div>
       <div className="topic-slider-single container-xl">
-        <VideoCardSlider heading="Related Tools" />
+        <VideoCardSlider heading="Related Tools" recentVibes tools />
       </div>
       <section className="idgw-5 container">
         <h2>Related Tools</h2>

@@ -54,14 +54,18 @@ const BpCheckedIcon = styled(BpIcon)({
   },
 });
 
-const CheckBoxList = ({ checked = false }) => {
+const CheckBoxList = ({ checked = false, lg }) => {
   return (
     <section className="checkbox-list ">
       <FormGroup>
         <div className="row">
           {new Array(6).fill(null).map((item) => {
             return (
-              <div className="form-group col-md-6">
+              <div
+                className={`form-group ${!lg && "col-md-6"} ${
+                  lg && "col-lg-6"
+                }`}
+              >
                 {checked ? (
                   <Checkbox
                     icon={<BpIcon />}

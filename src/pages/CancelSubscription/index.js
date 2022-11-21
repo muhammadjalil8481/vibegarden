@@ -16,10 +16,10 @@ const CancelSubscription = () => {
         linkTo="/join-us"
       />
       <div className="cancel-subs cs">
-        <div className="container cs-container">
+        <div className="container-lg cs-container">
           <h1 className="text-center">Cancel Subscription</h1>
           <div className="row cs-row">
-            <div className="col-5 cs-col cs-col-1">
+            <div className="col-md-5 cs-col cs-col-1">
               <div className="cs-video">
                 <VidCard />
               </div>
@@ -29,12 +29,12 @@ const CancelSubscription = () => {
                 aliquyam erat, sed diam.
               </p>
             </div>
-            <div className="col-1 cs-col cs-col-2">
+            <div className="col-md-1 cs-col cs-col-2">
               <div className="cs-line"></div>
             </div>
-            <div className="col-5 cs-col cs-col-3">
+            <div className="col-md-5 cs-col cs-col-3">
               <h5>Leaving Because: </h5>
-              <CheckBoxList />
+              <CheckBoxList lg />
             </div>
           </div>
           <div className="cs-btn" onClick={() => setShowModal(true)}>

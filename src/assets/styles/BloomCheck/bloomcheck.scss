@@ -8,16 +8,28 @@
   width: 100vw;
   height: 100vh;
   // background-color: salmon;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 100%;
+    padding: 10rem 0;
+  }
   h2 {
     color: $secondary;
     text-align: center;
     margin-bottom: 2rem;
     // background-color: magenta;
+    @media (max-width: 500px) {
+      font-size: 3.6rem;
+    }
   }
   .bloom-check-text {
     color: $black-3;
     font-family: "josefin sans";
     text-align: center;
+    @media (max-width: 500px) {
+      font-size: 1.6rem;
+      width: 80%;
+    }
     // background-color: maroon;
   }
   .bc-container {
@@ -141,4 +153,7 @@
   top: 10%;
   left: 5%;
   cursor: pointer;
+  @media (max-width: 767px) {
+    top: 5%;
+  }
 }

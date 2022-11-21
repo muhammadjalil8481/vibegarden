@@ -29,7 +29,7 @@ const VideoCardShifted = ({
             </div>
             <p className="vcs-para">{desc}</p>
             <a className="vcs-link">
-              <Link to="/tools/tonglen">
+              <Link to="/tools">
                 SEE MORE
                 <span className="vcs-link-icon">
                   <ArrowForwardIcon fontSize="large" />
@@ -38,7 +38,9 @@ const VideoCardShifted = ({
             </a>
           </div>
           <div className="vcs-video-card">
-            <VidCard image={image} noTitle />
+            <Link to="/tools/tonglen">
+              <VidCard image={image} noTitle recentVibes />
+            </Link>
             <div className="vcs-video-card-subText">
               <Link to="/tools/tonglen">
                 <p>Details</p>

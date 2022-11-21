@@ -64,14 +64,32 @@ const FourColumnVideoLayout = ({
           {dataArray.map((video, index) => (
             <div className="col-lg-3 col-sm-6 fcvl-col" key={`video${index}`}>
               <div className="fcvl-col-video">
-                <VidCard
-                  titleIcon
-                  blackTitle
-                  title={video.title}
-                  time={video.duration}
-                  groundwork={groundWork ? true : false}
-                  tool={tools ? true : false}
-                />
+                {groundWork || tools ? (
+                  <Link
+                    to={
+                      !tools ? `/groundwork/family-of-light` : `/tools/tonglen`
+                    }
+                  >
+                    <VidCard
+                      titleIcon
+                      blackTitle
+                      title={video.title}
+                      time={video.duration}
+                      groundwork={groundWork ? true : false}
+                      tool={tools ? true : false}
+                      recentVibes={groundWork || tools ? true : false}
+                    />
+                  </Link>
+                ) : (
+                  <VidCard
+                    titleIcon
+                    blackTitle
+                    title={video.title}
+                    time={video.duration}
+                    groundwork={groundWork ? true : false}
+                    tool={tools ? true : false}
+                  />
+                )}
               </div>
               <div className="subtext-container">
                 <Link

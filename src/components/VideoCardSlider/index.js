@@ -5,12 +5,16 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import VidCard from "../../components/VidCard";
 import { Link } from "react-router-dom";
 import { dummyVideodata } from "../../constants/dummyVideoData";
+import { useLocation } from "react-router-dom";
 
 const VideoCardSlider = ({
   heading = "Heading",
   twoRows,
   twoRowsFour,
   twoRowsThree,
+  recentVibes,
+  tools,
+  groundwork,
 }) => {
   const breakPoints2 = [
     { width: 1, itemsToShow: 1 },
@@ -42,6 +46,9 @@ const VideoCardSlider = ({
       </button>
     );
   }
+  const { state, pathname } = useLocation();
+  const route = pathname.slice(0, pathname.lastIndexOf("/"));
+
   if (twoRowsFour) {
     return (
       <div className="video-slider video-slider-two">
@@ -57,7 +64,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(0, 4).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -74,7 +104,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(0, 4).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -93,7 +146,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(0, 4).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -110,7 +186,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(5, 9).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -144,7 +243,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(0, 3).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin2">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -161,7 +283,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(0, 3).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin2">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -180,7 +325,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(0, 3).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin2">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -197,7 +365,30 @@ const VideoCardSlider = ({
                 {dummyVideodata.slice(0, 3).map((vid) => (
                   <div className="video-slider-vid-card-container vid-card-margin2">
                     <div className="video-slider-video-card">
-                      <VidCard titleIcon />
+                      {tools && (
+                        <Link to="/tools/tonglen">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
+                      {groundwork && (
+                        <Link to="/groundWork/family-of-light">
+                          <div className="video-slider-video-card">
+                            <VidCard
+                              titleIcon
+                              recentVibes={recentVibes ? true : false}
+                              tool={tools ? true : false}
+                              groundwork={groundwork ? true : false}
+                            />
+                          </div>
+                        </Link>
+                      )}
                     </div>
                     <div className="vid-card-subTexts">
                       <Link to="/groundwork/family-of-light">
@@ -227,9 +418,30 @@ const VideoCardSlider = ({
         >
           {dummyVideodata.slice(0, 7).map((vid) => (
             <div className="video-slider-vid-card-container">
-              <div className="video-slider-video-card">
-                <VidCard titleIcon />
-              </div>
+              {tools && (
+                <Link to="/tools/tonglen">
+                  <div className="video-slider-video-card">
+                    <VidCard
+                      titleIcon
+                      recentVibes={recentVibes ? true : false}
+                      tool={tools ? true : false}
+                      groundwork={groundwork ? true : false}
+                    />
+                  </div>
+                </Link>
+              )}
+              {groundwork && (
+                <Link to="/groundWork/family-of-light">
+                  <div className="video-slider-video-card">
+                    <VidCard
+                      titleIcon
+                      recentVibes={recentVibes ? true : false}
+                      tool={tools ? true : false}
+                      groundwork={groundwork ? true : false}
+                    />
+                  </div>
+                </Link>
+              )}
               <div className="vid-card-subTexts">
                 <Link to="/groundwork/family-of-light">
                   <p>Details</p>

@@ -92,28 +92,28 @@
   }
 }
 
-.video-js {
-  aspect-ratio: 17/9;
-  width: 100%;
-  // height: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  @media (max-width: 768px) {
-    // aspect-ratio: 17/10;
-  }
-}
-.vjs-control-bar {
-  background-color: black !important;
-  margin-bottom: 0 !important;
-  font-size: 1.4rem !important;
-  @media (max-width: 767px) {
-    font-size: 1.2rem;
-  }
-  @media (max-width: 576px) {
-    font-size: 1rem !important;
-  }
-}
+// .video-js {
+//   aspect-ratio: 17/9;
+//   width: 100%;
+//   // height: 100%;
+//   height: auto;
+//   display: block;
+//   margin: 0 auto;
+//   @media (max-width: 768px) {
+//     // aspect-ratio: 17/10;
+//   }
+// }
+// .vjs-control-bar {
+//   background-color: black !important;
+//   margin-bottom: 0 !important;
+//   font-size: 1.4rem !important;
+//   @media (max-width: 767px) {
+//     font-size: 1.2rem;
+//   }
+//   @media (max-width: 576px) {
+//     font-size: 1rem !important;
+//   }
+// }
 // .vjs-button {
 //   width: 4rem !important;
 // }
@@ -307,6 +307,10 @@
   .sub-modal {
     width: 40rem;
     height: 30rem;
+    @media (max-width: 500px) {
+      width: 30rem;
+      height: 25rem;
+    }
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -394,21 +398,34 @@
     width: 60rem;
     height: 30rem;
     background-color: white;
+    // background-color: salmon;
     display: flex;
     justify-content: center;
     // align-items: center;
     padding: 4rem;
     border-radius: 10px;
     position: relative;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      width: 40rem;
+      height: 50rem;
+      align-items: center;
+    }
+    @media (max-width: 450px) {
+      width: 30rem;
+      height: 70vh;
+    }
 
     .pm-pricetag {
-      // background-color: darkkhaki;
       background-color: white;
       border: 1px solid $secondary;
       border-radius: 10px;
       width: fit-content;
       padding: 2rem 2rem;
       text-align: center;
+      @media (max-width: 450px) {
+        padding: 1rem 2rem;
+      }
       h5 {
         // background-color: lightblue;
         font-family: "josefin sans";
@@ -419,10 +436,17 @@
         // background-color: lightcoral;
         font-size: 3.6rem;
         margin: 2rem 0;
+        @media (max-width: 450px) {
+          font-size: 2.6rem;
+          margin: 1rem 0;
+        }
         span {
           font-family: "lato";
           font-weight: 500;
           font-size: 4rem;
+          @media (max-width: 450px) {
+            font-size: 3rem;
+          }
         }
       }
       p {
@@ -436,9 +460,16 @@
       height: 100%;
       background-color: $secondary;
       margin: 0 3rem;
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
     .pm-payment {
       // background-color: hotpink;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       h5 {
         font-family: "josefin sans";
         color: $grey-2;
@@ -452,6 +483,9 @@
         font-size: 2rem;
         margin-bottom: 3rem;
         line-height: normal;
+        @media (max-width: 767px) {
+          margin-bottom: 1.5rem;
+        }
       }
       .pm-newCard {
         color: #1492e6;
@@ -478,6 +512,10 @@
   .paysuc-modal {
     width: 40rem;
     height: 40rem;
+    @media (max-width: 450px) {
+      width: 30rem;
+      height: 40rem;
+    }
     background-color: white;
     display: flex;
     flex-direction: column;

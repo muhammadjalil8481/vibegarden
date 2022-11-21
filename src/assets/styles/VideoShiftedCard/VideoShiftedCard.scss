@@ -3,8 +3,7 @@
 .vcs {
   max-width: 80%;
   display: block;
-  @media (max-width: 767px) {
-  }
+
   @media (max-width: 991px) {
     max-width: 90%;
   }
@@ -34,6 +33,7 @@
       max-width: 70%;
       @media (max-width: 991px) {
         max-width: 100%;
+        // text-align: center;
       }
 
       .vcs-info-and-icon {
@@ -78,6 +78,7 @@
         span {
           position: absolute;
           top: -10%;
+          margin-left: 0.5rem;
         }
       }
     }
@@ -97,11 +98,12 @@
       }
       @media (max-width: 991px) {
         position: unset;
-        width: 80%;
+        width: 90%;
         margin-top: 2rem;
       }
       @media (max-width: 767px) {
-        width: 60%;
+        width: 80%;
+        height: 20rem;
       }
       @media (max-width: 600px) {
         width: 80%;
@@ -112,6 +114,7 @@
 
       .vcs-video-card-subText {
         display: flex;
+        margin-top: 1rem;
         @media (max-width: 991px) {
           justify-content: center;
         }

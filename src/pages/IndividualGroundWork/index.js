@@ -61,7 +61,7 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
   return (
     <div className="individual-groundwork">
       <NavBar />
-      <section className="container idgw-1">
+      <section className="container-md idgw-1">
         <div className="idgw-1-headingAnIcon">
           <img src={pinkIcon} />
           <h2>{params || "heading"}</h2>
@@ -193,7 +193,11 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
         </div>
       </section>
       <div className="idgw3-video-slider container-xxl">
-        <VideoCardSlider heading="Related Content" />
+        <VideoCardSlider
+          heading="Related Content"
+          tools={route === "/tools" ? true : false}
+          groundwork={route === "/groundwork" ? true : false}
+        />
       </div>
       <section className="container-lg idgw-links">
         <h2>Additional Resource</h2>

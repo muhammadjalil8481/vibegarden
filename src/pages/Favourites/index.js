@@ -10,7 +10,7 @@ const Favorites = () => {
   return (
     <>
       <NavBar />
-      <div className="library-list container">
+      <div className="library-list container-lg">
         <h1>Favorites</h1>
         <div className="library-data">
           {/* {new Array(5).fill(null).map((item) => { */}

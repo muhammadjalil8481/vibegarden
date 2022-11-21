@@ -23,6 +23,9 @@
           margin-top: 2.5rem;
           .fcis-item--list-item {
             font-size: 1.8rem;
+            @media (max-width: 600px) {
+              font-size: 1.5rem;
+            }
             color: $black-3;
             letter-spacing: 1px;
             margin-bottom: 1rem;

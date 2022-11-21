@@ -20,7 +20,7 @@ const FeaturedTools = ({
   return (
     <section className="ft">
       <ContainerSection isFluid={"yes"}>
-        <div className="container ft-container ">
+        <div className="container-md ft-container ">
           <h2
             className={`ft-heading ${!leftHeading && "text-center"} ${
               whiteHeading && "color-white"

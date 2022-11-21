@@ -6,6 +6,21 @@ import Modal from "../Modal";
 import VideoIconPink from "../../assets/images/video-icon-pink.svg";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { AiFillPlusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import VideoPlayer from "../Modal/VideoPlayer";
+
+const videoJsOptions = {
+  autoplay: true,
+  playbackRates: [0.5, 1, 1.25, 1.5, 2],
+  // width: 720,
+  // height: 300,
+  controls: true,
+  sources: [
+    {
+      src: "//vjs.zencdn.net/v/oceans.mp4",
+      type: "video/mp4",
+    },
+  ],
+};
 
 const VidCard = ({
   titleIcon,
@@ -24,62 +39,73 @@ const VidCard = ({
   const [showModal, setShowModal] = useState(false);
   const [isFav, setIsFav] = useState(false);
   const [addTool, setAddTool] = useState(false);
-
+  const [playVideo, setPlayVideo] = useState(false);
   return (
     <>
       <div className="card vid-card border-0">
-        <img src={image} className="vid-card-image" />
-        {/* <div className="card-img-overlay"> */}
-        <div className="vid-card-titleAndIcon">
-          {titleIcon && <img src={VideoIcon2nd} />}
-          {titleIcon && (
-            <h5 className={`vid-card-title ${blackTitle && "text-black"}`}>
-              {title}
-            </h5>
-          )}
-        </div>
-        {(groundwork || freshBlooms) && !tool && (
-          <span
-            className="vid-card-heart"
-            onClick={() => {
-              setIsFav(!isFav);
-            }}
-          >
-            {!isFav ? (
-              <BsHeart size={20} color="rgba(214, 16, 153, 1)" />
-            ) : (
-              <BsHeartFill size={20} color="rgba(214, 16, 153, 1)" />
+        {playVideo && <VideoPlayer {...videoJsOptions} image={image} />}
+        {/* {!playVideo && ( */}
+        {/* <div> */}
+        {!playVideo && (
+          <>
+            <img src={image} className="vid-card-image" />
+            {/* <div className="card-img-overlay"> */}
+            <div className="vid-card-titleAndIcon">
+              {titleIcon && <img src={VideoIcon2nd} />}
+              {titleIcon && (
+                <h5 className={`vid-card-title ${blackTitle && "text-black"}`}>
+                  {title}
+                </h5>
+              )}
+            </div>
+            {(groundwork || freshBlooms) && !tool && (
+              <span
+                className="vid-card-heart"
+                onClick={() => {
+                  setIsFav(!isFav);
+                }}
+              >
+                {!isFav ? (
+                  <BsHeart size={20} color="rgba(214, 16, 153, 1)" />
+                ) : (
+                  <BsHeartFill size={20} color="rgba(214, 16, 153, 1)" />
+                )}
+              </span>
             )}
-          </span>
-        )}
-        {tool && (
-          <span
-            className="vid-card-heart"
-            onClick={() => {
-              setAddTool(!addTool);
-            }}
-          >
-            {!addTool ? (
-              <AiOutlinePlusCircle size={24} color="rgba(214, 16, 153, 1)" />
-            ) : (
-              <AiFillPlusCircle size={24} color="rgba(214, 16, 153, 1)" />
+            {tool && (
+              <span
+                className="vid-card-heart"
+                onClick={() => {
+                  setAddTool(!addTool);
+                }}
+              >
+                {!addTool ? (
+                  <AiOutlinePlusCircle
+                    size={24}
+                    color="rgba(214, 16, 153, 1)"
+                  />
+                ) : (
+                  <AiFillPlusCircle size={24} color="rgba(214, 16, 153, 1)" />
+                )}
+              </span>
             )}
-          </span>
+            {!titleIcon && !noTitle && (
+              <h5 className={`vid-card-topTitle ${blackTitle && "text-black"}`}>
+                {title}
+              </h5>
+            )}
+            <img
+              onClick={() => !recentVibes && setPlayVideo(true)}
+              src={pinkVideoIcon ? VideoIconPink : VideoIcon}
+              className="vid-card-video-icon"
+            />
+            <p className="vid-card-time">{time}</p>
+          </>
         )}
-        {!titleIcon && !noTitle && (
-          <h5 className={`vid-card-topTitle ${blackTitle && "text-black"}`}>
-            {title}
-          </h5>
-        )}
-        <img
-          onClick={() => !recentVibes && setShowModal(true)}
-          src={pinkVideoIcon ? VideoIconPink : VideoIcon}
-          className="vid-card-video-icon"
-        />
-        <p className="vid-card-time">{time}</p>
         {/* </div> */}
+        {/* </div> */}
+        {/* )} */}
       </div>
-
       {showModal && (
         // <div onClick={() => setShowModal(false)}>
         <Modal

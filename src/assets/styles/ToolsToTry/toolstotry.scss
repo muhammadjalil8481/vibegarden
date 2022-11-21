@@ -1,5 +1,14 @@
 .library-list {
   padding: 5rem 0;
+  @media (max-width: 991px) {
+    padding: 5rem 4rem;
+  }
+  @media (max-width: 767px) {
+    padding: 3rem;
+  }
+  @media (max-width: 500px) {
+    padding: 1rem;
+  }
   h1 {
     font-size: 4rem;
     font-family: "josefin sans";
@@ -7,6 +16,9 @@
     color: $secondary;
     border-bottom: 1px solid $secondary;
     padding-bottom: 2rem;
+    @media (max-width: 767px) {
+      text-align: center;
+    }
   }
   .library-data {
     .ld-item {
@@ -14,10 +26,26 @@
       align-items: center;
       margin-bottom: 3rem;
       position: relative;
+      // background-color: sandybrown;
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
       //   background-color: salmon;
       .ld-item-video {
         width: 35%;
         height: 20rem;
+        @media (max-width: 1099px) {
+          width: 45%;
+        }
+        @media (max-width: 991px) {
+          width: 85%;
+        }
+        @media (max-width: 767px) {
+          width: 60%;
+        }
+        @media (max-width: 500px) {
+          width: 80%;
+        }
       }
       .ld-trash {
         position: absolute;
@@ -25,12 +53,27 @@
       }
       .ld-item-info {
         // background-color: gold;
+        @media (max-width: 767px) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
         .ld-item-info-textAndIcon {
+          // background-color: darkcyan;
           display: flex;
           flex-direction: row;
           align-items: center;
           margin-left: 3rem;
           width: fit-content;
+          @media (max-width: 767px) {
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            margin-left: 0;
+            margin-top: 2rem;
+          }
           .ld-item-info-icon {
             margin-right: 1rem;
             width: 3.4rem;
@@ -51,6 +94,16 @@
           margin-top: 1rem;
           margin-bottom: 1rem;
           width: 60%;
+          @media (max-width: 991px) {
+            width: 70%;
+          }
+          @media (max-width: 767px) {
+            text-align: center;
+            margin-left: 0;
+          }
+          @media (max-width: 767px) {
+            width: 90%;
+          }
         }
         .ld-item-info-subtext {
           display: flex;

@@ -65,16 +65,18 @@ const JoinUs = () => {
             </h3>
             <div className="join-us-ppc">
               <PaymentPlanCard monthly />
-              {isEmailVerified !== "yes" && <PaymentPlanCard />}
+              {<PaymentPlanCard />}
             </div>
             {isEmailVerified === "yes" && (
               <div className="join-us-payment">
                 <img src={images.paymentOptions} />
               </div>
             )}
-            <h4 className="join-us-credit-heading">
-              Credit Card Or Debit Card
-            </h4>
+            {isEmailVerified === "yes" && (
+              <h4 className="join-us-credit-heading">
+                Credit Card Or Debit Card
+              </h4>
+            )}
 
             <form className="join-us-form">
               {isEmailVerified ? (

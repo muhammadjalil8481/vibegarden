@@ -9,23 +9,36 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 100%;
+    padding: 10rem 0;
+  }
   overflow-x: hidden;
   h2 {
     color: $secondary;
     text-align: center;
+    @media (max-width: 500px) {
+      font-size: 3.6rem;
+    }
     // background-color: wheat;
   }
 }
 .avatar-container {
   display: flex;
-  // background-color: rosybrown;
   flex-wrap: wrap;
   justify-content: center;
   margin: 5rem 0;
   .sa-imageAndText {
+    // background-color: rosybrown;
     //   background-color: lawngreen;
     margin: 0 2rem;
+    margin-bottom: 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .sa-choice-checked {
       width: 12rem;
       height: 12rem;
@@ -42,14 +55,27 @@
       margin-top: 1rem;
       cursor: pointer;
       font-size: 1.8rem;
+      @media (max-width: 500px) {
+        font-size: 1.6rem;
+      }
     }
     .sa-image {
       width: 12rem;
       height: 12rem;
+
       cursor: pointer;
+      @media (max-width: 767px) {
+        width: 10rem;
+        height: 10rem;
+      }
+      @media (max-width: 500px) {
+        width: 8.5rem;
+        height: 8.5rem;
+      }
       // background-color: darkcyan;
       img {
         width: 100%;
+        height: 100%;
       }
     }
   }
@@ -66,9 +92,13 @@
   background-image: url("../../images/light-flower-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
-  @media (max-width: 860px) {
+  @media (max-width: 767px) {
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10rem 0;
   }
+
   .avatar-back {
     background-color: $secondary;
     width: 5rem;
@@ -81,7 +111,10 @@
     top: 10%;
     left: 5%;
     cursor: pointer;
-    @media (max-width: 860px) {
+    @media (max-width: 1199px) {
+      top: 5%;
+    }
+    @media (max-width: 767px) {
       top: 5%;
     }
   }
@@ -95,14 +128,9 @@
       align-items: flex-start;
       width: 45%;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 767px) {
       width: 80%;
       text-align: center;
-      align-items: center;
-      margin-bottom: 4rem;
-    }
-    @media (max-width: 700px) {
-      width: 80%;
       margin-bottom: 2rem;
     }
 
@@ -119,8 +147,11 @@
       @media (max-width: 1199px) {
         width: 100%;
       }
-      @media (max-width: 600px) {
+      @media (max-width: 991px) {
         font-size: 5rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 3.6rem;
       }
     }
     p {
@@ -135,36 +166,39 @@
       @media (max-width: 1199px) {
         width: 100%;
       }
-      @media (max-width: 860px) {
+      @media (max-width: 991px) {
+        font-size: 1.6rem;
+      }
+      @media (max-width: 767px) {
         text-align: center;
-        width: 90%;
       }
       @media (max-width: 600px) {
-        font-size: 1.8rem;
-        width: 100%;
+        font-size: 1.4rem;
       }
     }
   }
   .avatar-img {
     width: 30%;
     margin-left: 2rem;
+    // background-color: skyblue;
     @media (max-width: 1399px) {
       width: 40%;
     }
     @media (max-width: 991px) {
-      width: 45%;
+      width: 40%;
       margin-left: 1rem;
     }
-    @media (max-width: 860px) {
-      width: 60%;
+    @media (max-width: 767px) {
       margin-left: 0;
+      width: 45%;
     }
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
+      width: 50%;
+    }
+    @media (max-width: 500px) {
       width: 70%;
     }
-    @media (max-width: 520px) {
-      width: 80%;
-    }
+
     img {
       width: 100%;
     }

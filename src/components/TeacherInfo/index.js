@@ -4,7 +4,7 @@ import VidCard from "../VidCard";
 import PinkIcon from "../../assets/images/pink-icon.svg";
 import VideoCardSlider from "../VideoCardSlider";
 
-const TeacherInfo = () => {
+const TeacherInfo = ({ tools, groundwork }) => {
   return (
     <div className="teacher-info ">
       <div className="row teacher-info-row container-lg">
@@ -28,7 +28,12 @@ const TeacherInfo = () => {
         </div>
       </div>
       <div className="teacher-content-slider container">
-        <VideoCardSlider heading="Related Content" />
+        <VideoCardSlider
+          heading="Related Content"
+          recentVibes={true}
+          tools={tools ? true : false}
+          groundwork={groundwork ? true : false}
+        />
       </div>
       <div className="teacher-info-reels container">
         <h2>Nightlight Reels</h2>

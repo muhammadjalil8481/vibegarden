@@ -302,7 +302,7 @@ const ProfileScreen = () => {
               </div>
               <div className="ps-form">
                 <div
-                  className="ps-editPassword"
+                  className="ps-editPassword billing-edit"
                   onClick={() => setEditBilling(!editBilling)}
                 >
                   <img src={EditIcon} />
@@ -380,7 +380,7 @@ const ProfileScreen = () => {
               </div>
               <div className="ps-form">
                 <div
-                  className="ps-editPassword"
+                  className="ps-editPassword "
                   onClick={() => setEditSubscription(!editSubscription)}
                 >
                   <img src={EditIcon} />

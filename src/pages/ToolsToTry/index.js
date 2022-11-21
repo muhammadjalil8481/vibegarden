@@ -10,7 +10,7 @@ const ToolsToTry = () => {
   return (
     <>
       <NavBar />
-      <div className="library-list container">
+      <div className="library-list container-lg">
         <h1>Tools To Try</h1>
         <div className="library-data">
           {new Array(5).fill(null).map((item) => {

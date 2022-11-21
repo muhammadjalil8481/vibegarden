@@ -3,8 +3,10 @@
 .ft {
   margin-top: 5rem;
   padding: 4rem 0 8rem 0;
+  // background-color: wheat;
   .ft-heading {
     color: $secondary;
+    // background-color: rebeccapurple;
     margin-bottom: 1rem;
     @media (max-width: 991px) {
       text-align: center;
@@ -12,6 +14,7 @@
   }
   .ft-para {
     color: $black-3;
+    // background-color: red;
     font-size: 1.6rem;
     margin-bottom: 5rem;
   }
@@ -72,23 +75,46 @@
     }
   }
 }
+.ft-row {
+  // background-color: forestgreen;
 
+  @media (max-width: 767px) {
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+}
 .ft-col-container {
   // background-color: saddlebrown;
   display: flex;
   justify-content: center;
+
   .ft-col {
+    width: 30rem;
     height: 250px;
 
+    @media (max-width: 1399px) {
+      width: 25rem;
+      height: 20rem;
+    }
     @media (max-width: 1199px) {
-      height: 220px;
+      width: 22rem;
+      height: 20rem;
     }
     @media (max-width: 991px) {
       margin-bottom: 2rem;
-      width: 90%;
+      width: 30rem;
+    }
+    @media (max-width: 767px) {
+      width: 24rem;
+    }
+    @media (max-width: 620px) {
+      width: 20rem;
     }
     @media (max-width: 575px) {
-      width: 70%;
+      width: 30rem;
+    }
+    @media (max-width: 400px) {
+      width: 25rem;
     }
   }
 }
