@@ -19,7 +19,7 @@ const TeacherInfo = ({ tools, groundwork }) => {
             <img src={PinkIcon} />
             <p>
               Body copy style for white text on dark or gradient backgrounds
-              (Medium Weight.
+              (Medium Weight).
             </p>
           </div>
         </div>

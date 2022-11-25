@@ -10,8 +10,6 @@ import SampleTools from "../../components/SampleToolsSection";
 import MoreVG from "../../components/MoreVGSection.js";
 import StayInTouch from "../../components/StayInTouchSection";
 import Footer from "../../components/Footer";
-import VidCard from "../../components/VidCard";
-import images from "../../constants/images";
 
 const HomePage = () => {
   return (

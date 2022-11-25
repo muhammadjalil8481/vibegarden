@@ -38,16 +38,12 @@ const ThreeColumnWhiteVideoInfoLayout = ({
                   groundwork={groundWork ? true : false}
                 />
               ) : (
-                <Link
-                  to="/groundwork/family-of-light"
-                  state={{ heading: title1 }}
-                >
-                  <VidCard
-                    image={images.placeholder}
-                    recentVibes
-                    groundwork={groundWork ? true : false}
-                  />
-                </Link>
+                <VidCard
+                  image={images.placeholder}
+                  recentVibes
+                  groundwork={groundWork ? true : false}
+                  linkVideo="/groundwork/family-of-light"
+                />
               )}
             </div>
             <div className="tcwvil-subtext-container">
@@ -85,12 +81,11 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               {!noRedirect ? (
                 <VidCard groundwork={groundWork ? true : false} />
               ) : (
-                <Link
-                  to="/groundwork/family-of-light"
-                  state={{ heading: title2 }}
-                >
-                  <VidCard recentVibes groundwork={groundWork ? true : false} />
-                </Link>
+                <VidCard
+                  recentVibes
+                  groundwork={groundWork ? true : false}
+                  linkVideo="/groundwork/family-of-light"
+                />
               )}
             </div>
             <div className="tcwvil-subtext-container">
@@ -131,16 +126,12 @@ const ThreeColumnWhiteVideoInfoLayout = ({
                   groundwork={groundWork ? true : false}
                 />
               ) : (
-                <Link
-                  to="/groundwork/family-of-light"
-                  state={{ heading: title3 }}
-                >
-                  <VidCard
-                    recentVibes
-                    image={images.placeholder4}
-                    groundwork={groundWork ? true : false}
-                  />
-                </Link>
+                <VidCard
+                  recentVibes
+                  image={images.placeholder4}
+                  groundwork={groundWork ? true : false}
+                  linkVideo="/groundwork/family-of-light"
+                />
               )}
             </div>
             <div className="tcwvil-subtext-container">

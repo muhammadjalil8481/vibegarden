@@ -275,7 +275,11 @@ const SearchPage = () => {
                   )} */}
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard groundwork />
+                      <VidCard
+                        groundwork
+                        recentVibes
+                        linkVideo="/groundwork/family-of-light"
+                      />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -304,7 +308,11 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard groundwork />
+                      <VidCard
+                        groundwork
+                        recentVibes
+                        linkVideo="/groundwork/family-of-light"
+                      />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -333,7 +341,12 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard groundwork />
+                      <VidCard
+                        groundwork
+                        recentVibes
+                        linkVideo="/groundwork/family-of-light"
+                      />
+                      ]{" "}
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -374,7 +387,7 @@ const SearchPage = () => {
                   )} */}
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard tool />
+                      <VidCard tool recentVibes linkVideo="/tools/tonglen" />
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -403,7 +416,9 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard tool />
+                      <Link to="/tools/tonglen">
+                        <VidCard tool recentVibes linkVideo="/tools/tonglen" />
+                      </Link>
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -432,7 +447,9 @@ const SearchPage = () => {
                   </div>
                   <div className="sp-item">
                     <div className="sp-item-video">
-                      <VidCard tool />
+                      <Link to="/tools/tonglen">
+                        <VidCard tool recentVibes linkVideo="/tools/tonglen" />
+                      </Link>
                     </div>
                     <div className="sp-item-info">
                       <div className="sp-item-info-textAndIcon">
@@ -461,7 +478,7 @@ const SearchPage = () => {
                   </div>
                 </div>
               )}
-              {(activeTab === "all" || activeTab === "fresh blooms") && (
+              {activeTab === "fresh blooms" && (
                 <div class="sp-type">
                   {/* {activeTab !== "all" && (
                     <div class="search-type-heading-container">

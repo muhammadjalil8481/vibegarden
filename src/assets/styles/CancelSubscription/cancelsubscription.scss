@@ -49,7 +49,20 @@
           width: 80%;
         }
         @media (max-width: 500px) {
-          width: 95%;
+          width: 90%;
+        }
+        .cs-video {
+          width: 100%;
+          height: 30rem;
+          @media (max-width: 991px) {
+            height: 25rem;
+          }
+          @media (max-width: 767px) {
+            height: 30rem;
+          }
+          @media (max-width: 500px) {
+            height: 25rem;
+          }
         }
         p {
           font-family: "josefin sans";

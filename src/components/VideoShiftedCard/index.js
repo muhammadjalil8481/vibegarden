@@ -38,9 +38,12 @@ const VideoCardShifted = ({
             </a>
           </div>
           <div className="vcs-video-card">
-            <Link to="/tools/tonglen">
-              <VidCard image={image} noTitle recentVibes />
-            </Link>
+            <VidCard
+              image={image}
+              noTitle
+              recentVibes
+              linkVideo="/tools/tonglen"
+            />
             <div className="vcs-video-card-subText">
               <Link to="/tools/tonglen">
                 <p>Details</p>

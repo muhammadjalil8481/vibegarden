@@ -7,6 +7,7 @@ import VideoIconPink from "../../assets/images/video-icon-pink.svg";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { AiFillPlusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import VideoPlayer from "../Modal/VideoPlayer";
+import { Link } from "react-router-dom";
 
 const videoJsOptions = {
   autoplay: true,
@@ -14,9 +15,12 @@ const videoJsOptions = {
   // width: 720,
   // height: 300,
   controls: true,
+  // fluid: true,
   sources: [
     {
       src: "//vjs.zencdn.net/v/oceans.mp4",
+      // src: "http://localhost:3000/uploads/videoplayback-1669094808047.mp4",
+      // src: "http://localhost:3000/uploads/Imagine_Dragons_-_Demons_(Official_Music_Video)-1668597315793.mp4",
       type: "video/mp4",
     },
   ],
@@ -35,6 +39,7 @@ const VidCard = ({
   groundwork,
   freshBlooms,
   tool,
+  linkVideo = "#",
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [isFav, setIsFav] = useState(false);
@@ -94,11 +99,13 @@ const VidCard = ({
                 {title}
               </h5>
             )}
-            <img
-              onClick={() => !recentVibes && setPlayVideo(true)}
-              src={pinkVideoIcon ? VideoIconPink : VideoIcon}
-              className="vid-card-video-icon"
-            />
+            <Link to={linkVideo}>
+              <img
+                onClick={() => !recentVibes && setPlayVideo(true)}
+                src={pinkVideoIcon ? VideoIconPink : VideoIcon}
+                className="vid-card-video-icon"
+              />
+            </Link>
             <p className="vid-card-time">{time}</p>
           </>
         )}

@@ -87,7 +87,6 @@ const Navigation = () => {
       <Route element={<ThankYou />} path="/thankyou" />
       <Route element={<SearchPage />} path="/searchpage" />
       <Route element={<Resonance />} path="/resonance" />
-      <Route element={<Resonance />} path="/resonance" />
       <Route element={<ResonanceFinder />} path="/resonancefinder" />
       <Route element={<ResonanceResult />} path="/resonanceresult" />
       <Route element={<SelectAvatar />} path="/selectavatar" />

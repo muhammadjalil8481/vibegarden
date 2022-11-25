@@ -29,7 +29,6 @@ const JoinUs = () => {
               <CheckBoxList checked={true} />
             </div>
             <div className="join-us-video-card">
-              {/* <EmptyVideoCard width="450px" /> */}
               <VidCard noTitle pinkVideoIcon image={images.placeholder5} />
             </div>
             <div className="join-us-info my70">

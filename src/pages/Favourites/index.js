@@ -20,7 +20,11 @@ const Favorites = () => {
               <FaTrash size={24} color="#1C5C2E" />
             </span>
             <div className="ld-item-video">
-              <VidCard groundwork />
+              <VidCard
+                groundwork
+                recentVibes
+                linkVideo="/groundwork/family-of-light"
+              />
             </div>
             <div className="ld-item-info">
               <div className="ld-item-info-textAndIcon">
@@ -52,7 +56,7 @@ const Favorites = () => {
               <FaTrash size={24} color="#1C5C2E" />
             </span>
             <div className="ld-item-video">
-              <VidCard tool />
+              <VidCard tool recentVibes linkVideo="/tools/tonglen" />
             </div>
             <div className="ld-item-info">
               <div className="ld-item-info-textAndIcon">
@@ -84,7 +88,11 @@ const Favorites = () => {
               <FaTrash size={24} color="#1C5C2E" />
             </span>
             <div className="ld-item-video">
-              <VidCard groundwork />
+              <VidCard
+                groundwork
+                recentVibes
+                linkVideo="/groundwork/family-of-light"
+              />
             </div>
             <div className="ld-item-info">
               <div className="ld-item-info-textAndIcon">
@@ -116,7 +124,9 @@ const Favorites = () => {
               <FaTrash size={24} color="#1C5C2E" />
             </span>
             <div className="ld-item-video">
-              <VidCard tool />
+              <Link to="/tools/tonglen">
+                <VidCard tool recentVibes linkVideo="/tools/tonglen" />
+              </Link>
             </div>
             <div className="ld-item-info">
               <div className="ld-item-info-textAndIcon">

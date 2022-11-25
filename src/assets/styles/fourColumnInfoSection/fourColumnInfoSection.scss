@@ -18,9 +18,13 @@
         .fcis-item--heading {
           color: $secondary;
           font-weight: 700;
+          font-family: "josefin sans";
         }
         .fcis-item--list {
+          // background-color: saddlebrown;
+          width: 90%;
           margin-top: 2.5rem;
+          font-family: "josefin sans";
           .fcis-item--list-item {
             font-size: 1.8rem;
             @media (max-width: 600px) {

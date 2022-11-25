@@ -197,6 +197,7 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
           heading="Related Content"
           tools={route === "/tools" ? true : false}
           groundwork={route === "/groundwork" ? true : false}
+          recentVibes
         />
       </div>
       <section className="container-lg idgw-links">
@@ -265,6 +266,7 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
       </section>
       <GreenLineBreak />
       <ButtonAndHeading
+        link="/schedule"
         heading="Want To Go Deeper?"
         text="Schedule Vibrguides"
       />

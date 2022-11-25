@@ -65,21 +65,18 @@ const FourColumnVideoLayout = ({
             <div className="col-lg-3 col-sm-6 fcvl-col" key={`video${index}`}>
               <div className="fcvl-col-video">
                 {groundWork || tools ? (
-                  <Link
-                    to={
+                  <VidCard
+                    titleIcon
+                    blackTitle
+                    title={video.title}
+                    time={video.duration}
+                    groundwork={groundWork ? true : false}
+                    tool={tools ? true : false}
+                    recentVibes={groundWork || tools ? true : false}
+                    linkVideo={
                       !tools ? `/groundwork/family-of-light` : `/tools/tonglen`
                     }
-                  >
-                    <VidCard
-                      titleIcon
-                      blackTitle
-                      title={video.title}
-                      time={video.duration}
-                      groundwork={groundWork ? true : false}
-                      tool={tools ? true : false}
-                      recentVibes={groundWork || tools ? true : false}
-                    />
-                  </Link>
+                  />
                 ) : (
                   <VidCard
                     titleIcon

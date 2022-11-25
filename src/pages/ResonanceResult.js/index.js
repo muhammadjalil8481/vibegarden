@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/Navbar";
-import { BsChevronUp, BsChevronDown, BsCheckLg } from "react-icons/bs";
-import res1 from "../../assets/images/reson1.svg";
-import res2 from "../../assets/images/reson2.svg";
-import res3 from "../../assets/images/reson3.svg";
-import res4 from "../../assets/images/reson4.svg";
-import ButtonFilled from "../../components/Button/ButtonFilled";
-import VidCard from "../../components/VidCard";
 import images from "../../constants/images";
 import QuestionsData from "../../constants/dummyQuestions";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
-import ResonanceQuestion from "../../components/resonanceQuestion";
 
 const ResonanceResult = () => {
   const [count, setCount] = useState(1);

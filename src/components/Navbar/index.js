@@ -9,10 +9,10 @@ import { IoNotificationsSharp, IoAddOutline } from "react-icons/io5";
 import NotificationPopUp from "../NotificationPopUp";
 import Spiral from "../../assets/images/spiral.svg";
 
-const NavBar = ({ onlyBrand, userNav = false }) => {
+const NavBar = ({ onlyBrand }) => {
   let location = useLocation();
   const navigate = useNavigate();
-  const [user, setUser] = useState(userNav);
+  const [user, setUser] = useState(true);
   const [expanded, setExpanded] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [dimensions, setDimensions] = React.useState({
@@ -31,12 +31,8 @@ const NavBar = ({ onlyBrand, userNav = false }) => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
   useEffect(() => {
-    if (
-      location.pathname === "/homepage" ||
-      location.pathname === "/tools" ||
-      location.pathname === "/profile"
-    )
-      setUser(true);
+    if (location.pathname === "/" || location.pathname === "/home")
+      setUser(false);
   }, [location]);
 
   return (

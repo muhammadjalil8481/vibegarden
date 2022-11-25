@@ -82,9 +82,13 @@
   }
 }
 .wiis-vid-card {
-  width: 80%;
-  height: 280px;
+  width: 85%;
+  height: 320px;
   margin-left: 2rem;
+  @media (max-width: 1399px) {
+    width: 85%;
+    height: 300px;
+  }
   @media (max-width: 1199px) {
     width: 85%;
     height: 250px;
@@ -275,6 +279,7 @@
   font-weight: 700;
 }
 .wiis-heading-double-container {
+  margin-top: 5rem;
   @media (max-width: 767px) {
     margin-bottom: 2rem;
   }
@@ -478,7 +483,7 @@
 .wiis-vid-cardHeading {
   color: $secondary;
   font-family: "josefin sans";
-  font-size: 3rem;
+  font-size: 3.6rem;
   margin-left: 2rem;
   font-weight: 700;
 }

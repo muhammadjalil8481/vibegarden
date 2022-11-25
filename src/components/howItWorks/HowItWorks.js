@@ -11,7 +11,7 @@ const HowItWorks = () => {
   return (
     <section className="hiw py-5">
       <ContainerSection isFluid={"yes"}>
-        <div className="container">
+        <div className="">
           <h2 class="hiw-heading">How It Works</h2>
           <div className="row mb-5 hiw-container">
             <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
@@ -42,7 +42,9 @@ const HowItWorks = () => {
               </div>
             </div>
             <div className="col-md-1 col-sm-2 col-3 hiw-small-col">
-              <img src={plusSign} />
+              <div class="hiw-small-col-img">
+                <img src={plusSign} />
+              </div>
             </div>
             <div className="col-md-2 col-sm-4 col-4 hiw-big-col">
               <div className="hiw-img-container">

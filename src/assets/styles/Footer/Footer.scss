@@ -107,7 +107,7 @@
       .footer-links-col-2 {
         position: relative;
         left: -5.5rem;
-        top: -0.5rem;
+        // top: -0.5rem;
         padding: 0;
         @media (max-width: 1199px) {
           left: -3rem;
@@ -129,6 +129,8 @@
         }
       }
       .footer-form-col {
+        position: relative;
+        top: 1.5rem;
         @media (max-width: 991px) {
           margin-left: 3rem;
         }

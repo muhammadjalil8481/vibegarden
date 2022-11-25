@@ -21,7 +21,7 @@
   // }
   .idgw-1-videoSubInfo {
     // background-color: lightgreen;
-    width: 50%;
+    width: 58%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -177,9 +177,12 @@
       align-items: center;
       margin-left: 1.6rem;
       margin-bottom: 0.5rem;
+      span {
+        color: rgba($secondary, 0.9);
+      }
 
       h5 {
-        color: rgba($secondary, 0.8);
+        color: rgba($secondary, 0.9);
         font-size: 2rem;
         font-weight: bold;
         font-family: "josefin sans";

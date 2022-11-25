@@ -43,24 +43,20 @@ const FeaturedTools = ({
           <div className="ft-row row">
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
-                <Link
-                  to={
+                <div className="ft-col">
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder}
                     recentVibes
-                      ? `/groundwork/family-of-light`
-                      : `/tools/tonglen`
-                  }
-                  state={{ heading: idgwHeading, tool: tool ? true : false }}
-                >
-                  <div className="ft-col">
-                    <VidCard
-                      titleIcon
-                      image={images.placeholder}
+                    tool={tool ? true : false}
+                    groundwork
+                    linkVideo={
                       recentVibes
-                      tool={tool ? true : false}
-                      groundwork
-                    />
-                  </div>
-                </Link>
+                        ? `/groundwork/family-of-light`
+                        : `/tools/tonglen`
+                    }
+                  />
+                </div>
               ) : (
                 <div className="ft-col">
                   <VidCard
@@ -73,22 +69,19 @@ const FeaturedTools = ({
             </div>
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
-                <Link
-                  to="/tools/tonglen"
-                  state={{
-                    heading: idgwHeading,
-                    tool: tool || toolDummy ? true : false,
-                  }}
-                >
-                  <div className="ft-col">
-                    <VidCard
-                      titleIcon
-                      image={images.placeholder2}
+                <div className="ft-col">
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder2}
+                    recentVibes
+                    tool={tool || toolDummy ? true : false}
+                    linkVideo={
                       recentVibes
-                      tool={tool || toolDummy ? true : false}
-                    />
-                  </div>
-                </Link>
+                        ? `/groundwork/family-of-light`
+                        : `/tools/tonglen`
+                    }
+                  />
+                </div>
               ) : (
                 <div className="ft-col">
                   <VidCard
@@ -101,24 +94,20 @@ const FeaturedTools = ({
             </div>
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
-                <Link
-                  to={
+                <div className="ft-col">
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder3}
                     recentVibes
-                      ? `/groundwork/family-of-light`
-                      : `/tools/tonglen`
-                  }
-                  state={{ heading: idgwHeading, tool: tool ? true : false }}
-                >
-                  <div className="ft-col">
-                    <VidCard
-                      titleIcon
-                      image={images.placeholder3}
+                    tool={tool ? true : false}
+                    groundwork
+                    linkVideo={
                       recentVibes
-                      tool={tool ? true : false}
-                      groundwork
-                    />
-                  </div>
-                </Link>
+                        ? `/groundwork/family-of-light`
+                        : `/tools/tonglen`
+                    }
+                  />
+                </div>
               ) : (
                 <div className="ft-col">
                   <VidCard
@@ -131,22 +120,19 @@ const FeaturedTools = ({
             </div>
             <div className="col-lg-3 col-sm-6 ft-col-container">
               {recentVibes ? (
-                <Link
-                  to="/tools/tonglen"
-                  state={{
-                    heading: idgwHeading,
-                    tool: tool || toolDummy ? true : false,
-                  }}
-                >
-                  <div className="ft-col">
-                    <VidCard
-                      titleIcon
-                      image={images.placeholder4}
+                <div className="ft-col">
+                  <VidCard
+                    titleIcon
+                    image={images.placeholder4}
+                    recentVibes
+                    tool={tool || toolDummy ? true : false}
+                    linkVideo={
                       recentVibes
-                      tool={tool || toolDummy ? true : false}
-                    />
-                  </div>
-                </Link>
+                        ? `/groundwork/family-of-light`
+                        : `/tools/tonglen`
+                    }
+                  />
+                </div>
               ) : (
                 <div className="ft-col">
                   <VidCard

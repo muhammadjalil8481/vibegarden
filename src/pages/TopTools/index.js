@@ -20,7 +20,9 @@ const TopTools = () => {
                   <FaTrash size={24} color="#1C5C2E" />
                 </span>
                 <div className="ld-item-video">
-                  <VidCard tool />
+                  <Link to="/tools/tonglen">
+                    <VidCard tool recentVibes linkVideo="/tools/tonglen" />
+                  </Link>
                 </div>
                 <div className="ld-item-info">
                   <div className="ld-item-info-textAndIcon">

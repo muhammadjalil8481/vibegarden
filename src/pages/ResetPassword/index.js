@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PinCodeInput from "../../components/PinCodeInput.js";
 import ButtonFilled from "../../components/Button/ButtonFilled.js";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const ResetPassword = ({ email = "user@gmail.com" }) => {
   const navigate = useNavigate();
+  const [buttonText, setButtonText] = useState("Confirm");
 
   return (
     <section className="ec">
@@ -22,12 +23,21 @@ const ResetPassword = ({ email = "user@gmail.com" }) => {
           {`Please enter the 6 digits code sent to you registered email address ${email}`}
         </p>
         <PinCodeInput />
-        <div
-          className="ec-btn-container"
-          onClick={() => navigate("/updatepassword")}
-        >
-          <ButtonFilled bgGradient={"yes"} text="Confirm" paddingX />
-        </div>
+        {buttonText === "Confirm" ? (
+          <div
+            className="ec-btn-container"
+            onClick={() => setButtonText("Confirmed")}
+          >
+            <ButtonFilled bgGradient={"yes"} text="Confirm" paddingX />
+          </div>
+        ) : (
+          <div
+            className="ec-btn-container"
+            onClick={() => navigate("/updatepassword")}
+          >
+            <ButtonFilled bgGradient={"yes"} text="Confirmed" paddingX />
+          </div>
+        )}
         {/* </Link> */}
       </div>
     </section>
