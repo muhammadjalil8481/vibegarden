@@ -38,17 +38,32 @@ const NavBar = ({ onlyBrand }) => {
   return (
     <Navbar expand="lg" className="navbar">
       <div className="container-xl">
-        <Link to="/">
-          <Navbar.Brand className="brand">
-            <div>
-              <img
-                src={VibeGardenLogo}
-                alt="Vibe Garden Logo"
-                style={{ width: "80%" }}
-              />
-            </div>
-          </Navbar.Brand>
-        </Link>
+        {!user && (
+          <Link to="/">
+            <Navbar.Brand className="brand">
+              <div>
+                <img
+                  src={VibeGardenLogo}
+                  alt="Vibe Garden Logo"
+                  style={{ width: "80%" }}
+                />
+              </div>
+            </Navbar.Brand>
+          </Link>
+        )}
+        {user && (
+          <Link to="/homepage">
+            <Navbar.Brand className="brand">
+              <div>
+                <img
+                  src={VibeGardenLogo}
+                  alt="Vibe Garden Logo"
+                  style={{ width: "80%" }}
+                />
+              </div>
+            </Navbar.Brand>
+          </Link>
+        )}
         {!onlyBrand && (
           <>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -98,20 +113,20 @@ const NavBar = ({ onlyBrand }) => {
                     <span className="navbar-tools-icon">
                       {/* <Link to="/resonance"> */}
                       {/* <IoAddOutline size={25} /> */}
-                      {location.pathname !== "/profile" && (
+                      {/* {location.pathname !== "/profile" && (
                         <Link to="/resonancefinder">
                           <div className="profile-spiral">
                             <img src={Spiral} />
                           </div>
                         </Link>
-                      )}
-                      {location.pathname === "/profile" && (
-                        <Link to="/updatebloomcheck">
-                          <div className="profile-bloom">
-                            <img src={images.bloomChu} />
-                          </div>
-                        </Link>
-                      )}
+                      )} */}
+                      {/* {location.pathname === "/profile" && ( */}
+                      <Link to="/updatebloomcheck">
+                        <div className="profile-bloom">
+                          <img src={images.bloomChu} />
+                        </div>
+                      </Link>
+                      {/* )} */}
                       {/* </Link> */}
                     </span>
 

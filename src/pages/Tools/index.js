@@ -38,6 +38,7 @@ const Tools = () => {
         heading="Tools For Light"
         linkDestination="/toolsforconnecting"
         tools
+        searchState="tools"
       />
       <div className="bg-gradient-pinkMask">
         <FourColumnVideoLayout

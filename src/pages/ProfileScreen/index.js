@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import images from "../../constants/images";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 import GreenButton from "../../components/Button/GreenButton";
@@ -27,12 +27,14 @@ import {
   BsCaretUpFill,
   BsCaretDownFill,
 } from "react-icons/bs";
+import { TiTick } from "react-icons/ti";
 import { TbArrowBack } from "react-icons/tb";
 
 const ProfileScreen = () => {
   const [showModal, setShowModal] = useState(false);
   const [library, setLibrary] = useState(false);
   const [percent, setPercent] = useState(25);
+  const [editTop, setEditTop] = useState(false);
   const [editAbout, setEditAbout] = useState(false);
   const [editBilling, setEditBilling] = useState(false);
   const [editSubscription, setEditSubscription] = useState(false);
@@ -125,15 +127,32 @@ const ProfileScreen = () => {
                         onClick={() => percent > 1 && setPercent(percent - 1)}
                       />
                     </div>
+                    {!editTop && (
+                      <div
+                        className="ps-editPassword"
+                        onClick={() => setEditTop(!editTop)}
+                      >
+                        <img src={EditIcon} />
+                      </div>
+                    )}
                   </div>
                 </div>
-                {(editAbout || editBilling || editSubscription) && (
+                {editTop && (
                   <div className="ps-top-buttons">
                     <div
                       className="ps-top-btn"
                       onClick={() => setShowModal(true)}
                     >
-                      <span className="ps-btn-outline">
+                      <span
+                        className="ps-btn-outline"
+                        onClick={() => {
+                          setShowModal(true);
+                          setEditAbout(false);
+                          setEditTop(false);
+                          setEditBilling(false);
+                          setEditSubscription(false);
+                        }}
+                      >
                         <ButtonFilled
                           // bgGradient={"yes"}
                           text="Save"
@@ -142,11 +161,13 @@ const ProfileScreen = () => {
                         />
                       </span>
                     </div>
-                    <ButtonFilled
-                      padXResponsive
-                      bgGradient={"yes"}
-                      text="Cancel"
-                    />
+                    <span onClick={() => setEditTop(false)}>
+                      <ButtonFilled
+                        padXResponsive
+                        bgGradient={"yes"}
+                        text="Cancel"
+                      />
+                    </span>
                   </div>
                 )}
                 {library && (
@@ -191,12 +212,14 @@ const ProfileScreen = () => {
               </div>
 
               <div className="ps-form">
-                <div
-                  className="ps-editPassword"
-                  onClick={() => setEditAbout(!editAbout)}
-                >
-                  <img src={EditIcon} />
-                </div>
+                {!editAbout && (
+                  <div
+                    className="ps-editPassword"
+                    onClick={() => setEditAbout(!editAbout)}
+                  >
+                    <img src={EditIcon} />
+                  </div>
+                )}
                 <FormGroupAuth
                   label="First Name"
                   value={aboutInfo.firstName}
@@ -227,17 +250,52 @@ const ProfileScreen = () => {
                     inputType="password"
                     // showPasswordIcon={editAbout ? true : false}
                     value={aboutInfo.password}
-                    disabled={true}
+                    showPasswordIcon={true}
+                    disabled={!editAbout}
+                    setValue={(data) =>
+                      setAboutInfo({ ...aboutInfo, password: data })
+                    }
                     // setValue={(data) =>
                     //   setAboutInfo({ ...aboutInfo, password: data })
                     // }
                   />
-                  <Link to="/updatepassword">
+
+                  {/* <Link to="/updatepassword">
                     <span>
                       <BiEditAlt color={"white"} size={18} />
                     </span>
-                  </Link>
+                  </Link> */}
                 </div>
+                {editAbout && (
+                  <div className="ps-about-btns">
+                    <div
+                      className="ps-top-btn"
+                      onClick={() => {
+                        setShowModal(true);
+                        setEditAbout(false);
+                        setEditTop(false);
+                        setEditBilling(false);
+                        setEditSubscription(false);
+                      }}
+                    >
+                      <span className="ps-btn-outline">
+                        <ButtonFilled
+                          // bgGradient={"yes"}
+                          text="Save"
+                          padXResponsive
+                          outline
+                        />
+                      </span>
+                    </div>
+                    <span onClick={() => setEditAbout(false)}>
+                      <ButtonFilled
+                        padXResponsive
+                        bgGradient={"yes"}
+                        text="Cancel"
+                      />
+                    </span>
+                  </div>
+                )}
                 {/* <Link to="/updatepassword"> */}
                 {/* <div
                     className="ps-editPassword"
@@ -301,12 +359,14 @@ const ProfileScreen = () => {
                 <HeadingLine text="Billing Info" />
               </div>
               <div className="ps-form">
-                <div
-                  className="ps-editPassword billing-edit"
-                  onClick={() => setEditBilling(!editBilling)}
-                >
-                  <img src={EditIcon} />
-                </div>
+                {!editBilling && (
+                  <div
+                    className="ps-editPassword billing-edit"
+                    onClick={() => setEditBilling(!editBilling)}
+                  >
+                    <img src={EditIcon} />
+                  </div>
+                )}
                 <FormGroupAuth
                   label="Full Name On Card"
                   inputType="text"
@@ -372,6 +432,36 @@ const ProfileScreen = () => {
                     setBillingInfo({ ...billingInfo, postalCode: data })
                   }
                 />
+                {editBilling && (
+                  <div className="ps-about-btns">
+                    <div
+                      className="ps-top-btn"
+                      onClick={() => {
+                        setShowModal(true);
+                        setEditAbout(false);
+                        setEditTop(false);
+                        setEditBilling(false);
+                        setEditSubscription(false);
+                      }}
+                    >
+                      <span className="ps-btn-outline">
+                        <ButtonFilled
+                          // bgGradient={"yes"}
+                          text="Save"
+                          padXResponsive
+                          outline
+                        />
+                      </span>
+                    </div>
+                    <span onClick={() => setEditBilling(false)}>
+                      <ButtonFilled
+                        padXResponsive
+                        bgGradient={"yes"}
+                        text="Cancel"
+                      />
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
             <div className="col-md-6 ps-subscriptionForm">
@@ -379,12 +469,14 @@ const ProfileScreen = () => {
                 <HeadingLine text="Subscription Info" />
               </div>
               <div className="ps-form">
-                <div
-                  className="ps-editPassword "
-                  onClick={() => setEditSubscription(!editSubscription)}
-                >
-                  <img src={EditIcon} />
-                </div>
+                {!editSubscription && (
+                  <div
+                    className="ps-editPassword "
+                    onClick={() => setEditSubscription(!editSubscription)}
+                  >
+                    <img src={EditIcon} />
+                  </div>
+                )}
                 <FormGroupAuth
                   label="Start Date"
                   inputType="date"
@@ -409,13 +501,21 @@ const ProfileScreen = () => {
                     })
                   }
                 />
-                <div className="ps-inputIcon">
+                <div
+                  className="ps-inputIcon"
+                  onClick={() => {
+                    if (editSubscription) {
+                      setShowSubPackageModal(true);
+                    }
+                  }}
+                >
                   <FormGroupAuth
                     label="Package Select"
+                    selectedIcon={editSubscription ? true : false}
                     // options={["Monthly", "Yearly"]}
                     // isSelectInput
                     disabled={true}
-                    value={subscriptionInfo.packageType}
+                    value={"Monthly $22"}
                     // setValue={(data) =>
                     //   setSubscriptionInfo({
                     //     ...subscriptionInfo,
@@ -423,14 +523,41 @@ const ProfileScreen = () => {
                     //   })
                     // }
                   />
-                  <span
+
+                  {/* <span
+                  className="edit-To"
                     onClick={() => {
                       setShowSubPackageModal(true);
                     }}
                   >
                     <BiEditAlt color={"white"} size={18} />
-                  </span>
+                  </span> */}
                 </div>
+                {editSubscription && (
+                  <div
+                    className="ps-inputIcon"
+                    onClick={() => {
+                      if (editSubscription) {
+                        setShowSubPackageModal(true);
+                      }
+                    }}
+                  >
+                    <FormGroupAuth
+                      noLabel
+                      selectedIconDisabled={editSubscription ? true : false}
+                      // options={["Monthly", "Yearly"]}
+                      // isSelectInput
+                      disabled={true}
+                      value={`Yearly ${22 * 12}`}
+                      // setValue={(data) =>
+                      //   setSubscriptionInfo({
+                      //     ...subscriptionInfo,
+                      //     packageType: data,
+                      //   })
+                      // }
+                    />
+                  </div>
+                )}
                 {/* <FormGroupAuth
                   label="Subsciption Status"
                   options={["Active", "inactive"]}
@@ -444,11 +571,43 @@ const ProfileScreen = () => {
                     })
                   }
                 /> */}
-                <Link to="/cancelsubscription">
-                  <div className="sub-btn">
-                    <GreenButton text="Cancel Subscription" />
+                {!editSubscription && (
+                  <Link to="/cancelsubscription">
+                    <div className="sub-btn">
+                      <GreenButton text="Cancel Subscription" />
+                    </div>
+                  </Link>
+                )}
+                {editSubscription && (
+                  <div className="ps-about-btns">
+                    <div
+                      className="ps-top-btn"
+                      onClick={() => {
+                        setShowModal(true);
+                        setEditAbout(false);
+                        setEditTop(false);
+                        setEditBilling(false);
+                        setEditSubscription(false);
+                      }}
+                    >
+                      <span className="ps-btn-outline">
+                        <ButtonFilled
+                          // bgGradient={"yes"}
+                          text="Save"
+                          padXResponsive
+                          outline
+                        />
+                      </span>
+                    </div>
+                    <span onClick={() => setEditSubscription(false)}>
+                      <ButtonFilled
+                        padXResponsive
+                        bgGradient={"yes"}
+                        text="Cancel"
+                      />
+                    </span>
                   </div>
-                </Link>
+                )}
               </div>
             </div>
           </div>

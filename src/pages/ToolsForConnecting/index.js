@@ -17,6 +17,8 @@ const ToolsForConnecting = () => {
         linkDestination="/tools"
         backText="Tools"
         tools
+        searchState="tools"
+        searchCatState={["tools for light"]}
       />
       <Footer />
     </div>

@@ -26,6 +26,8 @@ const FourColumnVideoLayout = ({
   linkTo = "/",
   groundWork,
   tools,
+  searchState = "all",
+  searchCatState = ["nullsq"],
 }) => {
   const navigate = useNavigate();
   return (
@@ -41,7 +43,13 @@ const FourColumnVideoLayout = ({
         {searchInput && (
           <div className="fcvl-search-input-container">
             <div className="fcvl-search-input">
-              <FormGroupAuth noLabel placeHolder="Search..." icon />
+              <FormGroupAuth
+                noLabel
+                placeHolder="Search..."
+                icon
+                searchState={searchState}
+                searchCatState={searchCatState}
+              />
               {/* <div className="fcvl-search-input-icon-container"> */}
               {/* <FilterAltIcon fontSize="large" sx={{ color: green[700] }} /> */}
               {/* </div> */}

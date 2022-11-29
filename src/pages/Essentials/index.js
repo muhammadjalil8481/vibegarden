@@ -16,6 +16,8 @@ const Essentials = () => {
         backLink
         linkDestination="/groundwork"
         groundWork
+        searchState="groundwork"
+        searchCatState={["essentials"]}
       />
       <Footer />
     </div>

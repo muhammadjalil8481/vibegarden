@@ -16,6 +16,8 @@ const Play = () => {
         backLink
         linkDestination="/groundwork"
         groundWork
+        searchState="groundwork"
+        searchCatState={["play"]}
       />
       <Footer />
     </div>

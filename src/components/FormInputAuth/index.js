@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import { TiTick } from "react-icons/ti";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { green, grey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
@@ -18,6 +19,10 @@ const FormGroupAuth = ({
   value,
   setValue,
   disabled = false,
+  searchState = "all",
+  searchCatState = ["nulls"],
+  selectedIcon,
+  selectedIconDisabled,
 }) => {
   const [inputTypeState, setInputTypeState] = useState(inputType);
   const showPasswordText = () => {
@@ -29,7 +34,7 @@ const FormGroupAuth = ({
         {!noLabel && <p className="fga-form-label">{label}</p>}
         <input
           type={inputTypeState}
-          className="fga-form-input"
+          className={`fga-form-input ${disabled && "fga-form-input-disabled"}`}
           placeholder={placeHolder}
           value={value}
           onChange={(event) => setValue(event.target.value)}
@@ -42,9 +47,55 @@ const FormGroupAuth = ({
             }`}
             // onClick={() => console.log(value)}
           >
-            <Link to="/searchpage">
+            <Link
+              to="/searchpage"
+              state={{
+                searchState: searchState,
+                searchCatState: searchCatState,
+              }}
+            >
               <SearchIcon fontSize="large" sx={{ color: green[700] }} />
             </Link>
+          </div>
+        )}
+        {selectedIcon && (
+          <div
+            className={` ${
+              noLabel ? "fga-form-icon-no-label" : "fga-form-icon"
+            }`}
+            // onClick={() => console.log(value)}
+          >
+            {/* <Link
+              to="/searchpage"
+              state={{
+                searchState: searchState,
+                searchCatState: searchCatState,
+              }}
+            > */}
+            <span className="form-selected-icon">
+              <TiTick fontSize={18} color="white" />
+            </span>
+            {/* </Link> */}
+          </div>
+        )}
+        {selectedIconDisabled && (
+          <div
+            className={` ${
+              noLabel ? "fga-form-icon-no-label" : "fga-form-icon"
+            }`}
+            // onClick={() => console.log(value)}
+          >
+            {/* <Link
+              to="/searchpage"
+              state={{
+                searchState: searchState,
+                searchCatState: searchCatState,
+              }}
+            > */}
+            <span className="form-selected-icon form-selected-icon-disabled">
+              <TiTick fontSize={18} color="white" />
+            </span>
+            {/* </Link> */}
           </div>
         )}
         {showPasswordIcon && (
@@ -69,7 +120,7 @@ const FormGroupAuth = ({
       <select
         id={selectId}
         name={selectName}
-        className="fga-form-input"
+        className={`fga-form-input ${disabled && "fga-form-input-disabled"}`}
         disabled={disabled}
       >
         {/* <option value="volvo">Volvo</option>

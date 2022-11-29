@@ -44,6 +44,7 @@ const Teachers = () => {
             icon
             value={searchValue}
             setValue={setSearchValue}
+            searchState="teachers"
           />
           <div
             className="teachers-filter-icon"

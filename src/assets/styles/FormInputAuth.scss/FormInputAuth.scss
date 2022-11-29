@@ -33,6 +33,14 @@
     //   padding-bottom: 1rem;
     // }
   }
+  .fga-form-input-disabled {
+    // background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+  }
   .fga-form-icon {
     position: absolute;
     right: 4%;

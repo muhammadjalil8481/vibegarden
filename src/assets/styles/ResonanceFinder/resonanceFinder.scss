@@ -16,11 +16,15 @@
     .rf-top {
       // background-color: salmon;
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: flex-end;
+      @media (max-width: 500px) {
+        justify-content: space-between;
+      }
       position: absolute;
       width: 100%;
       top: 5%;
+      // margin-bottom: 2rem;
       @media (max-width: 992px) {
         // background-color: saddlebrown;
         position: static;
@@ -32,13 +36,30 @@
         padding: 0 2rem;
         top: 2%;
       }
+      @media (max-width: 500px) {
+        // background-color: saddlebrown;
+        padding: 0 1rem;
+        top: 2%;
+      }
       h4 {
-        color: $secondary;
-        font-weight: 600;
+        // color: $secondary;
+        // font-weight: 600;
         font-family: "josefin sans";
-        font-size: 2.6rem;
-        line-height: 1.5;
+        font-size: 4.8rem;
+        // line-height: 1.5;
+        // align-self: center;
         // background-color: tan;
+        width: 100%;
+        text-align: center;
+        @media (max-width: 767px) {
+          font-size: 4rem;
+        }
+        @media (max-width: 500px) {
+          font-size: 3rem;
+          width: auto;
+          text-align: left;
+          // width: auto;
+        }
       }
       .rf-topright {
         background-color: $secondary;

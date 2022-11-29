@@ -107,7 +107,7 @@ const ResonanceFinder = () => {
                     );
                   })}
                 </div> */}
-                <div className={`rf-choices2 ${count!==1 && 'rfc-smwidth'}`}>
+                <div className={`rf-choices2 ${count !== 1 && "rfc-smwidth"}`}>
                   {questions.map((ques) => {
                     return (
                       <div

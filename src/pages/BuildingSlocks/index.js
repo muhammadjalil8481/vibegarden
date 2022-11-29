@@ -16,6 +16,8 @@ const BuildingSlocks = () => {
         backLink
         linkDestination="/groundwork"
         groundWork
+        searchState="groundwork"
+        searchCatState={["building slocks"]}
       />
       <Footer />
     </div>

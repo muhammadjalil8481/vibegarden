@@ -17,6 +17,8 @@ const ToolsForWorker = () => {
         linkDestination="/tools"
         backText="Tools"
         tools
+        searchState="tools"
+        searchCatState={["tools for worker"]}
       />
       <Footer />
     </div>

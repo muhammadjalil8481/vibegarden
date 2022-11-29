@@ -27,7 +27,7 @@
   // background-color: teal;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: flex-start;
   // @media (max-width: 1199px) {
   //   // flex-direction: column;
@@ -38,6 +38,15 @@
   // @media (max-width: 430px) {
   //   padding: 0 2rem;
   // }
+  @media (max-width: 991px) {
+    justify-content: space-between;
+  }
+  @media (max-width: 450px) {
+    flex-direction: column;
+    // align-items: center;
+    padding-left: 3rem;
+    justify-content: center;
+  }
   .ps-top-image {
     width: 15rem;
     height: 15rem;
@@ -66,8 +75,12 @@
     // justify-content: center;
     align-items: center;
     // background-color: darkgoldenrod;
+    width: 50%;
     @media (max-width: 1199px) {
       margin-bottom: 2rem;
+    }
+    @media (max-width: 991px) {
+      width: auto;
     }
     @media (max-width: 767px) {
       margin-bottom: 0;
@@ -76,6 +89,7 @@
   .ps-top-info {
     margin-left: 2rem;
     // background-color: salmon;
+
     @media (max-width: 500px) {
       margin-left: 1rem;
       // width: 80%;
@@ -93,6 +107,10 @@
       color: $primary;
       font-size: 1.6rem;
       font-weight: 700;
+      @media (max-width: 991px) {
+        width: 80%;
+        // width: 80%;
+      }
       @media (max-width: 500px) {
         font-size: 1.4rem;
       }
@@ -123,6 +141,12 @@
   @media (max-width: 450px) {
     width: 100%;
   }
+}
+.ps-about-btns {
+  // background-color: saddlebrown;
+  display: flex;
+  margin-top: 2rem;
+  // margin-left: -4rem;
 }
 .ps-top-btn {
   margin-right: 2rem;
@@ -178,12 +202,25 @@
     margin-left: 1rem;
   }
 }
+.form-selected-icon {
+  background-color: $secondary;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.form-selected-icon-disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+}
 .ps-inputIcon {
   display: flex;
   align-items: center;
 
   // background-color: firebrick;
-  span {
+  .edit-To {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -284,9 +321,6 @@
       color: $black-3;
       // font-weight: 700;
     }
-    span {
-      // background-color: darkcyan;
-    }
   }
 }
 
@@ -315,9 +349,21 @@
   display: flex;
   flex-direction: column;
   // background-color: salmon;
-  margin-right: 2rem;
+  width: 50%;
+  // margin-right: 2rem;
   @media (max-width: 991px) {
     margin-right: 0;
+    width: auto;
+  }
+  @media (max-width: 450px) {
+    margin-top: 2rem;
+    align-self: flex-end;
+    padding-right: 3rem;
+  }
+  .ps-editPassword {
+    position: static;
+    margin-top: 0;
+    padding: 0.8rem;
   }
 }
 
@@ -327,7 +373,7 @@
     // background-color: rosybrown;
     font-family: "josefin sans";
     color: $black-3;
-    text-align: center;
+    // text-align: center;
     @media (max-width: 767px) {
       font-size: 2rem;
     }
@@ -338,7 +384,7 @@
   .pbc-container {
     // background-color: lemonchiffon;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     margin: 2rem 0 3rem 0;
     @media (max-width: 767px) {

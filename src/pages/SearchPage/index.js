@@ -11,19 +11,25 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { green } from "@mui/material/colors";
 import { RiCloseFill } from "react-icons/ri";
 import Toggle from "react-styled-toggle";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 
 const SearchPage = () => {
-  const [activeTab, setActiveTab] = useState("all");
+  const location = useLocation();
+  const actTab = location?.state?.searchState || "all";
+  const actCat = location?.state?.searchCatState || ["null"];
+  console.log("actTab", actCat, location?.state?.searchCatState);
+  const [activeTab, setActiveTab] = useState(actTab);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [filtered, setFiltered] = useState([]);
   const category = [
-    "category 1",
-    "category 2",
-    "category 3",
-    "category 4",
-    "category 5",
+    "essentials",
+    "building slocks",
+    "deeper cuts",
+    "play",
+    "tools for light",
+    "tools for connection",
+    "tools for worker"
   ];
   const topics = [
     "topic 1",
@@ -42,6 +48,16 @@ const SearchPage = () => {
     "topic 14",
     "topic 15",
   ];
+  useEffect(() => {
+    actCat.map((cat) => {
+      if (category.includes(cat)) {
+        setFiltered([...filtered, cat]);
+      }
+      if (topics.includes(cat)) {
+        setFiltered([...filtered, cat]);
+      }
+    });
+  }, []);
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth,

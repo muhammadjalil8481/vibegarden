@@ -11,12 +11,14 @@ const ToolsForConnection = () => {
       <NavBar />
       <FourColumnVideoLayout
         searchInput
-        heading="Tools For Connection "
+        heading="Tools For Connection"
         dataArray={dummyVideodata}
         backLink
         linkDestination="/tools"
         backText="Tools"
         tools
+        searchState="tools"
+        searchCatState={['tools for connection']}
       />
       <Footer />
     </div>

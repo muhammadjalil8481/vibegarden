@@ -16,6 +16,8 @@ const DeeperCuts = () => {
         backLink
         linkDestination="/groundwork"
         groundWork
+        searchState="groundwork"
+        searchCatState={["deeper cuts"]}
       />
       <Footer />
     </div>

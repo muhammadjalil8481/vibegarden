@@ -37,6 +37,7 @@ const GroundWork = () => {
         dataArray={array4}
         linkDestination="/essentials"
         groundWork
+        searchState="groundwork"
       />
       <div className="bg-gradient-greenMask">
         <FourColumnVideoLayout
