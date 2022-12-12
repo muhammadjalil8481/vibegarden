@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PinCodeInput from "../../components/PinCodeInput.js";
 import ButtonFilled from "../../components/Button/ButtonFilled.js";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
@@ -6,6 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 const EmailConfirmation = ({ email = "ab***@gmail.com" }) => {
   const navigate = useNavigate();
+  const [btnText, setBtnText] = useState(false);
+
   return (
     <section className="ec">
       <div className="ec-icon" onClick={() => navigate("/join-us")}>
@@ -23,14 +25,20 @@ const EmailConfirmation = ({ email = "ab***@gmail.com" }) => {
         </p>
         <PinCodeInput />
         {/* <Link to={{"/join-us", isEmailVerified}}> */}
-        <div
-          className="ec-btn-container"
-          onClick={() =>
-            navigate("/join-us", { state: { isEmailVerified: "yes" } })
-          }
-        >
-          <ButtonFilled bgGradient={"yes"} text="Confirm" paddingX />
-        </div>
+        {!btnText ? (
+          <div className="ec-btn-container" onClick={() => setBtnText(true)}>
+            <ButtonFilled bgGradient={"yes"} text="Confirm" paddingX />
+          </div>
+        ) : (
+          <div
+            className="ec-btn-container"
+            onClick={() =>
+              navigate("/join-us", { state: { isEmailVerified: "yes" } })
+            }
+          >
+            <ButtonFilled bgGradient={"yes"} text="Confirmed" paddingX />
+          </div>
+        )}
         {/* </Link> */}
       </div>
     </section>

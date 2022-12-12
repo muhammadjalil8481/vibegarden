@@ -7,7 +7,7 @@ import { RiArrowLeftLine } from "react-icons/ri";
 
 const BloomResult = () => {
   const { state } = useLocation();
-  const { percent } = state;
+  const percent = state?.percent || 26;
   return (
     <div className="bloom-result bg-lightGreenMask">
       <Link to="/bloomcheck">

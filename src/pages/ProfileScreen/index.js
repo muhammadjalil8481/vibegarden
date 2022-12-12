@@ -117,20 +117,25 @@ const ProfileScreen = () => {
                       <img src={images.bloomChu} />
                     </div>
                     <p>{percent}%</p>
-                    <div className="pbc-icons">
-                      <AiFillCaretUp
-                        size={25}
-                        onClick={() => percent < 100 && setPercent(percent + 1)}
-                      />
-                      <AiFillCaretDown
-                        size={25}
-                        onClick={() => percent > 1 && setPercent(percent - 1)}
-                      />
-                    </div>
+                    {editTop && (
+                      <div className="pbc-icons">
+                        <AiFillCaretUp
+                          size={25}
+                          onClick={() =>
+                            percent < 100 && setPercent(percent + 1)
+                          }
+                        />
+                        <AiFillCaretDown
+                          size={25}
+                          onClick={() => percent > 1 && setPercent(percent - 1)}
+                        />
+                      </div>
+                    )}
                     {!editTop && (
                       <div
                         className="ps-editPassword"
                         onClick={() => setEditTop(!editTop)}
+                        style={{ marginLeft: "3px" }}
                       >
                         <img src={EditIcon} />
                       </div>

@@ -30,6 +30,28 @@
       @media (max-width: 767px) {
         flex-direction: column;
       }
+      &-rating {
+        // background: salmon;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        line-height: normal;
+        margin-left: 0;
+        margin-top: -0.6rem;
+        p {
+          line-height: normal;
+          font-family: "josefin sans";
+        }
+
+        .ldir-num {
+          // background-color: darkgoldenrod;
+          margin-bottom: 0 !important;
+          margin-right: 0 !important;
+          font-size: 1.7rem !important;
+          color: rgba($secondary, 1) !important;
+          // margin-left: 0.5rem !important;
+        }
+      }
       //   background-color: salmon;
       .ld-item-video {
         width: 35%;

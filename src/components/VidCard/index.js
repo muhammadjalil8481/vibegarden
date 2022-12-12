@@ -18,12 +18,39 @@ const videoJsOptions = {
   // fluid: true,
   sources: [
     {
-      src: "//vjs.zencdn.net/v/oceans.mp4",
+      // src: "//vjs.zencdn.net/v/oceans.mp4",
       // src: "http://localhost:3000/uploads/videoplayback-1669094808047.mp4",
       // src: "http://localhost:3000/uploads/Imagine_Dragons_-_Demons_(Official_Music_Video)-1668597315793.mp4",
+      src: "http://localhost:3000/api/v1/video/Coke_Studio_-_Season_14_-_Kana_Yaari_-_Kaifi_Khalil_x_Eva_B_x_Abdul_Wahab_Bugti-1670828123129.mp4",
       type: "video/mp4",
     },
+    // {
+    //   // src: "//vjs.zencdn.net/v/oceans.mp4",
+    //   type: "video/mp4",
+    //   label: "720P",
+    // },
+    // {
+    //   src: "http://localhost:3000/uploads/Imagine_Dragons_-_Demons_(Official_Music_Video)-1669726371617.mp4",
+    //   type: "video/mp4",
+    //   label: "480P",
+    //   selected: true,
+    // },
+    // {
+    //   src: "//vjs.zencdn.net/v/oceans.mp4",
+    //   type: "video/mp4",
+    //   label: "360P",
+    // },
   ],
+  controlBar: {
+    children: [
+      "playToggle",
+      "progressControl",
+      "remainingTimeDisplay",
+      "volumePanel",
+      "qualitySelector",
+      "fullscreenToggle",
+    ],
+  },
 };
 
 const VidCard = ({

@@ -5,6 +5,7 @@ import PinkIcon from "../../assets/images/pink-icon.svg";
 import NavBar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { FaTrash } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 
 const TopTools = () => {
   return (
@@ -20,9 +21,9 @@ const TopTools = () => {
                   <FaTrash size={24} color="#1C5C2E" />
                 </span>
                 <div className="ld-item-video">
-                  <Link to="/tools/tonglen">
-                    <VidCard tool recentVibes linkVideo="/tools/tonglen" />
-                  </Link>
+                  {/* <Link to="/tools/tonglen"> */}
+                  <VidCard tool recentVibes linkVideo="/tools/tonglen" />
+                  {/* </Link> */}
                 </div>
                 <div className="ld-item-info">
                   <div className="ld-item-info-textAndIcon">
@@ -46,6 +47,11 @@ const TopTools = () => {
                     <Link to="/topic">
                       <p>#Tag</p>
                     </Link>
+                    <div className="ld-item-rating">
+                      <AiFillStar size={20} color="rgba(27, 91, 47, 1)" />
+                      {/* <p className="ldir-line">-</p> */}
+                      <p className="ldir-num">(4.7)</p>
+                    </div>
                   </div>
                 </div>
               </div>

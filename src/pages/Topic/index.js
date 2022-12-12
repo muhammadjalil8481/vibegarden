@@ -61,7 +61,7 @@ const Topic = () => {
         <VideoCardSlider heading="Related Tools" recentVibes tools />
       </div>
       <section className="idgw-5 container">
-        <h2>Related Tools</h2>
+        <h2>Related Teachers</h2>
         <div className="idgw-5-row">
           <div className="idgw-5-col-1">
             <img src={images.teacher1} />
