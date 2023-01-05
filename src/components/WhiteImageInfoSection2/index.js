@@ -21,9 +21,9 @@ const WhiteImageInfoSection2 = ({
   return (
     <section className="wiis2">
       <ContainerSection isFluid={"yes"}>
-        <div class="container-lg wiis2-container py80">
-          <div class="row wiis2-row">
-            <div class="col-md-7 wiis2-col wiis2-left-col order-md-2">
+        <div className="container-lg wiis2-container py80">
+          <div className="row wiis2-row">
+            <div className="col-md-7 wiis2-col wiis2-left-col order-md-2">
               <h3 className="wiis2-heading ">H3 Headline Style Green</h3>
               <p className=" wiis2-para mt-2 mb-5">
                 Body copy style for white text on dark or gradient backgrounds
@@ -41,7 +41,7 @@ const WhiteImageInfoSection2 = ({
                 </div>
               </Link>
             </div>
-            <div class="col-md-5 wiis2-col wiis2-right-col">
+            <div className="col-md-5 wiis2-col wiis2-right-col">
               <div className="wiis2-right-col-heading">
                 <h2>H2</h2>
               </div>

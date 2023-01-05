@@ -41,7 +41,7 @@ const WhiteImageInfoSection = ({
   return (
     <section className="wiis">
       <ContainerSection isFluid={"yes"}>
-        <div class="container wiis-container py80">
+        <div className="container wiis-container py80">
           {topHeading && (
             <h3
               className={`wiis-top-heading  ${whiteHeading && "text-white"} ${
@@ -53,8 +53,8 @@ const WhiteImageInfoSection = ({
               {heading}
             </h3>
           )}
-          <div class="row wiis-row">
-            <div class="col-md-8 wiis-col wiis-left-col order-md-2">
+          <div className="row wiis-row">
+            <div className="col-md-8 wiis-col wiis-left-col order-md-2">
               {!noHeading && (
                 <h2 className={`wiis-heading ${blackHeading && "text-black"}`}>
                   {mainHeading}
@@ -110,7 +110,7 @@ const WhiteImageInfoSection = ({
               )}
             </div>
             <div
-              class={`col-md-4 wiis-col wiis-right-col ${
+              className={`col-md-4 wiis-col wiis-right-col ${
                 (orderReverse || orderReverseWithButton) && "order-md-3"
               }`}
             >

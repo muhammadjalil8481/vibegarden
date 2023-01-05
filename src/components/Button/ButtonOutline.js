@@ -3,7 +3,7 @@ import React from "react";
 
 const ButtonOutline = ({ text = "Button" }) => {
   return (
-    <div classname="btn-outline-container">
+    <div className="btn-outline-container">
       <button className="btn-outline">{text}</button>
     </div>
   );

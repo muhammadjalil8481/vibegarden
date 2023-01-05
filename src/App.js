@@ -1,16 +1,20 @@
-import Navigation from "./navigation/navigation";
+// Library imports
 import React, { useState, useEffect } from "react";
-import NavBar from "./components/Navbar";
-import PleaseSignUpModal from "./components/pleaseSignUpModal";
 import { useLocation } from "react-router-dom";
-import SelectAvatar from "./pages/SelectAvatar";
-import AvatarInfo from "./pages/AvatarInfo";
+import { useSelector } from "react-redux";
+// Custom Imports
+import Navigation from "./navigation/navigation";
+import Loader from "./components/Modal/loader";
 
 function App() {
+  const location = useLocation();
+  // States
   const [user, setUser] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const location = useLocation();
   const [path, setPath] = useState(location.pathname);
+  // Redux State Read
+  const isLoading = useSelector((state) => state.loading.isLoading);
+
   useEffect(() => {
     setPath(location.pathname);
     console.log(path);
@@ -23,8 +27,11 @@ function App() {
   setTimeout(() => {
     !user && setShowModal(true);
   }, 3000);
+
   return (
     <div className="App">
+      {isLoading && <Loader />}
+
       {/* {!user &&
         showModal &&
         path !== "/" &&
@@ -38,6 +45,7 @@ function App() {
         )} */}
 
       <Navigation />
+
       {/* <SelectAvatar /> */}
       {/* <AvatarInfo /> */}
       {/* <NavBar /> */}

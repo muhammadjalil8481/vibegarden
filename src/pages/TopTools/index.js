@@ -17,9 +17,9 @@ const TopTools = () => {
           {new Array(5).fill(null).map((item) => {
             return (
               <div className="ld-item">
-                <span className="ld-trash">
+                {/* <span className="ld-trash">
                   <FaTrash size={24} color="#1C5C2E" />
-                </span>
+                </span> */}
                 <div className="ld-item-video">
                   {/* <Link to="/tools/tonglen"> */}
                   <VidCard tool recentVibes linkVideo="/tools/tonglen" />

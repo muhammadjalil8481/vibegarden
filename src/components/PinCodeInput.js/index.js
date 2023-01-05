@@ -1,21 +1,15 @@
 import React, { useState, useRef } from "react";
 
-const PinCodeInput = () => {
-  const [pci, setPci] = useState({
-    pci1: "",
-    pci2: "",
-    pci3: "",
-    pci4: "",
-    pci5: "",
-    pci6: "",
-  });
+const PinCodeInput = ({
+  pci = { pci1: "", pci2: "", pci3: "", pci4: "", pci5: "", pci6: "" },
+  setPci = () => null,
+}) => {
   const pci1Ref = useRef(null);
   const pci2Ref = useRef(null);
   const pci3Ref = useRef(null);
   const pci4Ref = useRef(null);
   const pci5Ref = useRef(null);
   const pci6Ref = useRef(null);
-
   return (
     <div className="pci">
       <input

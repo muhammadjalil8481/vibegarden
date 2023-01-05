@@ -11,9 +11,9 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <footer className="footer">
-      <div class="container footer-container">
-        <div class="row footer-row">
-          <div class="col-md-4 col-lg-3 mb-md-0 mb-4 footer-col footer-col-1">
+      <div className="container footer-container">
+        <div className="row footer-row">
+          <div className="col-md-4 col-lg-3 mb-md-0 mb-4 footer-col footer-col-1">
             <div className="footer-logo">
               <img src={images.logo2} />
             </div>
@@ -35,9 +35,9 @@ const Footer = () => {
               Download
             </button>
           </div>
-          <div class="col-md-4 col-sm-3 col-lg-3  mb-4 footer-links-col footer-links-col-1">
-            <h4 class="footer-list-heading">Quick Links</h4>
-            <ul class="footer-list">
+          <div className="col-md-4 col-sm-3 col-lg-3  mb-4 footer-links-col footer-links-col-1">
+            <h4 className="footer-list-heading">Quick Links</h4>
+            <ul className="footer-list">
               <Link to="/groundwork">
                 <li>Groundwork</li>
               </Link>
@@ -52,9 +52,9 @@ const Footer = () => {
               </Link>
             </ul>
           </div>
-          <div class="col-md-4 col-sm-3 col-lg-3 mb-md-0 mb-4 footer-links-col footer-links-col-2">
-            <h4 class="footer-list-heading">Contact Us</h4>
-            <ul class="footer-list">
+          <div className="col-md-4 col-sm-3 col-lg-3 mb-md-0 mb-4 footer-links-col footer-links-col-2">
+            <h4 className="footer-list-heading">Contact Us</h4>
+            <ul className="footer-list">
               <li>Sample@mail.com</li>
               <li>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
@@ -63,16 +63,16 @@ const Footer = () => {
               <li>+222-232-0009</li>
             </ul>
           </div>
-          <div class="col-md-4 col-lg-3 mb-md-0 mb-4 footer-form-col">
-            <h4 class="footer-form-heading">News Letter</h4>
+          <div className="col-md-4 col-lg-3 mb-md-0 mb-4 footer-form-col">
+            <h4 className="footer-form-heading">News Letter</h4>
             <p className="footer-form-para">
               Get Latest Update Through Your Email address
             </p>
             <form action="#" className="subscribe-form footer-form">
-              <div class="form-group d-flex footer-form-group">
+              <div className="form-group d-flex footer-form-group">
                 <input
                   type="text"
-                  class="form-control rounded-left"
+                  className="form-control rounded-left"
                   placeholder="Enter email address"
                 />
                 <div className="footer-form-btn">

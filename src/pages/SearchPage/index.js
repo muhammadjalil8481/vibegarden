@@ -29,7 +29,7 @@ const SearchPage = () => {
     "play",
     "tools for light",
     "tools for connection",
-    "tools for worker"
+    "tools for worker",
   ];
   const topics = [
     "topic 1",
@@ -91,12 +91,12 @@ const SearchPage = () => {
               </Link>
             </div>
             <div className="sfm-main">
-              <div class="sfm-topicItemContainer">
+              <div className="sfm-topicItemContainer">
                 {/* <h4 className={`sfm-topicheading `}>Category</h4>; */}
-                <div class="sfm-topic">
+                <div className="sfm-topic">
                   {category.map((cat) => {
                     return (
-                      <div class="sfm-topicItem ">
+                      <div className="sfm-topicItem ">
                         <Toggle
                           backgroundColorChecked="rgba(27, 91, 47, 1)"
                           backgroundColorUnchecked="#75997E"
@@ -123,12 +123,12 @@ const SearchPage = () => {
                 </div>
               </div>
               {(activeTab === "tools" || activeTab === "groundwork") && (
-                <div class="sfm-topicItemContainer">
+                <div className="sfm-topicItemContainer">
                   {/* <h4 className="sfm-topicheading ">Topic</h4>; */}
-                  <div class="sfm-topic">
+                  <div className="sfm-topic">
                     {topics.map((topic) => {
                       return (
-                        <div class="sfm-topicItem ">
+                        <div className="sfm-topicItem ">
                           <Toggle
                             backgroundColorChecked="rgba(27, 91, 47, 1)"
                             backgroundColorUnchecked="#75997E"
@@ -280,7 +280,7 @@ const SearchPage = () => {
                   )}
               </div>
               {(activeTab === "all" || activeTab === "groundwork") && (
-                <div class="sp-type">
+                <div className="sp-type">
                   {/* {activeTab !== "all" && (
                     // <div className="search-type-heading-container">
                     //   <h4 className="search-type-heading">Ground Work</h4>
@@ -392,9 +392,9 @@ const SearchPage = () => {
                 </div>
               )}
               {(activeTab === "all" || activeTab === "tools") && (
-                <div class="sp-type">
+                <div className="sp-type">
                   {/* {activeTab !== "all" && (
-                    // <div class="search-type-heading-container">
+                    // <div className="search-type-heading-container">
                     //   <h4 className="search-type-heading">Tools</h4>
                     //   <Link to="/tools">
                     //     <p>See All</p>
@@ -495,9 +495,9 @@ const SearchPage = () => {
                 </div>
               )}
               {activeTab === "fresh blooms" && (
-                <div class="sp-type">
+                <div className="sp-type">
                   {/* {activeTab !== "all" && (
-                    <div class="search-type-heading-container">
+                    <div className="search-type-heading-container">
                       <h4 className="search-type-heading">Fresh Blooms</h4>
                       <Link to="/freshblooms">
                         <p>See All</p>
@@ -594,14 +594,14 @@ const SearchPage = () => {
                 </div>
               )}
               {activeTab === "teachers" && (
-                <div class="sp-type">
-                  {/* <div class="search-type-heading-container">
+                <div className="sp-type">
+                  {/* <div className="search-type-heading-container">
                     <h4 className="search-type-heading">Teachers</h4>
                     <Link to="/teachers">
                       <p>See All</p>
                     </Link>
                   </div> */}
-                  <div class="sp-search-teachers">
+                  <div className="sp-search-teachers">
                     <div className="teacher-infosearch-imgHeading">
                       <Link to="/schedule">
                         <div className="teacher-infosearch-img-container">
@@ -624,7 +624,7 @@ const SearchPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="sp-search-teachers">
+                  <div className="sp-search-teachers">
                     <div className="teacher-infosearch-imgHeading">
                       <Link to="/schedule">
                         <div className="teacher-infosearch-img-container">
@@ -647,7 +647,7 @@ const SearchPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="sp-search-teachers">
+                  <div className="sp-search-teachers">
                     <div className="teacher-infosearch-imgHeading">
                       <Link to="/schedule">
                         <div className="teacher-infosearch-img-container">

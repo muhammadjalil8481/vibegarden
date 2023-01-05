@@ -17,29 +17,30 @@ const videoJsOptions = {
   controls: true,
   // fluid: true,
   sources: [
-    {
-      // src: "//vjs.zencdn.net/v/oceans.mp4",
-      // src: "http://localhost:3000/uploads/videoplayback-1669094808047.mp4",
-      // src: "http://localhost:3000/uploads/Imagine_Dragons_-_Demons_(Official_Music_Video)-1668597315793.mp4",
-      src: "http://localhost:3000/api/v1/video/Coke_Studio_-_Season_14_-_Kana_Yaari_-_Kaifi_Khalil_x_Eva_B_x_Abdul_Wahab_Bugti-1670828123129.mp4",
-      type: "video/mp4",
-    },
     // {
     //   // src: "//vjs.zencdn.net/v/oceans.mp4",
+    //   // src: "http://localhost:3000/uploads/videoplayback-1669094808047.mp4",
+    //   // src: "http://localhost:3000/uploads/Imagine_Dragons_-_Demons_(Official_Music_Video)-1668597315793.mp4",
+    //   src: "http://localhost:3000/api/v1/video/Highway_Fight_Scene_-_Captain_America__The_Winter_Soldier_(2014)_Movie_CLIP_HD-1670841809191-360p.mp4",
     //   type: "video/mp4",
-    //   label: "720P",
     // },
-    // {
-    //   src: "http://localhost:3000/uploads/Imagine_Dragons_-_Demons_(Official_Music_Video)-1669726371617.mp4",
-    //   type: "video/mp4",
-    //   label: "480P",
-    //   selected: true,
-    // },
-    // {
-    //   src: "//vjs.zencdn.net/v/oceans.mp4",
-    //   type: "video/mp4",
-    //   label: "360P",
-    // },
+    {
+      src: "http://localhost:3000/api/v1/video/Highway_Fight_Scene_-_Captain_America__The_Winter_Soldier_(2014)_Movie_CLIP_HD-1670846455716.mp4",
+      type: "video/mp4",
+      label: "720P",
+      selected: true,
+    },
+    {
+      src: "http://localhost:3000/api/v1/video/Highway_Fight_Scene_-_Captain_America__The_Winter_Soldier_(2014)_Movie_CLIP_HD-1670846455716-480p.mp4",
+      type: "video/mp4",
+      label: "480P",
+      // selected: true,
+    },
+    {
+      src: "http://localhost:3000/api/v1/video/Highway_Fight_Scene_-_Captain_America__The_Winter_Soldier_(2014)_Movie_CLIP_HD-1670846455716-360p.mp4",
+      type: "video/mp4",
+      label: "360P",
+    },
   ],
   controlBar: {
     children: [

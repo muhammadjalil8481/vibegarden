@@ -8,6 +8,7 @@ const AlertModal = ({
   setState = () => null,
   extraFunc = () => null,
   linkTo = "#",
+  reload,
 }) => {
   //   const [showModal, setShowModal] = useState(state);
 
@@ -22,6 +23,7 @@ const AlertModal = ({
                 onClick={() => {
                   setState(false);
                   extraFunc();
+                  if (reload) window.location.reload(false);
                 }}
               >
                 <ButtonFilled

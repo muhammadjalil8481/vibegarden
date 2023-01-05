@@ -113,7 +113,7 @@ const ProfileScreen = () => {
                 <div className="profile-bloom-check">
                   <h4>Bloom Check</h4>
                   <div className="pbc-container">
-                    <div class="pbc-img">
+                    <div className="pbc-img">
                       <img src={images.bloomChu} />
                     </div>
                     <p>{percent}%</p>

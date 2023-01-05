@@ -7,6 +7,8 @@ import Checkbox from "@mui/material/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonFilled from "../Button/ButtonFilled";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/slices/userSlice";
 
 const RememberMeCheckboxIcon = styled("span")(({ theme }) => ({
   borderRadius: 5,
@@ -62,6 +64,7 @@ const sectionStyle = {
 };
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <section className="login" style={sectionStyle}>
       <div className="ec-icon" onClick={() => navigate("/home")}>
@@ -99,7 +102,12 @@ const Login = () => {
                 Forgot Password?
               </p>
             </div>
-            <div className="login-button">
+            <div
+              className="login-button"
+              onClick={() =>
+                dispatch(setUser({ name: "jalil", id: "1234567" }))
+              }
+            >
               <Link to="/selectavatar">
                 <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
               </Link>

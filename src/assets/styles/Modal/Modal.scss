@@ -270,8 +270,8 @@
   z-index: 1000;
 
   .alertModal {
-    width: 50rem;
-    height: 20rem;
+    width: 60rem;
+    // height: 20rem;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -289,6 +289,7 @@
       margin-bottom: 3rem;
       text-transform: capitalize;
       text-align: center;
+      line-height: 1.5;
     }
   }
 }

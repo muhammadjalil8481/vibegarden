@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import GradientImageInfoSection from "../../components/GradientImageInfoSection";
@@ -10,6 +10,8 @@ import SampleTools from "../../components/SampleToolsSection";
 import MoreVG from "../../components/MoreVGSection.js";
 import StayInTouch from "../../components/StayInTouchSection";
 import Footer from "../../components/Footer";
+import { useSelector, useDispatch } from "react-redux";
+import { setUser } from "../../redux/slices/userSlice";
 
 const HomePage = () => {
   return (

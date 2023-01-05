@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactStars from "react-rating-stars-component";
 import { useNavigate, Link, useLocation, useParams } from "react-router-dom";
 import NavBar from "../../components/Navbar";
 import pinkIcon from "../../assets/images/pink-icon.svg";
@@ -22,6 +23,11 @@ import res2 from "../../assets/images/reson2.svg";
 import res3 from "../../assets/images/reson3.svg";
 import res4 from "../../assets/images/reson4.svg";
 import { BsChevronUp, BsChevronDown, BsCheckLg } from "react-icons/bs";
+import {
+  TiStarOutline,
+  TiStarFullOutline,
+  TiStarHalfOutline,
+} from "react-icons/ti";
 
 function myArrow({ type, onClick, isEdge }) {
   const pointer =
@@ -166,13 +172,27 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
       <GreenLineBreak />
       <section className="idgw-2 container-lg">
         <div className="idgw-2-headingAndRating">
-          <h4 className="idgw-2-heading">Recent Comments</h4>
-          <div className="idgw-2-rating">
-            <span>
-              <StarIcon fontSize="large" />
-            </span>
-            <h5 className="idgw-2-rating-text">4.71 - 187</h5>
-          </div>
+          <span className="idgw-2-headingspan">
+            <h4 className="idgw-2-heading">Recent Comments</h4>
+            <div className="idgw-2-rating">
+              <span>
+                <StarIcon fontSize="large" />
+              </span>
+              <h5 className="idgw-2-rating-text">4.71 - 187</h5>
+            </div>
+          </span>
+          <span className="idgw-2-ratingspan">
+            <ReactStars
+              count={5}
+              // onChange={ratingChanged}
+              emptyIcon={<TiStarOutline />}
+              halfIcon={<TiStarHalfOutline />}
+              fullIcon={<TiStarFullOutline />}
+              size={30}
+              color="rgba(27, 91, 47, 0.4)"
+              activeColor="rgba(27, 91, 47, 1)"
+            />
+          </span>
         </div>
         <div className="idgw-2-comment">
           <Carousel breakPoints={breakPoints} renderArrow={myArrow}>

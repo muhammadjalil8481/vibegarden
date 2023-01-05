@@ -1,23 +1,112 @@
-import React, { useEffect } from "react";
-import CheckBoxList from "../../components/CheckBoxList";
+// Library Imports
+import React, { useState } from "react";
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+// Redux Slices
+import { setLoading } from "../../redux/slices/loadingSlice";
+import { signUpUser } from "../../redux/slices/signUpUserSlice";
+// Custom Imports
+import { apiRequest } from "../../api/axios";
+import images from "../../constants/images";
 import NavBar from "../../components/Navbar";
-import EmptyVideoCard from "../../components/EmptyVideoCard.js";
+import CheckBoxList from "../../components/CheckBoxList";
 import PaymentPlanCard from "../../components/PaymentPlanCard/PaymentPlanCard";
 import Footer from "../../components/Footer";
 import GreenButton from "../../components/Button/GreenButton";
-import images from "../../constants/images";
 import FormGroupAuth from "../../components/FormInputAuth";
-import { useNavigate, Link, useLocation } from "react-router-dom";
 import VidCard from "../../components/VidCard";
+import AlertModal from "../../components/Modal/AlertModal";
 
 const JoinUs = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   let isEmailVerified = null;
+  // Page render depending upon state
   if (location.state && location.state.isEmailVerified) isEmailVerified = "yes";
+  // States
+  const [state, setState] = useState({
+    firstName: "",
+    lastName: "",
+    userName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [error, setError] = useState(false);
+  const [reload, setReload] = useState(false);
+  // Redux State Read
+  const user = useSelector((state) => state?.signUpUser?.user);
+
+  // OnClick Handlers
+  // No 1
+  const signUpUserFunction = async () => {
+    try {
+      if (
+        !state.firstName ||
+        !state.lastName ||
+        !state.userName ||
+        !state.email ||
+        !state.password ||
+        !state.confirmPassword
+      )
+        return setError("Please fill the remaining fields");
+      dispatch(setLoading(true));
+      const { data } = await apiRequest.post("/register", {
+        firstName: state.firstName,
+        lastName: state.lastName,
+        userName: state.userName,
+        email: state.email,
+        password: state.password,
+        confirmPassword: state.confirmPassword,
+      });
+      if (data?.status === "ok") {
+        dispatch(signUpUser(data?.user));
+        dispatch(setLoading(false));
+        navigate("/email-confirmation");
+      }
+    } catch (err) {
+      dispatch(setLoading(false));
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
+  // No 2
+  const acceptPay = async () => {
+    try {
+      console.log("accepting sign up payment");
+      dispatch(setLoading(true));
+      const { data } = await apiRequest.post("/acceptPay", {
+        paymentMethod: "card",
+        cardNumber: "329382039203",
+        expirationDate: "12/12/22",
+        country: "USA",
+        state: "California",
+        postalCode: "12345",
+        packageType: "monthly",
+        belongsTo: user.email,
+      });
+      console.log(data);
+      dispatch(signUpUser(data.data));
+      dispatch(setLoading(false));
+      navigate("/login");
+    } catch (err) {
+      console.log("catching and dispatching");
+      dispatch(setLoading(false));
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
 
   return (
     <div className="join-us">
+      <AlertModal
+        state={error}
+        message={error}
+        setState={setError}
+        reload={reload}
+      />
+      {/* {isLoading && <Loader />} */}
       <NavBar onlyBrand />
       <div className="container-lg join-us-container mt-5">
         <div className="row join-us-row">
@@ -93,18 +182,45 @@ const JoinUs = () => {
                 </>
               ) : (
                 <>
-                  <FormGroupAuth label="First Name" inputType="text" />
-                  <FormGroupAuth label="Last Name" inputType="text" />
-                  <FormGroupAuth label="Email" inputType="email" />
+                  <FormGroupAuth
+                    label="First Name"
+                    inputType="text"
+                    value={state.firstName}
+                    setValue={(val) => setState({ ...state, firstName: val })}
+                  />
+                  <FormGroupAuth
+                    label="Last Name"
+                    inputType="text"
+                    value={state.lastName}
+                    setValue={(val) => setState({ ...state, lastName: val })}
+                  />
+                  <FormGroupAuth
+                    label="Username"
+                    inputType="text"
+                    value={state.userName}
+                    setValue={(val) => setState({ ...state, userName: val })}
+                  />
+                  <FormGroupAuth
+                    label="Email"
+                    inputType="email"
+                    value={state.email}
+                    setValue={(val) => setState({ ...state, email: val })}
+                  />
                   <FormGroupAuth
                     label="Password"
                     inputType="password"
                     showPasswordIcon
+                    value={state.password}
+                    setValue={(val) => setState({ ...state, password: val })}
                   />
                   <FormGroupAuth
                     label="Confirm Password"
                     inputType="password"
                     showPasswordIcon
+                    value={state.confirmPassword}
+                    setValue={(val) =>
+                      setState({ ...state, confirmPassword: val })
+                    }
                   />
                 </>
               )}
@@ -112,7 +228,9 @@ const JoinUs = () => {
             {isEmailVerified !== "yes" && (
               <h3
                 className="join-us-next-btn"
-                onClick={() => navigate("/email-confirmation")}
+                onClick={() => {
+                  signUpUserFunction();
+                }}
               >
                 Next&#62;
               </h3>
@@ -120,7 +238,7 @@ const JoinUs = () => {
             {isEmailVerified === "yes" && (
               <div
                 className="join-us-submit-btn"
-                onClick={() => navigate("/login")}
+                onClick={() => acceptPay()}
               >
                 <GreenButton paddingX text="Submit" />
               </div>
