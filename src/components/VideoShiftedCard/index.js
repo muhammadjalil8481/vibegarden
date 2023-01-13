@@ -13,10 +13,13 @@ const para = `Body copy style for white text on dark or gradient backgrounds
 elit. Mauris placerat euismod porttitor.`;
 
 const VideoCardShifted = ({
+  icon = circle,
   width = "600px",
   image = images.placeholder1,
   heading = "Gradient Card Headline",
   desc = para,
+  videoLink = "//vjs.zencdn.net/v/oceans.mp4",
+  videoDuration = "3:15",
 }) => {
   return (
     <section className="vcs">
@@ -24,7 +27,7 @@ const VideoCardShifted = ({
         <div className="vcs-container">
           <div className="vcs-info">
             <div className="vcs-info-and-icon">
-              <img src={circle} />
+              <img src={icon} />
               <h4 className="vcs-heading">{heading}</h4>
             </div>
             <p className="vcs-para">{desc}</p>
@@ -43,6 +46,8 @@ const VideoCardShifted = ({
               noTitle
               recentVibes
               linkVideo="/tools/tonglen"
+              videoSrc={videoLink}
+              time={videoDuration}
             />
             <div className="vcs-video-card-subText">
               <Link to="/tools/tonglen">

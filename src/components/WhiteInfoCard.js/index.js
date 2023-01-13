@@ -4,6 +4,8 @@ import VideoCard from "../VideoCard/VideoCard";
 import VidCard from "../VidCard";
 import ButtonFilled from "../Button/ButtonFilled";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { updateSrc } from "../../redux/slices/videoSlice";
 
 const WhiteInfoCard = ({
   heading = "Heading",
@@ -11,13 +13,26 @@ const WhiteInfoCard = ({
   image = images.placeholder4,
   btnText = "Button Text",
   linkText = "/",
+  videoLink = "//vjs.zencdn.net/v/oceans.mp4",
+  videoDuration = "3:15",
 }) => {
+  const homepage = useSelector((state) => state.homepage);
+  const dispatch = useDispatch();
+
   return (
     <div className="wic">
       <h4 className="wic-heading">{heading}</h4>
       <p className="wic-para">{para}</p>
-      <div className="wic-vid-container">
-        <VidCard image={image} noTitle />
+      <div
+        className="wic-vid-container"
+        // onClick={() => dispatch(updateSrc(videoLink))}
+      >
+        <VidCard
+          image={image}
+          noTitle
+          videoSrc={videoLink}
+          time={videoDuration}
+        />
       </div>
       <div className="wic-btn-container">
         <Link to={linkText}>

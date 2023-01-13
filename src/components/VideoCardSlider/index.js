@@ -424,6 +424,17 @@ const VideoCardSlider = ({
                   />
                 </div>
               )}
+              {!tools && !groundwork && (
+                <div className="video-slider-video-card">
+                  <VidCard
+                    titleIcon
+                    recentVibes={recentVibes ? true : false}
+                    // tool={tools ? true : false}
+                    // groundwork={groundwork ? true : false}
+                    linkVideo="/groundWork/family-of-light"
+                  />
+                </div>
+              )}
               <div className="vid-card-subTexts">
                 <Link to="/groundwork/family-of-light">
                   <p>Details</p>

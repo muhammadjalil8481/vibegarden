@@ -1,21 +1,61 @@
+// Library Imports
 import React, { useState } from "react";
-import images from "../../constants/images";
-import ButtonFilled from "../../components/Button/ButtonFilled";
 import { BsCheckLg } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
-import { BsChevronUp, BsChevronDown } from "react-icons/bs";
-import NavBar from "../../components/Navbar";
 import { RiArrowLeftLine } from "react-icons/ri";
+import { useDispatch, useSelector } from "react-redux";
+// Redux Slices
+import { setLoading } from "../../redux/slices/loadingSlice";
+import { setUser } from "../../redux/slices/userSlice";
+// Custom Imports
+import images from "../../constants/images";
+import { apiRequest } from "../../api/axios";
+import ButtonFilled from "../../components/Button/ButtonFilled";
+import AlertModal from "../../components/Modal/AlertModal";
 
 const BloomCheck = () => {
+  // Hooks
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // States
   const [choice, setChoice] = useState("");
   const [percent, setPercent] = useState(25);
+  const [error, setError] = useState(false);
+  // Redux State Read
+  const user = useSelector((state) => state.user.user);
+
+  // OnClick Handlers
+  const setUserBloomPercentage = async () => {
+    try {
+      console.log("setting user bloom percentage");
+      dispatch(setLoading(true));
+      const { data } = await apiRequest.patch(
+        `/updateBloomPercentage/${user._id}`,
+        {
+          bloomPercentage: percent,
+        }
+      );
+      console.log("next");
+      console.log("data///", data);
+      setTimeout(() => {
+        dispatch(setLoading(false));
+        dispatch(setUser(data.user));
+        navigate("/bloomresult", { state: { percent: percent } });
+      }, 1000);
+    } catch (err) {
+      dispatch(setLoading(false));
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
 
   return (
     <>
       {/* <NavBar onlyBrand /> */}
       <div className="bloom-check bg-lightGreenMask">
+        <AlertModal message={error} state={error} setState={setError} />
         <Link to="/selectbloom">
           <span className="bc-back">
             <RiArrowLeftLine size={30} fill="white" />
@@ -111,14 +151,16 @@ const BloomCheck = () => {
               {/* <BsChevronDown size={20} fill="black" color="black" /> */}
             </div>
           </div>
-          <Link to="/bloomresult" state={{ percent: percent }}>
+          {/* <Link to="/bloomresult" state={{ percent: percent }}> */}
+          <span onClick={setUserBloomPercentage}>
             <ButtonFilled
               text="Continue"
               paddingX
               bgGradient={"yes"}
               paddingYSmall
             />
-          </Link>
+          </span>
+          {/* </Link> */}
         </div>
       </div>
     </>

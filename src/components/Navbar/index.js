@@ -1,24 +1,34 @@
+// Library Imports
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { IoNotificationsSharp, IoAddOutline } from "react-icons/io5";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, NavLink } from "react-bootstrap";
+// Redux Slices
+import { setLoading } from "../../redux/slices/loadingSlice";
+import { logoutUser } from "../../redux/slices/userSlice";
+// Custom Imports
 import ButtonOutline from "../Button/ButtonOutline";
 import images from "../../constants/images";
-import { Link, useNavigate, useLocation } from "react-router-dom";
 import UserButton from "../userButton.js";
 import VibeGardenLogo from "../../assets/images/vibegarden_logo.svg";
-import { IoNotificationsSharp, IoAddOutline } from "react-icons/io5";
 import NotificationPopUp from "../NotificationPopUp";
-import Spiral from "../../assets/images/spiral.svg";
 
 const NavBar = ({ onlyBrand }) => {
-  let location = useLocation();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [user, setUser] = useState(true);
+  // Redux State Read
+  const user = useSelector((state) => state.user.user);
+  console.log("bloom", user?.bloom);
+  // States
   const [expanded, setExpanded] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
-  const [dimensions, setDimensions] = React.useState({
+  const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
   });
+
+  // Update Navbar Responsiveness
   useEffect(() => {
     function updateSize() {
       setDimensions({
@@ -30,40 +40,31 @@ const NavBar = ({ onlyBrand }) => {
     updateSize();
     return () => window.removeEventListener("resize", updateSize);
   }, []);
-  useEffect(() => {
-    if (location.pathname === "/" || location.pathname === "/home")
-      setUser(false);
-  }, [location]);
 
+  // OnClick handlers
+  const logoutUserFunction = () => {
+    console.log("logged out");
+    dispatch(setLoading(true));
+    setTimeout(() => {
+      dispatch(logoutUser());
+      dispatch(setLoading(false));
+      navigate("/login");
+    }, 1000);
+  };
   return (
     <Navbar expand="lg" className="navbar">
       <div className="container-xl">
-        {!user && (
-          <Link to="/">
-            <Navbar.Brand className="brand">
-              <div>
-                <img
-                  src={VibeGardenLogo}
-                  alt="Vibe Garden Logo"
-                  style={{ width: "80%" }}
-                />
-              </div>
-            </Navbar.Brand>
-          </Link>
-        )}
-        {user && (
-          <Link to="/homepage">
-            <Navbar.Brand className="brand">
-              <div>
-                <img
-                  src={VibeGardenLogo}
-                  alt="Vibe Garden Logo"
-                  style={{ width: "80%" }}
-                />
-              </div>
-            </Navbar.Brand>
-          </Link>
-        )}
+        <Link to="/">
+          <Navbar.Brand className="brand">
+            <div>
+              <img
+                src={VibeGardenLogo}
+                alt="Vibe Garden Logo"
+                style={{ width: "80%" }}
+              />
+            </div>
+          </Navbar.Brand>
+        </Link>
         {!onlyBrand && (
           <>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -111,25 +112,14 @@ const NavBar = ({ onlyBrand }) => {
                 <Nav className="ms-auto">
                   <div className="navbar-actions">
                     <span className="navbar-tools-icon">
-                      {/* <Link to="/resonance"> */}
-                      {/* <IoAddOutline size={25} /> */}
-                      {/* {location.pathname !== "/profile" && (
-                        <Link to="/resonancefinder">
-                          <div className="profile-spiral">
-                            <img src={Spiral} />
-                          </div>
-                        </Link>
-                      )} */}
-                      {/* {location.pathname === "/profile" && ( */}
                       <Link to="/updatebloomcheck">
                         <div className="profile-bloom">
-                          <img src={images.bloomChu} />
+                          <img
+                            src={user?.bloom?.croppedImage || images.bloomChu}
+                          />
                         </div>
                       </Link>
-                      {/* )} */}
-                      {/* </Link> */}
                     </span>
-
                     <span className="navbar-actions-icon">
                       <span
                         onClick={() => setShowNotification(!showNotification)}
@@ -143,6 +133,7 @@ const NavBar = ({ onlyBrand }) => {
                       <span className="notification-dot"></span>
                     </span>
                     <UserButton
+                      username={`${user?.firstName} ${user.lastName}`}
                       onClickFunction={() => setExpanded(!expanded)}
                     />
                     {expanded && dimensions.width >= 992 && (
@@ -153,9 +144,12 @@ const NavBar = ({ onlyBrand }) => {
                           </Link>
                         </NavLink>
                         <NavLink>
-                          <Link to="/login">
-                            <div className="list_item-expanded ">Logout</div>
-                          </Link>
+                          <div
+                            className="list_item-expanded "
+                            onClick={() => logoutUserFunction()}
+                          >
+                            Logout
+                          </div>
                         </NavLink>
                       </div>
                     )}
@@ -180,29 +174,11 @@ const NavBar = ({ onlyBrand }) => {
                       <div className="list_item">Resonance</div>
                     </NavLink>
                     <NavLink>
-                      <div
-                        className="list_item"
-                        // onClick={() => setShowNotification(!showNotification)}
-                      >
-                        Notification
-                      </div>
+                      <div className="list_item">Notification</div>
                     </NavLink>
-                    {/* <div className="mobile-nav-not"> */}
-                    {/* <NotificationPopUp /> */}
-                    {/* </div> */}
                   </div>
                 </Nav>
               )}
-              {/* {expanded && dimensions.width >= 992 && (
-                <div className="expandedBar">
-                  <NavLink onClick={() => navigate("profile")}>
-                    <div className="list_item-expanded">Profile Settings</div>
-                  </NavLink>
-                  <NavLink>
-                    <div className="list_item-expanded ">Logout</div>
-                  </NavLink>
-                </div>
-              )} */}
             </Navbar.Collapse>
           </>
         )}

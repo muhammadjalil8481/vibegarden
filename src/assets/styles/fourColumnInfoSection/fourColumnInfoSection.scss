@@ -20,6 +20,18 @@
           font-weight: 700;
           font-family: "josefin sans";
         }
+        .fcis-item-para {
+          font-family: "josefin sans";
+          width: 85%;
+          margin-top: 2.5rem;
+          font-size: 1.8rem;
+          @media (max-width: 600px) {
+            font-size: 1.5rem;
+          }
+          color: $black-3;
+          letter-spacing: 1px;
+          margin-bottom: 1rem;
+        }
         .fcis-item--list {
           // background-color: saddlebrown;
           width: 90%;

@@ -1,22 +1,33 @@
-import { red } from "@mui/material/colors";
+// Library Imports
 import React from "react";
 import { Container } from "react-bootstrap";
-import images from "../../constants/images";
+// Vustom Importys
 
-const sectionStyle = {
-  backgroundImage: `url(${images.hero})`,
-  //   backgroundColor: "red",
-};
 const Hero = ({
-  quote1stPart = "First Part",
-  quote2ndPart = "",
-  author = "Author Name",
+  quote = "",
+  quote1stPart = "“There is a sun within every person;",
+  quote2ndPart = "the you we call campanion.”",
+  author = "– Thich Nhat Hahn",
   heading = "Hi, You",
   greenColor,
   shortPadding,
   reduceFont,
   topPadding,
 }) => {
+  // Manipulate Quote Data
+  const quoteExtract = quote
+    .match(/[“|"](\\.|[^"\\])*[”|"]/g)
+    ?.pop()
+    ?.split("\n");
+  const quoteExcept = quote
+    .split(/[“|"](\\.|[^"\\])*[”|"]/g)
+    .filter((el) => el !== "" && el !== "." && el !== " ")
+    .join(" ")
+    .split("\n")
+    .filter((el) => el !== "" && el !== "." && el !== " ");
+  const quoteAuthor = quoteExcept[0];
+  const quoteHeading = quoteExcept[1];
+
   return (
     <Container
       fluid
@@ -24,33 +35,53 @@ const Hero = ({
         topPadding && "top-padding"
       }`}
     >
-      <h2
-        className={`hero-quote ${greenColor && "text-green"} ${
-          reduceFont && "hero-font-quote"
-        }`}
-      >
-        {quote1stPart}
-      </h2>
-      <h2
-        className={`hero-quote ${greenColor && "text-green"} ${
-          reduceFont && "hero-font-quote"
-        }`}
-      >
-        {quote2ndPart}
-      </h2>
+      {quote && quoteExtract ? (
+        <div>
+          {quoteExtract?.map((quote) => {
+            return (
+              <h2
+                className={`hero-quote ${greenColor && "text-green"} ${
+                  reduceFont && "hero-font-quote"
+                }`}
+              >
+                {quote}
+              </h2>
+            );
+          })}
+        </div>
+      ) : (
+        <div>
+          <h2
+            className={`hero-quote ${greenColor && "text-green"} ${
+              reduceFont && "hero-font-quote"
+            }`}
+          >
+            {quote1stPart}
+          </h2>
+          <h2
+            className={`hero-quote ${greenColor && "text-green"} ${
+              reduceFont && "hero-font-quote"
+            }`}
+          >
+            {quote2ndPart}
+          </h2>
+        </div>
+      )}
+
       <p
         className={`hero-author ${greenColor && "text-green"} ${
           reduceFont && "hero-font-author"
         }`}
       >
-        {author}
+        {quoteAuthor || author}
       </p>
+
       <h1
         className={`hero-heading ${greenColor && "text-green"} ${
           topPadding && "hero-heading-pad"
         } ${reduceFont && "hero-font-heading"}`}
       >
-        {heading}
+        {quoteHeading || heading}
       </h1>
     </Container>
   );

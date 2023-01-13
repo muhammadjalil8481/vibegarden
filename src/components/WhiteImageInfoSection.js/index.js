@@ -1,35 +1,41 @@
+// Library Imports
 import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+// Custom Imports
+import images from "../../constants/images";
 import ContainerSection from "../Container";
 import ButtonFilled from "../Button/ButtonFilled";
-import images from "../../constants/images";
-import VideoCard from "../VideoCard/VideoCard";
 import LightButton from "../Button/LightButton";
-import { Link } from "react-router-dom";
 import VidCard from "../VidCard";
 
+const para = ` Body copy style for white text on dark or gradient backgrounds
+(Medium Weight) Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Mauris placerat euismod porttitor. Nam nec
+mauris non magna facilisis volutpat ac sit amet nulla. Nullam
+vestibulum velit vitae sem commodo tempor. Sed dapibus, est non
+pulvinar fringilla, lorem libero laoreet erat, ac tristique elit
+nisl eu metus. Sed fermentum erat sit amet enim blandit, quis
+dictum nisi tempus. Etiam dui tellus, porttitor vitae rutrum a,
+ultrices pharetra nulla.`;
+
 const WhiteImageInfoSection = ({
-  button,
-  videoCardLeftMargin,
-  videoCardRightMargin,
+  desc = para,
   noHeading,
   noButton,
   topHeading,
-  videoCardHeight = "230px",
-  videoCardWidth = "300px",
   orderReverse,
   orderReverseWithButton,
   rightAlignHeading,
   whiteHeading,
   whitePara,
   doubleHeading,
-  videoCardTopHeading,
   bottomInfo,
   lightButton,
   postedDate,
   mainHeading = "Main Heading",
   btnText = "Button",
   padX = true,
-  onClickFunction = () => null,
   link = "#",
   heading = "Go Deeper - Vibe Guides",
   rightAlignBtn,
@@ -37,6 +43,10 @@ const WhiteImageInfoSection = ({
   vidHeading,
   homeLogged,
   freshBlooms,
+  videoLink = "//vjs.zencdn.net/v/oceans.mp4",
+  videoImage = images.placeholder,
+  videoDuration = "3:15",
+  noTitle,
 }) => {
   return (
     <section className="wiis">
@@ -69,15 +79,7 @@ const WhiteImageInfoSection = ({
                 </div>
               )}
               <p className={`${whitePara && "text-white"} wiis-para mt-5 mb-5`}>
-                Body copy style for white text on dark or gradient backgrounds
-                (Medium Weight) Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Mauris placerat euismod porttitor. Nam nec
-                mauris non magna facilisis volutpat ac sit amet nulla. Nullam
-                vestibulum velit vitae sem commodo tempor. Sed dapibus, est non
-                pulvinar fringilla, lorem libero laoreet erat, ac tristique elit
-                nisl eu metus. Sed fermentum erat sit amet enim blandit, quis
-                dictum nisi tempus. Etiam dui tellus, porttitor vitae rutrum a,
-                ultrices pharetra nulla.
+                {desc}
               </p>
               {lightButton && (
                 <div className="wiis-lightBtnContainer">
@@ -121,10 +123,14 @@ const WhiteImageInfoSection = ({
                 className={`wiis-vid-card ${
                   orderReverse && "wiis-vid-card-margin"
                 }`}
+                // onClick={() => dispatch(updateSrc(videoLink))}
               >
                 <VidCard
-                  image={images.placeholder}
+                  image={videoImage}
                   freshBlooms={freshBlooms ? true : false}
+                  videoSrc={videoLink}
+                  time={videoDuration}
+                  noTitle={noTitle ? true : false}
                 />
               </div>
               {postedDate && (

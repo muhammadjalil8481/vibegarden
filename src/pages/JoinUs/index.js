@@ -1,5 +1,5 @@
 // Library Imports
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // Redux Slices
@@ -21,9 +21,8 @@ const JoinUs = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  let isEmailVerified = null;
   // Page render depending upon state
-  if (location.state && location.state.isEmailVerified) isEmailVerified = "yes";
+  // if (location.state && location.state.isEmailVerified) isEmailVerified = "yes";
   // States
   const [state, setState] = useState({
     firstName: "",
@@ -33,10 +32,25 @@ const JoinUs = () => {
     password: "",
     confirmPassword: "",
   });
+  const [paymentState, setPaymentState] = useState({
+    cardNumber: "",
+    expirationDate: "",
+    securityCode: "",
+    country: "",
+    state: "",
+    postalCode: "",
+  });
   const [error, setError] = useState(false);
+  const [accountCreated, setAccountCreated] = useState(false);
+  const [paymentComplete, setPaymentComplete] = useState(false);
   const [reload, setReload] = useState(false);
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
+
   // Redux State Read
   const user = useSelector((state) => state?.signUpUser?.user);
+  useEffect(() => {
+    if (user && user?.verified) setIsEmailVerified(true);
+  }, []);
 
   // OnClick Handlers
   // No 1
@@ -51,7 +65,9 @@ const JoinUs = () => {
         !state.confirmPassword
       )
         return setError("Please fill the remaining fields");
+
       dispatch(setLoading(true));
+
       const { data } = await apiRequest.post("/register", {
         firstName: state.firstName,
         lastName: state.lastName,
@@ -62,11 +78,15 @@ const JoinUs = () => {
       });
       if (data?.status === "ok") {
         dispatch(signUpUser(data?.user));
-        dispatch(setLoading(false));
-        navigate("/email-confirmation");
+        setTimeout(() => {
+          dispatch(setLoading(false));
+          setAccountCreated(true);
+        }, 1000);
       }
     } catch (err) {
+      // console.log(err.message);
       dispatch(setLoading(false));
+      if (err.message === "Network Error") return setError("Network Error");
       const data = err?.response?.data;
       setError(data?.message);
     }
@@ -75,6 +95,16 @@ const JoinUs = () => {
   const acceptPay = async () => {
     try {
       console.log("accepting sign up payment");
+      if (
+        !paymentState.cardNumber ||
+        !paymentState.expirationDate ||
+        !paymentState.securityCode ||
+        !paymentState.country ||
+        !paymentState.state ||
+        !paymentState.postalCode
+      )
+        return setError("Please fill the remaining fields");
+
       dispatch(setLoading(true));
       const { data } = await apiRequest.post("/acceptPay", {
         paymentMethod: "card",
@@ -84,15 +114,16 @@ const JoinUs = () => {
         state: "California",
         postalCode: "12345",
         packageType: "monthly",
-        belongsTo: user.email,
+        belongsTo: user._id,
       });
-      console.log(data);
-      dispatch(signUpUser(data.data));
-      dispatch(setLoading(false));
-      navigate("/login");
+      dispatch(signUpUser(null));
+      setTimeout(() => {
+        dispatch(setLoading(false));
+        setPaymentComplete(true);
+      }, 1000);
     } catch (err) {
-      console.log("catching and dispatching");
       dispatch(setLoading(false));
+      if (err.message === "Network Error") return setError("Network Error");
       const data = err?.response?.data;
       setError(data?.message);
     }
@@ -105,6 +136,18 @@ const JoinUs = () => {
         message={error}
         setState={setError}
         reload={reload}
+      />
+      <AlertModal
+        state={accountCreated}
+        message={"Account created Successfully! Please verify your account"}
+        setState={setAccountCreated}
+        navigateTo="/email-confirmation"
+      />
+      <AlertModal
+        state={paymentComplete}
+        message={"Payment Successful!"}
+        setState={setPaymentComplete}
+        navigateTo="/login"
       />
       {/* {isLoading && <Loader />} */}
       <NavBar onlyBrand />
@@ -169,16 +212,55 @@ const JoinUs = () => {
             <form className="join-us-form">
               {isEmailVerified ? (
                 <>
-                  <FormGroupAuth label="Card Number" inputType="text" />
-                  <FormGroupAuth label="Expiration Date" inputType="date" />
-                  <FormGroupAuth label="Security Code" inputType="text" />
+                  <FormGroupAuth
+                    label="Card Number"
+                    inputType="text"
+                    value={paymentState.cardNumber}
+                    setValue={(val) =>
+                      setPaymentState({ ...paymentState, cardNumber: val })
+                    }
+                  />
+                  <FormGroupAuth
+                    label="Expiration Date"
+                    inputType="date"
+                    value={paymentState.expirationDate}
+                    setValue={(val) =>
+                      setPaymentState({ ...paymentState, expirationDate: val })
+                    }
+                  />
+                  <FormGroupAuth
+                    label="Security Code"
+                    inputType="text"
+                    value={paymentState.securityCode}
+                    setValue={(val) =>
+                      setPaymentState({ ...paymentState, securityCode: val })
+                    }
+                  />
+                  <FormGroupAuth
+                    label="Postal Code"
+                    inputType="text"
+                    value={paymentState.postalCode}
+                    setValue={(val) =>
+                      setPaymentState({ ...paymentState, postalCode: val })
+                    }
+                  />
                   <FormGroupAuth
                     label="Country"
                     options={["USA", "UK", "Pakistan"]}
                     isSelectInput
+                    value={paymentState.country}
+                    setValue={(val) =>
+                      setPaymentState({ ...paymentState, country: val })
+                    }
                   />
-                  <FormGroupAuth label="State" isSelectInput />
-                  <FormGroupAuth label="Postal Code" inputType="text" />
+                  <FormGroupAuth
+                    label="State"
+                    isSelectInput
+                    value={paymentState.state}
+                    setValue={(val) =>
+                      setPaymentState({ ...paymentState, state: val })
+                    }
+                  />
                 </>
               ) : (
                 <>
@@ -225,7 +307,7 @@ const JoinUs = () => {
                 </>
               )}
             </form>
-            {isEmailVerified !== "yes" && (
+            {!isEmailVerified && (
               <h3
                 className="join-us-next-btn"
                 onClick={() => {
@@ -235,11 +317,8 @@ const JoinUs = () => {
                 Next&#62;
               </h3>
             )}
-            {isEmailVerified === "yes" && (
-              <div
-                className="join-us-submit-btn"
-                onClick={() => acceptPay()}
-              >
+            {isEmailVerified && (
+              <div className="join-us-submit-btn" onClick={() => acceptPay()}>
                 <GreenButton paddingX text="Submit" />
               </div>
             )}

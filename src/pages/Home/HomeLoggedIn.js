@@ -1,4 +1,7 @@
+// Library Imports
 import React from "react";
+import { Link } from "react-router-dom";
+// Custom Imports
 import NavBar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import WhiteImageInfoSection2 from "../../components/WhiteImageInfoSection2";
@@ -10,16 +13,11 @@ import BrowseByTags from "../../components/BrowseByTags";
 import WhiteImageInfoSection from "../../components/WhiteImageInfoSection.js";
 import BigImageSection from "../../components/BigImageSection";
 import Footer from "../../components/Footer";
-import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 
 const HomeLoggedIn = () => {
-  const location = useLocation();
-  console.log(location);
-
   return (
-    <div className="remove-overflow ">
+    <div className="remove-overflow">
       <NavBar />
       <div className="bg-gradient-blueflowers">
         <Hero

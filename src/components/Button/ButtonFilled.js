@@ -1,4 +1,6 @@
+// Library Imports
 import React from "react";
+// Custom Imports
 import rectangle from "../../assets/images/rectangle.svg";
 
 const gradientBackground = {
@@ -18,7 +20,6 @@ const ButtonFilled = ({
   padYResponsive,
   padXBig,
   padYBig,
-  // onPressFunction = () => null,
 }) => {
   return (
     <button
@@ -28,7 +29,6 @@ const ButtonFilled = ({
         paddingXSmall && "pd-x-small"
       } ${padXBig && "pd-x-big"} ${padYBig && "pd-y-big"} btn-filled`}
       style={bgGradient === "yes" ? gradientBackground : null}
-      // onPress={onPressFunction}
     >
       {text}
     </button>

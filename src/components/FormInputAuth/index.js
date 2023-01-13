@@ -1,9 +1,10 @@
+// Library Imports
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import { TiTick } from "react-icons/ti";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { green, grey } from "@mui/material/colors";
-import { Link } from "react-router-dom";
 
 const FormGroupAuth = ({
   inputType = "text",
@@ -24,7 +25,9 @@ const FormGroupAuth = ({
   selectedIcon,
   selectedIconDisabled,
 }) => {
+  // States
   const [inputTypeState, setInputTypeState] = useState(inputType);
+  // Redux State Read
   const showPasswordText = () => {
     setInputTypeState(inputTypeState === "password" ? "text" : "password");
   };
@@ -33,7 +36,7 @@ const FormGroupAuth = ({
       <div className="fga-form-group">
         {!noLabel && <p className="fga-form-label">{label}</p>}
         <input
-          type={inputTypeState}
+          type={inputType !== "date" ? inputTypeState : "date"}
           className={`fga-form-input ${disabled && "fga-form-input-disabled"}`}
           placeholder={placeHolder}
           value={value}
@@ -122,6 +125,8 @@ const FormGroupAuth = ({
         name={selectName}
         className={`fga-form-input ${disabled && "fga-form-input-disabled"}`}
         disabled={disabled}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
       >
         {/* <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>

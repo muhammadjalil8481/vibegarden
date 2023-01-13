@@ -1,13 +1,17 @@
+// States
 import React from "react";
-import images from "../../constants/images";
 import { BsFillCheckCircleFill } from "react-icons/bs";
-import ButtonFilled from "../../components/Button/ButtonFilled";
 import { Link, useLocation } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
+import { useSelector } from "react-redux";
+// Custom Importts
+import images from "../../constants/images";
+import ButtonFilled from "../../components/Button/ButtonFilled";
 
 const BloomResult = () => {
-  const { state } = useLocation();
-  const percent = state?.percent || 26;
+  // Redux State Read
+  const user = useSelector((state) => state.user.user);
+  const percent = user.bloomPercentage || 25;
   return (
     <div className="bloom-result bg-lightGreenMask">
       <Link to="/bloomcheck">
@@ -26,12 +30,12 @@ const BloomResult = () => {
         <h4>{percent}%</h4>
         <BsFillCheckCircleFill size={30} color="rgba(27, 91, 47,0.8)" />
       </div>
-      <h2>Perfect Erin!</h2>
+      <h2>Perfect {user?.firstName || "Erin"}</h2>
       <p>
         We Have Tools to Support Your Unique Journey to full bloom the world
         could sure use more of your light?
       </p>
-      <Link to="/homepage">
+      <Link to="/">
         <ButtonFilled
           text="Take Me To the Garden"
           padXResponsive

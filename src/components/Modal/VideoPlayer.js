@@ -35,8 +35,7 @@ export default class VideoPlayer extends React.Component {
         <video
           ref={(node) => (this.videoNode = node)}
           className="video-js  vjs-big-play-centered vjs-theme-forest"
-          poster={this.props.image}
-          
+          // poster={this.props.image}
         />
       </div>
     );

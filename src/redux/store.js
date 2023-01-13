@@ -5,11 +5,17 @@ import thunk from "redux-thunk";
 import userReducer from "./slices/userSlice";
 import signUpUserSlice from "./slices/signUpUserSlice";
 import loadingReducer from "./slices/loadingSlice";
+import homePageReducer from "./slices/homePageSlice";
+import videoReducer from "./slices/videoSlice";
+import teachersReducer from "./slices/teachersSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,
   signUpUser: signUpUserSlice,
   loading: loadingReducer,
+  homepage: homePageReducer,
+  video: videoReducer,
+  teachers: teachersReducer,
 });
 const persistConfig = {
   key: "root",

@@ -1,24 +1,67 @@
-import React, { useState } from "react";
-import NavBar from "../../components/Navbar";
-import images from "../../constants/images";
-import ButtonFilled from "../../components/Button/ButtonFilled";
+// Library Imports
+import React, { useState, useEffect } from "react";
 import { BsCheckLg } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
+import { useDispatch, useSelector } from "react-redux";
+// Redux Slices
+import { setLoading } from "../../redux/slices/loadingSlice";
+import { setUser } from "../../redux/slices/userSlice";
+// Custom Imports
+import { apiRequest } from "../../api/axios";
 import AlertModal from "../../components/Modal/AlertModal";
+import ButtonFilled from "../../components/Button/ButtonFilled";
 
 const SelectBloom = () => {
-  const [choice, setChoice] = useState("");
-  const [showModal, setShowModal] = useState(false);
+  // Hooks
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // States
+  const [choice, setChoice] = useState("");
+  const [blooms, setBlooms] = useState([]);
+  const [error, setError] = useState(false);
+  // Redux State Read
+  const user = useSelector((state) => state.user.user);
+
+  const getBlooms = async () => {
+    try {
+      const { data } = await apiRequest.get("/getAllBlooms");
+      if (data.status === "ok") setBlooms(data?.blooms);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const setUserBloom = async () => {
+    try {
+      console.log("selecting bloom from user");
+      if (!choice) return setError("Please select a bloom");
+      dispatch(setLoading(true));
+      const { data } = await apiRequest.patch(`/updateUserBloom/${user._id}`, {
+        bloom: choice,
+      });
+      console.log("next");
+      console.log("data///", data);
+      setTimeout(() => {
+        dispatch(setUser(data.user));
+        dispatch(setLoading(false));
+        navigate("/bloomcheck");
+      }, 1000);
+    } catch (err) {
+      dispatch(setLoading(false));
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
+  // UseEffect
+  useEffect(() => {
+    getBlooms();
+  }, []);
+
   return (
     <div className="selectavatar">
       {/* <NavBar onlyBrand /> */}
-      <AlertModal
-        message="Please select a bloom"
-        state={showModal}
-        setState={setShowModal}
-      />
+      <AlertModal message={error} state={error} setState={setError} />
       <div className="select-avatar bg-lightGreenMask">
         <Link to="/selectavatar">
           <span className="bc-back">
@@ -31,94 +74,41 @@ const SelectBloom = () => {
         </h2>
 
         <div className="avatar-container">
-          <div className="sa-imageAndText">
-            {choice === "lotus" ? (
-              <span className="sa-choice-checked bg-gradient-pink">
-                <BsCheckLg size={50} fill="white" />
-              </span>
-            ) : (
-              <div className="sa-image" onClick={() => setChoice("lotus")}>
-                <img src={images.bloomLotus} alt="" />
+          {blooms.map((bloom) => {
+            return (
+              <div className="sa-imageAndText" key={bloom?._id}>
+                {choice === bloom._id ? (
+                  <span className="sa-choice-checked bg-gradient-pink">
+                    <BsCheckLg size={50} fill="white" />
+                  </span>
+                ) : (
+                  <div
+                    className="sa-image"
+                    onClick={() => setChoice(bloom?._id)}
+                  >
+                    <img src={bloom?.croppedImage} alt={bloom?.croppedImage} />
+                  </div>
+                )}
+
+                <Link
+                  to="/bloominfo"
+                  state={{
+                    heading: bloom?.title.split("-").join(" "),
+                    description: bloom?.description,
+                    image: bloom?.image,
+                  }}
+                >
+                  <p>
+                    Meet <br />
+                    {bloom?.title.split("-").join(" ")}
+                  </p>
+                </Link>
               </div>
-            )}
-            <Link
-              to="/bloominfo"
-              state={{ heading: "Blue Lotus", image: images.blueLotus }}
-            >
-              <p>
-                Meet <br />
-                Blue Lotus
-              </p>
-            </Link>
-          </div>
-          <div className="sa-imageAndText">
-            {choice === "ross" ? (
-              <span className="sa-choice-checked bg-gradient-pink">
-                <BsCheckLg size={50} fill="white" />
-              </span>
-            ) : (
-              <div className="sa-image" onClick={() => setChoice("ross")}>
-                <img src={images.bloomRoss} alt="" />
-              </div>
-            )}
-            <Link
-              to="/bloominfo"
-              state={{ heading: "Divine Ross", image: images.divineRoss }}
-            >
-              <p>
-                Meet <br />
-                Divine Ross
-              </p>
-            </Link>
-          </div>
-          <div className="sa-imageAndText">
-            {choice === "mushroom" ? (
-              <span className="sa-choice-checked bg-gradient-pink">
-                <BsCheckLg size={50} fill="white" />
-              </span>
-            ) : (
-              <div className="sa-image" onClick={() => setChoice("mushroom")}>
-                <img src={images.bloomMushroom} alt="" />
-              </div>
-            )}
-            <Link
-              to="/bloominfo"
-              state={{ heading: "Blue Lotus", image: images.mushroom }}
-            >
-              <p>
-                Meet <br />
-                Mushrooms
-              </p>
-            </Link>
-          </div>
-          <div className="sa-imageAndText">
-            {choice === "chuchu" ? (
-              <span className="sa-choice-checked bg-gradient-pink">
-                <BsCheckLg size={50} fill="white" />
-              </span>
-            ) : (
-              <div className="sa-image" onClick={() => setChoice("chuchu")}>
-                <img src={images.bloomChu} alt="" />
-              </div>
-            )}
-            <Link
-              to="/bloominfo"
-              state={{ heading: "Blue Lotus", image: images.chuchu }}
-            >
-              <p>
-                Meet <br />
-                Chuchuhuas
-              </p>
-            </Link>
-          </div>
+            );
+          })}
         </div>
         {/* <Link to="/bloomcheck"> */}
-        <span
-          onClick={() => {
-            !choice && setShowModal(true);
-            choice && navigate("/bloomcheck");
-          }}
-        >
+        <span onClick={setUserBloom}>
           <ButtonFilled
             text="Continue"
             bgGradient={"yes"}

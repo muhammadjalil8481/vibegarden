@@ -1,10 +1,13 @@
+// Custom Imports
 import React from "react";
-import ContainerSection from "../Container";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+// Redux Slices
+import { updateSrc } from "../../redux/slices/videoSlice";
+// Custom Imports
 import ButtonFilled from "../Button/ButtonFilled";
 import images from "../../constants/images";
-import VideoCard from "../VideoCard/VideoCard";
 import VidCard from "../VidCard";
-import { Link } from "react-router-dom";
 
 const para = `Body copy style for white text on dark or gradient backgrounds
 (Medium Weight) Lorem ipsum dolor sit amet, consectetur
@@ -17,22 +20,24 @@ dictum nisi tempus. Etiam dui tellus, porttitor vitae rutrum a,
 ultrices pharetra nulla.`;
 
 const GradientImageInfoSection = ({
-  button,
-  videoCardLeftMargin,
-  videoCardRightMargin,
   noButton,
   heading = "Heading",
   desc = para,
   buttonText = "Button",
   btnLink = "#",
+  videoLink = "//vjs.zencdn.net/v/oceans.mp4",
+  videoImage = images.placeholder2,
+  videoDuration = "3:15",
+  videoTitle = "Title",
+  noTitle,
 }) => {
+  // Hooks
+  const dispatch = useDispatch();
   return (
     <section className="giid">
-      {/* <ContainerSection isFluid={"yes"}> */}
       <div class="container giid-container py80">
         <div class="row giid-row">
           <div class="col-md-6 giid-col giid-left-col">
-            {/* <h1>Left side</h1> */}
             <h2 className="giid-heading ">{heading}</h2>
             <p className="white-text section-text mt-2 mb-5">{desc}</p>
             {!noButton && (
@@ -48,13 +53,20 @@ const GradientImageInfoSection = ({
             )}
           </div>
           <div class="col-sm-6 giid-col giid-right-col">
-            <div className="giid-vid-card">
-              <VidCard image={images.placeholder2} title="Title" time="3:15" />
+            <div
+              className="giid-vid-card"
+              onClick={() => dispatch(updateSrc(videoLink))}
+            >
+              <VidCard
+                image={videoImage}
+                title={!noTitle && videoTitle}
+                time={videoDuration}
+                videoSrc={videoLink}
+              />
             </div>
           </div>
         </div>
       </div>
-      {/* </ContainerSection> */}
     </section>
   );
 };

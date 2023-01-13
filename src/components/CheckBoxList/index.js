@@ -1,10 +1,10 @@
+// Library Imporrts
 import React from "react";
 import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import { green } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 
+// Icons
 const BpIcon = styled("span")(({ theme }) => ({
   borderRadius: 9,
   width: 18,
@@ -59,12 +59,13 @@ const CheckBoxList = ({ checked = false, lg }) => {
     <section className="checkbox-list ">
       <FormGroup>
         <div className="row">
-          {new Array(6).fill(null).map((item) => {
+          {new Array(6).fill(null).map((item, index) => {
             return (
               <div
                 className={`form-group ${!lg && "col-md-6"} ${
                   lg && "col-lg-6"
                 }`}
+                key={`list-${index}`}
               >
                 {checked ? (
                   <Checkbox

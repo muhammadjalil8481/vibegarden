@@ -1,15 +1,24 @@
-import React from "react";
-import ContainerSection from "../Container";
-import images from "../../constants/images";
-import FormGroupAuth from "../FormInputAuth";
+// Library Imports
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Checkbox from "@mui/material/Checkbox";
-import { Link, useNavigate } from "react-router-dom";
-import ButtonFilled from "../Button/ButtonFilled";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../redux/slices/userSlice";
+// Redux Slices
+import { setLoading } from "../../redux/slices/loadingSlice";
+import { setUser, saveToken } from "../../redux/slices/userSlice";
+import { signUpUser } from "../../redux/slices/signUpUserSlice";
+// Custom Importrs
+import { apiRequest } from "../../api/axios";
+import images from "../../constants/images";
+import AlertModal from "../../components/Modal/AlertModal";
+import ContainerSection from "../Container";
+import FormGroupAuth from "../FormInputAuth";
+import ButtonFilled from "../Button/ButtonFilled";
 
+// Checkbox Icon
+// ***************************
 const RememberMeCheckboxIcon = styled("span")(({ theme }) => ({
   borderRadius: 5,
   width: 15,
@@ -58,15 +67,71 @@ const RememberMeCheckedIcon = styled(RememberMeCheckboxIcon)({
     backgroundColor: "rgba(255, 84, 90, 1)",
   },
 });
-const sectionStyle = {
-  // backgroundImage: `url(${images.pinkMask})`,
-  // //   backgroundColor: "red",
-};
+// *****************************************
+
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // States
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+  const [paymentIncomplete, setPaymentIncomplete] = useState(false);
+  const [error, setError] = useState(false);
+
+  // OnClick Handlers
+  const loginUser = async () => {
+    try {
+      if (!state.email || !state.password)
+        return setError("Please fill in your email and password");
+      // console.log("nest");
+      dispatch(setLoading(true));
+
+      const { data } = await apiRequest.post("/login", {
+        email: state.email,
+        password: state.password,
+      });
+      // console.log("data", data);
+      if (data?.status === "ok") {
+        dispatch(setUser(data?.user));
+        dispatch(saveToken(data?.token));
+        setTimeout(() => {
+          dispatch(setLoading(false));
+          if (
+            data?.user?.avatar &&
+            data?.user?.bloom &&
+            data?.user?.bloomPercentage
+          )
+            navigate("/");
+          else if (!data?.user?.avatar) navigate("/selectAvatar");
+          else if (!data?.user?.bloom) navigate("/selectbloom");
+          else if (!data?.user?.bloomPercentage)
+            navigate("/selectBloomPercentage");
+        }, 1000);
+      }
+    } catch (err) {
+      // console.log("catching error", err);
+      dispatch(setLoading(false));
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      if (data?.specialMessage === "paymentIncomplete") {
+        setPaymentIncomplete(true);
+        dispatch(signUpUser(data?.specialData));
+        setError(data?.message);
+      }
+      setError(data?.message);
+    }
+  };
   return (
-    <section className="login" style={sectionStyle}>
+    <section className="login">
+      <AlertModal
+        state={error}
+        message={error}
+        setState={setError}
+        navigateTo={paymentIncomplete ? "/join-us" : false}
+      />
       <div className="ec-icon" onClick={() => navigate("/home")}>
         <ArrowBackIosRoundedIcon
           color="success"
@@ -81,10 +146,17 @@ const Login = () => {
           </div>
           <h3 className="login-heading">Login</h3>
           <form action="#" className="login-form">
-            <FormGroupAuth label="Email Address" inputType="email" />
+            <FormGroupAuth
+              label="Email Address"
+              inputType="email"
+              value={state.email}
+              setValue={(val) => setState({ ...state, email: val })}
+            />
             <FormGroupAuth
               label="Password"
               inputType="password"
+              value={state.password}
+              setValue={(val) => setState({ ...state, password: val })}
               showPasswordIcon
             />
             <div className="form-options">
@@ -104,13 +176,14 @@ const Login = () => {
             </div>
             <div
               className="login-button"
-              onClick={() =>
-                dispatch(setUser({ name: "jalil", id: "1234567" }))
-              }
+              onClick={(e) => {
+                e.preventDefault();
+                loginUser();
+              }}
             >
-              <Link to="/selectavatar">
-                <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
-              </Link>
+              {/* <Link to="/selectavatar"> */}
+              <ButtonFilled text="Login" bgGradient={"yes"} paddingX />
+              {/* </Link> */}
             </div>
             <h3 className="login-or">OR</h3>
             <p className="login-signup">

@@ -41,8 +41,11 @@ const EmailConfirmation = () => {
       });
       if (data?.status === "ok") {
         dispatch(signUpUser(data.data));
-        dispatch(setLoading(false));
-        setBtnText(true);
+        setTimeout(() => {
+          dispatch(setLoading(false));
+          setBtnText(true);
+          setError("OTP Verified Successfully");
+        }, 1000);
       }
     } catch (err) {
       dispatch(setLoading(false));
@@ -57,8 +60,10 @@ const EmailConfirmation = () => {
       const { data } = await apiRequest.post("/resendOTP", { email });
       if (data.status === "ok") {
         dispatch(signUpUser(data.data));
-        dispatch(setLoading(false));
-        setError("OTP has been updated successfully"); //////    This is not an error
+        setTimeout(() => {
+          dispatch(setLoading(false));
+          setError("OTP has been resent successfully"); //////    This is not an error
+        });
       }
     } catch (err) {
       dispatch(setLoading(false));

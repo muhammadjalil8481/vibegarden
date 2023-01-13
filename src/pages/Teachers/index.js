@@ -1,19 +1,93 @@
-import React, { useState } from "react";
+// Library Imports
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import { green } from "@mui/material/colors";
+// Custom Imports
+import { apiRequest } from "../../api/axios";
+import AlertModal from "../../components/Modal/AlertModal";
 import NavBar from "../../components/Navbar";
 import VidCard from "../../components/VidCard";
 import GreenLineBreak from "../../components/GreenLineBreak";
 import FormGroupAuth from "../../components/FormInputAuth";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import { green } from "@mui/material/colors";
 import TeacherInfo from "../../components/TeacherInfo";
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
+// Redux Slices
+import { setTeachers, setTeacherRC } from "../../redux/slices/teachersSlice";
+import { setLoading } from "../../redux/slices/loadingSlice";
 
 const Teachers = () => {
+  // Hooks
+  const dispatch = useDispatch();
+  const { teachers, relatedContent } = useSelector((state) => state?.teachers);
+  console.log("yes to data", teachers, relatedContent);
+  // States
   const [searchValue, setSearchValue] = useState("");
+  const [error, setError] = useState(false);
+  const getTeachers = async () => {
+    try {
+      if (teachers.length === 0) dispatch(setLoading(true));
+      const { data } = await apiRequest.get("/getAllTeachers");
+      console.log("teachers data", data.data);
+      dispatch(setTeachers(data?.data));
+      dispatch(setLoading(false));
+    } catch (err) {
+      dispatch(setLoading(false));
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
+  const teacherRelatedContent = async () => {
+    try {
+      // console.log("rc teacher");
+      // dispatch(setLoading(true));
+      // const teacherRC = await Promise.all(
+      //   teachers?.map(async (teach) => {
+      //     console.log("hello");
+      //     // const {data} = await
+      //     const { data } = await apiRequest.get(
+      //       `/getAllToolVideos?teacher=${teach?._id}`
+      //     );
+      //     console.log("the data", data?.data);
+      //     setTeacherRC({ teacherId: teach._id, relatedContent: data?.data });
+      //     console.log("inside async", teacherRC);
+      //     return data?.data;
+      //   })
+      // );
+      // console.log("teachRc outside", teacherRC);
+      // dispatch(setLoading(false));
+      console.log("rc teacher");
+      dispatch(setLoading(true));
+      const teacherRC = await Promise.all(
+        teachers?.map(async (teach) => {
+          const data = await apiRequest.get(
+            `/getAllToolVideos?teacher=${teach?._id}`
+          );
+          if (data.data.status === "ok")
+            dispatch(setTeacherRC(teach?._id, data.data.data));
+          return data?.data?.data;
+        })
+      );
+      console.log("yes RC", teacherRC);
+      dispatch(setLoading(false));
+    } catch (err) {
+      dispatch(setLoading(false));
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
+  useEffect(() => {
+    getTeachers();
+    teacherRelatedContent();
+  }, []);
+
   return (
     <>
       <NavBar />
+      <AlertModal message={error} state={error} setState={setError} />
       <div className="teachers">
         <h2 className=" teahers-heading">teachers</h2>
         <section className="teachers-top container-lg">
@@ -87,13 +161,32 @@ const Teachers = () => {
             </div>
           )}
         </section>
-
-        <section className="teachers-info bg-lightGreen">
+        {teachers?.map((teacher, index) => {
+          return (
+            <section
+              key={teacher._id}
+              className={`teachers-info ${
+                index % 2 === 0 ? "bg-lightGreen" : "bg-lightPink"
+              }`}
+            >
+              <TeacherInfo
+                // tools
+                name={teacher?.name}
+                profile={teacher?.profileImage}
+                desc={teacher?.description}
+                thumbnail={teacher?.thumbnail}
+                videoLink={teacher?.video}
+                reels={teacher?.reels}
+              />
+            </section>
+          );
+        })}
+        {/* <section className="teachers-info bg-lightGreen">
           <TeacherInfo tools />
         </section>
         <section className="teachers-info bg-lightPink">
           <TeacherInfo groundwork />
-        </section>
+        </section> */}
         <Footer />
       </div>
     </>
