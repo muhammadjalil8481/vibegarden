@@ -6,7 +6,9 @@ import OutletComponent from "./outlet";
 import LoginScreen from "../pages/Login";
 import EmailConfirmation from "../pages/EmailConfirmation";
 import GroundWork from "../pages/GroundWork";
+import GroundWorkCategory from "../pages/GroundWorkCategory";
 import Tools from "../pages/Tools";
+import ToolsCategory from "../pages/ToolsCategory";
 import Guides from "../pages/Guides";
 import ThankYou from "../pages/ThankYou/ThankYou";
 import CommunityGarden from "../pages/CommunityGarden";
@@ -58,8 +60,10 @@ const Navigation = () => {
       <Route element={<LoginScreen />} path="/login" />
       <Route element={<EmailConfirmation />} path="/email-confirmation" />
       <Route element={<GroundWork />} path="/groundwork" />
+      <Route element={<GroundWorkCategory />} path="/groundworkcategory/:id" />
       <Route element={<IndividualGroundWork />} path="/groundwork/:name" />
       <Route element={<Tools />} path="/tools" />
+      <Route element={<ToolsCategory />} path="/toolscategory/:id" />
       <Route element={<IndividualGroundWork />} path="/tools/:name" />
       <Route element={<Guides />} path="/guides" />
       <Route element={<CommunityGarden />} path="/community-garden" />
@@ -79,7 +83,7 @@ const Navigation = () => {
       <Route element={<ToolsForWorker />} path="/toolsforworker" />
       <Route element={<ToolsForConnection />} path="/toolsforconnection" />
       <Route element={<Teachers />} path="/teachers" />
-      <Route element={<Topic />} path="/topic" />
+      <Route element={<Topic />} path="/topic/:id" />
       <Route element={<Schedule />} path="/schedule" />
       <Route element={<Payment />} path="/payment" />
       <Route element={<ThankYou />} path="/thankyou" />

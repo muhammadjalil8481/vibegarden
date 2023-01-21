@@ -17,6 +17,7 @@ const TeacherInfo = ({
   videoDuration = "3:10",
   thumbnail = images.placeholder3,
   reels,
+  data,
 }) => {
   return (
     <div className="teacher-info ">
@@ -45,9 +46,10 @@ const TeacherInfo = ({
       <div className="teacher-content-slider container">
         <VideoCardSlider
           heading="Related Content"
-          recentVibes={true}
+          recentVibes
           tools={tools ? true : false}
           groundwork={groundwork ? true : false}
+          data={data ? data : false}
         />
       </div>
       <div className="teacher-info-reels container">

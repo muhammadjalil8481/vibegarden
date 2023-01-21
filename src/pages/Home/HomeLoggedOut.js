@@ -1,5 +1,5 @@
 // Library Imports
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 // Custom Imports
 import { apiRequest } from "../../api/axios";
@@ -14,6 +14,7 @@ import SampleTools from "../../components/SampleToolsSection";
 import MoreVG from "../../components/MoreVGSection.js";
 import StayInTouch from "../../components/StayInTouchSection";
 import Footer from "../../components/Footer";
+import AlertModal from "../../components/Modal/AlertModal";
 // Redux Slices
 import {
   setHero,
@@ -41,18 +42,12 @@ const HomePage = () => {
   // Hooks
   const dispatch = useDispatch();
   const homepage = useSelector((state) => state.homepage);
+  // States
+  const [error, setError] = useState(false);
   // OnClick Handlers
   const getHomePageData = async () => {
     try {
-      let hpage = { ...homepage };
-      [
-        "headerImage2",
-        "headerImage3",
-        "mainQuotation2",
-        "mainQuotation3",
-      ].forEach((item) => delete hpage[item]);
-      if (Object.values(hpage).includes(null || "")) dispatch(setLoading(true));
-
+      dispatch(setLoading(true));
       const { data } = await apiRequest.get("/homepage");
       dispatch(setHero(data.data));
       dispatch(setEmbodyingYourFullness(data.data));
@@ -75,6 +70,7 @@ const HomePage = () => {
       dispatch(setLoading(false));
     } catch (err) {
       console.log(err);
+      dispatch(setLoading(false));
     }
   };
   // UseEffect
@@ -84,9 +80,11 @@ const HomePage = () => {
   return (
     <div className="remove-overflow">
       <NavBar />
+      <AlertModal state={error} message={error} setState={setError} />
       <div
         className="bg-gradient-blueflowers"
         style={{
+          // backgroundColor: "blue",
           backgroundImage: `url(${homepage?.headerImage})` || "blue",
         }}
       >

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { AiFillPlusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 // Custom Imports
 import VideoPlayer from "../Modal/VideoPlayer";
 import Modal from "../Modal";
@@ -82,10 +81,15 @@ const VidCard = ({
           <>
             <img src={image} className="vid-card-image" />
             <div className="vid-card-titleAndIcon">
-              {titleIcon && <img src={VideoIcon2nd} />}
+              {titleIcon && (
+                // <div className="vid-card-icon">
+                <img src={VideoIcon2nd} />
+                // </div>
+              )}
               {titleIcon && (
                 <h5 className={`vid-card-title ${blackTitle && "text-black"}`}>
-                  {title}
+                  {title.length > 7 ? `${title.slice(0, 6)}...` : title}
+                  {/* {title} */}
                 </h5>
               )}
             </div>

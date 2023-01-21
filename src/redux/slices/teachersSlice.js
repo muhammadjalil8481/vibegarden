@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   teachers: [],
-  relatedContent: [],
 };
 
 const teachersSlice = createSlice({
@@ -15,19 +14,18 @@ const teachersSlice = createSlice({
     resetTeachers: (state) => {
       state.teachers = [];
     },
-    setTeacherRC: (state, action) => {
-      console.log("teacher rc", action.payload);
-      state.relatedContent = [
-        ...state?.relatedContent,
-        {
-          teacherId: action.payload.teacherId,
-          relatedContent: action.payload.relatedContent,
-        },
-      ];
-    },
+    // setTeacherRC: (state, action) => {
+    //   console.log("teacher rc", action.payload);
+    //   state.relatedContent = [
+    //     ...state?.relatedContent,
+    //     {
+    //       teacherId: action.payload.teacherId,
+    //       relatedContent: action.payload.relatedContent,
+    //     },
+    //   ];
+    // },
   },
 });
 
-export const { setTeachers, resetTeachers, setTeacherRC } =
-  teachersSlice.actions;
+export const { setTeachers, resetTeachers } = teachersSlice.actions;
 export default teachersSlice.reducer;

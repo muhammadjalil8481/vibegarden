@@ -6,6 +6,8 @@ import jwtDecode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 // Redux Slices
 import { logoutUser, setUser } from "./redux/slices/userSlice";
+import { setGWVideos } from "./redux/slices/groundWorkVideos";
+import { setToolVideos } from "./redux/slices/toolVideos";
 
 // Custom Imports
 import { apiRequest } from "./api/axios";
@@ -29,7 +31,6 @@ function App() {
   const updateUser = async () => {
     try {
       const { data } = await apiRequest.get(`/getUser/${user._id}`);
-      console.log("user data", data.data);
       dispatch(setUser(data?.data));
     } catch (err) {
       if (err.message === "Network Error") return setError("Network Error");
@@ -37,7 +38,26 @@ function App() {
       setError(data?.message);
     }
   };
-
+  const groundWorkVideos = async () => {
+    try {
+      const { data } = await apiRequest.get("/getAllGroundWorkVideos");
+      dispatch(setGWVideos(data.data));
+    } catch (err) {
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
+  const toolVideos = async () => {
+    try {
+      const { data } = await apiRequest.get("/getAllToolVideos");
+      dispatch(setToolVideos(data.data));
+    } catch (err) {
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  };
   useEffect(() => {
     if (user && !token) {
       dispatch(logoutUser());
@@ -52,7 +72,11 @@ function App() {
       }
     }
   });
-  useEffect(() => updateUser(), []);
+  useEffect(() => {
+    updateUser();
+    groundWorkVideos();
+    toolVideos();
+  }, []);
 
   useEffect(() => {
     // setPath(location.pathname);

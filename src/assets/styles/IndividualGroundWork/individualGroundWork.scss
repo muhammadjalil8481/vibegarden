@@ -220,8 +220,9 @@
 }
 
 .comment {
-  //   background-color: darkcyan;
+  // background-color: darkcyan;
   margin-left: 2rem;
+  width: 100%;
   @media (max-width: 767px) {
     margin-left: 1rem;
   }
@@ -232,7 +233,17 @@
     // background-color: darkgoldenrod;
     display: flex;
     align-items: center;
+
     flex-wrap: wrap;
+    &-img {
+      width: 45px;
+      height: 45px;
+      // background-color: salmon;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
     @media (max-width: 550px) {
       // background-color: chartreuse;
       width: 90%;
@@ -258,7 +269,7 @@
     font-size: 1.6rem;
     letter-spacing: 1px;
     font-weight: 700;
-    margin-left: 5rem;
+    margin-left: 6.2rem;
     width: 90%;
     line-height: 1.7;
     @media (max-width: 767px) {
@@ -270,10 +281,37 @@
     }
   }
   .comment-reply {
+    cursor: pointer;
+    font-family: "josefin sans";
     color: #2680eb;
     margin-left: 5rem;
     // font-weight: 700;
   }
+}
+.comment-replies {
+  font-family: "josefin sans";
+  color: $black-3;
+  cursor: pointer;
+}
+.comment-reply-container {
+  // background-color: darkcyan;
+  max-height: 24rem;
+  overflow-y: scroll;
+}
+.comment-reply-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.comment-reply-container::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+.comment-reply-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba($secondary, 1);
 }
 
 .idgw-2-newComment {
@@ -305,12 +343,28 @@ textarea::placeholder {
   color: $grey;
   font-weight: bold;
 }
+.idgw-2-btns {
+  // background-color: salmon;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
 
 .idgw-2-btn {
   //   background-color: firebrick;
   width: fit-content;
   //   border-radius: 15px;
   overflow: hidden;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+  p {
+    color: $secondary;
+    font-family: "josefin sans";
+    // background-color: cadetblue;
+    position: relative;
+    top: 7px;
+    cursor: pointer;
+  }
 }
 
 .rec.rec-dot {
@@ -472,8 +526,13 @@ textarea::placeholder {
       margin-top: 4rem;
     }
     .idgw-5-col-1 {
-      min-width: 180px;
-      min-height: 180px;
+      width: 170px;
+      height: 150px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+      overflow: hidden;
+      // background-color: salmon;
       @media (max-width: 767px) {
         min-width: 250px;
         min-height: 250px;
@@ -497,6 +556,7 @@ textarea::placeholder {
     }
     .idgw-5-col-2 {
       margin-left: 2rem;
+      // background-color: darkcyan;
       @media (max-width: 767px) {
         text-align: center;
       }

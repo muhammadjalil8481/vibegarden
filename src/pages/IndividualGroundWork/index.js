@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
 import { useNavigate, Link, useLocation, useParams } from "react-router-dom";
 import NavBar from "../../components/Navbar";
@@ -8,6 +8,7 @@ import GreenLineBreak from "../../components/GreenLineBreak";
 import StarIcon from "@mui/icons-material/Star";
 import Comment from "../../components/Comments";
 import GreenButton from "../../components/Button/GreenButton";
+import ButtonOutline from "../../components/Button/ButtonOutline";
 import Carousel from "react-elastic-carousel";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -23,11 +24,15 @@ import res2 from "../../assets/images/reson2.svg";
 import res3 from "../../assets/images/reson3.svg";
 import res4 from "../../assets/images/reson4.svg";
 import { BsChevronUp, BsChevronDown, BsCheckLg } from "react-icons/bs";
+import AlertModal from "../../components/Modal/AlertModal";
 import {
   TiStarOutline,
   TiStarFullOutline,
   TiStarHalfOutline,
 } from "react-icons/ti";
+import { apiRequest } from "../../api/axios";
+import { setLoading } from "../../redux/slices/loadingSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function myArrow({ type, onClick, isEdge }) {
   const pointer =
@@ -56,36 +61,95 @@ function myArrow({ type, onClick, isEdge }) {
 }
 
 const IndividualGroundWork = ({ groundWork, freshBloom }) => {
+  const dispatch = useDispatch();
+  const [videoData, setVideoData] = useState();
+  const { user } = useSelector((state) => state);
   const params = useParams().name.replaceAll("-", " ");
   const breakPoints = [{ width: 1, itemsToShow: 1 }];
   const { state, pathname } = useLocation();
   const route = pathname.slice(0, pathname.lastIndexOf("/"));
+  const [commentsLength, setCommentsLength] = useState(0);
+  const [commentText, setCommentText] = useState("");
   const [isFav, setIsFav] = useState(false);
   const [addTool, setAddTool] = useState(false);
   const [rating, setRating] = useState(0);
+  const [error, setError] = useState(false);
+  const [replyActive, setReplyActive] = useState(false);
+  let videoType = route.replace("/", "");
+
+  const getVideoData = async () => {
+    try {
+      dispatch(setLoading(true));
+      const { data } = await apiRequest.get(
+        `get${videoType === "tool" ? "Tool" : "GroundWork"}Video/${params}`
+      );
+      setVideoData(data.data);
+      setCommentsLength(data.comments.length);
+      dispatch(setLoading(false));
+    } catch (err) {
+      console.log("err", err);
+      setError(err?.response?.data?.message);
+      dispatch(setLoading(false));
+    }
+  };
+  const createComment = async () => {
+    try {
+      if (!commentText.length) return setError("Please enter a comment");
+      dispatch(setLoading(true));
+      console.log("creating Comment");
+      const newComment = await apiRequest.post("/createComment", {
+        user: user.userId,
+        postId: params,
+        docModel: videoType === "tool" ? "ToolVideo" : "groundWorkVideo",
+        comment: commentText,
+      });
+      console.log("done", newComment);
+      setCommentsLength((comments) => comments + 1);
+      setCommentText("");
+      dispatch(setLoading(false));
+    } catch (err) {
+      console.log("err comment", err?.response?.data?.message);
+      setError(err?.response?.data?.message);
+      dispatch(setLoading(false));
+    }
+  };
+  useEffect(() => {
+    getVideoData();
+  }, [commentsLength]);
 
   return (
     <div className="individual-groundwork">
       <NavBar />
+      <AlertModal state={error} message={error} setState={setError} />
       <section className="container-md idgw-1">
         <div className="idgw-1-headingAnIcon">
           <img src={pinkIcon} />
-          <h2>{params || "heading"}</h2>
+          <h2>{videoData?.title || "heading"}</h2>
         </div>
         <p className="idgw-1-desc">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          {videoData?.description ||
+            `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kas
+          rebum. Stet clita kas`}
         </p>
         <div className="idgw-1-video">
-          <VidCard />
+          <VidCard
+            title={videoData?.title || "Title"}
+            time={videoData?.videoDuration || "00:00"}
+            image={videoData?.thumbnail}
+            videoSrc={videoData?.video || "//vjs.zencdn.net/v/oceans.mp4"}
+          />
         </div>
         <div className="idgw-1-videoSubInfo">
           <div className="idgw-1-subtext">
-            <p>Lorem</p>
-            <p>Lorem</p>
-            <p>Lorem</p>
+            {videoData?.tags?.map((tag) => {
+              return (
+                <Link to={`/topic/${tag?._id}`}>
+                  <p>{tag?.name || "Lorem"}</p>
+                </Link>
+              );
+            })}
           </div>
           {/* {(groundWork || freshBloom) && ( */}
           <div className="idgw-1-icons">
@@ -196,19 +260,55 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
         </div>
         <div className="idgw-2-comment">
           <Carousel breakPoints={breakPoints} renderArrow={myArrow}>
+            {videoData?.comments?.map((cmnt) => {
+              return (
+                <Comment
+                  profile={cmnt?.user?.avatar?.croppedImage}
+                  name={`${cmnt?.user?.firstName} ${cmnt?.user?.lastName}`}
+                  text={cmnt?.comment}
+                  replyOnClick={() => setReplyActive(true)}
+                  // repliesData={cmnt?.replies}
+                />
+              );
+            })}
+            {/* <Comment />
             <Comment />
-            <Comment />
-            <Comment />
+            <Comment /> */}
           </Carousel>
         </div>
-        <div className="idgw-2-newComment">
-          <h4 className="idgw-2-heading">Leave A Comment</h4>
-          <textarea
-            className="idgw-2-textArea"
-            placeholder="Type Your Comment"
-          />
-          <div className="idgw-2-btn">
-            <GreenButton text="Post Comment" paddingX />
+        <div>
+          {replyActive && (
+            <div className="idgw-2-newComment">
+              <textarea
+                className="idgw-2-textArea"
+                placeholder="Type Your Reply Comment"
+                value={commentText}
+                onChange={(e) => setCommentText(e.target.value)}
+              />
+              <div className="idgw-2-btns">
+                <div className="idgw-2-btn">
+                  <GreenButton text="Post Reply" paddingX />
+                </div>
+                <div
+                  className="idgw-2-btn"
+                  onClick={() => setReplyActive(false)}
+                >
+                  <p>Cancel</p>
+                </div>
+              </div>
+            </div>
+          )}
+          <div className="idgw-2-newComment">
+            <h4 className="idgw-2-heading">Leave A Comment</h4>
+            <textarea
+              className="idgw-2-textArea"
+              placeholder="Type Your Comment"
+              value={commentText}
+              onChange={(e) => setCommentText(e.target.value)}
+            />
+            <div className="idgw-2-btn" onClick={() => createComment()}>
+              <GreenButton text="Post Comment" paddingX />
+            </div>
           </div>
         </div>
       </section>

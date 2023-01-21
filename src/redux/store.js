@@ -8,6 +8,10 @@ import loadingReducer from "./slices/loadingSlice";
 import homePageReducer from "./slices/homePageSlice";
 import videoReducer from "./slices/videoSlice";
 import teachersReducer from "./slices/teachersSlice";
+import groundWorkVideosReducer from "./slices/groundWorkVideos";
+import groundWorkCategoriesReducer from "./slices/groundWorkCategories";
+import toolVideosReducer from "./slices/toolVideos";
+import toolCategoryReducer from "./slices/toolCategories";
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -16,6 +20,10 @@ const rootReducer = combineReducers({
   homepage: homePageReducer,
   video: videoReducer,
   teachers: teachersReducer,
+  groundWorkVideos: groundWorkVideosReducer,
+  groundWorkCategories: groundWorkCategoriesReducer,
+  toolVideos: toolVideosReducer,
+  toolCategories: toolCategoryReducer,
 });
 const persistConfig = {
   key: "root",

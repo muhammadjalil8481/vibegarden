@@ -25,11 +25,11 @@ const Teachers = () => {
   // States
   const [searchValue, setSearchValue] = useState("");
   const [error, setError] = useState(false);
+
   const getTeachers = async () => {
     try {
-      if (teachers.length === 0) dispatch(setLoading(true));
+      dispatch(setLoading(true));
       const { data } = await apiRequest.get("/getAllTeachers");
-      console.log("teachers data", data.data);
       dispatch(setTeachers(data?.data));
       dispatch(setLoading(false));
     } catch (err) {
@@ -39,49 +39,9 @@ const Teachers = () => {
       setError(data?.message);
     }
   };
-  const teacherRelatedContent = async () => {
-    try {
-      // console.log("rc teacher");
-      // dispatch(setLoading(true));
-      // const teacherRC = await Promise.all(
-      //   teachers?.map(async (teach) => {
-      //     console.log("hello");
-      //     // const {data} = await
-      //     const { data } = await apiRequest.get(
-      //       `/getAllToolVideos?teacher=${teach?._id}`
-      //     );
-      //     console.log("the data", data?.data);
-      //     setTeacherRC({ teacherId: teach._id, relatedContent: data?.data });
-      //     console.log("inside async", teacherRC);
-      //     return data?.data;
-      //   })
-      // );
-      // console.log("teachRc outside", teacherRC);
-      // dispatch(setLoading(false));
-      console.log("rc teacher");
-      dispatch(setLoading(true));
-      const teacherRC = await Promise.all(
-        teachers?.map(async (teach) => {
-          const data = await apiRequest.get(
-            `/getAllToolVideos?teacher=${teach?._id}`
-          );
-          if (data.data.status === "ok")
-            dispatch(setTeacherRC(teach?._id, data.data.data));
-          return data?.data?.data;
-        })
-      );
-      console.log("yes RC", teacherRC);
-      dispatch(setLoading(false));
-    } catch (err) {
-      dispatch(setLoading(false));
-      if (err.message === "Network Error") return setError("Network Error");
-      const data = err?.response?.data;
-      setError(data?.message);
-    }
-  };
+
   useEffect(() => {
     getTeachers();
-    teacherRelatedContent();
   }, []);
 
   return (
@@ -177,6 +137,8 @@ const Teachers = () => {
                 thumbnail={teacher?.thumbnail}
                 videoLink={teacher?.video}
                 reels={teacher?.reels}
+                data={teacher?.relatedContent}
+                videoDuration={teacher?.videoDuration}
               />
             </section>
           );
