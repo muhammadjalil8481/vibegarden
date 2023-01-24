@@ -38,11 +38,11 @@ const SelectAvatar = () => {
       const { data } = await apiRequest.patch(`/updateUserAvatar/${user._id}`, {
         avatar: choice,
       });
-      setTimeout(() => {
-        dispatch(setUser(data.user));
-        dispatch(setLoading(false));
-        navigate("/selectbloom");
-      }, 1000);
+      // setTimeout(() => {
+      dispatch(setUser(data.user));
+      dispatch(setLoading(false));
+      navigate("/selectbloom");
+      // }, 1000);
     } catch (err) {
       dispatch(setLoading(false));
       if (err.message === "Network Error") return setError("Network Error");

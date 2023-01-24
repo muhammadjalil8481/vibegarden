@@ -40,12 +40,12 @@ const Comment = ({
               <div className="comment-reply-box">
                 <div className="comment-top">
                   <div className="comment-top-img">
-                    <img src={profile} />
+                    <img src={reply.user?.avatar?.croppedImage} />
                   </div>
-                  <h4>{name}</h4>
+                  <h4>{`${reply?.user?.firstName} ${reply?.user?.lastName}`}</h4>
                   <p>January 27, 2021 at 8:41 am</p>
                 </div>
-                <p className="comment-text">{text}</p>
+                <p className="comment-text">{reply?.comment}</p>
               </div>
             );
           })}

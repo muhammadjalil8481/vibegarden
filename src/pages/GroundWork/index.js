@@ -25,6 +25,7 @@ const GroundWork = () => {
     try {
       dispatch(setLoading(true));
       const { data } = await apiRequest.get("/getAllGroundWorkCategories");
+      console.log("data", data.data, categories);
       dispatch(setGWCategories(data.data));
       dispatch(setLoading(false));
     } catch (err) {
@@ -63,7 +64,7 @@ const GroundWork = () => {
               <FourColumnVideoLayout
                 heading={cat.title}
                 desc={cat?.description}
-                dataArray={cat?.videos.slice(0, 4) || array4}
+                dataArray={cat?.videos?.slice(0, 4) || array4}
                 linkDestination={`/groundworkcategory/${cat?._id}`}
                 searchState="groundwork"
                 searchInput={index === 0 ? true : false}

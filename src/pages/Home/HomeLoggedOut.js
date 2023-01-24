@@ -47,8 +47,10 @@ const HomePage = () => {
   // OnClick Handlers
   const getHomePageData = async () => {
     try {
+      console.log("getting homepage data");
       dispatch(setLoading(true));
       const { data } = await apiRequest.get("/homepage");
+      console.log("homepage", data.data, homepage);
       dispatch(setHero(data.data));
       dispatch(setEmbodyingYourFullness(data.data));
       dispatch(setComingHomeTogether(data.data));

@@ -41,11 +41,11 @@ const SelectBloom = () => {
       });
       console.log("next");
       console.log("data///", data);
-      setTimeout(() => {
-        dispatch(setUser(data.user));
-        dispatch(setLoading(false));
-        navigate("/bloomcheck");
-      }, 1000);
+      // setTimeout(() => {
+      dispatch(setUser(data.user));
+      dispatch(setLoading(false));
+      navigate("/bloomcheck");
+      // }, 1000);
     } catch (err) {
       dispatch(setLoading(false));
       if (err.message === "Network Error") return setError("Network Error");

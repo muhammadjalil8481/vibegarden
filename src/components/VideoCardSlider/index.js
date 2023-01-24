@@ -301,11 +301,13 @@ const VideoCardSlider = ({
                     <VidCard
                       titleIcon
                       recentVibes={recentVibes ? true : false}
-                      tool={vid?.type === "tool" ? true : false}
-                      groundwork={vid?.type === "groundwork" ? true : false}
+                      tool={tools || vid?.type === "tool" ? true : false}
+                      groundwork={
+                        groundwork || vid?.type === "groundwork" ? true : false
+                      }
                       linkVideo={`/${
-                        vid?.type === "tool" ? "tools" : "groundWork"
-                      }/${vid.title}`}
+                        vid?.type === "tool" ? "tools" : "groundwork"
+                      }/${vid._id}`}
                       time={vid?.videoDuration}
                       image={vid?.thumbnail}
                       title={vid?.title}

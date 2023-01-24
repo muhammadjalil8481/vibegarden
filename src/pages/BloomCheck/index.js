@@ -24,6 +24,7 @@ const BloomCheck = () => {
   const [error, setError] = useState(false);
   // Redux State Read
   const user = useSelector((state) => state.user.user);
+  console.log("user", user);
 
   // OnClick Handlers
   const setUserBloomPercentage = async () => {
@@ -38,11 +39,11 @@ const BloomCheck = () => {
       );
       console.log("next");
       console.log("data///", data);
-      setTimeout(() => {
-        dispatch(setLoading(false));
-        dispatch(setUser(data.user));
-        navigate("/bloomresult", { state: { percent: percent } });
-      }, 1000);
+      // setTimeout(() => {
+      dispatch(setLoading(false));
+      dispatch(setUser(data.user));
+      navigate("/bloomresult", { state: { percent: percent } });
+      // }, 1000);
     } catch (err) {
       dispatch(setLoading(false));
       if (err.message === "Network Error") return setError("Network Error");
@@ -152,7 +153,7 @@ const BloomCheck = () => {
             </div>
           </div>
           {/* <Link to="/bloomresult" state={{ percent: percent }}> */}
-          <span onClick={setUserBloomPercentage}>
+          <span onClick={() => setUserBloomPercentage()}>
             <ButtonFilled
               text="Continue"
               paddingX

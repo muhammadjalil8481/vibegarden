@@ -70,6 +70,7 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
   const route = pathname.slice(0, pathname.lastIndexOf("/"));
   const [commentsLength, setCommentsLength] = useState(0);
   const [commentText, setCommentText] = useState("");
+  const [replyText, setReplyText] = useState("");
   const [isFav, setIsFav] = useState(false);
   const [addTool, setAddTool] = useState(false);
   const [rating, setRating] = useState(0);
@@ -79,9 +80,10 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
 
   const getVideoData = async () => {
     try {
+      console.log("videotype", videoType);
       dispatch(setLoading(true));
       const { data } = await apiRequest.get(
-        `get${videoType === "tool" ? "Tool" : "GroundWork"}Video/${params}`
+        `get${videoType === "tools" ? "Tool" : "GroundWork"}Video/${params}`
       );
       setVideoData(data.data);
       setCommentsLength(data.comments.length);
@@ -100,7 +102,7 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
       const newComment = await apiRequest.post("/createComment", {
         user: user.userId,
         postId: params,
-        docModel: videoType === "tool" ? "ToolVideo" : "groundWorkVideo",
+        docModel: videoType === "tools" ? "ToolVideo" : "groundWorkVideo",
         comment: commentText,
       });
       console.log("done", newComment);
@@ -113,9 +115,31 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
       dispatch(setLoading(false));
     }
   };
+  const replyComment = async (commentId) => {
+    try {
+      if (!replyText.length) return setError("Please enter a reply comment");
+      dispatch(setLoading(true));
+      console.log("creating reply comment");
+      const replyComment = await apiRequest.patch("/replyComment", {
+        user: user.userId,
+        postId: params,
+        docModel: videoType === "tools" ? "ToolVideo" : "groundWorkVideo",
+        comment: replyText,
+        commentId,
+      });
+      console.log("done", replyComment);
+      setCommentsLength((comments) => comments + 1);
+      setReplyText("");
+      dispatch(setLoading(false));
+    } catch (err) {
+      console.log("err comment", err?.response?.data?.message);
+      setError(err?.response?.data?.message);
+      dispatch(setLoading(false));
+    }
+  };
   useEffect(() => {
     getVideoData();
-  }, [commentsLength]);
+  }, [commentsLength, params]);
 
   return (
     <div className="individual-groundwork">
@@ -262,13 +286,39 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
           <Carousel breakPoints={breakPoints} renderArrow={myArrow}>
             {videoData?.comments?.map((cmnt) => {
               return (
-                <Comment
-                  profile={cmnt?.user?.avatar?.croppedImage}
-                  name={`${cmnt?.user?.firstName} ${cmnt?.user?.lastName}`}
-                  text={cmnt?.comment}
-                  replyOnClick={() => setReplyActive(true)}
-                  // repliesData={cmnt?.replies}
-                />
+                <div className="cmnt-cont">
+                  <Comment
+                    profile={cmnt?.user?.avatar?.croppedImage}
+                    name={`${cmnt?.user?.firstName} ${cmnt?.user?.lastName}`}
+                    text={cmnt?.comment}
+                    replyOnClick={() => setReplyActive(true)}
+                    repliesData={cmnt?.reply}
+                  />
+                  {replyActive && (
+                    <div className="idgw-2-newComment">
+                      <textarea
+                        className="idgw-2-textArea"
+                        placeholder="Type Your Reply Comment"
+                        value={replyText}
+                        onChange={(e) => setReplyText(e.target.value)}
+                      />
+                      <div className="idgw-2-btns">
+                        <div
+                          className="idgw-2-btn"
+                          onClick={() => replyComment(cmnt._id)}
+                        >
+                          <GreenButton text="Post Reply" paddingX />
+                        </div>
+                        <div
+                          className="idgw-2-btn"
+                          onClick={() => setReplyActive(false)}
+                        >
+                          <p>Cancel</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             })}
             {/* <Comment />
@@ -277,27 +327,6 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
           </Carousel>
         </div>
         <div>
-          {replyActive && (
-            <div className="idgw-2-newComment">
-              <textarea
-                className="idgw-2-textArea"
-                placeholder="Type Your Reply Comment"
-                value={commentText}
-                onChange={(e) => setCommentText(e.target.value)}
-              />
-              <div className="idgw-2-btns">
-                <div className="idgw-2-btn">
-                  <GreenButton text="Post Reply" paddingX />
-                </div>
-                <div
-                  className="idgw-2-btn"
-                  onClick={() => setReplyActive(false)}
-                >
-                  <p>Cancel</p>
-                </div>
-              </div>
-            </div>
-          )}
           <div className="idgw-2-newComment">
             <h4 className="idgw-2-heading">Leave A Comment</h4>
             <textarea
@@ -315,43 +344,60 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
       <div className="idgw3-video-slider container-xxl">
         <VideoCardSlider
           heading="Related Content"
-          tools={route === "/tools" ? true : false}
-          groundwork={route === "/groundwork" ? true : false}
+          // tools={route === "/tools" ? true : false}
+          // groundwork={route === "/groundwork" ? true : false}
+          groundwork={true}
           recentVibes
+          data={videoData?.relatedContent}
         />
       </div>
       <section className="container-lg idgw-links">
         <h2>Additional Resource</h2>
-        <div className="link-display">
-          <div className="link-display-heading">
-            <span>•</span>
-            <h4>Link Display Name</h4>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasLorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor i
-          </p>
-        </div>
-        <div className="link-display">
-          <div className="link-display-heading">
-            <span>•</span>
-            <h4>Link Display Name</h4>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasLorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor i
-          </p>
-        </div>
+        {videoData?.additionalResources?.map((ar) => {
+          return (
+            <div className="link-display">
+              <div className="link-display-heading">
+                <span>•</span>
+                <h4>{ar?.title || "Link Display Name"}</h4>
+              </div>
+              <p>
+                {ar?.description ||
+                  ` Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasLorem ipsum dolor
+                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                tempor i`}
+              </p>
+            </div>
+          );
+        })}
       </section>
       <section className="idgw-5 container-lg">
         <h2>Suggested Teacher</h2>
-        <div className="idgw-5-row">
+        {videoData?.teachers?.map((teacher) => {
+          return (
+            <div className="idgw-5-row">
+              <div className="idgw-5-col-1">
+                <img src={teacher?.profileImage || images?.teacher1} />
+              </div>
+              <div className="idgw-5-col-2">
+                <p>
+                  {teacher?.description ||
+                    ` Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasLorem ipsum dolor
+                  sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                  tempor I Lorem ipsum dolor sit amet, consetetur sadipscing
+                  elitr, sed diam nonumy eirmod tempor invidunt ut.`}
+                  <span>Link</span>
+                </p>
+              </div>
+            </div>
+          );
+        })}
+        {/* <div className="idgw-5-row">
           <div className="idgw-5-col-1">
             <img src={images.teacher1} />
           </div>
@@ -382,7 +428,7 @@ const IndividualGroundWork = ({ groundWork, freshBloom }) => {
               eirmod tempor invidunt ut.<span>Link</span>
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
       <GreenLineBreak />
       <ButtonAndHeading

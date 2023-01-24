@@ -86,7 +86,7 @@ const Login = () => {
     try {
       if (!state.email || !state.password)
         return setError("Please fill in your email and password");
-      // console.log("nest");
+      console.log("nest");
       dispatch(setLoading(true));
 
       const { data } = await apiRequest.post("/login", {
@@ -97,19 +97,18 @@ const Login = () => {
       if (data?.status === "ok") {
         dispatch(setUser(data?.user));
         dispatch(saveToken(data?.token));
-        setTimeout(() => {
-          dispatch(setLoading(false));
-          if (
-            data?.user?.avatar &&
-            data?.user?.bloom &&
-            data?.user?.bloomPercentage
-          )
-            navigate("/");
-          else if (!data?.user?.avatar) navigate("/selectAvatar");
-          else if (!data?.user?.bloom) navigate("/selectbloom");
-          else if (!data?.user?.bloomPercentage)
-            navigate("/selectBloomPercentage");
-        }, 1000);
+        // setTimeout(() => {
+        dispatch(setLoading(false));
+        if (
+          data?.user?.avatar &&
+          data?.user?.bloom &&
+          data?.user?.bloomPercentage
+        )
+          navigate("/");
+        else if (!data?.user?.avatar) navigate("/selectAvatar");
+        else if (!data?.user?.bloom) navigate("/selectbloom");
+        else if (!data?.user?.bloomPercentage) navigate("/bloomcheck");
+        // }, );
       }
     } catch (err) {
       // console.log("catching error", err);

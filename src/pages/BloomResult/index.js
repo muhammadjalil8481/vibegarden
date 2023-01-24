@@ -11,7 +11,7 @@ import ButtonFilled from "../../components/Button/ButtonFilled";
 const BloomResult = () => {
   // Redux State Read
   const user = useSelector((state) => state.user.user);
-  const percent = user.bloomPercentage || 25;
+  const percent = user?.bloomPercentage || 25;
   return (
     <div className="bloom-result bg-lightGreenMask">
       <Link to="/bloomcheck">

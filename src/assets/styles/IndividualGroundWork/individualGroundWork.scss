@@ -288,15 +288,21 @@
     // font-weight: 700;
   }
 }
+.cmnt-cont {
+  // background-color: lightblue;
+  width: 100%;
+}
 .comment-replies {
   font-family: "josefin sans";
   color: $black-3;
   cursor: pointer;
 }
 .comment-reply-container {
+  width: 98.5%;
   // background-color: darkcyan;
   max-height: 24rem;
   overflow-y: scroll;
+  // margin-left: -1rem;
 }
 .comment-reply-container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
