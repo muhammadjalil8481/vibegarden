@@ -19,7 +19,6 @@ const NavBar = ({ onlyBrand }) => {
   const navigate = useNavigate();
   // Redux State Read
   const user = useSelector((state) => state.user.user);
-  console.log("bloom", user?.bloom);
   // States
   const [expanded, setExpanded] = useState(false);
   const [showNotification, setShowNotification] = useState(false);

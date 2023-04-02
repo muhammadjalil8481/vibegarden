@@ -5,12 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { RiArrowLeftLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 // Redux Slices
-import { setLoading } from "../../redux/slices/loadingSlice";
 import { setUser } from "../../redux/slices/userSlice";
 // Custom Imports
-import { apiRequest } from "../../api/axios";
 import AlertModal from "../../components/Modal/AlertModal";
 import ButtonFilled from "../../components/Button/ButtonFilled";
+import { useBlooms } from "../../api/blooms";
+import Loader from "../../components/Modal/loader";
+import { useSelectBloom } from "../../api/user";
 
 const SelectBloom = () => {
   // Hooks
@@ -18,49 +19,35 @@ const SelectBloom = () => {
   const dispatch = useDispatch();
   // States
   const [choice, setChoice] = useState("");
-  const [blooms, setBlooms] = useState([]);
   const [error, setError] = useState(false);
   // Redux State Read
   const user = useSelector((state) => state.user.user);
+  const { data, isLoading, error: err } = useBlooms();
 
-  const getBlooms = async () => {
-    try {
-      const { data } = await apiRequest.get("/getAllBlooms");
-      if (data.status === "ok") setBlooms(data?.blooms);
-    } catch (err) {
-      console.log(err);
-    }
+  const {
+    mutate: selectBloom,
+    isLoading: isLoading2,
+    error: err2,
+  } = useSelectBloom(({ data }) => {
+    dispatch(setUser(data.user));
+    navigate("/bloomcheck");
+  });
+
+  const setUserBloom = () => {
+    if (!choice) return setError("Please select aa bloom");
+    selectBloom({ userid: user._id, choice });
   };
-  const setUserBloom = async () => {
-    try {
-      console.log("selecting bloom from user");
-      if (!choice) return setError("Please select a bloom");
-      dispatch(setLoading(true));
-      const { data } = await apiRequest.patch(`/updateUserBloom/${user._id}`, {
-        bloom: choice,
-      });
-      console.log("next");
-      console.log("data///", data);
-      // setTimeout(() => {
-      dispatch(setUser(data.user));
-      dispatch(setLoading(false));
-      navigate("/bloomcheck");
-      // }, 1000);
-    } catch (err) {
-      dispatch(setLoading(false));
-      if (err.message === "Network Error") return setError("Network Error");
-      const data = err?.response?.data;
-      setError(data?.message);
-    }
-  };
-  // UseEffect
   useEffect(() => {
-    getBlooms();
-  }, []);
+    if (err || err2) {
+      console.log("err", err, err2);
+      setError(err || err2);
+    }
+  }, [err, err2]);
 
   return (
     <div className="selectavatar">
       {/* <NavBar onlyBrand /> */}
+      {(isLoading || isLoading2) && <Loader />}
       <AlertModal message={error} state={error} setState={setError} />
       <div className="select-avatar bg-lightGreenMask">
         <Link to="/selectavatar">
@@ -74,7 +61,7 @@ const SelectBloom = () => {
         </h2>
 
         <div className="avatar-container">
-          {blooms.map((bloom) => {
+          {data?.data?.blooms.map((bloom) => {
             return (
               <div className="sa-imageAndText" key={bloom?._id}>
                 {choice === bloom._id ? (

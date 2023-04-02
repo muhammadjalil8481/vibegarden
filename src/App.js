@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import jwtDecode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 // Redux Slices
 import { logoutUser, setUser } from "./redux/slices/userSlice";
 import { setGWVideos } from "./redux/slices/groundWorkVideos";
@@ -16,6 +18,16 @@ import Loader from "./components/Modal/loader";
 import AlertModal from "./components/Modal/AlertModal";
 
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        cacheTime: 10 * 60 * 1000, // 10 minutes in milliseconds
+        staleTime: 1 * 60 * 1000,
+        refetchOnReconnect: true,
+        refetchOnWindowFocus: true,
+      },
+    },
+  });
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -58,25 +70,25 @@ function App() {
       setError(data?.message);
     }
   };
-  useEffect(() => {
-    if (user && !token) {
-      dispatch(logoutUser());
-      setError("Session expired ! , Please login again");
-    }
-    if (token) {
-      const decodedToken = jwtDecode(token);
-      const currentTime = new Date().getTime() / 1000;
-      if (currentTime > decodedToken.exp) {
-        dispatch(logoutUser());
-        setError("Session expired ! Please login again");
-      }
-    }
-  });
-  useEffect(() => {
-    updateUser();
-    groundWorkVideos();
-    toolVideos();
-  }, []);
+  // useEffect(() => {
+  //   if (user && !token) {
+  //     dispatch(logoutUser());
+  //     setError("Session expired ! , Please login again");
+  //   }
+  //   if (token) {
+  //     const decodedToken = jwtDecode(token);
+  //     const currentTime = new Date().getTime() / 1000;
+  //     if (currentTime > decodedToken.exp) {
+  //       dispatch(logoutUser());
+  //       setError("Session expired ! Please login again");
+  //     }
+  //   }
+  // });
+  // useEffect(() => {
+  //   updateUser();
+  //   groundWorkVideos();
+  //   toolVideos();
+  // }, []);
 
   useEffect(() => {
     // setPath(location.pathname);
@@ -93,14 +105,15 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading && <Loader />}
-      <AlertModal
-        state={error}
-        setState={setError}
-        message={error}
-        navigateTo="/login"
-      />
-      {/* {!user &&
+      <QueryClientProvider client={queryClient}>
+        {/* {isLoading && <Loader />} */}
+        <AlertModal
+          state={error}
+          setState={setError}
+          message={error}
+          navigateTo="/login"
+        />
+        {/* {!user &&
         showModal &&
         path !== "/" &&
         path !== "/home" &&
@@ -112,11 +125,13 @@ function App() {
           </div>
         )} */}
 
-      <Navigation />
+        <Navigation />
 
-      {/* <SelectAvatar /> */}
-      {/* <AvatarInfo /> */}
-      {/* <NavBar /> */}
+        {/* <SelectAvatar /> */}
+        {/* <AvatarInfo /> */}
+        {/* <NavBar /> */}
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      </QueryClientProvider>
     </div>
   );
 }

@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { BsCheckLg } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 // Redux Slices
-import { setLoading } from "../../redux/slices/loadingSlice";
 import { setUser } from "../../redux/slices/userSlice";
 // Custom Imports
-import { apiRequest } from "../../api/axios";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 import AlertModal from "../../components/Modal/AlertModal";
+import { useAvatars } from "../../api/avatars";
+import Loader from "../../components/Modal/loader";
+import { useSelectAvatar } from "../../api/user";
 
 const SelectAvatar = () => {
   // Hooks
@@ -17,46 +18,35 @@ const SelectAvatar = () => {
   const dispatch = useDispatch();
   // States
   const [choice, setChoice] = useState("");
-  const [avatars, setAvatars] = useState([]);
   const [error, setError] = useState(false);
   // Redux State Read
   const user = useSelector((state) => state.user.user);
 
-  // OnClick Handlers
-  const getAvatars = async () => {
-    try {
-      const { data } = await apiRequest.get("/getAllAvatars");
-      if (data.status === "ok") setAvatars(data?.avatars);
-    } catch (err) {
-      console.log(err);
-    }
+  const { data, isLoading, error: err } = useAvatars();
+
+  const {
+    mutate: selectAvatar,
+    isLoading: isLoading2,
+    error: err2,
+  } = useSelectAvatar(({ data }) => {
+    dispatch(setUser(data.user));
+    navigate("/selectbloom");
+  });
+
+  const setUserAvatar = () => {
+    if (!choice) return setError("Please select an avatar");
+    selectAvatar({ userid: user._id, choice });
   };
-  const setUserAvatar = async () => {
-    try {
-      if (!choice) return setError("Please select an avatar");
-      dispatch(setLoading(true));
-      const { data } = await apiRequest.patch(`/updateUserAvatar/${user._id}`, {
-        avatar: choice,
-      });
-      // setTimeout(() => {
-      dispatch(setUser(data.user));
-      dispatch(setLoading(false));
-      navigate("/selectbloom");
-      // }, 1000);
-    } catch (err) {
-      dispatch(setLoading(false));
-      if (err.message === "Network Error") return setError("Network Error");
-      const data = err?.response?.data;
-      setError(data?.message);
-    }
-  };
-  // UseEffect
   useEffect(() => {
-    getAvatars();
-  }, []);
+    if (err || err2) {
+      console.log("err", err, err2);
+      setError(err || err2);
+    }
+  }, [err, err2]);
 
   return (
     <div className="selectavatar">
+      {(isLoading || isLoading2) && <Loader />}
       <AlertModal message={error} state={error} setState={setError} />
       <div className="select-avatar bg-lightGreenMask">
         <h2>
@@ -65,7 +55,7 @@ const SelectAvatar = () => {
         </h2>
 
         <div className="avatar-container">
-          {avatars.map((avatar) => {
+          {data?.data?.avatars?.map((avatar) => {
             return (
               <div className="sa-imageAndText" key={avatar?._id}>
                 {choice === avatar._id ? (

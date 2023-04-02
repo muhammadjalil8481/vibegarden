@@ -4,7 +4,8 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // Redux Slices
 import { setLoading } from "../../redux/slices/loadingSlice";
-import { signUpUser } from "../../redux/slices/signUpUserSlice";
+// import { signUpUser } from "../../redux/slices/signUpUserSlice";
+import { setUser } from "../../redux/slices/userSlice";
 // Custom Imports
 import { apiRequest } from "../../api/axios";
 import images from "../../constants/images";
@@ -15,14 +16,15 @@ import Footer from "../../components/Footer";
 import GreenButton from "../../components/Button/GreenButton";
 import FormGroupAuth from "../../components/FormInputAuth";
 import VidCard from "../../components/VidCard";
+import Loader from "../../components/Modal/loader";
 import AlertModal from "../../components/Modal/AlertModal";
+import { useRegisterUser } from "../../api/auth";
 
 const JoinUs = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  // Page render depending upon state
-  // if (location.state && location.state.isEmailVerified) isEmailVerified = "yes";
+
   // States
   const [state, setState] = useState({
     firstName: "",
@@ -47,50 +49,56 @@ const JoinUs = () => {
   const [isEmailVerified, setIsEmailVerified] = useState(false);
 
   // Redux State Read
-  const user = useSelector((state) => state?.signUpUser?.user);
+  const user = useSelector((state) => state?.user?.user);
   useEffect(() => {
     if (user && user?.verified) setIsEmailVerified(true);
   }, []);
 
   // OnClick Handlers
   // No 1
-  const signUpUserFunction = async () => {
-    try {
-      if (
-        !state.firstName ||
-        !state.lastName ||
-        !state.userName ||
-        !state.email ||
-        !state.password ||
-        !state.confirmPassword
-      )
-        return setError("Please fill the remaining fields");
+  const {
+    mutate: registerUser,
+    error: err,
+    isLoading,
+  } = useRegisterUser(({ data }) => {
+    console.log("data", data?.user);
+    dispatch(setUser(data?.user));
+    setTimeout(() => {
+      setAccountCreated(true);
+    }, 500);
+  });
+  // console.log("data", data);
 
-      dispatch(setLoading(true));
-
-      const { data } = await apiRequest.post("/register", {
-        firstName: state.firstName,
-        lastName: state.lastName,
-        userName: state.userName,
-        email: state.email,
-        password: state.password,
-        confirmPassword: state.confirmPassword,
-      });
-      if (data?.status === "ok") {
-        dispatch(signUpUser(data?.user));
-        setTimeout(() => {
-          dispatch(setLoading(false));
-          setAccountCreated(true);
-        }, 1000);
-      }
-    } catch (err) {
-      // console.log(err.message);
-      dispatch(setLoading(false));
+  useEffect(() => {
+    if (err) {
+      console.log("err", err);
       if (err.message === "Network Error") return setError("Network Error");
       const data = err?.response?.data;
       setError(data?.message);
     }
+  }, [err]);
+
+  const signUpUserFunction2 = () => {
+    if (
+      !state.firstName ||
+      !state.lastName ||
+      !state.userName ||
+      !state.email ||
+      !state.password ||
+      !state.confirmPassword
+    )
+      return setError("Please fill the remaining fields");
+    const user = {
+      firstName: state.firstName,
+      lastName: state.lastName,
+      userName: state.userName,
+      email: state.email,
+      password: state.password,
+      confirmPassword: state.confirmPassword,
+    };
+    registerUser(user);
   };
+
   // No 2
   const acceptPay = async () => {
     try {
@@ -116,11 +124,11 @@ const JoinUs = () => {
         packageType: "monthly",
         belongsTo: user._id,
       });
-      dispatch(signUpUser(null));
+      dispatch(setUser(null));
       setTimeout(() => {
         dispatch(setLoading(false));
         setPaymentComplete(true);
-      }, 1000);
+      }, 500);
     } catch (err) {
       dispatch(setLoading(false));
       if (err.message === "Network Error") return setError("Network Error");
@@ -131,6 +139,7 @@ const JoinUs = () => {
 
   return (
     <div className="join-us">
+      {isLoading && <Loader />}
       <AlertModal
         state={error}
         message={error}
@@ -149,7 +158,6 @@ const JoinUs = () => {
         setState={setPaymentComplete}
         navigateTo="/login"
       />
-      {/* {isLoading && <Loader />} */}
       <NavBar onlyBrand />
       <div className="container-lg join-us-container mt-5">
         <div className="row join-us-row">
@@ -311,7 +319,7 @@ const JoinUs = () => {
               <h3
                 className="join-us-next-btn"
                 onClick={() => {
-                  signUpUserFunction();
+                  signUpUserFunction2();
                 }}
               >
                 Next&#62;

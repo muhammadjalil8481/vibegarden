@@ -1,5 +1,5 @@
 // Library Imports
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsCheckLg } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
@@ -13,6 +13,8 @@ import images from "../../constants/images";
 import { apiRequest } from "../../api/axios";
 import ButtonFilled from "../../components/Button/ButtonFilled";
 import AlertModal from "../../components/Modal/AlertModal";
+import { useBloomPercentage } from "../../api/user";
+import Loader from "../../components/Modal/loader";
 
 const BloomCheck = () => {
   // Hooks
@@ -27,35 +29,53 @@ const BloomCheck = () => {
   console.log("user", user);
 
   // OnClick Handlers
-  const setUserBloomPercentage = async () => {
-    try {
-      console.log("setting user bloom percentage");
-      dispatch(setLoading(true));
-      const { data } = await apiRequest.patch(
-        `/updateBloomPercentage/${user._id}`,
-        {
-          bloomPercentage: percent,
-        }
-      );
-      console.log("next");
-      console.log("data///", data);
-      // setTimeout(() => {
-      dispatch(setLoading(false));
-      dispatch(setUser(data.user));
-      navigate("/bloomresult", { state: { percent: percent } });
-      // }, 1000);
-    } catch (err) {
-      dispatch(setLoading(false));
-      if (err.message === "Network Error") return setError("Network Error");
-      const data = err?.response?.data;
-      setError(data?.message);
+  const {
+    mutate: bloomPercentage,
+    isLoading,
+    error: err,
+  } = useBloomPercentage(({ data }) => {
+    dispatch(setUser(data.user));
+    navigate("/bloomresult", { state: { percent: percent } });
+  });
+
+  useEffect(() => {
+    if (err) {
+      console.log("err", err);
+      setError(err);
     }
-  };
+  }, [err]);
+
+  // const setUserBloomPercenatage = () => {};
+
+  // const setUserBloomPercentage2 = async () => {
+  //   try {
+  //     dispatch(setLoading(true));
+  //     const { data } = await apiRequest.patch(
+  //       `/updateBloomPercentage/${user._id}`,
+  //       {
+  //         bloomPercentage: percent,
+  //       }
+  //     );
+  //     console.log("next");
+  //     console.log("data///", data);
+  //     // setTimeout(() => {
+  //     dispatch(setLoading(false));
+  //     dispatch(setUser(data.user));
+  //     navigate("/bloomresult", { state: { percent: percent } });
+  //     // }, 1000);
+  //   } catch (err) {
+  //     dispatch(setLoading(false));
+  //     if (err.message === "Network Error") return setError("Network Error");
+  //     const data = err?.response?.data;
+  //     setError(data?.message);
+  //   }
+  // };
 
   return (
     <>
       {/* <NavBar onlyBrand /> */}
       <div className="bloom-check bg-lightGreenMask">
+        {isLoading && <Loader />}
         <AlertModal message={error} state={error} setState={setError} />
         <Link to="/selectbloom">
           <span className="bc-back">
@@ -153,7 +173,7 @@ const BloomCheck = () => {
             </div>
           </div>
           {/* <Link to="/bloomresult" state={{ percent: percent }}> */}
-          <span onClick={() => setUserBloomPercentage()}>
+          <span onClick={() => bloomPercentage({ userid: user._id, percent })}>
             <ButtonFilled
               text="Continue"
               paddingX

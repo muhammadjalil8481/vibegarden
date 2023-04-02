@@ -44,18 +44,18 @@ const VideoCardShifted = ({
             <VidCard
               image={image}
               noTitle
-              recentVibes
-              linkVideo="/tools/tonglen"
+              // recentVibes
+              // linkVideo="/tools/tonglen"
               videoSrc={videoLink}
               time={videoDuration}
             />
             <div className="vcs-video-card-subText">
-              <Link to="/tools/tonglen">
-                <p>Details</p>
-              </Link>
-              <Link to="/topic">
-                <p>#Tag</p>
-              </Link>
+              {/* <Link to="/tools/tonglen"> */}
+              <p>#Tag</p>
+              {/* </Link> */}
+              {/* <Link to="/topic"> */}
+              <p>#Tag</p>
+              {/* </Link> */}
             </div>
           </div>
         </div>

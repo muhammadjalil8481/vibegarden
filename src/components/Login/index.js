@@ -1,5 +1,5 @@
 // Library Imports
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
@@ -16,6 +16,8 @@ import AlertModal from "../../components/Modal/AlertModal";
 import ContainerSection from "../Container";
 import FormGroupAuth from "../FormInputAuth";
 import ButtonFilled from "../Button/ButtonFilled";
+import { useLogin } from "../../api/auth";
+import Loader from "../Modal/loader";
 
 // Checkbox Icon
 // ***************************
@@ -81,12 +83,45 @@ const Login = () => {
   const [paymentIncomplete, setPaymentIncomplete] = useState(false);
   const [error, setError] = useState(false);
 
+  const {
+    mutate: login,
+    isLoading,
+    error: err,
+  } = useLogin(({ data }) => {
+    dispatch(setUser(data?.user));
+    dispatch(saveToken(data?.token));
+    if (data?.user?.avatar && data?.user?.bloom && data?.user?.bloomPercentage)
+      navigate("/");
+    else if (!data?.user?.avatar) navigate("/selectAvatar");
+    else if (!data?.user?.bloom) navigate("/selectbloom");
+    else if (!data?.user?.bloomPercentage) navigate("/bloomcheck");
+  });
+  if (isLoading) {
+    dispatch(setLoading(true));
+  } else {
+    dispatch(setLoading(false));
+  }
+  useEffect(() => {
+    if (err) {
+      console.log("err", err);
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  }, [err]);
   // OnClick Handlers
-  const loginUser = async () => {
+  const loginUser = () => {
+    if (!state.email || !state.password)
+      return setError("Please fill in your email and password");
+    login({
+      email: state.email,
+      password: state.password,
+    });
+  };
+  const loginUser2 = async () => {
     try {
       if (!state.email || !state.password)
         return setError("Please fill in your email and password");
-      console.log("nest");
       dispatch(setLoading(true));
 
       const { data } = await apiRequest.post("/login", {
@@ -125,6 +160,7 @@ const Login = () => {
   };
   return (
     <section className="login">
+      {isLoading && <Loader />}
       <AlertModal
         state={error}
         message={error}

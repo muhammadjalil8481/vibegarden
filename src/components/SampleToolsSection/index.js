@@ -6,43 +6,39 @@ import ContainerSection from "../Container";
 import VideoCardShifted from "../VideoShiftedCard";
 import circle from "../../assets/images/circle.svg";
 
-const SampleTools = () => {
+const SampleTools = ({ data }) => {
   // Redux State Read
-  const homepage = useSelector((state) => state.homepage);
+
   return (
     <section className="st my70">
       <ContainerSection isFluid={"yes"}>
         <div className="container-lg st-container ">
           <h2 className="st-heading mb-5">
-            {homepage?.sampleToolsHeading || `Sample Tools`}
+            {data?.sampleToolsHeading || `Sample Tools`}
           </h2>
           <div className="row st-cards">
             <div className="col-md-6 st-card">
               <VideoCardShifted
-                image={homepage?.sampleTools1?.thumbnail}
-                heading={
-                  homepage?.sampleTools1?.heading || "Sample Tool Card 1"
-                }
+                image={data?.sampleTools1?.thumbnail}
+                heading={data?.sampleTools1?.heading || "Sample Tool Card 1"}
                 desc={
-                  homepage?.sampleTools1?.text || "sample tool card description"
+                  data?.sampleTools1?.text || "sample tool card description"
                 }
-                icon={homepage?.sampleTools1?.icon || circle}
-                videoDuration={homepage?.sampleTools1?.videoDuration}
-                videoLink={homepage?.sampleTools1?.video}
+                icon={data?.sampleTools1?.icon || circle}
+                videoDuration={data?.sampleTools1?.videoDuration}
+                videoLink={data?.sampleTools1?.video}
               />
             </div>
             <div className="col-md-6 st-card">
               <VideoCardShifted
-                image={homepage?.sampleTools2?.thumbnail}
-                heading={
-                  homepage?.sampleTools2?.heading || "Sample Tool Card 2"
-                }
+                image={data?.sampleTools2?.thumbnail}
+                heading={data?.sampleTools2?.heading || "Sample Tool Card 2"}
                 desc={
-                  homepage?.sampleTools2?.text || "sample tool card description"
+                  data?.sampleTools2?.text || "sample tool card description"
                 }
-                icon={homepage?.sampleTools2?.icon || circle}
-                videoLink={homepage?.sampleTools2?.video}
-                videoDuration={homepage?.sampleTools2?.videoDuration}
+                icon={data?.sampleTools2?.icon || circle}
+                videoLink={data?.sampleTools2?.video}
+                videoDuration={data?.sampleTools2?.videoDuration}
               />
             </div>
           </div>

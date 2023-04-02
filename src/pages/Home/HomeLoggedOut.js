@@ -1,8 +1,6 @@
 // Library Imports
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
 // Custom Imports
-import { apiRequest } from "../../api/axios";
 import NavBar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import GradientImageInfoSection from "../../components/GradientImageInfoSection";
@@ -16,119 +14,77 @@ import StayInTouch from "../../components/StayInTouchSection";
 import Footer from "../../components/Footer";
 import AlertModal from "../../components/Modal/AlertModal";
 // Redux Slices
-import {
-  setHero,
-  setEmbodyingYourFullness,
-  setComingHomeTogether,
-  setHiw1,
-  setHiw2,
-  setHiw3,
-  setHiw4,
-  setHeadline1,
-  setHeadline2,
-  setHeadline3,
-  setHeadline4,
-  setSampleToolsHeading,
-  setSampleTools1,
-  setSampleTools2,
-  setMoreVGHeading,
-  setCreationStory,
-  setTeacher,
-  setVibeBloomApp,
-} from "../../redux/slices/homePageSlice";
-import { setLoading } from "../../redux/slices/loadingSlice";
+import { useHomepageLO } from "../../api/pages";
+import Loader from "../../components/Modal/loader";
 
 const HomePage = () => {
   // Hooks
-  const dispatch = useDispatch();
-  const homepage = useSelector((state) => state.homepage);
   // States
   const [error, setError] = useState(false);
   // OnClick Handlers
-  const getHomePageData = async () => {
-    try {
-      console.log("getting homepage data");
-      dispatch(setLoading(true));
-      const { data } = await apiRequest.get("/homepage");
-      console.log("homepage", data.data, homepage);
-      dispatch(setHero(data.data));
-      dispatch(setEmbodyingYourFullness(data.data));
-      dispatch(setComingHomeTogether(data.data));
-      dispatch(setHiw1(data.data));
-      dispatch(setHiw2(data.data));
-      dispatch(setHiw3(data.data));
-      dispatch(setHiw4(data.data));
-      dispatch(setHeadline1(data.data));
-      dispatch(setHeadline2(data.data));
-      dispatch(setHeadline3(data.data));
-      dispatch(setHeadline4(data.data));
-      dispatch(setSampleToolsHeading(data.data));
-      dispatch(setSampleTools1(data.data));
-      dispatch(setSampleTools2(data.data));
-      dispatch(setMoreVGHeading(data.data));
-      dispatch(setCreationStory(data.data));
-      dispatch(setVibeBloomApp(data.data));
-      dispatch(setTeacher(data.data));
-      dispatch(setLoading(false));
-    } catch (err) {
-      console.log(err);
-      dispatch(setLoading(false));
-    }
-  };
+  const { data, isLoading, error: err } = useHomepageLO();
+  const homedata = data?.data?.data;
+
   // UseEffect
   useEffect(() => {
-    getHomePageData();
-  }, []);
+    if (err) {
+      console.log("err", err);
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  }, [err]);
+
   return (
     <div className="remove-overflow">
       <NavBar />
+      {isLoading && <Loader />}
       <AlertModal state={error} message={error} setState={setError} />
       <div
         className="bg-gradient-blueflowers"
         style={{
-          // backgroundColor: "blue",
-          backgroundImage: `url(${homepage?.headerImage})` || "blue",
+          backgroundImage: `url(${homedata?.headerImage})` || "blue",
         }}
       >
-        <Hero author="– Thich Nhat Hahn" quote={homepage?.mainQuotation} />
+        <Hero author="– Thich Nhat Hahn" quote={homedata?.mainQuotation} />
       </div>
       <div className="bg-gradient-pink">
         <GradientImageInfoSection
-          desc={homepage?.embodyingYourFullness?.text || "fullness para"}
-          videoCardLeftMargin={"30px"}
           heading={
-            homepage?.embodyingYourFullness?.heading ||
+            homedata?.embodyingYourFullness?.heading ||
             "Embodying Your Fullness"
           }
+          desc={homedata?.embodyingYourFullness?.text || "fullness para"}
+          videoCardLeftMargin={"30px"}
           buttonText={
-            homepage?.embodyingYourFullness?.buttonText || "Explorer Tools"
+            homedata?.embodyingYourFullness?.buttonText || "Explorer Tools"
           }
-          videoLink={homepage?.embodyingYourFullness?.video}
-          videoImage={homepage?.embodyingYourFullness?.thumbnail}
-          videoDuration={homepage?.embodyingYourFullness?.videoDuration}
+          videoLink={homedata?.embodyingYourFullness?.video}
+          videoImage={homedata?.embodyingYourFullness?.thumbnail}
+          videoDuration={homedata?.embodyingYourFullness?.videoDuration}
           noTitle
           btnLink="/tools"
         />
       </div>
       <WhiteImageInfoSection
         mainHeading={
-          homepage?.comingHomeTogether?.heading || "Coming Home Together"
+          homedata?.comingHomeTogether?.heading || "Coming Home Together"
         }
         desc={
-          homepage?.comingHomeTogether?.text || "coming home toghether text"
+          homedata?.comingHomeTogether?.text || "coming home toghether text"
         }
-        videoLink={homepage?.comingHomeTogether?.video}
-        videoImage={homepage?.comingHomeTogether?.thumbnail}
-        videoDuration={homepage?.comingHomeTogether?.videoDuration}
+        videoLink={homedata?.comingHomeTogether?.video}
+        videoImage={homedata?.comingHomeTogether?.thumbnail}
+        videoDuration={homedata?.comingHomeTogether?.videoDuration}
         noTitle
-        btnText={homepage?.comingHomeTogether?.buttonText || "Join Us"}
+        btnText={homedata?.comingHomeTogether?.buttonText || "Join Us"}
         link="/join-us"
       />
-      <HowItWorks homeLoggedOut />
-      <FourColumnInfoSection homeLoggedOut />
+      <HowItWorks data={homedata} />
+      <FourColumnInfoSection data={homedata} />
       <LineBreak />
-      <SampleTools />
-      <MoreVG />
+      <SampleTools data={homedata} />
+      <MoreVG data={homedata} />
       <div className="bg-gradient-pinkMask">
         <StayInTouch />'
       </div>

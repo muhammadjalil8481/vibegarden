@@ -10,7 +10,6 @@ const signUpUserSlice = createSlice({
   initialState,
   reducers: {
     signUpUser: (state, action) => {
-      console.log("redux signing up");
       state.user = action.payload;
     },
     setError: (state, action) => {
