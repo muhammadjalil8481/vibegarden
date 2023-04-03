@@ -1,26 +1,39 @@
 // Library Imports
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { IoNotificationsSharp, IoAddOutline } from "react-icons/io5";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Navbar, Container, Nav, NavLink } from "react-bootstrap";
+import { IoNotificationsSharp } from "react-icons/io5";
+import { Link, useNavigate } from "react-router-dom";
+import { Navbar, Nav, NavLink } from "react-bootstrap";
 // Redux Slices
-import { setLoading } from "../../redux/slices/loadingSlice";
 import { logoutUser } from "../../redux/slices/userSlice";
+import { setUser } from "../../redux/slices/userSlice";
 // Custom Imports
 import ButtonOutline from "../Button/ButtonOutline";
 import images from "../../constants/images";
 import UserButton from "../userButton.js";
 import VibeGardenLogo from "../../assets/images/vibegarden_logo.svg";
 import NotificationPopUp from "../NotificationPopUp";
+import { useUser } from "../../api/user";
+import Loader from "../Modal/loader";
+import AlertModal from "../Modal/AlertModal";
 
 const NavBar = ({ onlyBrand }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // Redux State Read
   const user = useSelector((state) => state.user.user);
+  const { isLoading, error: err } = useUser(
+    user?._id,
+    user ? true : false,
+    ({ data }) => {
+      dispatch(setUser(data?.data));
+    }
+  );
+
   // States
   const [expanded, setExpanded] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
@@ -42,16 +55,25 @@ const NavBar = ({ onlyBrand }) => {
 
   // OnClick handlers
   const logoutUserFunction = () => {
-    console.log("logged out");
-    dispatch(setLoading(true));
+    setLoading(true);
     setTimeout(() => {
       dispatch(logoutUser());
-      dispatch(setLoading(false));
+      setLoading(false);
       navigate("/login");
     }, 1000);
   };
+  useEffect(() => {
+    if (err) {
+      console.log("err", err);
+      if (err.message === "Network Error") return setError("Network Error");
+      const data = err?.response?.data;
+      setError(data?.message);
+    }
+  }, [err]);
   return (
     <Navbar expand="lg" className="navbar">
+      {(isLoading || loading) && <Loader />}
+      <AlertModal state={error} message={error} setState={setError} />
       <div className="container-xl">
         <Link to="/">
           <Navbar.Brand className="brand">
@@ -132,7 +154,7 @@ const NavBar = ({ onlyBrand }) => {
                       <span className="notification-dot"></span>
                     </span>
                     <UserButton
-                      username={`${user?.firstName} ${user.lastName}`}
+                      username={`${user?.firstName} ${user?.lastName}`}
                       onClickFunction={() => setExpanded(!expanded)}
                     />
                     {expanded && dimensions.width >= 992 && (

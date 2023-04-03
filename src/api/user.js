@@ -1,6 +1,10 @@
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import { apiRequest } from "./axios";
 
+const user = async (id) => {
+  console.log("refetch id", id);
+  return await apiRequest.get(`/getUser/${id}`);
+};
 const selectAvatar = async (data) => {
   const { userid, choice } = data;
   return await apiRequest.patch(`/updateUserAvatar/${userid}`, {
@@ -17,6 +21,12 @@ const bloomPercentage = async (data) => {
   const { userid, percent } = data;
   return await apiRequest.patch(`/updateBloomPercentage/${userid}`, {
     bloomPercentage: percent,
+  });
+};
+export const useUser = (id, enabled = true, onSuccess) => {
+  return useQuery(["user", id], () => user(id), {
+    onSuccess,
+    enabled,
   });
 };
 export const useSelectAvatar = (onSuccess) => {

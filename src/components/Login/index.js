@@ -18,6 +18,7 @@ import FormGroupAuth from "../FormInputAuth";
 import ButtonFilled from "../Button/ButtonFilled";
 import { useLogin } from "../../api/auth";
 import Loader from "../Modal/loader";
+import { useUser } from "../../api/user";
 
 // Checkbox Icon
 // ***************************
@@ -96,11 +97,7 @@ const Login = () => {
     else if (!data?.user?.bloom) navigate("/selectbloom");
     else if (!data?.user?.bloomPercentage) navigate("/bloomcheck");
   });
-  if (isLoading) {
-    dispatch(setLoading(true));
-  } else {
-    dispatch(setLoading(false));
-  }
+
   useEffect(() => {
     if (err) {
       console.log("err", err);
@@ -118,46 +115,7 @@ const Login = () => {
       password: state.password,
     });
   };
-  const loginUser2 = async () => {
-    try {
-      if (!state.email || !state.password)
-        return setError("Please fill in your email and password");
-      dispatch(setLoading(true));
 
-      const { data } = await apiRequest.post("/login", {
-        email: state.email,
-        password: state.password,
-      });
-      // console.log("data", data);
-      if (data?.status === "ok") {
-        dispatch(setUser(data?.user));
-        dispatch(saveToken(data?.token));
-        // setTimeout(() => {
-        dispatch(setLoading(false));
-        if (
-          data?.user?.avatar &&
-          data?.user?.bloom &&
-          data?.user?.bloomPercentage
-        )
-          navigate("/");
-        else if (!data?.user?.avatar) navigate("/selectAvatar");
-        else if (!data?.user?.bloom) navigate("/selectbloom");
-        else if (!data?.user?.bloomPercentage) navigate("/bloomcheck");
-        // }, );
-      }
-    } catch (err) {
-      // console.log("catching error", err);
-      dispatch(setLoading(false));
-      if (err.message === "Network Error") return setError("Network Error");
-      const data = err?.response?.data;
-      if (data?.specialMessage === "paymentIncomplete") {
-        setPaymentIncomplete(true);
-        dispatch(signUpUser(data?.specialData));
-        setError(data?.message);
-      }
-      setError(data?.message);
-    }
-  };
   return (
     <section className="login">
       {isLoading && <Loader />}
