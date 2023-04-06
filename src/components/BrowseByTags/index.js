@@ -2,7 +2,7 @@ import React from "react";
 import ContainerSection from "../Container";
 import SearchInput from "../SearchInput";
 
-const BrowseByTags = () => {
+const BrowseByTags = ({ heading = "Browse By Tags" }) => {
   return (
     <section className="bbt bg-gradient-pink">
       <ContainerSection isFluid={"yes"}>

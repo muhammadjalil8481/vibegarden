@@ -13,6 +13,9 @@ const ThreeColumnWhiteVideoInfoLayout = ({
   title3 = "Title3",
   noRedirect,
   groundWork,
+  gwVideo1,
+  gwVideo2,
+  gwVideo3,
 }) => {
   const navigate = useNavigate();
   return (
@@ -24,22 +27,22 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               <div className="tcwvil-icon">
                 <img src={PinkIcon} />
               </div>
-              <h5 className="tcwvil-title">{title1}</h5>
+              <h5 className="tcwvil-title">{gwVideo1?.heading}</h5>
             </div>
-            <p className="tcwvil-para">
-              Body copy style for white text on dark or gradient backgrounds
-              (Medium Weight) Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Mauris placerat euismod porttitor.
-            </p>
+            <p className="tcwvil-para">{gwVideo1?.text}</p>
             <div className="tcwvil-video">
               {!noRedirect ? (
                 <VidCard
-                  image={images.placeholder}
+                  image={gwVideo1?.thumbnail}
+                  videoSrc={gwVideo1?.video}
+                  time={gwVideo1?.videoDuration}
                   groundwork={groundWork ? true : false}
                 />
               ) : (
                 <VidCard
-                  image={images.placeholder}
+                  image={gwVideo1?.thumbnail}
+                  videoSrc={gwVideo1?.video}
+                  time={gwVideo1?.videoDuration}
                   recentVibes
                   groundwork={groundWork ? true : false}
                   linkVideo="/groundwork/family-of-light"
@@ -59,7 +62,11 @@ const ThreeColumnWhiteVideoInfoLayout = ({
             </div>
             <Link to="/groundwork/family-of-light" state={{ heading: title1 }}>
               <div className="tcwvil-btn">
-                <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
+                <ButtonFilled
+                  text={gwVideo1?.buttonText}
+                  bgGradient={"yes"}
+                  paddingX
+                />
               </div>
             </Link>
           </div>
@@ -70,18 +77,22 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               <div className="tcwvil-icon">
                 <img src={PinkIcon} />
               </div>
-              <h5 className="tcwvil-title">{title2}</h5>
+              <h5 className="tcwvil-title">{gwVideo2?.heading}</h5>
             </div>
-            <p className="tcwvil-para">
-              Body copy style for white text on dark or gradient backgrounds
-              (Medium Weight) Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Mauris placerat euismod porttitor.
-            </p>
+            <p className="tcwvil-para">{gwVideo2?.text}</p>
             <div className="tcwvil-video">
               {!noRedirect ? (
-                <VidCard groundwork={groundWork ? true : false} />
+                <VidCard
+                  image={gwVideo2?.thumbnail}
+                  videoSrc={gwVideo2?.video}
+                  time={gwVideo2?.videoDuration}
+                  groundwork={groundWork ? true : false}
+                />
               ) : (
                 <VidCard
+                  image={gwVideo2?.thumbnail}
+                  videoSrc={gwVideo2?.video}
+                  time={gwVideo2?.videoDuration}
                   recentVibes
                   groundwork={groundWork ? true : false}
                   linkVideo="/groundwork/family-of-light"
@@ -101,7 +112,11 @@ const ThreeColumnWhiteVideoInfoLayout = ({
             </div>
             <Link to="/groundwork/family-of-light" state={{ heading: title2 }}>
               <div className="tcwvil-btn">
-                <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
+                <ButtonFilled
+                  text={gwVideo2?.buttonText}
+                  bgGradient={"yes"}
+                  paddingX
+                />
               </div>
             </Link>
           </div>
@@ -112,23 +127,23 @@ const ThreeColumnWhiteVideoInfoLayout = ({
               <div className="tcwvil-icon">
                 <img src={PinkIcon} />
               </div>
-              <h5 className="tcwvil-title">{title3}</h5>
+              <h5 className="tcwvil-title">{gwVideo3?.heading}</h5>
             </div>
-            <p className="tcwvil-para">
-              Body copy style for white text on dark or gradient backgrounds
-              (Medium Weight) Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Mauris placerat euismod porttitor.
-            </p>
+            <p className="tcwvil-para">{gwVideo3?.text}</p>
             <div className="tcwvil-video">
               {!noRedirect ? (
                 <VidCard
-                  image={images.placeholder4}
+                  image={gwVideo3?.thumbnail}
+                  videoSrc={gwVideo3?.video}
+                  time={gwVideo3?.videoDuration}
                   groundwork={groundWork ? true : false}
                 />
               ) : (
                 <VidCard
+                  image={gwVideo3?.thumbnail}
+                  videoSrc={gwVideo3?.video}
+                  time={gwVideo3?.videoDuration}
                   recentVibes
-                  image={images.placeholder4}
                   groundwork={groundWork ? true : false}
                   linkVideo="/groundwork/family-of-light"
                 />
@@ -147,7 +162,11 @@ const ThreeColumnWhiteVideoInfoLayout = ({
             </div>
             <Link to="/groundwork/family-of-light" state={{ heading: title3 }}>
               <div className="tcwvil-btn">
-                <ButtonFilled text="Learn More" bgGradient={"yes"} paddingX />
+                <ButtonFilled
+                  text={gwVideo3?.buttonText}
+                  bgGradient={"yes"}
+                  paddingX
+                />
               </div>
             </Link>
           </div>

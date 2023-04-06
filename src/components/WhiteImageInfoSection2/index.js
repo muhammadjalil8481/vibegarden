@@ -17,6 +17,7 @@ const WhiteImageInfoSection2 = ({
   freshBlooms,
   groundWork,
   tool,
+  data,
 }) => {
   return (
     <section className="wiis2">
@@ -24,20 +25,11 @@ const WhiteImageInfoSection2 = ({
         <div className="container-lg wiis2-container py80">
           <div className="row wiis2-row">
             <div className="col-md-7 wiis2-col wiis2-left-col order-md-2">
-              <h3 className="wiis2-heading ">H3 Headline Style Green</h3>
-              <p className=" wiis2-para mt-2 mb-5">
-                Body copy style for white text on dark or gradient backgrounds
-                (Medium Weight) Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Mauris placerat euismod porttitor. Nam nec
-                mauris non magna facilisis volutpat ac sit amet nulla. Nullam
-                vestibulum velit vitae sem commodo tempor. Sed dapibus, est non
-                pulvinar fringilla, lorem libero laoreet erat, ac tristique elit
-                nisl eu metus. Sed fermentum erat sit amet enim blandit, quis
-                dictum nisi tempus.
-              </p>
+              <h3 className="wiis2-heading ">{data?.heading}</h3>
+              <p className=" wiis2-para mt-2 mb-5">{data?.text}</p>
               <Link to="/freshblooms">
                 <div className="wiis2-link">
-                  <ColoredLink text="See Fresh Blooms Archive" />
+                  <ColoredLink text={data?.buttonText} />
                 </div>
               </Link>
             </div>
@@ -48,8 +40,9 @@ const WhiteImageInfoSection2 = ({
 
               <div className="wiis2-vid-card">
                 <VidCard
-                  time="3:15"
-                  image={images.placeholder2}
+                  time={data?.videoDuration}
+                  image={data?.thumbnail}
+                  videoSrc={data?.video}
                   title="Title"
                   freshBlooms={freshBlooms ? true : false}
                 />

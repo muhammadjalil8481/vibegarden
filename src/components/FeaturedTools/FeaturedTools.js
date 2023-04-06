@@ -16,6 +16,7 @@ const FeaturedTools = ({
   idgwHeading = "Heading",
   tool,
   toolDummy,
+  data,
 }) => {
   return (
     <section className="ft">
@@ -26,7 +27,7 @@ const FeaturedTools = ({
               whiteHeading && "color-white"
             } ${noPara && "mb-5"}`}
           >
-            {heading}
+            {data?.heading || heading}
           </h2>
           {!noPara && (
             <p
@@ -34,10 +35,7 @@ const FeaturedTools = ({
                 whitePara && "color-white"
               }`}
             >
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kas
+              {data?.text}
             </p>
           )}
           <div className="ft-row row">

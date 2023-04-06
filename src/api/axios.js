@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { store } from "../redux/store";
-const baseURL = "http://192.168.2.106:3000/api/v1";
+// const baseURL = "http://192.168.2.106:3000/api/v1";
+const baseURL = "http://192.168.2.103:3000/api/v1";
 // const baseURL = "https://vibegardenss.herokuapp.com/api/v1";
 
 export const apiRequest = axios.create({

@@ -27,6 +27,7 @@ const Hero = ({
     .filter((el) => el !== "" && el !== "." && el !== " ");
   const quoteAuthor = quoteExcept[0];
   const quoteHeading = quoteExcept[1];
+  console.log(quote);
   return (
     <Container
       fluid

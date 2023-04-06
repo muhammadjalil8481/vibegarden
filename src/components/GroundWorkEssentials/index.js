@@ -2,20 +2,24 @@ import React from "react";
 import ContainerSection from "../Container";
 import ThreeColumnWhiteVideoInfoLayout from "../ThreeColumnWhiteVideoInfoLayout";
 
-const GroundWorkEssentials = () => {
+const GroundWorkEssentials = ({
+  heading,
+  text,
+  gwVideo1,
+  gwVideo2,
+  gwVideo3,
+}) => {
   return (
     <section className="ge">
       <ContainerSection isFluid={"yes"}>
         <div className="container-lg ge-container text-center">
-          <h2 className="ge-heading">Groundwork Essentials</h2>
-          <p className="ge-para">
-            LoLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kass
-          </p>
+          <h2 className="ge-heading">{heading}</h2>
+          <p className="ge-para">{text}</p>
           <div className="ge-cards">
             <ThreeColumnWhiteVideoInfoLayout
+              gwVideo1={gwVideo1}
+              gwVideo2={gwVideo2}
+              gwVideo3={gwVideo3}
               noRedirect
               title1="A Creation Story"
               title2="A Creation Story"
